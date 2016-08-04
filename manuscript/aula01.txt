@@ -13,7 +13,8 @@ Ruby é uma linguagem bastante semelhante a Python. Portanto, aqueles que já es
 
 Como você deve estar imaginando, a logo do Ruby é um rubi, que é uma pedra preciosa de cor vermelha, conforme ilustra a [Figura 01](#aula01-figura01). A escolha desse nome foi feita em uma conversa online entre Matz e Keiju Ishitsuka em 24 de fevereiro de 1993. Eles tomaram essa decisão antes de qualquer codificação para se produzir a linguagem, e essa escolha foi feita entre duas opções: Coral ou Ruby (WIKIPÉDIA, 2015).
 
-![Figura 01 - Logo da linguagem Ruby. Fonte: Ruby, 2015](images/ruby.jpg) {#aula01-figura01}
+{#aula01-figura01,float=center}
+![Figura 01 - Logo da linguagem Ruby. Fonte: Ruby, 2015](images/ruby.jpg)
 
 ## Instalação do Ruby {#aula01-instalacao-do-ruby}
 
@@ -25,7 +26,8 @@ Para instalar o Ruby no Windows, usaremos um instalador chamado *[RubyInstaller 
 
 **Passo 1** – Acesse a página de downloads RubyInstaller através do endereço: <http://rubyinstaller.org/downloads>. Você deve visualizar uma página, conforme ilustra a [Figura 02](#aula01-figura02).
 
-![Figura 02 - Downloads do RubyInstaller](images/rubyinstaller-download.png) {#aula01-figura02}
+{#aula01-figura02}
+![Figura 02 - Downloads do RubyInstaller](images/rubyinstaller-download.png)
 
 **Passo 2** – Se seu computador for x32, faça o download do instalador clicando no link *Ruby 2.2.3*. Se seu computador for x64, faça o download clicando no link *Ruby 2.2.3 (x64)*. Caso não saiba, recomendamos fazer o download do instalador clicando no link *Ruby 2.2.3*.
 
@@ -33,19 +35,23 @@ Para instalar o Ruby no Windows, usaremos um instalador chamado *[RubyInstaller 
 
 **Passo 4** – Na primeira tela do assistente de instalação, ilustrada na [Figura 03](#aula01-figura03), você poderá configurar o idioma durante a instalação. Recomendamos deixar a opção *English* e clique em *OK*.
 
-![Figura 03 - Configuração do idioma do instalador](images/instalacao-ruby-tela1.png) {#aula01-figura03}
+{#aula01-figura03}
+![Figura 03 - Configuração do idioma do instalador](images/instalacao-ruby-tela1.png)
 
 **Passo 5** – Na segunda tela do assistente de instalação, ilustrada na [Figura 04](#aula01-figura04), será solicitado que você aceite os termos da licença. Selecione a opção *I accept the License* e depois clique no botão *Next >*.
 
-![Figura 04 - Licença de uso](images/instalacao-ruby-tela2.png) {#aula01-figura04}
+{#aula01-figura04}
+![Figura 04 - Licença de uso](images/instalacao-ruby-tela2.png)
 
 **Passo 6** – Na terceira tela do assistente de instalação, ilustrada na [Figura 05](#aula01-figura05), você poderá configurar o local de instalação do Ruby. Recomendamos deixar o local de instalação padrão, contudo, selecione as três opções que aparecem: *Install Tcl/Tk support*, *Add Ruby executables to your PATH* e *Associate .rb and .rbw files with this Ruby installation*. A primeira opção instala o suporte para construção de interfaces gráficas; a segunda opção adiciona os executáveis do Ruby ao PATH do Windows, nos permitindo executá-los no prompt de comando; e a terceira opção permite-nos executar os arquivos com extensão .rb e .rbw, clicando duas vezes sobre eles. Por fim, clique no botão *Install*.
 
-![Figura 05 - Local de instalação e demais configurações](images/instalacao-ruby-tela3.png) {#aula01-figura05}
+{#aula01-figura05}
+![Figura 05 - Local de instalação e demais configurações](images/instalacao-ruby-tela3.png)
 
 **Passo 7** – Na última tela do assistente de instalação, ilustrada na [Figura 06](#aula01-figura06), conclua a instalação clicando no botão *Finish*.
 
-![Figura 06 - Finalizando a instalação](aula01/images/instalacao-ruby-tela4.png) {#aula01-figura06}
+{#aula01-figura06}
+![Figura 06 - Finalizando a instalação](aula01/images/instalacao-ruby-tela4.png)
 
 Parabéns! Você concluiu a instalação do Ruby no Windows!
 

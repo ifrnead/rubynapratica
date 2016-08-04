@@ -51,7 +51,7 @@ Para instalar o Ruby no Windows, usaremos um instalador chamado *[RubyInstaller 
 **Passo 7** – Na última tela do assistente de instalação, ilustrada na [Figura 06](#aula01-figura06), conclua a instalação clicando no botão *Finish*.
 
 {#aula01-figura06}
-![Figura 06 - Finalizando a instalação](aula01/images/instalacao-ruby-tela4.png)
+![Figura 06 - Finalizando a instalação](images/instalacao-ruby-tela4.png)
 
 Parabéns! Você concluiu a instalação do Ruby no Windows!
 

@@ -80,3 +80,51 @@ X>
 X> Agora é a sua vez! Siga os passos descritos nesta aula para instalar o Ruby no seu Windows ou Linux.
 
 ## Instalação da ferramenta de desenvolvimento {#aula01-instalacao-da-ferramenta-de-desenvolvimento}
+
+Uma ferramenta de desenvolvimento é um programa que usamos para codificar. Como segundo passo para a nossa jornada de aprendizado, precisamos instalar e configurar o Atom (ATOM, 2015), que é uma ferramenta de desenvolvimento muito leve e versátil, pois conta com plug-ins e temas que nos permitem personalizá-la, deixando a ferramenta adaptada às preferências de cada programador. Vamos aprender como instalar o Atom no Windows o no Linux.
+
+{#aula01-figura07}
+![Figura 07 - Instalar e configurar o Atom. Fonte: (ATOM, 2015)](images/atom.png)
+
+### Instalação do Atom no Windows {#aula01-instalacao-do-atom-no-windows}
+
+A instalação do Atom no Windows é bem simples: primeiro faça o download do instalador através do endereço [http://atom.io](http://atom.io). Na página inicial, ilustrada na [Figura 08](#aula01-figura08), clique em *Download Windows Installer* para fazer o download do instalador do Atom para Windows.
+
+{#aula01-figura08}
+![Figura 08 - Download do Atom para Windows. Fonte: (ATOM, 2015)](images/download-atom.png)
+
+Uma vez concluído o download, execute o instalador e aguarde. Quando a instalação for concluída, o Atom será aberto conforme ilustra a [Figura 09](#aula01-figura09).
+
+{#aula01-figura09}
+![Figura 09 - Tela inicial do Atom após a conclusão da instalação](images/atom-instalado.png)
+
+Muito bem! Você acabou de concluir a instalação do Atom no seu Windows. Não iremos criar nem um projeto ou codificar no momento, portanto você pode fechá-lo.
+
+### Instalação do Atom no Linux {#aula01-instalacao-do-atom-no-linux}
+
+Para instalar o Atom no Linux, faça o download do pacote Debian ([https://atom.io/download/deb]{https://atom.io/download/deb}) ou RPM ([https://atom.io/download/rpm]{https://atom.io/download/deb}), e faça a instalação do pacote usando o comando apropriado.
+
+Para instalar o Atom usando o pacote Debian, use o comando abaixo.
+
+    $ sudo dpkg –i atom-amd64.deb
+
+Para instalar o Atom usando o pacote RPM, use o comando abaixo.
+
+    $ rpm –i atom.x86_64.rpm
+
+Ótimo! Você concluiu a instalação do Atom no Linux!
+
+X> ## Atividade 1.2
+X>
+X> Agora que você viu como fazer a instalação do Atom no Windows e no Linux, proceda com a instalação do Atom no seu sistema operacional.
+
+## Referências
+
+ATOM. Atom. Atom, 2015. Disponivel em: <http://atom.io>. Acesso em: 14 set. 2015.
+
+INSTALLER, R. Ruby Installer for Windows. Ruby Installer for Windows, 2015. Disponivel em: <http://rubyinstaller.org/>. Acesso em: 23 out. 2015.
+
+RUBY. The Ruby Logo. Ruby Language, 2015. Disponivel em: <https://www.ruby-lang.org/en/about/logo/>. Acesso em: 21 out. 2015.
+WIKIPÉDIA. Ruby. Wikipédia, 2015. Disponivel em: <https://pt.wikipedia.org/wiki/Ruby_(linguagem_de_programa%C3%A7%C3%A3o)>. Acesso em: 21 out. 2015.
+
+WIKIPÉDIA. Yukihiro Matsumoto. Wikipédia, 2015. Disponivel em: <https://pt.wikipedia.org/wiki/Yukihiro_Matsumoto>. Acesso em: 21 out. 2015.

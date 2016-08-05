@@ -24,31 +24,31 @@ O primeiro passo para que possamos começar a aprender Ruby é, naturalmente, in
 
 Para instalar o Ruby no Windows, usaremos um instalador chamado *[RubyInstaller for Windows](http://rubyinstaller.org/)*.
 
-**Passo 1** – Acesse a página de downloads RubyInstaller através do endereço: <http://rubyinstaller.org/downloads>. Você deve visualizar uma página, conforme ilustra a [Figura 02](#aula01-figura02).
+**Passo 1** - Acesse a página de downloads RubyInstaller através do endereço: <http://rubyinstaller.org/downloads>. Você deve visualizar uma página, conforme ilustra a [Figura 02](#aula01-figura02).
 
 {#aula01-figura02}
 ![Figura 02 - Downloads do RubyInstaller](images/rubyinstaller-download.png)
 
-**Passo 2** – Se seu computador for x32, faça o download do instalador clicando no link *Ruby 2.2.3*. Se seu computador for x64, faça o download clicando no link *Ruby 2.2.3 (x64)*. Caso não saiba, recomendamos fazer o download do instalador clicando no link *Ruby 2.2.3*.
+**Passo 2** - Se seu computador for x32, faça o download do instalador clicando no link *Ruby 2.2.3*. Se seu computador for x64, faça o download clicando no link *Ruby 2.2.3 (x64)*. Caso não saiba, recomendamos fazer o download do instalador clicando no link *Ruby 2.2.3*.
 
-**Passo 3** – Uma vez concluído o download do instalador, clique duas vezes sobre ele para executá-lo.
+**Passo 3** - Uma vez concluído o download do instalador, clique duas vezes sobre ele para executá-lo.
 
-**Passo 4** – Na primeira tela do assistente de instalação, ilustrada na [Figura 03](#aula01-figura03), você poderá configurar o idioma durante a instalação. Recomendamos deixar a opção *English* e clique em *OK*.
+**Passo 4** - Na primeira tela do assistente de instalação, ilustrada na [Figura 03](#aula01-figura03), você poderá configurar o idioma durante a instalação. Recomendamos deixar a opção *English* e clique em *OK*.
 
 {#aula01-figura03}
 ![Figura 03 - Configuração do idioma do instalador](images/instalacao-ruby-tela1.png)
 
-**Passo 5** – Na segunda tela do assistente de instalação, ilustrada na [Figura 04](#aula01-figura04), será solicitado que você aceite os termos da licença. Selecione a opção *I accept the License* e depois clique no botão *Next >*.
+**Passo 5** - Na segunda tela do assistente de instalação, ilustrada na [Figura 04](#aula01-figura04), será solicitado que você aceite os termos da licença. Selecione a opção *I accept the License* e depois clique no botão *Next >*.
 
 {#aula01-figura04}
 ![Figura 04 - Licença de uso](images/instalacao-ruby-tela2.png)
 
-**Passo 6** – Na terceira tela do assistente de instalação, ilustrada na [Figura 05](#aula01-figura05), você poderá configurar o local de instalação do Ruby. Recomendamos deixar o local de instalação padrão, contudo, selecione as três opções que aparecem: *Install Tcl/Tk support*, *Add Ruby executables to your PATH* e *Associate .rb and .rbw files with this Ruby installation*. A primeira opção instala o suporte para construção de interfaces gráficas; a segunda opção adiciona os executáveis do Ruby ao PATH do Windows, nos permitindo executá-los no prompt de comando; e a terceira opção permite-nos executar os arquivos com extensão .rb e .rbw, clicando duas vezes sobre eles. Por fim, clique no botão *Install*.
+**Passo 6** - Na terceira tela do assistente de instalação, ilustrada na [Figura 05](#aula01-figura05), você poderá configurar o local de instalação do Ruby. Recomendamos deixar o local de instalação padrão, contudo, selecione as três opções que aparecem: *Install Tcl/Tk support*, *Add Ruby executables to your PATH* e *Associate .rb and .rbw files with this Ruby installation*. A primeira opção instala o suporte para construção de interfaces gráficas; a segunda opção adiciona os executáveis do Ruby ao PATH do Windows, nos permitindo executá-los no prompt de comando; e a terceira opção permite-nos executar os arquivos com extensão .rb e .rbw, clicando duas vezes sobre eles. Por fim, clique no botão *Install*.
 
 {#aula01-figura05}
 ![Figura 05 - Local de instalação e demais configurações](images/instalacao-ruby-tela3.png)
 
-**Passo 7** – Na última tela do assistente de instalação, ilustrada na [Figura 06](#aula01-figura06), conclua a instalação clicando no botão *Finish*.
+**Passo 7** - Na última tela do assistente de instalação, ilustrada na [Figura 06](#aula01-figura06), conclua a instalação clicando no botão *Finish*.
 
 {#aula01-figura06}
 ![Figura 06 - Finalizando a instalação](images/instalacao-ruby-tela4.png)
@@ -71,7 +71,7 @@ Após a execução dos comandos acima, use o RVM para instalar a versão 2.2.3 d
 
     $ source ~/.rvm/scripts/rvm
     $ rvm install 2.2.3
-    $ rvm use 2.2.3 –default
+    $ rvm use 2.2.3 -default
 
 Parabéns! Você acabou de concluir a instalação do Ruby no Linux!
 
@@ -102,15 +102,15 @@ Muito bem! Você acabou de concluir a instalação do Atom no seu Windows. Não 
 
 ### Instalação do Atom no Linux {#aula01-instalacao-do-atom-no-linux}
 
-Para instalar o Atom no Linux, faça o download do pacote Debian ([https://atom.io/download/deb]{https://atom.io/download/deb}) ou RPM ([https://atom.io/download/rpm]{https://atom.io/download/deb}), e faça a instalação do pacote usando o comando apropriado.
+Para instalar o Atom no Linux, faça o download do pacote Debian (<https://atom.io/download/deb>) ou RPM (<https://atom.io/download/rpm>), e faça a instalação do pacote usando o comando apropriado.
 
 Para instalar o Atom usando o pacote Debian, use o comando abaixo.
 
-    $ sudo dpkg –i atom-amd64.deb
+    $ sudo dpkg -i atom-amd64.deb
 
 Para instalar o Atom usando o pacote RPM, use o comando abaixo.
 
-    $ rpm –i atom.x86_64.rpm
+    $ rpm -i atom.x86_64.rpm
 
 Ótimo! Você concluiu a instalação do Atom no Linux!
 

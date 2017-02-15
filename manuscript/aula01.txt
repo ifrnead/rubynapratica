@@ -13,7 +13,8 @@ Ruby é uma linguagem bastante semelhante a Python. Portanto, aqueles que já es
 
 Como você deve estar imaginando, a logo do Ruby é um rubi, que é uma pedra preciosa de cor vermelha, conforme ilustra a [Figura 01](#aula01-figura01). A escolha desse nome foi feita em uma conversa online entre Matz e Keiju Ishitsuka em 24 de fevereiro de 1993. Eles tomaram essa decisão antes de qualquer codificação para se produzir a linguagem, e essa escolha foi feita entre duas opções: Coral ou Ruby (WIKIPÉDIA, 2015).
 
-{#aula01-figura01,float=center}
+{float=center}
+{#aula01-figura01}
 ![Figura 01 - Logo da linguagem Ruby. Fonte: Ruby, 2015](images/ruby.jpg)
 
 ## Instalação do Ruby {#aula01-instalacao-do-ruby}

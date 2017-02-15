@@ -1,0 +1,20 @@
+# Aula 2 - IRB, tipos de dados e operações de entrada e saída {#aula02}
+
+## IRB
+
+Quando você fez a instalação do Ruby, no seu sistema operacional, também foi instalado um programa chamado IRB. O IRB (Interactive Ruby) é uma ferramenta que nos permite executar o código Ruby e receber a resposta desses comandos imediatamente. Isso é muito útil quando queremos executar comandos simples para aprender a linguagem. Ele se parece muito com um terminal de comandos, como o prompt de comandos do Windows (INTERACTIVE, 2015).
+
+Abra o IRB, no seu Windows, que deve se parecer com o programa ilustrado na [Figura 01](#aula02-figura01).
+
+{float=center}
+{#aula02-figura01}
+![Figura 01 - IRB.
+
+Perceba que nós podemos escrever na primeira linha, na qual aparece irb(main):001:0>.Vamos explorar um pouco o IRB e a linguagem Ruby? Digite o valor 1 e aperte ENTER, conforme ilustrado a seguir.
+
+    irb(main):001:0> 1
+    => 1
+
+## Referências
+
+INTERACTIVE Ruby - Ruby interativo. 2015. Disponível em: <http://ruby-doc.org/stdlib-2.2.3/libdoc/irb/rdoc/IRB.html>. Acesso em: 24 out. 2015

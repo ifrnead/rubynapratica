@@ -8,10 +8,11 @@ Abra o IRB, no seu Windows, que deve se parecer com o programa ilustrado na [Fig
 
 {float=center}
 {#aula02-figura01}
-![Figura 01 - IRB.
+![Figura 01 - IRB.](images/irb.jpg)
 
-Perceba que nós podemos escrever na primeira linha, na qual aparece irb(main):001:0>.Vamos explorar um pouco o IRB e a linguagem Ruby? Digite o valor 1 e aperte ENTER, conforme ilustrado a seguir.
+Perceba que nós podemos escrever na primeira linha, na qual aparece `irb(main):001:0>`. Vamos explorar um pouco o IRB e a linguagem Ruby? Digite o valor 1 e aperte ENTER, conforme ilustrado a seguir.
 
+{lang="ruby"}
     irb(main):001:0> 1
     => 1
 

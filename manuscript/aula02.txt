@@ -105,6 +105,98 @@ Recebemos a nossa primeira mensagem de erro. Consegue imaginar a causa do proble
 
 Isso é o que chamamos de conversão de tipos. Ou seja, transformar o dado de um tipo em um dado de outro tipo. Por exemplo: transformar "1" (String) em 1 (Integer), 10 (Integer) em "10" (String), '3.14' (String) em 3.14 (Float), etc. Para converter tipos, devemos usar os métodos `to_i`, `to_f` e `to_s`.
 
+| Método       | Descrição                                         | Exemplo     |
+|--------------|---------------------------------------------------|-------------|
+| <valor>.to_i | Converte <valor> para um número inteiro (Integer) | "10".to_i   |
+| <valor>.to_f | Converte <valor> para um número real (Float)      | "3.14".to_f |
+| <valor>.to_s | Converte <valor> para uma String | 12.to_s        | 12.to_s     |
+
+Observe os exemplos abaixo.
+
+    irb(main):001:0> "10".to_i
+    => 10
+    irb(main):002:0> "3.14".to_f
+    => 3.14
+    irb(main):003:0> 30.to_s
+    => "30"
+    irb(main):004:0> 3.to_f
+    => 3.0
+
+Agora nós podemos corrigir o exemplo apresentado anteriormente.
+
+    irb(main):001:0> "1".to_i + 1
+    => 2
+
+Entendeu? O método `to_i` converteu "1" (String) em 1 (Integer) e depois a operação de soma foi executada, resultando em 2. Observe o próximo exemplo.
+
+    irb(main):001:0> "a".to_i
+    => 0
+
+No exemplo anterior, tentamos converter a String "a" para um valor inteiro. Obviamente, isso não faz nenhum sentido, porque não é possível converter uma letra em um número. Quando tentamos converter um valor não-numérico para String, o Ruby sempre nos dá zero como resultado.
+
+## Entrada e Saída de Dados
+
+As operações de entrada de dados são aquelas que permitem ao usuário passar informações para o programa (entrada), e as operações de saída são aquelas que permitem o programa apresentar informações para o usuário. Vamos iniciar os estudos com a operação de saída de dados, para que possamos fazer o programa mais famoso do mundo: o "Olá Mundo!".
+
+### Saída de Dados
+
+Conforme explicado anteriormente, a operação de saída de dados permite que o programa apresente informações para o usuário. Para fazer isso, devemos usar o método `puts`. Mas o que é um método? Por enquanto, pense no método como sendo um comando que irá fazer alguma tarefa
+para você. Nesse caso, o método puts apresenta alguma informação na tela do usuário. As informações apresentadas na tela são aquelas que você digitar ao lado do método.
+
+Vamos fazer o programa "Olá Mundo!" para exemplificar o uso do método `puts`. Digite o seguinte comando no IRB e depois tecle ENTER.
+
+    irb(main):001:0> puts "Olá mundo!"
+    Olá mundo!
+    => nil
+
+Observe que usamos o método `puts` e, logo em seguida, digitamos a String `"Olá mundo!"`. Quando fazemos isso, estamos informando para o método `puts` que desejamos que ele mostre `"Olá mundo!"` na tela e foi exatamente isso o que aconteceu. Observe também que apareceu `=> nil`. `nil` é um valor especial que significa nulo, ou seja, algo inexistente. Ele foi exibido porque o método `puts` sempre retorna (dá como resultado) `nil`, além de mostrar a informação na tela.
+
+Caso tenha ocorrido algum erro, verifique se você digitou corretamente, pois o código só será executado se ele estiver sintaticamente correto, ou seja, se ele estiver bem construído e formatado. Observe o que acontece quando digitamos algo errado.
+
+    irb(main):001:0> put "Olá mundo!"
+    NoMethodError: undefined method `put’ for main:Object
+      from (irb):27
+      from C:/Ruby22-x64/bin/irb:11:in `<main>’
+
+Novamente, recebemos um erro. Você consegue perceber o que fizemos de errado? Nós escrevemos `put` ao invés de `puts`! Nesse caso, houve um
+`NoMethodError`, dizendo que o método `put` não foi encontrado.
+
+Outro método para saída de dados bastante utilizado é o `print`. Mas qual é a diferença entre o `puts` e o `print`? A diferença é que o `puts` dá uma quebra de linha após exibir a String, enquanto o `print` não o faz. Observe o exemplo abaixo para compreender melhor a diferença entre os dois
+
+    irb(main):001> puts "Com quebra de linha"
+    Com quebra de linha
+    => nil
+    irb(main):002> print "Sem quebra de linha"
+    Sem quebra de linha => nil
+
+Observe que, quando usamos o `puts`, a String `"Com quebra de linha"` apareceu numa linha e o `=> nil` apareceu em outra. Isso ocorreu porque o `puts` dá uma quebra de linha após exibir a String `"Com quebra de linha"`. Quando usamos o `print`, a String `"Sem quebra de linha"` e o `=> nil` aparecem na mesma linha, pois nesse caso não há quebra de linha entre eles.
+
+### Entrada de Dados
+
+A entrada de dados é uma operação que permite que o usuário forneça dados para o programa. Essa operação é realizada usando o método `gets`. Observe o exemplo abaixo.
+
+    irb(main):001:0> gets
+    Um texto qualquer
+    => "Um texto qualquer\n"
+
+No exemplo anterior, usamos o método `gets` para permitir que o usuário digite algo. Ao executar o método `gets`, o Ruby fica aguardando que o usuário digite algo na linha seguinte e tecle ENTER. No exemplo, digitamos a String "Um texto qualquer" (sem aspas) e o resultado foi a String que digitamos seguido de `\n`. Mas de onde veio esse `\n`? Esse é um caractere especial que significa nova linha e ele foi enviado pelo nosso teclado quando apertamos ENTER. E como evitamos isso? Usamos o método `chomp` sobre o retorno (resultado) do método `gets` da seguinte forma.
+
+    irb(main):001:0> gets.chomp
+    Um texto qualquer
+    => "Um texto qualquer"
+
+Pronto, dessa forma, o método `gets` irá retornar (dará como resultado) aquilo que o usuário digitar no teclado. O método `chomp` será executado sobre o retorno do método `gets` (aquilo que o usuário digitou) e irá remover caracteres como o de nova linha. Vale salientar que os métodos `gets` e `chomp` sempre retornam (dão como resultado) um dado do tipo String. Não se preocupe nesse momento em entender como capturar o valor digitado pelo usuário e realizar algum processamento com ele, pois isso será tema da nossa próxima aula.
+
+X> ## Atividade 1.1
+X>
+X> Use o IRB para escrever o primeiro programa de todo programador: o "Olá Mundo!". Abra o IRB no seu computador e escreva `puts "Olá mundo!`
+
 ## Referências
 
-INTERACTIVE Ruby - Ruby interativo. 2015. Disponível em: <http://ruby-doc.org/stdlib-2.2.3/libdoc/irb/rdoc/IRB.html>. Acesso em: 24 out. 2015
+DOC, R. IRB. Ruby Doc. 2015. Disponivel em: <http://ruby-doc.org/stdlib-2.2.3/libdoc/irb/rdoc/IRB.html>. Acesso em: 24 out. 2015.
+
+INTERACTIVE Ruby=Ruby interativo. 2015. Disponível em: <http://ruby-doc.org/stdlib-2.2.3/libdoc/irb/rdoc/IRB.html>. Acesso em: 24 out. 2015.
+
+HOW Big is a Bignum? Pat Shaughnessy. 2014. Disponivel em: <http://patshaugh-nessy.net/2014/1/9/how-big-is-a-bignum>. Acesso em: 24 out. 2015.
+
+SOUZA, L. Ruby: aprenda a programar na linguagem mais divertida. 1. ed. São Paulo: Casa do Código, 2012 .v. I.

@@ -1,0 +1,19 @@
+# Aula 4 - Criando os primeiros scripts
+
+## Introdução
+
+Antes de começarmos a discutir o assunto principal da nossa aula, uma pergunta que você pode estar se fazendo é: o que é um _script_? Se você digitar a palavra "script" no Google, ele dará a seguinte definição.
+
+> Script é um texto com uma série de instruções escritas para serem seguidas, ou por pessoas em peças teatrais ou programas televisivos, ou executadas por um programa de computador. O termo é uma redução da palavra inglesa _manuscript_, que significa "manuscrito", "escrito à mão". (SIGNIFICADOS, 2015).
+
+Um script é um arquivo de texto que contém instruções escritas em alguma linguagem de programação. Essas instruções podem ser lidas por algum interpretador, que irá executá-las e produzir algum resultado ou efeito. No nosso caso, nós vamos criar scripts usando a linguagem Ruby e iremos utilizar o interpretador Ruby.
+
+## Criando os Primeiros Scripts
+
+Para criar um script, podemos utilizar um editor de textos qualquer como o Bloco de Notas do Windows, contudo recomendamos o uso do Atom, a ferramenta de desenvolvimento que ensinamos a instalar na nossa primeira aula. Mas, fique à vontade para usar uma ferramenta de sua preferência.
+
+Crie um novo arquivo usando o Atom ou seu editor de código preferido. No Atom, clique no menu File (canto superior esquerdo) e depois em New File. O Atom irá abrir uma nova janela, permitindo que você possa editar o conteúdo desse novo arquivo. Digite o código abaixo, conforme ilustra o Exemplo de código 1.
+
+{#aula04-codigo01}
+<<(code/exemplo41.rb)
+![Exemplo de código 01 - Olá mundo!]

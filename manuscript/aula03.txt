@@ -129,8 +129,7 @@ Portanto, em linguagens de tipagem dinâmica como Ruby, você não precisa defin
 
     irb(main):001:0> variavel = 3
     => 3
-    irb(main):002:0> variavel = "Ruby usa tipagem
-    dinâmica"
+    irb(main):002:0> variavel = "Ruby usa tipagem dinâmica"
     => "Ruby usa tipagem din\x83mica"
 
 Observe que usamos a mesma variável para guardar um número inteiro e, em seguida, guardar uma String. Porém, toda essa flexibilidade tem um preço: em alguns momentos, pode ficar difícil saber qual tipo de dado está sendo guardado em cada variável. Para atenuar esse problema, existem meios de descobrir qual tipo de dado está guardado em cada variável. Observe o exemplo abaixo.
@@ -143,8 +142,7 @@ Observe que usamos a mesma variável para guardar um número inteiro e, em segui
 No exemplo de código acima, usamos o método `class` para descobrir o tipo de dado guardado na variável `variavel_desconhecida`. Perceba que
 o retorno (resultado) do método foi `Fixnum`, que é um tipo de dado inteiro. Observe mais exemplos abaixo.
 
-    irb(main):001:0> variavel_desconhecida = "Tipo de
-    dado desconhecido"
+    irb(main):001:0> variavel_desconhecida = "Tipo de dado desconhecido"
     => "Tipo de dado desconhecido"
     irb(main):002:0> variavel_desconhecida.class
     => String

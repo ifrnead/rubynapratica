@@ -12,7 +12,130 @@ Um script é um arquivo de texto que contém instruções escritas em alguma lin
 
 Para criar um script, podemos utilizar um editor de textos qualquer como o Bloco de Notas do Windows, contudo recomendamos o uso do Atom, a ferramenta de desenvolvimento que ensinamos a instalar na nossa primeira aula. Mas, fique à vontade para usar uma ferramenta de sua preferência.
 
-Crie um novo arquivo usando o Atom ou seu editor de código preferido. No Atom, clique no menu File (canto superior esquerdo) e depois em New File. O Atom irá abrir uma nova janela, permitindo que você possa editar o conteúdo desse novo arquivo. Digite o código abaixo, conforme ilustra o [Exemplo de código 1](#aula04-codigo01).
+Crie um novo arquivo usando o Atom ou seu editor de código preferido. No Atom, clique no menu File (canto superior esquerdo) e depois em New File. O Atom irá abrir uma nova janela, permitindo que você possa editar o conteúdo desse novo arquivo. Digite o código abaixo, conforme ilustra o [Exemplo de código 01](#aula04-codigo01).
 
 {#aula04-codigo01}
-<<[Exemplo de código 1 - Olá mundo!](code/exemplo41.rb)
+<<[Exemplo de código 01 - Olá mundo!](code/exemplo41.rb)
+
+Observe que, no [Exemplo de código 01](#aula04-codigo01), incluímos a numeração das linhas do código, portanto você não precisa digitar o número que aparece no início de cada linha. Após digitar o código acima, salve o arquivo clicando em _File_ (canto superior esquerdo) e depois em _Save_. Uma janela será aberta para que você indique o nome e o local onde o arquivo deverá ser salvo. Salve o arquivo com o nome "exemplo1.rb" (sem aspas) no local onde você preferir. Você pode usar outro nome para o seu arquivo, contudo ele precisa ter a extensão ".rb", pois é isso o que vai indicar para o nosso Windows que esse arquivo é um script escrito em Ruby.
+
+{float=center}
+{#aula04-figura01}
+![Figura 01 - Olá mundo no Atom.](images/ola-mundo.png)
+
+Conforme ilustra a [Exemplo de código 1](#aula04-codigo01), após salvar o seu script, algumas mudanças serão evidentes:
+
+* O código ficou com uma coloração, a qual chamamos de _syntax highlight_ ou simplesmente de coloração de código;
+
+* O nome do script apareceu na aba, que, no caso da [Exemplo de código 1](#aula04-codigo01), o nome do script é "exemplo1.rb" (sem aspas);
+
+* O local onde nosso script foi salvo aparece no canto inferior da tela.
+
+## Executando Scripts
+
+Existem duas formas de executar scripts: a primeira delas é através do Windows Explorer (o gerenciador de arquivos do Windows) e a segunda é
+usando um terminal de comandos.
+
+### Executando Scripts no Windows Explorer
+
+Para executar seu script, primeiro abra a pasta onde você salvou o seu script usando o Windows Explorer (o gerenciador de arquivos do Windows). O seu arquivo deve ser exibido, de acordo com a [Figura 02](#aula04-figura02).
+
+{float=center}
+{#aula04-figura02}
+![Figura 02 - Script no Windows Explorer.](images/exemplo1.png)
+
+Após localizar o seu script no Windows Explorer, basta clicar duas vezes sobre ele para executá-lo. Contudo, vale salientar que a execução de scripts no Windows Explorer só irá funcionar caso, durante a instalação do Ruby no seu Windows, você tenha selecionado as opções _Add Ruby executables to your PATH_ e _Associate .rb and .rbw files with this Ruby installation_.
+
+Agora, vamos exercitar um pouco o que já aprendemos até aqui.
+
+X> ## Atividade 4.1
+X>
+X> Crie um script Ruby, usando o Atom ou seu editor de código preferido, e salve-o com o nome "aula04-atividade01.rb" (sem aspas). Digite o código apresentado no [Exemplo de código 01](#aula04-codigo01), salve o script novamente e execute-o.
+
+Você vai perceber que uma tela preta será exibida rapidamente e depois irá fechar sozinha. Isso ocorre porque o script executa muito rapidamente, pois há uma única instrução para ser executada. Ao concluir a execução do script, o Windows simplesmente fecha a janela, impedindo que possamos ver o resultado. Para resolver esse problema, vamos incluir mais uma linha de código no nosso script, segundo ilustra o [Exemplo de código 02](#aula04-codigo02).
+
+{#aula04-codigo02}
+<<[Exemplo de código 02 - Olá mundo!](code/exemplo42.rb)
+
+Lembra-se da utilidade do método `gets`? Ele permite que o usuário digite algo no teclado para ser usado no nosso programa. Ao executar o método `gets`, o script fica aguardando que o usuário digite algo. Vamos usar essa pausa na execução a nosso favor, permitindo que observemos o resultado do nosso script antes que o Windows feche a janela. Após inserir a segunda linha de código, execute novamente o script.
+
+Observe que, dessa vez, a janela ficou aberta. Para fechá-la, basta teclar ENTER.
+
+X> ## Atividade 4.2
+X>
+X> Altere o código do script que você criou na Atividade 4.1, incluindo a segunda linha de código, como apresenta o [Exemplo de código 02](#aula04-codigo02). Salve o arquivo com o nome "aula04-atividade02.rb" e execute-o.
+
+### Executando Scripts com o Terminal de Comandos do Windows
+
+A segunda forma é mais usada pelos programadores e por usuários do Linux, mas que também pode ser usada no Windows. Se você conhecer os comandos usados no terminal, você pode optar por executar os scripts dessa forma. Caso não conheça, vamos dar uma breve explicação de alguns comandos úteis para que você possa executar seus scripts através do terminal.
+
+A vantagem de executar os scripts usando o terminal de comandos é que essa forma dispensa o uso do `gets` no final do script, porque o Windows não irá fechar a janela do terminal ao finalizar a execução do script.
+
+Para executar nossos scripts usando o terminal de comandos do Windows, primeiramente, precisamos abrir o _prompt_ de comandos, que é considerado o terminal de comandos desse sistema operacional. Para abrir o _prompt_ de comandos, siga os passos abaixo de acordo com a versão do seu Windows.
+
+* No Windows XP, abra o menu Iniciar, clique na opção "Executar" e, na janela que será aberta, digite "cmd.exe" (sem aspas) e tecle ENTER;
+
+* No Windows 7 e 10, abra o menu Iniciar, digite "cmd.exe" (sem aspas) no campo para buscar programas e arquivos e tecle ENTER;
+
+* No Windows 8 e 8.1, tecle o botão do Windows no seu teclado, digite "cmd.exe" (sem aspas) no campo para buscar programas e arquivos e tecle ENTER.
+
+Depois, ao abrir o prompt de comandos do Windows, você deverá visualizar uma janela conforme ilustrada na [Figura 03](#aula04-figura03).
+
+{float=center}
+{#aula04-figura03}
+![Figura 03 - Terminal de comandos do Windows.](images/prompt.png)
+
+O prompt de comandos exibe algumas informações referentes ao sistema operacional, mas o que importa para nós é a linha que diz `C:\Users\ Jalerson`. Isso indica o diretório (pasta) em que estamos no momento, ou seja, estamos no diretório `Jalerson` (diretório de um usuário), que está dentro da pasta `Users`, que por sua vez está na unidade `C:` do disco. Certamente, você utiliza outro nome de usuário no seu Windows, portanto onde aparece `Jalerson`, deverá aparecer o nome de usuário que você está usando.
+
+Após abrir o terminal de comandos, o segundo passo é entrar na pasta onde você salvou o seu script. Para alterar o diretório em que estamos operando no momento, basta utilizar o comando `cd` (_change directory_).
+
+* **Mudar para o diretório pai**: `cd ..` – ao executar esse comando, você irá mudar para o diretório pai da pasta onde você está atualmente. Por exemplo: considerando que você está no diretório `C:\Users\Jalerson`, ao executar `cd ..`, você irá para o diretório `C:\Users`;
+
+* **Entrar num subdiretório**: `cd <nome_do_subdiretório>` - ao executar esse comando, você entrará num subdiretório do diretório onde você se encontra atualmente. Por exemplo: considerando que você está no diretório `C:\Users` e deseje entrar na pasta `Jalerson`, basta digitar o comando `cd Jalerson`;
+
+* **Entrar num diretório usando o caminho absoluto**: `cd <caminho_ absoluto>` - esse comando nos permite mudar de diretório fornecendo um caminho absoluto (completo) para o diretório no qual desejamos ir. Exemplo: independente de qual diretório você estiver, ao digitar `cd C:\EaD\Disciplinas\PEOO\Códigos`, você será direcionado para esse diretório;
+
+* **Listar os arquivos e pastas do diretório atual**: `dir` – esse comando nos permite listar os arquivos e pastas presentes no diretório em que estamos operando atualmente.
+
+Supondo que salvamos nosso script na Área de Trabalho (Desktop) do Windows e considerando que estamos em `C:\Users\Jalerson`, vamos
+usar o comando `cd Desktop` para entrar no diretório da Área de Trabalho e, em seguida, usaremos o comando `ruby exemplo1.rb` para executar nosso script.
+
+    C:\Users\Jalerson\Desktop> ruby exemplo1.rb
+
+No comando acima, estamos usando o interpretador do Ruby para executar o script "exemplo1.rb".
+
+### Executando Scripts no Terminal de Comandos do Linux
+
+Para ilustrar como executar os scripts no terminal de comandos do Linux, usaremos a Máquina Virtual fornecida pelo nosso curso. Para isso, clique em Menu (canto superior esquerdo), no campo desse menu, digite "terminal" (sem aspas) e tecle ENTER. Ao abrir o terminal, você deverá visualizar a janela ilustrada na [Figura 04](#aula04-figura04).
+
+{float=center}
+{#aula04-figura04}
+![Figura 04 - Terminal de comandos](images/terminal.png)
+
+Observe o que está escrito no terminal: `alumni@alumnivm:~$`. _Alumni_ é o seu nome de usuário. Em seguida, aparece um `@`, que serve apenas para separar o nome de usuário (`alumni`) e o nome da sua máquina (`alumnivm`), também conhecido como _hostname_. Após o `:`, o terminal indica o diretório em que você se encontra atualmente. Nesse caso, localizamo-nos em `~`. Esse símbolo `~` significa que estamos no diretório do usuário, que, nesse caso, é `/home/alumni`. O `$` sempre será exibido e ele serve para separar o diretório atual do comando que estamos digitando.
+
+Ao abrir o terminal, o segundo passo é entrar no diretório onde se encontra o nosso script. Felizmente, a maioria dos comandos apresentados anteriormente também funcionam da mesma forma no Linux, com algumas poucas diferenças: o comando equivalente ao `dir` é o `ls`; o caractere separador de diretórios no Windows é o `\`, enquanto no Linux é o `/`. Dessa forma, supondo que estamos no diretório `\home\alumni` e que salvamos nosso script na Área de Trabalho, devemos executar o comando `cd Área\ de\ Trabalho`. Observe a presença de \ antes dos espaços em branco no nome do diretório. Isso é necessário no Linux sempre que houver espaços em branco no nome do diretório no qual desejamos entrar.
+
+Ao entrar no diretório onde se encontra o nosso script, podemos executá-lo através do comando `ruby exemplo1.rb`.
+
+    alumni@alumnivm:~/Área de Trabalho$ ruby exemplo1.rb
+
+### Dicas para Uso do Terminal
+
+Os terminais do Windows e do Linux nos fornecem alguns atalhos que são muito úteis. As dicas aqui apresentadas valem para os terminais dos dois sistemas operacionais. A primeira delas é o uso das teclas direcionais (as setinhas do teclado) para cima e para baixo para navegar entre os comandos já executados no terminal.
+
+A segunda dica é o uso do TAB para autocompletar nomes de arquivos e diretórios. Ao digitar uma parte do nome de um arquivo ou diretório, podemos teclar TAB para que o terminal preencha automaticamente o resto do nome.
+
+X> ## Atividade 4.3
+X>
+X> Crie um script que apresente mensagens pedindo para que o usuário digite seu nome e sua idade. O nome e a idade do usuário devem ser lidos e guardados em variáveis distintas. Por fim, o script deve dar boas-vindas ao usuário mostrando o seu nome e a idade digitadas.
+
+## Referências
+
+GOOGLE. Google. Google. 2015. Disponivel em: <http://www.google.com>. Acesso em: 02 nov. 2015.
+
+POINT, T. Ruby Tutorial. Tutorials Point. 2015. Disponivel em: <http://www.tutorialspoint.com/ruby/>. Acesso em: 12 nov. 2015.
+
+SIGNIFICADOS. Script. Significados. 2015. Disponivel em: <http://www.significados.com.br/script/>. Acesso em: 02 nov. 2015.
+
+SOUZA, L. Ruby: aprenda a programar na linguagem mais divertida. 1. ed. São Paulo: Casa do Código, 2012 .v. I.

@@ -1,4 +1,4 @@
-# Aula 2 - IRB, tipos de dados e operações de entrada e saída {#aula02}
+# Aula 02 - IRB, tipos de dados e operações de entrada e saída {#aula02}
 
 ## IRB
 

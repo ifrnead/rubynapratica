@@ -109,7 +109,7 @@ Isso é o que chamamos de conversão de tipos. Ou seja, transformar o dado de um
 |--------------|---------------------------------------------------|-------------|
 | <valor>.to_i | Converte <valor> para um número inteiro (Integer) | "10".to_i   |
 | <valor>.to_f | Converte <valor> para um número real (Float)      | "3.14".to_f |
-| <valor>.to_s | Converte <valor> para uma String | 12.to_s        | 12.to_s     |
+| <valor>.to_s | Converte <valor> para uma String                  | 12.to_s     |
 
 Observe os exemplos abaixo.
 
@@ -187,7 +187,7 @@ No exemplo anterior, usamos o método `gets` para permitir que o usuário digite
 
 Pronto, dessa forma, o método `gets` irá retornar (dará como resultado) aquilo que o usuário digitar no teclado. O método `chomp` será executado sobre o retorno do método `gets` (aquilo que o usuário digitou) e irá remover caracteres como o de nova linha. Vale salientar que os métodos `gets` e `chomp` sempre retornam (dão como resultado) um dado do tipo String. Não se preocupe nesse momento em entender como capturar o valor digitado pelo usuário e realizar algum processamento com ele, pois isso será tema da nossa próxima aula.
 
-X> ## Atividade 1.1
+X> ## Atividade 2.2
 X>
 X> Use o IRB para escrever o primeiro programa de todo programador: o "Olá Mundo!". Abra o IRB no seu computador e escreva `puts "Olá mundo!`
 

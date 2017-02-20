@@ -175,7 +175,7 @@ X> ## Atividade 3.3
 X>
 X> Crie uma constante chamada `IDADE` e atribua a sua idade a ela. Em seguida, mostre na tela o valor da constante criada por você usando o método `puts`.
 
-# Referências
+## Referências
 
 DOC, R. Keywords. Ruby Doc. 2015. Disponivel em: <http://ruby-doc.org/core-2.2.3/doc/keywords_rdoc.html>. Acesso em: 24 out. 2015.
 

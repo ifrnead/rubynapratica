@@ -12,8 +12,7 @@ Um script é um arquivo de texto que contém instruções escritas em alguma lin
 
 Para criar um script, podemos utilizar um editor de textos qualquer como o Bloco de Notas do Windows, contudo recomendamos o uso do Atom, a ferramenta de desenvolvimento que ensinamos a instalar na nossa primeira aula. Mas, fique à vontade para usar uma ferramenta de sua preferência.
 
-Crie um novo arquivo usando o Atom ou seu editor de código preferido. No Atom, clique no menu File (canto superior esquerdo) e depois em New File. O Atom irá abrir uma nova janela, permitindo que você possa editar o conteúdo desse novo arquivo. Digite o código abaixo, conforme ilustra o Exemplo de código 1.
+Crie um novo arquivo usando o Atom ou seu editor de código preferido. No Atom, clique no menu File (canto superior esquerdo) e depois em New File. O Atom irá abrir uma nova janela, permitindo que você possa editar o conteúdo desse novo arquivo. Digite o código abaixo, conforme ilustra o [Exemplo de código 1](#aula04-codigo01).
 
 {#aula04-codigo01}
-<<(code/exemplo41.rb)
-![Exemplo de código 01 - Olá mundo!]
+<<[Exemplo de código 1 - Olá mundo!](code/exemplo41.rb)

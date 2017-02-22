@@ -37,7 +37,7 @@ O primeiro detalhe a ser percebido no exemplo anterior é que as variáveis poss
 
 * As palavras abaixo são reservadas pela linguagem Ruby, portanto, você não poderá usar nenhuma delas para nomear as suas variáveis.
 
-| [__]ENCODING[__] | case     | false  | redo   | unless |
+| \_\_ENCODING\_\_ | case     | false  | redo   | unless |
 | __LINE__     | class    | for    | rescue | until  |
 | __FILE__     | def      | if     | retry  | when   |
 | BEGIN        | defined? | in     | return | while  |

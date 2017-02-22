@@ -19,7 +19,7 @@ Os operadores aritméticos são aqueles que aprendemos nas aulas de matemática:
 
 Observe abaixo alguns exemplos de uso dos operadores aritméticos.
 
-    {lang=irb}
+{lang=irb}
     irb(main):001:0> 5 + 5
     => 10
     irb(main):002:0> 3 – 5

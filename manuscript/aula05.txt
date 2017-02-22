@@ -1,0 +1,21 @@
+# Aula 05 - Operadores aritméticos e relacionais
+
+## Introdução
+
+A linguagem Ruby, bem como as outras linguagens, possui pelo menos três tipos de operadores: os aritméticos, os lógicos e os relacionais. Os operadores nos permitem realizar determinadas operações com os dados. Nesta aula, iremos aprender sobre os operadores aritméticos.
+
+## Operadores Aritméticos
+
+Os operadores aritméticos são aqueles que aprendemos nas aulas de matemática: soma, subtração, multiplicação, divisão, entre outros. Em Ruby, nós temos seis operadores aritméticos a nossa disposição.
+
+{float=center}
+{#aula01-tabela01}
+| Nome           | Símbolo | Descrição                                     | Exemplo    |
+|----------------|---------|-----------------------------------------------|------------|
+| Adição ou soma | +       | Soma dois valores                             | 2 + 3 = 5  |
+| Subtração      | -       | Subtrai dois valores                          | 4 - 2 = 2  |
+| Multiplicação  | *       | Multiplica dois valores                       | 2 * 2 = 4  |
+| Divisão        | /       | Divide dois valores                           | 13 / 4 = 3 |
+| Módulo         | %       | Calcula o resto da divisão entre dois valores | 13 % 4 = 1 |
+| Potência       | **      | Calcula a potência entre dois valores         | 2 ** 3 = 8 |
+![Tabela 01 - Operadores aritméticos em Ruby]

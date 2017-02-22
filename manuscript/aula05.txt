@@ -77,6 +77,7 @@ X> Crie um _script_ Ruby usando o Atom ou seu editor de código preferido. Nesse
 
 Se você realizou a [Atividade 5.3](#aula05-atividade03), deve ter observado que a execução do _script_ apresentou algo parecido com o seguinte resultado.
 
+{lang=irb}
     Digite um valor
     2
     Digite outro valor
@@ -101,6 +102,7 @@ X> Crie um _script_ Ruby usando o Atom ou seu editor de código preferido. Nesse
 
 Ao realizar o exercício proposto na [Atividade 5.4](#aula05-atividade04), você deve ter observado um resultado parecido com o apresentado abaixo.
 
+{lang=irb}
     Digite um valor
     2
     Digite outro valor
@@ -122,6 +124,7 @@ X> Crie um _script_ Ruby usando o Atom ou seu editor de código preferido. Nesse
 
 Ao realizar o exercício proposto na [Atividade 5.5]{#aula05-atividade05}, você deve visualizar resultados parecidos com estes apresentados abaixo.
 
+{lang=irb}
     Digite um valor
     2
     Digite outro valor
@@ -158,6 +161,7 @@ A linguagem Ruby conta com sete operadores relacionais, apresentados na Tabela 2
 
 Vamos ilustrar o uso dos operadores relacionais através de alguns exemplos. Confira a seguir.
 
+{lang=irb}
     irb(main):001:0> 1 == 1
     => true
     irb(main):002:0> 1 == 2
@@ -195,6 +199,7 @@ X> Crie um _script_ Ruby e digite o código ilustrado no [Exemplo de código 5](
 
 Após executar o _script_ apresentado no [Exemplo de código 5](#aula05-codigo05), você deve observar o seguinte resultado.
 
+{lang=irb}
     false
     true
     true
@@ -208,6 +213,7 @@ X> ## Atividade 5.7
 X>
 X> Modifique o _script_ Ruby apresentado no [Exemplo de código 5](#aula05-codigo05) para permitir que o usuário digite os valores das duas variáveis e melhore a apresentação dos resultados usando a substituição de expressões. Ao concluir essa atividade, seu _script_ deverá apresentar algo parecido com o ilustrado abaixo.
 
+{lang=irb}
     Digite um número inteiro:
     2
     Digite outro número inteiro:

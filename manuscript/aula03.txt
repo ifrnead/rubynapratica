@@ -21,6 +21,7 @@ Agora vamos aprender como guardar informações na memória temporária do nosso
 
 Em Ruby, criar uma variável e armazenar um dado dentro dela é muito simples. Abra o IRB, digite o código abaixo e aperte ENTER.
 
+{lang=irb}
     irb(main):001:0> numero = 3
     => 3
 
@@ -36,7 +37,7 @@ O primeiro detalhe a ser percebido no exemplo anterior é que as variáveis poss
 
 * As palavras abaixo são reservadas pela linguagem Ruby, portanto, você não poderá usar nenhuma delas para nomear as suas variáveis.
 
-| __ENCODING__ | case     | false  | redo   | unless |
+| [__]ENCODING[__] | case     | false  | redo   | unless |
 | __LINE__     | class    | for    | rescue | until  |
 | __FILE__     | def      | if     | retry  | when   |
 | BEGIN        | defined? | in     | return | while  |

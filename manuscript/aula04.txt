@@ -4,7 +4,7 @@
 
 Antes de começarmos a discutir o assunto principal da nossa aula, uma pergunta que você pode estar se fazendo é: o que é um _script_? Se você digitar a palavra "script" no Google, ele dará a seguinte definição.
 
-> _Script_ é um texto com uma série de instruções escritas para serem seguidas, ou por pessoas em peças teatrais ou programas televisivos, ou executadas por um programa de computador. O termo é uma redução da palavra inglesa _manuscript_, que significa "manuscrito", "escrito à mão". (SIGNIFICADOS, 2015).
+> _Script_ é um texto com uma série de instruções escritas para serem seguidas, ou por pessoas em peças teatrais ou programas televisivos, ou executadas por um programa de computador. O termo é uma redução da palavra inglesa _manuscript_, que significa "manuscrito", "escrito à mão" (SIGNIFICADOS, 2015).
 
 Um _script_ é um arquivo de texto que contém instruções escritas em alguma linguagem de programação. Essas instruções podem ser lidas por algum interpretador, que irá executá-las e produzir algum resultado ou efeito. No nosso caso, nós vamos criar _scripts_ usando a linguagem Ruby e iremos utilizar o interpretador Ruby.
 

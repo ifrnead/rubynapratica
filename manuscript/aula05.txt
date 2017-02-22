@@ -19,6 +19,7 @@ Os operadores aritméticos são aqueles que aprendemos nas aulas de matemática:
 
 Observe abaixo alguns exemplos de uso dos operadores aritméticos.
 
+    {lang=irb}
     irb(main):001:0> 5 + 5
     => 10
     irb(main):002:0> 3 – 5
@@ -222,17 +223,29 @@ X> Modifique o _script_ Ruby apresentado no [Exemplo de código 5](#aula05-codig
 X> ## Atividade 5.8
 X>
 X> a) Crie um _script_ em Ruby que leia um número inteiro e mostre seu sucessor.
+X>
 X> b) Crie um _script_ em Ruby que leia um número inteiro e mostre seu antecessor.
+X>
 X> c) Crie um _script_ em Ruby que leia um número inteiro e mostre o dobro desse número.
+X>
 X> d) Crie um _script_ em Ruby que leia um número inteiro e mostre a metade desse número.
+X>
 X> e) Crie um _script_ em Ruby que leia dois números inteiros, X e Y, e mostre o quociente e o resto da divisão de X por Y.
+X>
 X> f) Crie um _script_ em Ruby que leia uma idade e calcule quantos dias essa pessoa já viveu.
+X>
 X> g) Crie um _script_ em Ruby que leia dois números reais, calcule e mostre a soma deles, o produto e o quociente.
+X>
 X> h) Crie um _script_ em Ruby que leia dois números, X e Y, calcule X elevado a Y e mostre o resultado.
+X>
 X> i) Crie um _script_ em Ruby que leia dois números, X e Y e mostre o resto da divisão entre eles.
+X>
 X> j) Crie um _script_ em Ruby que leia o salário de um funcionário, reajuste o salário em 7% e mostre o resultado.
+X>
 X> k) Crie um _script_ em Ruby que leia um valor real em dólar e converta o valor para reais. Considere que a cotação é US$ 1 = R$ 3,20.
+X>
 X> l) Crie um _script_ em Ruby que leia uma distância (em Km) entre dois pontos e o preço da gasolina em reais. Depois, calcule e mostre quantos litros de gasolina o carro irá consumir e quanto será o gasto em reais. Considere que o carro consegue percorrer 12 km com um litro de gasolina.
+X>
 X> m) Crie um _script_ em Ruby que leia as variáveis inteiras `n1` e `n2` e troque o valor dessas variáveis. Isto é, `n1` deve ficar com o valor de `n2` e `n2` deve ficar com o valor de `n1`. Em seguida mostre os valores depois da troca.
 
 ## Referências

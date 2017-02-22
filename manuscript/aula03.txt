@@ -50,8 +50,8 @@ Ao longo desse livro, iremos estudar e conhecer a maioria das palavras reservada
 
     irb(main):001:0> numero = 2
     => 2
-    irb(main):002:0> nome_completo = “Adam Sandler”
-    => “Adam Sandler”
+    irb(main):002:0> nome_completo = "Adam Sandler"
+    => "Adam Sandler"
     irb(main):003:0> idade = 26
     => 26
     irb(main):004:0> preco_promocional = 2.33
@@ -61,8 +61,8 @@ Perceba que estamos usando nomes de variáveis que indicam o que está guardado 
 
     irb(main):001:0> x = 2
     => 2
-    irb(main):002:0> z = “Adam Sandler”
-    => “Adam Sandler”
+    irb(main):002:0> z = "Adam Sandler"
+    => "Adam Sandler"
     irb(main):003:0> z2 = 26
     => 26
     irb(main):004:0> x1 = 2.33

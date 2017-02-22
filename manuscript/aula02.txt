@@ -12,21 +12,25 @@ Abra o IRB, no seu Windows, que deve se parecer com o programa ilustrado na [Fig
 
 Perceba que nós podemos escrever na primeira linha, na qual aparece `irb(main):001:0>`. Vamos explorar um pouco o IRB e a linguagem Ruby? Digite o valor 1 e aperte ENTER, conforme ilustrado a seguir.
 
+{lang=irb}
     irb(main):001:0> 1
     => 1
 
 Observe a resposta do IRB: `=>1`. O sinal `=>` indica que o que aparece em seguida é o resultado de um comando, trecho de código ou expressão dada por você. Nesse caso, você digitou 1 e a resposta foi 1. O que acabou de acontecer? O IRB avalia expressões, trechos de código e instruções em Ruby, isto é, ele executa e dá alguma resposta. Nesse caso, a expressão que fornecemos foi 1 e a resposta, naturalmente, foi 1 porque não houve nenhuma operação matemática ou processamento a ser feito. Vamos tentar algo diferente. Digite `1 + 1` e tecle ENTER.
 
+{lang=irb}
     irb(main):001:0> 1 + 1
     => 2
 
 Nesse segundo exemplo, fizemos uma operação matemática de soma entre dois números, e o resultado foi a soma deles. Vamos tentar algo um pouco mais complexo?
 
+{lang=irb}
     irb(main):001:0> 2 + 1 –
     irb(main):002:0*
 
 O que aconteceu? Observe que, na segunda linha, o caractere `>` foi substituído por `*`. Mas por que isso aconteceu? Porque nós digitamos uma expressão incompleta na primeira linha. Conforme vamos ver em uma aula futura, os operadores de soma e subtração precisam de dois operandos (um de cada lado do operador). Portanto, está faltando um operando ao lado do sinal de subtração. O IRB ainda não executou a expressão que digitamos porque ela ainda está incompleta. A segunda linha nos permite digitar o que falta da expressão. Digite 3 na segunda linha e tecle ENTER, conforme o exemplo abaixo.
 
+{lang=irb}
     irb(main):001:0> 2 + 1 –
     irb(main):002:0* 3
     => 0
@@ -54,6 +58,7 @@ Conforme mencionado anteriormente, existem dois tipos de dados numéricos: intei
 
 Números inteiros (__Integer__) são aqueles que não têm parte fracionária. Veja alguns exemplos de números inteiros abaixo. Quais informações poderiam ser representadas por números inteiros? A sua idade, o dia, o mês e o ano do seu nascimento, a quantidade de irmãos que você tem, etc.
 
+{lang=irb}
     irb(main):001:0> 1
     => 1
     irb(main):002:0> 2
@@ -67,6 +72,7 @@ Em Ruby, os números inteiros ainda podem ser classificados em __Fixnum__ e __Bi
 
 Números reais (__Float__) são aqueles que têm parte fracionária, por exemplo: 3.14, 21.2, 4.583, etc. Observe que usamos o ponto ao invés da vírgula! Nas linguagens de programação em geral, e isso vale para Ruby também, nós devemos escrever 3.14 e não 3,14. Alguns exemplos de números reais são a quantidade de dinheiro que você tem em sua conta bancária, o seu peso, a distância que você percorre quando corre, etc.
 
+{lang=irb}
     irb(main):001:0> 3.14
     => 3.14
     irb(main):002:0> 21.2
@@ -78,6 +84,7 @@ Números reais (__Float__) são aqueles que têm parte fracionária, por exemplo
 
 Vale salientar que, quando queremos nos referir a texto, não usamos a palavra "texto", e sim "String". Portanto, de agora em diante, quando nos referirmos a String, você já sabe que estamos nos referindo a texto. Esse tipo de dado, tão comum, deve ser escrito usando aspas simples ou duplas no início e no final do valor (SOUZA, 2012). Veja alguns exemplos abaixo.
 
+{lang=irb}
     irb(main):001:0> "Ser ou não ser, eis a questão!""
     => "Ser ou n\xC6o ser, eis a quest\xC6o"
     irb(main):002:0> 'Hasta la vista, baby'
@@ -94,6 +101,7 @@ ambos são String. O cuidado que precisamos ter é que, quando iniciarmos uma St
 Tudo entendido até aqui? Então temos uma pergunta para você: "1" é um inteiro ou é uma String? E agora? O que você acha? "1" é uma String!
 Porque ele está entre aspas duplas. Se não estivesse entre aspas duplas, seria um número inteiro. Agora faça o seguinte exemplo no IRB.
 
+{lang=irb}
     irb(main):001:0> "1" + 1
     TypeError: no implicit conversion of Fixnum into
     String
@@ -113,6 +121,7 @@ Isso é o que chamamos de conversão de tipos. Ou seja, transformar o dado de um
 
 Observe os exemplos abaixo.
 
+{lang=irb}
     irb(main):001:0> "10".to_i
     => 10
     irb(main):002:0> "3.14".to_f
@@ -124,11 +133,13 @@ Observe os exemplos abaixo.
 
 Agora nós podemos corrigir o exemplo apresentado anteriormente.
 
+{lang=irb}
     irb(main):001:0> "1".to_i + 1
     => 2
 
 Entendeu? O método `to_i` converteu "1" (String) em 1 (Integer) e depois a operação de soma foi executada, resultando em 2. Observe o próximo exemplo.
 
+{lang=irb}
     irb(main):001:0> "a".to_i
     => 0
 
@@ -145,6 +156,7 @@ para você. Nesse caso, o método puts apresenta alguma informação na tela do 
 
 Vamos fazer o programa "Olá Mundo!" para exemplificar o uso do método `puts`. Digite o seguinte comando no IRB e depois tecle ENTER.
 
+{lang=irb}
     irb(main):001:0> puts "Olá mundo!"
     Olá mundo!
     => nil
@@ -153,6 +165,7 @@ Observe que usamos o método `puts` e, logo em seguida, digitamos a String `"Ol�
 
 Caso tenha ocorrido algum erro, verifique se você digitou corretamente, pois o código só será executado se ele estiver sintaticamente correto, ou seja, se ele estiver bem construído e formatado. Observe o que acontece quando digitamos algo errado.
 
+{lang=irb}
     irb(main):001:0> put "Olá mundo!"
     NoMethodError: undefined method `put’ for main:Object
       from (irb):27
@@ -163,6 +176,7 @@ Novamente, recebemos um erro. Você consegue perceber o que fizemos de errado? N
 
 Outro método para saída de dados bastante utilizado é o `print`. Mas qual é a diferença entre o `puts` e o `print`? A diferença é que o `puts` dá uma quebra de linha após exibir a String, enquanto o `print` não o faz. Observe o exemplo abaixo para compreender melhor a diferença entre os dois
 
+{lang=irb}
     irb(main):001> puts "Com quebra de linha"
     Com quebra de linha
     => nil
@@ -175,12 +189,14 @@ Observe que, quando usamos o `puts`, a String `"Com quebra de linha"` apareceu n
 
 A entrada de dados é uma operação que permite que o usuário forneça dados para o programa. Essa operação é realizada usando o método `gets`. Observe o exemplo abaixo.
 
+{lang=irb}
     irb(main):001:0> gets
     Um texto qualquer
     => "Um texto qualquer\n"
 
 No exemplo anterior, usamos o método `gets` para permitir que o usuário digite algo. Ao executar o método `gets`, o Ruby fica aguardando que o usuário digite algo na linha seguinte e tecle ENTER. No exemplo, digitamos a String "Um texto qualquer" (sem aspas) e o resultado foi a String que digitamos seguido de `\n`. Mas de onde veio esse `\n`? Esse é um caractere especial que significa nova linha e ele foi enviado pelo nosso teclado quando apertamos ENTER. E como evitamos isso? Usamos o método `chomp` sobre o retorno (resultado) do método `gets` da seguinte forma.
 
+{lang=irb}
     irb(main):001:0> gets.chomp
     Um texto qualquer
     => "Um texto qualquer"

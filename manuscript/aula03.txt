@@ -38,17 +38,18 @@ O primeiro detalhe a ser percebido no exemplo anterior é que as variáveis poss
 * As palavras abaixo são reservadas pela linguagem Ruby, portanto, você não poderá usar nenhuma delas para nomear as suas variáveis.
 
 | \_\_ENCODING\_\_ | case     | false  | redo   | unless |
-| __LINE__     | class    | for    | rescue | until  |
-| __FILE__     | def      | if     | retry  | when   |
-| BEGIN        | defined? | in     | return | while  |
-| END          | do       | module | self   | yield  |
-| alias        | else     | next   | super  |        |
-| and          | elsif    | nil    | then   |        |
-| begin        | end      | not    | true   |        |
-| break        | ensure   | or     | undef  |        |
+| \_\_LINE\_\_     | class    | for    | rescue | until  |
+| \_\_FILE\_\_     | def      | if     | retry  | when   |
+| BEGIN            | defined? | in     | return | while  |
+| END              | do       | module | self   | yield  |
+| alias            | else     | next   | super  |        |
+| and              | elsif    | nil    | then   |        |
+| begin            | end      | not    | true   |        |
+| break            | ensure   | or     | undef  |        |
 
 Ao longo desse livro, iremos estudar e conhecer a maioria das palavras reservadas. Abaixo você pode conferir alguns exemplos válidos de criação de variáveis.
 
+{lang=irb}
     irb(main):001:0> numero = 2
     => 2
     irb(main):002:0> nome_completo = "Adam Sandler"
@@ -60,6 +61,7 @@ Ao longo desse livro, iremos estudar e conhecer a maioria das palavras reservada
 
 Perceba que estamos usando nomes de variáveis que indicam o que está guardado nelas. É muito comum ver aqueles que estão aprendendo a linguagem usando péssimos nomes para variáveis, conforme ilustramos abaixo.
 
+{lang=irb}
     irb(main):001:0> x = 2
     => 2
     irb(main):002:0> z = "Adam Sandler"
@@ -73,6 +75,7 @@ Os nomes das variáveis ilustrados no exemplo anterior não indicam o que elas e
 
 Outro detalhe a ser percebido, nos exemplos anteriores, é que nós não apenas criamos novas variáveis, mas também guardamos valores dentro delas. Para guardar um valor dentro de uma variável, nós usamos o sinal de atribuição, que é o sinal de igual (=). Veja o exemplo abaixo.
 
+{lang=irb}
     irb(main):001:0> numero = 2
     => 2
 
@@ -80,6 +83,7 @@ No exemplo acima, criamos uma variável chamada `numero` que armazena o número 
 
 Você se lembra dos métodos `puts` e `gets.chomp` que aprendemos na aula anterior? Eles são comandos de entrada e saída de dados e também podem ser usados com variáveis! Observe o próximo exemplo.
 
+{lang=irb}
     irb(main):001:0> numero = 2
     irb(main):002:0> puts numero
     2
@@ -89,6 +93,7 @@ No exemplo acima, criamos uma variável chamada `numero`, armazenamos o valor 2 
 
 Como permitir que o usuário digite um dado no teclado e essa informação seja guardada numa variável? Observe o próximo exemplo.
 
+{lang=irb}
     irb(main):002:0> nome = gets.chomp
     Drew Barrymore
     => "Drew Barrymore"
@@ -98,6 +103,7 @@ Como permitir que o usuário digite um dado no teclado e essa informação seja 
 
 Na primeira linha do exemplo anterior, usamos os métodos `gets.chomp` para permitir que o usuário digite o seu nome. Os métodos `gets.chomp` irão retornar (devolver como resultado) o valor digitado pelo usuário (uma String), e esse valor será guardado na variável `nome`. Na quarta linha do exemplo, usamos o método `puts` para exibir o valor guardado na variável `nome`, que será o nome digitado por você. Agora observe o exemplo abaixo.
 
+{lang=irb}
     irb(main):001:0> idade = gets.chomp
     29
     => 29
@@ -109,6 +115,7 @@ Na primeira linha do exemplo anterior, usamos os métodos `gets.chomp` para perm
 
 Algo deu errado. Você consegue perceber por quê? Na aula anterior, vimos que o retorno, ou seja, o resultado dado pelos métodos `gets.chomp` é uma String. Portanto, apesar de o usuário digitar um valor numérico (sua idade), essa informação será guardada na variável `idade` como uma String. Quando tentamos calcular a idade do usuário daqui a 10 anos, tentamos somar a variável `idade` (que guarda uma String) com o valor inteiro 10 e, como já vimos na aula passada, não é possível somar uma String com um número. Portanto, para que o exemplo anterior funcione, é preciso converter o valor digitado pelo usuário para inteiro, e, só depois disso, poderemos somá-lo com 10. Observe abaixo o exemplo corrigido.
 
+{lang=irb}
     irb(main):001:0> idade = gets.chomp.to_i
     29
     => 29
@@ -122,12 +129,14 @@ Lembra-se do método `to_i` que aprendemos na aula anterior? Ele está sendo usa
 
 Em alguns momentos, essa questão dos tipos das variáveis, ou seja, os tipos de dados que as variáveis guardam, pode ficar confusa. Isso ocorre porque Ruby é uma linguagem de "tipagem" dinâmica. Lembra que mencionamos isso na nossa primeira aula? Sendo o Ruby uma linguagem de tipagem dinâmica, você não precisa definir qual tipo de dado será guardado na variável ao criá-la. Um outro exemplo de tipagem é a estática, que exige que o programador, ao criar uma variável, informe qual tipo de dado será guardado nela. Observe o exemplo de código abaixo escrito na linguagem Java. Não tente fazer isso no IRB, pois esse exemplo está escrito em outra linguagem.
 
+{lang=java}
     int idade = 29;
 
 Quais diferenças você consegue perceber entre a criação de uma variável em Java e em Ruby? A primeira delas é a presença do `int` antes do nome da variável. Isso indica que essa variável irá guardar um número inteiro, portanto, ela não será capaz de guardar outros tipos de dados. A segunda diferença é a presença do ponto e vírgula no final da linha. Em Java, o final de cada instrução deve ser marcado com ponto e vírgula.
 
 Portanto, em linguagens de tipagem dinâmica como Ruby, você não precisa definir o tipo da variável ao criar uma. Já em linguagens de tipagem estática como Java, você precisa definir o tipo da variável ao criá-la. Em Ruby, você pode fazer algo do tipo:
 
+{lang=irb}
     irb(main):001:0> variavel = 3
     => 3
     irb(main):002:0> variavel = "Ruby usa tipagem dinâmica"
@@ -135,6 +144,7 @@ Portanto, em linguagens de tipagem dinâmica como Ruby, você não precisa defin
 
 Observe que usamos a mesma variável para guardar um número inteiro e, em seguida, guardar uma String. Porém, toda essa flexibilidade tem um preço: em alguns momentos, pode ficar difícil saber qual tipo de dado está sendo guardado em cada variável. Para atenuar esse problema, existem meios de descobrir qual tipo de dado está guardado em cada variável. Observe o exemplo abaixo.
 
+{lang=irb}
     irb(main):001:0> variavel_desconhecida = 20
     => 20
     irb(main):002:0> variavel_desconhecida.class
@@ -143,6 +153,7 @@ Observe que usamos a mesma variável para guardar um número inteiro e, em segui
 No exemplo de código acima, usamos o método `class` para descobrir o tipo de dado guardado na variável `variavel_desconhecida`. Perceba que
 o retorno (resultado) do método foi `Fixnum`, que é um tipo de dado inteiro. Observe mais exemplos abaixo.
 
+{lang=irb}
     irb(main):001:0> variavel_desconhecida = "Tipo de dado desconhecido"
     => "Tipo de dado desconhecido"
     irb(main):002:0> variavel_desconhecida.class
@@ -162,6 +173,7 @@ Uma constante é como uma variável, ou seja, um espaço na memória do computad
 
 Para criar uma constante, basta criar uma ‘variável’ com a primeira letra maiúscula. Observe o exemplo abaixo.
 
+{lang=irb}
     irb(main):001:0> Minha_constante = 2
     => 2
     irb(main):001:0> Minha_constante = 3

@@ -1,0 +1,200 @@
+# Aula 6 - Operadores lógicos e precedência de operadores
+
+## Introdução
+
+Vamos dar continuidade aos estudos dos operadores em Ruby e, dessa vez, vamos abordar os operadores lógicos. Os operadores lógicos permitem- nos construir expressões complexas usando valores booleanos, e o retorno (resultado) é sempre um valor booleano. A linguagem Ruby possui sete desses operadores. Mas antes de começarmos a tratar sobre eles, vamos a alguns exemplos para nos recordar sobre a sua utilidade.
+
+Um dos operadores lógicos é o `and`, que significa "e" em inglês. O operador lógico `and` retorna verdadeiro (_true_) apenas quando as duas proposições são verdadeiras. Em todos os outros casos, esse operador irá retornar falso (_false_). Para exemplificar o uso desse operador, considere o exemplo abaixo.
+
+{lang=irb}
+    irb(main):001:0> a = true
+    => true
+    irb(main):002:0> b = true
+    => true
+    irb(main):003:0> c = false
+    => false
+    irb(main):004:0> a and b
+    => true
+    irb(main):005:0> a and c
+    => false
+    irb(main):006:0> b and c
+    => false
+
+Observe que o operador `and` retornou verdadeiro (`true`) quando as duas variáveis eram verdadeiras (`true`). Quando pelo menos uma das variáveis era falsa (`false`), o retorno foi falso (`false`).
+
+## Operadores Lógicos em Ruby
+
+Ruby possui sete operadores lógicos que representam quatro operações lógicas.
+
+| Operador | Nome         | Descrição                                                                                                    |
+|----------|--------------|--------------------------------------------------------------------------------------------------------------|
+| and      | E            | Resulta verdadeiro quando os dois operandos forem verdadeiros, resulta falso caso contrário                  |
+| &&       | E            | Resulta verdadeiro quando os dois operandos forem verdadeiros, resulta falso caso contrário                  |
+| or       | Ou           | Resulta verdadeiro quando pelo menos um dos dois operandos for verdadeiro, resulta falso caso contrário      |
+| \|\|     | Ou           | Resulta verdadeiro quando pelo menos um dos dois operandos for verdadeiro, resulta falso caso contrário      |
+| ^        | Ou exclusivo | Resulta verdadeiro quando apenas um operando for verdadeiro. Quando os dois forem verdadeiros, retorna falso |
+| !        | Negador      | Inverte o valor lógico do operando                                                                           |
+| not      | Negador      | Inverte o valor lógico do operando                                                                           |
+
+O quadro acima apresenta todos os operadores lógicos disponíveis em Ruby. Observe que alguns deles representam a mesma operação lógica, como o `and` e o `&&`, o `||` e o `or`, o `!` e o `not`.
+
+### Operação lógica: AND
+
+A operação lógica `and` irá retornar verdadeiro apenas quando os dois operandos forem verdadeiros. Observe a tabela da verdade do operador `and` no quadro abaixo.
+
+| A          | B          | A and B    |
+|------------|------------|------------|
+| Verdadeiro | Verdadeiro | Verdadeiro |
+| Verdadeiro | Falso      | Falso      |
+| Falso      | Verdadeiro | Falso      |
+| Falso      | Falso      | Falso      |
+
+A operação lógica `and` pode ser executada utilizando um dos dois operadores lógicos: `and` ou `&&`. Observe alguns exemplos de uso desse operador no [Exemplo de código 01](#aula06-codigo01).
+
+{#aula06-codigo01}
+<<[Exemplo de código 01 - Exemplos de uso do operador lógico `and`](code/exemplo61.rb)
+
+### Operação lógica: OR
+
+A operação lógica `or` irá retornar verdadeiro quando pelo menos um dos operandos for verdadeiro. Observe a tabela da verdade do operador `or` no quadro abaixo.
+
+| A          | B          | A or B     |
+|------------|------------|------------|
+| Verdadeiro | Verdadeiro | Verdadeiro |
+| Verdadeiro | Falso      | Verdadeiro |
+| Falso      | Verdadeiro | Verdadeiro |
+| Falso      | Falso      | Falso      |
+
+A operação lógica `or` pode ser executada utilizando um dos dois operadores lógicos: `or` ou `||`. Observe alguns exemplos de uso desse operador no [Exemplo de código 02](#aula06-codigo02).
+
+{#aula06-codigo02}
+<<[Exemplo de código 02 - Exemplos de uso do operador lógico `or`](code/exemplo62.rb)
+
+### Operação lógica: Ou exclusivo
+
+A operação lógica ‘ou exclusivo’, também conhecida como _xor_ (do inglês _exclusive or_), retorna verdadeiro quando apenas um dos operadores é verdadeiro. Em todos os outros casos, será retornado falso. Observe a tabela da verdade do ‘ou exclusivo’ no quadro abaixo.
+
+| A          | B          | A ^ B      |
+|------------|------------|------------|
+| Verdadeiro | Verdadeiro | Falso      |
+| Verdadeiro | Falso      | Verdadeiro |
+| Falso      | Verdadeiro | Verdadeiro |
+| Falso      | Falso      | Falso      |
+
+A operação lógica _xor_ pode ser executada utilizando o operador `^`. Observe os exemplos de uso desse operador no [Exemplo de código 03](#aula06-codigo03).
+
+{#aula06-codigo03}
+<<[Exemplo de código 03 - Exemplos de uso do operador lógico `^`](code/exemplo63.rb)
+
+### Operação lógica: Negador
+
+A operação lógica de negação inverte o valor lógico do operando. Se o operando for verdadeiro ele se tornará falso e se for falso se tornará verdadeiro. Observe a tabela da verdade do operador `not` no quadro abaixo.
+
+| A          | not A |
+|------------|-------|
+| Verdadeiro | Falso |
+| Falso | Verdadeiro |
+
+A operação lógica `not` pode ser executada utilizando um dos seguintes operadores: `not` ou `!`. Observe os exemplos de uso desse operador no [Exemplo de código 04](#aula06-codigo04).
+
+{#aula06-codigo04}
+<<[Exemplo de código 04 - Exemplos de uso do operador lógico `not`](code/exemplo64.rb)
+
+{#aula06-atividade01}
+X> ## Atividade 6.1
+X>
+X> Crie um _script_ em Ruby com o código apresentado nos Exemplos de código 1, 2, 3 e 4. Execute o _script_ e veja o resultado apresentado.
+
+## Expressões Lógicas
+
+Utilizando operadores lógicos e relacionais, nós somos capazes de construir expressões lógicas mais complexas. Confira os exemplos no [Exemplo de código 05](#aula06-codigo05).
+
+{#aula06-codigo05}
+<<[Exemplo de código 05 - Exemplos com operadores lógicos e relacionais](code/exemplo65.rb)
+
+{#aula06-atividade02}
+X> ## Atividade 6.2
+X>
+X> Antes de executar o [Exemplo de código 05](#aula06-codigo05), tente determinar o resultado de cada expressão lógica (linhas de 6 a 10). Depois, execute o código e confira se você acertou.
+
+Se você tentou determinar o resultado de cada expressão lógica da [Atividade 6.2]({#aula06-atividade02}), você, provavelmente, deve ter achado algo estranho na expressão da linha 7 e talvez não saiba explicar o porquê. A expressão é a seguinte: `(d or c) and not a`. Considerando que `d` é `false` e `c` é `true`, o resultado de `(d or c)` é `true`, e, considerando que `a` é `true`, `not a` resulta em `false`. Por fim, temos `true and false` que resulta em `false`. Contudo, na linha 13, o valor da variável `exemplo2`, que guarda o resultado da expressão da linha 7, é `true`! Como isso é possível?
+
+Para complicar mais, se você teve a curiosidade de tentar executar a expressão da linha 7 no IRB, vai ver que o resultado da expressão é, de fato, `false`. Observe o exemplo abaixo.
+
+{lang=irb}
+    irb(main):001:0> a = true
+    => true
+    irb(main):002:0> b = false
+    => false
+    irb(main):003:0> c = true
+    => true
+    irb(main):004:0> d = false
+    => false
+    irb(main):005:0> (d or c) and not a
+    => false
+    irb(main):006:0> exemplo2 = (d or c) and not a
+    => false
+    irb(main):007:0> exemplo2
+    => true
+    irb(main):008:0>
+
+No exemplo anterior, definimos os valores das variáveis `a`, `b`, `c` e `d`, conforme o [Exemplo de código 5](#aula06-codigo05) e, em seguida, executamos a expressão `(d or c) and not a`, que resultou em `false`. Quando atribuímos o resultado dessa mesma expressão para a variável `exemplo2`, o valor dela é `true`. Como é possível que o resultado da expressão seja `false`, mas o valor atribuído à variável seja `true`? A resposta para essa pergunta está na precedência de operadores.
+
+## Precedência de Operadores
+
+Para explicar a precedência de operadores, vamos usar um exemplo da matemática. Qual é o resultado da expressão aritmética abaixo?
+
+{float=center}
+3 * 4 + 2
+
+Se você respondeu que o resultado é 14, parabéns! Você acertou! E se você acertou, você levou em consideração a precedência de operadores. Mas o que é isso? A precedência de operadores determina quais operações serão executadas primeiro e quais serão executadas depois. Nesse exemplo, sabemos que o operador de multiplicação tem precedência sobre o operador de soma, portanto devemos primeiro multiplicar e depois somar.
+
+Assim como a matemática, as linguagens de programação também possuem precedência de operadores. O quadro abaixo apresenta operadores em ordem de precedência, ou seja, os operadores que aparecem no topo do quadro têm precedência (ou seja, devem ser executados primeiro) sobre os operadores que aparecem da parte de baixo no quadro subsequentes a eles.
+
+| Operador                  |
+| !, ~ e +                  |
+| **                        |
+| -                         |
+| *, / e %                  |
+| + e -                     |
+| << e >>                   |
+| &                         |
+| \| e ^                    |
+| >, >=, < e <=             |
+| <=>, ==, ===, !=, =~ e !~ |
+| &&                        |
+| \|\|                      |
+| .. e ...                  |
+| ? e :                     |
+| rescue                    |
+| =, +=, -=, etc.           |
+| defined?                  |
+| not                       |
+| or e and                  |
+| if, unless, while e until |
+| { } blocks                |
+
+Vale salientar que, assim como na matemática, o uso de parênteses garante a precedência de execução da expressão que está entre os parênteses. Um exemplo clássico é a fórmula para calcular a média aritmética entre dois números (ilustrada abaixo).
+
+    media = (a+b)/2
+
+Os parênteses garantem que a soma `a + b` será executada antes da divisão por 2, e isso é necessário porque a divisão tem precedência sobre a soma.
+
+Para explicar porque a variável `exemplo2` ficou com o valor `true` quando recebeu o resultado da expressão `(d or c) and not a` no [Exemplo de código 05](#aula06-codigo05), precisamos levar em consideração a precedência de operadores. Observe, no quadro de precedência de operadores, que o operador de atribuição (=) tem precedência sobre os operadores `not`, `or` e `and`, portanto a atribuição é executada primeiro.
+
+Agora vamos repensar a execução de `exemplo2 = (d or c) and not a` levando em consideração a precedência de operadores. A primeira parte da expressão a ser executada é `(d or c)` porque ela está entre parênteses, e o resultado será `true`. Pela precedência de operadores, o próximo operador a ser executado é a atribuição (=), e é por isso que a variável `exemplo2` recebe o valor `true` (resultado de `d or c`). O próximo operador a ser executado é o `not`, portanto `not a` resulta em `false`. Por fim, o que resta da expressão é `true and false`, que resulta em `false`.
+
+Isso explica porque o resultado da expressão `(d or c) and not a` é `false`, mas quando se introduz o sinal de atribuição (`exemplo2 = (d or c) and not a`), a variável `exemplo2` irá receber `true`, que é o resultado de apenas parte da expressão (`d or c`), e não dela toda.
+
+#{aula06-atividade03}
+X> ## Atividade 6.3
+X>
+X> Crie três variáveis lógicas (com valores booleanos) e combine-as utilizando os operadores lógicos. Tente prever o resultado da expressão lógica antes de executá-la no IRB.
+
+## Referências
+
+RUBY Operators Precedence: Operators Precedence. W3resource. 2015. Disponivel em: <http://www.w3resource.com/ruby/ruby-operators-precedence.php>. Acesso em: 23 nov. 2015.
+
+POINT, T. Ruby Operators. Tutorials Point. 2015. Disponivel em: <http://www.tutorialspoint.com/ruby/ruby_operators.htm>. Acesso em: 03 nov. 2015.
+
+SOUZA, L. Ruby: aprenda a programar na linguagem mais divertida. São Paulo: Casa do Código, 2012. v. 1.

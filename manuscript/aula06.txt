@@ -152,9 +152,10 @@ Se você respondeu que o resultado é 14, parabéns! Você acertou! E se você a
 Assim como a matemática, as linguagens de programação também possuem precedência de operadores. O quadro abaixo apresenta operadores em ordem de precedência, ou seja, os operadores que aparecem no topo do quadro têm precedência (ou seja, devem ser executados primeiro) sobre os operadores que aparecem da parte de baixo no quadro subsequentes a eles.
 
 | Operador                  |
+|---------------------------|
 | !, ~ e +                  |
 | **                        |
-| -                         |
+| \-                        |
 | *, / e %                  |
 | + e -                     |
 | << e >>                   |

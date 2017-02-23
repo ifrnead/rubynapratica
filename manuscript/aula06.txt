@@ -186,7 +186,7 @@ Agora vamos repensar a execução de `exemplo2 = (d or c) and not a` levando em 
 
 Isso explica porque o resultado da expressão `(d or c) and not a` é `false`, mas quando se introduz o sinal de atribuição (`exemplo2 = (d or c) and not a`), a variável `exemplo2` irá receber `true`, que é o resultado de apenas parte da expressão (`d or c`), e não dela toda.
 
-#{aula06-atividade03}
+{#aula06-atividade03}
 X> ## Atividade 6.3
 X>
 X> Crie três variáveis lógicas (com valores booleanos) e combine-as utilizando os operadores lógicos. Tente prever o resultado da expressão lógica antes de executá-la no IRB.

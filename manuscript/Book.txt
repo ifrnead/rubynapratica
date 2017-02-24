@@ -4,3 +4,4 @@ aula03.txt
 aula04.txt
 aula05.txt
 aula06.txt
+aula07.txt

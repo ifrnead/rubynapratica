@@ -1,0 +1,91 @@
+# Aula 07 - Estruturas de controle de fluxo condicionais
+
+## Introdução
+
+Daremos início ao estudo das estruturas de controle de fluxo, que são comandos e instruções que nos permitem controlar como a execução do código será realizada. Os códigos que produzimos até o presente momento não incluíram nenhuma estrutura de controle de fluxo, e, portanto, a execução deles é simplesmente linear, ou seja, inicia na primeira linha, segue a execução das linhas seguintes e termina na última, sem nenhum trecho de código condicional ou repetição.
+
+Nesta aula, iremos estudar apenas uma categoria das estruturas de controle de fluxo: as estruturas condicionais. Essas estruturas permitem que trechos de código sejam executados dependendo de uma condição (expressão lógica). Essa condição normalmente é construída utilizando operadores lógicos e relacionais.
+
+Para ilustrar como funciona uma das estruturas de controle de fluxo condicionais, vamos usar um exemplo do cotidiano: uma receita de brigadeiro adaptada do site Como Fazer Brigadeiro (http://www.comofazerbrigadeiro.com.br/). Confira a receita abaixo.
+
+> 1. Aqueça a panela em fogo médio;
+> 2. Acrescente 1 colher de sopa de manteiga;
+> 3. Acrescente todo o leite condensado;
+> 4. Se desejar fazer brigadeiro de chocolate, acrescente 4 colheres de sopa
+de chocolate em pó;
+> 5. Mexa sem parar até que o brigadeiro esteja desgrudando da panela;
+> 6. Unte um recipiente na qual a mistura será despejada;
+> 7. Molde os brigadeiros com as mãos, passando-os no chocolate granulado.
+
+Observe que a receita é uma sequência simples de instruções, mas o passo 4 é uma estrutura de controle condicional, pois você só irá acrescentar 4 colheres de sopa de chocolate em pó se desejar fazer brigadeiro de chocolate. Numa linguagem de programação, essa estrutura poderia ser reescrita da seguinte forma.
+
+> se desejar fazer brigadeiro de chocolate
+>   acrescente 4 colheres de sopa de chocolate em pó
+> fim
+
+Observe que, na primeira linha, escrevemos a condição (_se desejar fazer brigadeiro de chocolate_), e, na segunda linha, escrevemos a instrução que deverá ser "executada" apenas se a condição da primeira linha for verdadeira. Na última linha escrevemos "fim" para marcar o fim da estrutura condicional. Observe que a estrutura condicional segue o formato apresentado abaixo.
+
+> se <condição>
+>   <instruções a serem executadas caso a condição seja verdadeira>
+> fim
+
+Um outro detalhe a ser observado nos exemplos de código acima é o espaçamento dado antes da segunda linha, de forma que a linha de código fica deslocada para a direita. Essa técnica é chamada de indentação de código e visa melhorar a legibilidade, ou seja, a facilidade de leitura e compreensão.
+
+A indentação permite identificar visualmente que um trecho de código está dentro de uma estrutura. Nos exemplos apresentados anteriormente, é possível identificar que a segunda linha está dentro da estrutura do "se". Vale salientar, contudo, que a indentação de código é opcional em Ruby, portanto, seu código terá o mesmo comportamento se você usar a indentação ou não. Contudo, indentar seu código é altamente recomendado, tendo em vista que essa técnica melhora muito a facilidade de leitura, especialmente em _scripts_ complexos e longos.
+
+## Estruturas de Controle Condicionais em Ruby
+
+### Estruturas condicionais: _if_ e _else_
+
+A primeira estrutura condicional que vamos estudar é o `if`, que significa "se" em inglês. Na linguagem Ruby, o `if` é construído conforme a sintaxe ilustrada no [Exemplo de código 01](#aula07-codigo01).
+
+{#aula07-codigo01}
+> if <condição>
+>   <trecho de código a ser executado quando a condição for verdadeira>
+> end
+
+Vale salientar que devemos sempre substituir o código que aparece entre `<` e `>` pelo que desejamos. Confira o [Exemplo de código 02](#aula07-codigo02) que ilustra um exemplo de uso do `if`.
+
+{#aula07-codigo02}
+<<[Exemplo de código 02 - Exemplo de uso do `if`](code/exemplo72.rb)
+
+Na linha 4 do [Exemplo de código 02](#aula07-codigo02) escrevemos a instrução `if` seguida da condição `idade >= 18`. A linha 5 só será executada caso essa condição seja verdadeira, ou seja, caso o valor da variável `idade` seja maior ou igual a 18. Na linha 6 escrevemos a instrução `end` que marca o fim da estrutura condicional. Caso seja dada uma idade inferior a 18 anos, a execução do código irá literalmente pular a linha 5.
+
+{#aula07-atividade01}
+X> ## Atividade 7.1
+X>
+X> Crie um _script_ em Ruby, digite o código apresentado no [Exemplo de código 02](#aula07-codigo02) e o execute-o.
+
+Ao realizar a [Atividade 7.1](#aula07-atividade01), você deve ter percebido que, ao digitar uma idade inferior a 18 anos, o _script_ não apresenta resposta. Idealmente ele deveria apresentar uma mensagem informando que o usuário é menor de idade. Para fazer isso, vamos utilizar uma outra instrução chamada `else`, que significa "senão" em inglês. Confira a sintaxe do `else` no [Exemplo de código 03](#aula07-codigo03).
+
+{#aula07-codigo03}
+> if <condição>
+>   <trecho de código a ser executado quando a condição for verdadeira>
+> else
+>   <trecho de código a ser executado quando a condição for falsa>
+> end
+
+O primeiro trecho de código será executado quando a condição for verdadeira e o segundo será executado quando a condição for falsa. Vale salientar que o `else` só pode ser usado acompanhado de um `if`, porque o `else` depende da condição do `if`. Agora, confira o [Exemplo de código 04](#aula07-codigo04), que ilustra o exemplo apresentado anteriormente usando o `else`.
+
+{#aula07-codigo04}
+<<[Exemplo de código 04 - Exemplo da maioridade usando o `else`](code/exemplo74.rb)
+
+No [Exemplo de código 04](#aula07-codigo04), se atribuirmos uma idade inferior a 18 à variável `idade`, o _script_ irá apresentar a mensagem "Você é maior de idade!", caso contrário, o _script_ irá apresentar "Você é menor de idade!". Observe que as duas mensagens nunca serão apresentadas ao mesmo tempo, porque a condição só pode dar um resultado lógico: verdadeiro ou falso.
+
+Observe novamente que a indentação de código nos permite identificar facilmente que o comando `puts` (linha 5) está dentro da estrutura do `if` e, portanto, só será executado se a condição for verdadeira. Além disso, é fácil ver que o outro `puts` (linha 7) está dentro da estrutura do `else`, e, portanto, será executado quando a condição for falsa.
+
+{#aula07-atividade02}
+X> ## Atividade 7.2
+X>
+X> Crie um _script_ em Ruby que permita que o usuário digite um número inteiro e verifique se esse número é par ou ímpar.
+
+Uma forma mais simples de escrever o `if` é ilustrada [Exemplo de código 05](#aula07-codigo05).
+
+> <trecho de código> if <condição>
+
+Apesar da estrutura simplificada, o funcionamento permanece o mesmo: o trecho de código só será executado se a condição for verdadeira. Observe um exemplo de uso no [Exemplo de código 06](#aula07-codigo06).
+
+{#aula07-codigo06}
+<<[Exemplo de código 06 - Exemplo de uso com `if` _inline_](code/exemplo76.rb)
+
+### Estrutura Condicional: _elsif_

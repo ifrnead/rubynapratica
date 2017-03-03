@@ -89,3 +89,137 @@ Apesar da estrutura simplificada, o funcionamento permanece o mesmo: o trecho de
 <<[Exemplo de código 06 - Exemplo de uso com `if` _inline_](code/exemplo76.rb)
 
 ### Estrutura Condicional: _elsif_
+
+Outra estrutura de controle condicional é o `elsif`, que é uma combinação de um `if` com um `else`. Para melhor ilustrar a utilidade do `elsif`, tente resolver o exercício proposto na [Atividade 7.3](#aula07-atividade03).
+
+{#aula07-atividade03}
+X> ## Atividade 7.3
+X>
+X> Crie um _script_ em Ruby que permita que o usuário digite uma nota de 0 a 100 (número inteiro) e calcule o conceito relativo à nota. Se a nota for entre 0 e 20, o conceito é "E"; entre 21 e 40, conceito "D"; entre 41 e 60, conceito "C"; entre 61 e 80, conceito "B"; entre 81 e 100, conceito "A".
+
+Uma das soluções possíveis para o exercício proposto na [Atividade 7.3](#aula07-atividade03) é o código ilustrado no [Exemplo de código 07](#aula07-codigo07).
+
+{#aula07-codigo07}
+<<[Exemplo de código 07 - Solução da Atividade 7.3](code/exemplo77.rb)
+
+Observe, no [Exemplo de código 07](#aula07-codigo07), que o código se desloca para a direita por causa da indentação. Uma opção para melhorar a legibilidade é usar o `elsif`, conforme ilustra o [Exemplo de código 08](#aula07-codigo07).
+
+{#aula07-codigo08}
+<<[Exemplo de código 08 - Exemplo de uso do `elsif`](code/exemplo78.rb)
+
+Observe que o código ficou mais curto pois com o uso do `elsif` foi possível eliminar a repetição de vários `if` e `else`.
+
+{#aula07-atividade04}
+X> ## Atividade 7.4
+X>
+X> Crie um _script_ em Ruby, digite o código apresentado no [Exemplo de código 08](#aula07-codigo08) e execute-o.
+
+A construção do `elsif` sempre segue o formato apresentado no [Exemplo de código 09](#aula07-codigo09).
+
+{#aula07-codigo09}
+<<[Exemplo de código 09 - Sintaxe do `elsif`](code/exemplo79.rb)
+
+{#aula07-atividade05}
+X> ## Atividade 7.5
+X>
+X> Crie um _script_ em Ruby que calcule o IMC (Índice de Massa Corporal) de uma pessoa. O script deve ler dois números reais. O primeiro número é o peso de uma pessoa em Kg, e o segundo é a altura de uma pessoa em metros. A fórmula para calcular o IMC é a seguinte:
+X> IMC = peso / altura²
+X> * Se o IMC for abaixo de 17: apresentar "Muito abaixo do peso";
+X> * Se o IMC for entre 17 e 18,49: apresentar "Abaixo do peso";
+X> * Se o IMC for entre 18,5 e 24,99: apresentar "Peso normal";
+X> * Se o IMC for entre 25 e 29,99: apresentar "Um pouco acima do peso";
+X> * Se o IMC for entre 30 e 34,99: apresentar "Obeso";
+X> * Se o IMC for entre 35 e 39,99: apresentar "Obesidade severa".
+
+### Estrutura condicional: _unless_
+
+O `unless`, que em inglês significa "a menos que", tem um comportamento inverso ao do `if`. O trecho de código abaixo do `if` é executado quando a condição é verdadeira. O trecho de código abaixo do `unless` é executado quando a condição for falsa. Observe a sintaxe do `unless` no [Exemplo de código 10](#aula07-codigo10).
+
+{#aula07-codigo10}
+<<[Exemplo de código 10 - Sintaxe do `unless`](code/exemplo710.rb)
+
+No [Exemplo de código 10](#aula07-codigo10), o trecho de código da linha 2 só será executado quando a condição do `unless` for falsa. Para exemplificar o uso do `unless`, vamos usar um método chamado `empty?`. O método `empty?` é executado sobre uma variável que guarda uma _string_ e verifica se ela está vazia ou não, portanto, seria o equivalente a testar `variavel == ""`. Esse método retorna `true` quando a _string_ está vazia, e `false` caso contrário.
+
+{#aula07-codigo11}
+<<[Exemplo de código 11 - Exemplo de uso do `empty?`](code/exemplo711.rb)
+
+O [Exemplo de código 11](#aula07-codigo11) permite que o usuário digite o seu nome (_string_), que será guardado na variável `nome`. Em seguida, o _script_ verifica, usando o método `empty?`, se o usuário de fato digitou algo. Mas, e se quiséssemos executar um trecho de código apenas quando o usuário digitar algo? É nesse tipo de situação que o `unless` pode ser útil, conforme ilustra [Exemplo de código 12](#aula07-codigo12).
+
+{#aula07-codigo12}
+<<[Exemplo de código 12 - Exemplo de uso do `unless`](code/exemplo712.rb)
+
+É claro que, ao invés de ter usado o `unless`, nós poderíamos ter usado apenas `if nome != ""` na condição da linha 4, mas a intenção aqui era apenas ilustrar um exemplo do `unless`.
+
+{#aula07-atividade06}
+X> ## Atividade 7.6
+X>
+X> Crie um _script_ em Ruby, digite o código apresentado no [Exemplo de código 12](#aula07-codigo12) e execute-o.
+
+Assim como o `if`, o `unless` também tem uma forma mais simples de ser escrita, conforme ilustra o [Exemplo de código 13](#aula07-codigo13).
+
+{#aula07-codigo13}
+> <trecho de código> unless <condição>
+
+O trecho de código só será executado caso a condição seja falsa. Observe um exemplo de uso do `unless` _inline_ no [Exemplo de código 14](#aula07-codigo14).
+
+{#aula07-codigo14}
+<<[Exemplo de código 14 - Exemplo de uso do `unless` _inline_](code/exemplo714.rb)
+
+### Estrutura condicional: case
+
+O `case` é uma estrutura condicional interessante que nos permite substituir vários testes com `if`. Observe a sintaxe do `case` no [Exemplo de código 15](#aula07-codigo15).
+
+{#aula07-codigo15}
+<<[Exemplo de código 15 - Sintaxe do `case`](code/exemplo715.rb)
+
+O `case` funciona da seguinte forma: uma variável é colocada ao lado do `case` (linha 1). O valor dessa variável é comparado com os valores que aparecem ao lado dos `when` (linhas 2 e 4). Caso o valor da variável seja igual ao valor que aparece no `when`, o trecho de código correspondente é executado. Caso o valor da variável não combine com nenhum dos valores, o trecho de código do `else` é executado. Vale salientar, contudo, que o `else` é opcional.
+
+Vamos a alguns exemplos para melhor ilustrar o uso do `case`.
+
+{#aula07-atividade07}
+X> ## Atividade 7.7
+X>
+X> Crie um _script_ em Ruby que permita ao usuário digitar um número inteiro que representa um mês do ano (1 para janeiro, 2 para fevereiro, 3 para março, etc.). O _script_ deve apresentar o nome do mês e quantos dias ele tem.
+
+Uma solução para o exercício proposto na [Atividade 7.7](#aula07-atividade07) é ilustrado no [Exemplo de código 16](#aula07-codigo16).
+
+{#aula07-codigo16}
+<<[Exemplo de código 16 - Solução do exercício proposto na [Atividade 7.7](#aula07-atividade07)](code/exemplo716.rb)
+
+Quando o valor da variável `mes` for igual a 1, a linha 6 será executada. Quando o valor da variável `mes` for igual a 2, a linha 8 será executada, e assim sucessivamente. Caso o valor da variável não seja igual ao valor de nenhum `when`, o trecho de código do `else` será executado, nesse caso, a linha 30.
+
+{#aula07-atividade08}
+X> ## Atividade 7.8
+X>
+X> Resolva o exercício proposto na [Atividade 7.3](#aula07-atividade03) usando a estrutura condicional `case`.
+
+O [Exemplo de código 17](#aula07-exemplo17) apresenta uma solução para o exercício proposto na [Atividade 7.8](#aula07-atividade08).
+
+{#aula07-codigo17}
+<<[Exemplo de código 17 - Solução do exercício proposto na [Atividade 7.3](#aula07-atividade03) usando `case`](code/exemplo717.rb)
+
+Observe, no [Exemplo de código 17](#aula07-exemplo17), que também é possível usar faixas de valores ao lado do `when`. Dessa forma, se o valor da variável `nota` estiver entre 0 e 20, a linha 6 será executada; se estiver entre 21 e 40, a linha 8 será executada; se estiver entre 41 e 60, a linha 10 será executada, e assim sucessivamente. Se a nota não estiver entre 0 e 100, a linha 16 será executada.
+
+{#aula07-atividade09}
+X> ## Atividade 7.9
+X>
+X> Resolva o exercício proposto na [Atividade 7.5](#aula07-atividade05) usando a estrutura condicional `case`.
+
+{#aula07-atividade10}
+X> ## Atividade 7.10
+X>
+X> a) Crie um _script_ em Ruby que leia três valores, 'a', 'b' e 'c' e diga se estes valores podem ser os lados de um triângulo. Para um triângulo ser formado, a soma de dois lados deve ser maior do que o terceiro lado: a + b > c e a + c > b e b + c > a.
+X> b) Modifique a questão anterior para contemplar o seguinte: quando os lados do triângulo forem válidos, o algoritmo deve informar qual é o tipo de triângulo formado pelos lados. O triângulo equilátero é formado quando os três lados são iguais. O triângulo isósceles é formado quando dois lados quaisquer são iguais, e o triângulo escaleno é formado quando os três lados são diferentes entre si.
+X> c) Crie um _script_ em Ruby que permita ao usuário digitar um ano. Em seguida, o _script_ deve informar se o ano (informado pelo usuário) é ou não bissexto. Dica: um ano é bissexto se ele for divisível por 400, ou se ele for divisível por 4 e não por 100.
+X> d) Crie um _script_ em Ruby que receba três notas, calcule e mostre a média aritmética e, além disso, mostre a situação do aluno (aprovado, recuperação ou reprovado). Se a média for maior ou igual a 7, o aluno está aprovado; se for menor que 7 e maior ou igual a 5, o aluno está de recuperação; se for menor que 5, o aluno está reprovado.
+X> e) Desenvolva um _script_ em Ruby que leia a velocidade máxima permitida em uma avenida e a velocidade com que o motorista estava dirigindo nela. Calcule e mostre a multa que uma pessoa vai receber, sabendo que são pagos: R$ 50 reais se o motorista ultrapassar em até 10km/h a velocidade permitida; R$ 100 reais, se o motorista ultrapassar de 11 a 30 km/h a velocidade permitida; e R$ 200 reais, se estiver acima de 31km/h da velocidade permitida.
+f) O imposto de renda de uma pessoa varia segundo uma tabela. Se o salário for menor do que R$ 1.000,00, não há imposto, se for entre R$ 1.000,00 e R$ 2.200,00, o imposto é de 13%, se for maior do que 2.200,00, o imposto é de 22%. Crie um _script_ em Ruby que, dado um valor em reais informado pelo usuário, correspondente a um salário, informe o valor que será recebido (total menos o imposto).
+g) Desenvolva um _script_ em Ruby que informe se uma data é válida ou não. O _script_ deverá ler 3 números inteiros, que representem o dia, o mês e o ano da data. Uma data é considerada válida quando o dia estiver entre 1 e 31, o mês estiver entre 1 e 12 e o ano for maior que zero.
+
+## Referências
+
+RANGEL, E. Conhecendo Ruby. [S.l.]: Leanpub, 2014.
+
+SOUZA, L. Ruby - Ruby: Aprenda a programar na linguagem mais divertida. 1. ed. São Paulo: Casa do Código, 2012. v. I.
+
+WIKIPÉDIA. Identação. 2015. Disponivel em: <https://pt.wikipedia.org/wiki/Indenta%C3%A7%C3%A3o>. Acesso em: 24 nov. 2015.

@@ -42,9 +42,7 @@ A indentação permite identificar visualmente que um trecho de código está de
 A primeira estrutura condicional que vamos estudar é o `if`, que significa "se" em inglês. Na linguagem Ruby, o `if` é construído conforme a sintaxe ilustrada no [Exemplo de código 01](#aula07-codigo01).
 
 {#aula07-codigo01}
-> if <condição>
->   <trecho de código a ser executado quando a condição for verdadeira>
-> end
+<<[Exemplo de código 01 - Sintaxe do `if`](code/exemplo71.rb)
 
 Vale salientar que devemos sempre substituir o código que aparece entre `<` e `>` pelo que desejamos. Confira o [Exemplo de código 02](#aula07-codigo02) que ilustra um exemplo de uso do `if`.
 
@@ -61,11 +59,7 @@ X> Crie um _script_ em Ruby, digite o código apresentado no [Exemplo de código
 Ao realizar a [Atividade 7.1](#aula07-atividade01), você deve ter percebido que, ao digitar uma idade inferior a 18 anos, o _script_ não apresenta resposta. Idealmente ele deveria apresentar uma mensagem informando que o usuário é menor de idade. Para fazer isso, vamos utilizar uma outra instrução chamada `else`, que significa "senão" em inglês. Confira a sintaxe do `else` no [Exemplo de código 03](#aula07-codigo03).
 
 {#aula07-codigo03}
-> if <condição>
->   <trecho de código a ser executado quando a condição for verdadeira>
-> else
->   <trecho de código a ser executado quando a condição for falsa>
-> end
+<<[Exemplo de código 03 - Sintaxe do `else`](code/exemplo73.rb)
 
 O primeiro trecho de código será executado quando a condição for verdadeira e o segundo será executado quando a condição for falsa. Vale salientar que o `else` só pode ser usado acompanhado de um `if`, porque o `else` depende da condição do `if`. Agora, confira o [Exemplo de código 04](#aula07-codigo04), que ilustra o exemplo apresentado anteriormente usando o `else`.
 
@@ -83,7 +77,8 @@ X> Crie um _script_ em Ruby que permita que o usuário digite um número inteiro
 
 Uma forma mais simples de escrever o `if` é ilustrada [Exemplo de código 05](#aula07-codigo05).
 
-> <trecho de código> if <condição>
+{#aula07-codigo05}
+<<[Exemplo de código 05 - Sintaxe do `if` _inline_](code/exemplo75.rb)
 
 Apesar da estrutura simplificada, o funcionamento permanece o mesmo: o trecho de código só será executado se a condição for verdadeira. Observe um exemplo de uso no [Exemplo de código 06](#aula07-codigo06).
 
@@ -160,7 +155,7 @@ X> Crie um _script_ em Ruby, digite o código apresentado no [Exemplo de código
 Assim como o `if`, o `unless` também tem uma forma mais simples de ser escrita, conforme ilustra o [Exemplo de código 13](#aula07-codigo13).
 
 {#aula07-codigo13}
-> <trecho de código> unless <condição>
+<<[Exemplo de código 13 - Sintaxe do `unless` _inline_](code/exemplo713.rb)
 
 O trecho de código só será executado caso a condição seja falsa. Observe um exemplo de uso do `unless` _inline_ no [Exemplo de código 14](#aula07-codigo14).
 

@@ -120,13 +120,15 @@ A construção do `elsif` sempre segue o formato apresentado no [Exemplo de cód
 X> ## Atividade 7.5
 X>
 X> Crie um _script_ em Ruby que calcule o IMC (Índice de Massa Corporal) de uma pessoa. O script deve ler dois números reais. O primeiro número é o peso de uma pessoa em Kg, e o segundo é a altura de uma pessoa em metros. A fórmula para calcular o IMC é a seguinte:
+X>
 X> IMC = peso / altura²
-X> * Se o IMC for abaixo de 17: apresentar "Muito abaixo do peso";
-X> * Se o IMC for entre 17 e 18,49: apresentar "Abaixo do peso";
-X> * Se o IMC for entre 18,5 e 24,99: apresentar "Peso normal";
-X> * Se o IMC for entre 25 e 29,99: apresentar "Um pouco acima do peso";
-X> * Se o IMC for entre 30 e 34,99: apresentar "Obeso";
-X> * Se o IMC for entre 35 e 39,99: apresentar "Obesidade severa".
+X>
+X> Se o IMC for abaixo de 17: apresentar "Muito abaixo do peso";
+X> Se o IMC for entre 17 e 18,49: apresentar "Abaixo do peso";
+X> Se o IMC for entre 18,5 e 24,99: apresentar "Peso normal";
+X> Se o IMC for entre 25 e 29,99: apresentar "Um pouco acima do peso";
+X> Se o IMC for entre 30 e 34,99: apresentar "Obeso";
+X> Se o IMC for entre 35 e 39,99: apresentar "Obesidade severa".
 
 ### Estrutura condicional: _unless_
 

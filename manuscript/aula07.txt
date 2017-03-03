@@ -19,9 +19,10 @@ de chocolate em pó;
 
 Observe que a receita é uma sequência simples de instruções, mas o passo 4 é uma estrutura de controle condicional, pois você só irá acrescentar 4 colheres de sopa de chocolate em pó se desejar fazer brigadeiro de chocolate. Numa linguagem de programação, essa estrutura poderia ser reescrita da seguinte forma.
 
-> se desejar fazer brigadeiro de chocolate
->   acrescente 4 colheres de sopa de chocolate em pó
-> fim
+{lang=gherkin}
+    se desejar fazer brigadeiro de chocolate
+      acrescente 4 colheres de sopa de chocolate em pó
+    fim
 
 Observe que, na primeira linha, escrevemos a condição (_se desejar fazer brigadeiro de chocolate_), e, na segunda linha, escrevemos a instrução que deverá ser "executada" apenas se a condição da primeira linha for verdadeira. Na última linha escrevemos "fim" para marcar o fim da estrutura condicional. Observe que a estrutura condicional segue o formato apresentado abaixo.
 

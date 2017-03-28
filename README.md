@@ -1,7 +1,7 @@
 # Ruby na Prática
 
 <p align="justify">
-  O Ruby na Prática é um livro didático escrito colaborativamente para ensino de programação estruturada e orientada a 
+  O Ruby na Prática é um livro didático escrito colaborativamente para ensino de programação estruturada e orientada a
   objetos em Ruby.
 </p>
 
@@ -28,9 +28,9 @@
 ## Como posso utilizar o livro?
 
 <p align="justify">
-  O livro Ruby na Prática está disponível sob a licença <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative 
-  Commons Attribution-ShareAlike 4.0 International License</a>, o que significa que você pode utilizá-lo livremente, sem 
-  custos, mesmo para fins comerciais, e também pode fazer adaptações, desde que suas adaptações também sejam compartilhadas 
+  O livro Ruby na Prática está disponível sob a licença <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+  Commons Attribution-ShareAlike 4.0 International License</a>, o que significa que você pode utilizá-lo livremente, sem
+  custos, mesmo para fins comerciais, e também pode fazer adaptações, desde que suas adaptações também sejam compartilhadas
   sob a mesma licença ou sob <a href="https://creativecommons.org/compatiblelicenses">licença compatível</a>.
 </p>
 
@@ -44,6 +44,7 @@
 
 <p>Nenhuma versão do livro disponível até o momento.</p>
 
-## Autores
+## Autores e colaboradores
 
 * Jalerson Lima (http://jalerson.me)
+* Erick Bergamini (arte da capa)

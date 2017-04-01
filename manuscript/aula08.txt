@@ -1,0 +1,30 @@
+# Aula 08 - Estruturas de Controle de Repetição Quantificadas
+
+## Introdução
+
+Para ilustrar a utilidade das estruturas de controle de repetição quantificadas, também conhecidas como laços, iremos usar o exercício proposto na [Atividade 8.1](#aula08-atividade01). Tente resolver esse exercício com os conhecimentos que você já possui.
+
+{#aula08-atividade01}
+X> ## Atividade 8.1
+X>
+X> Crie um _script_ em Ruby que lê um número inteiro e mostra a tabuada de multiplicação desse número de 1 a 10.
+
+Para resolver o problema proposto na [Atividade 8.1](#aula08-atividade01), provavelmente você produziu um script parecido com o ilustrado no Exemplo de código 1.
+
+{#aula08-codigo01}
+<<[Exemplo de código 01 - Solução da Atividade 8.1](code/exemplo81.rb)
+
+Observe que, para resolver esse problema usando apenas os conhecimentos que temos atualmente, precisamos escrever repetidas vezes uma ação específica: multiplicar o número informado pelo usuário por um outro número (linhas 4 a 13). Para esse problema específico, precisamos realizar essa ação apenas 10 vezes, mas e se o problema exigisse que executássemos a ação 100 vezes? Ou 1000 vezes? Iríamos escrever a mesma linha de código várias vezes? E pior: o problema pode exigir que a ação seja executada um número variável de vezes.
+
+Para resolver problemas como esse, em que ações precisam ser feitas repetidas vezes, é que devemos utilizar as estruturas de controle de repetição quantificadas. Essas estruturas são ditas quantificadas porque elas executam um número determinado de vezes.
+
+## Estruturas de controle de repetição quantificadas em Ruby
+
+A linguagem Ruby possui três estruturas de controle de repetição quantificadas: o `for`, o `each` e o `times`.
+
+### Estrutura de repetição: `for`
+
+O `for` (para) é uma estrutura de repetição muito comum e presente em quase todas as linguagens de programação. O [Exemplo de código 2](#aula08-codigo02) ilustra a sintaxe do `for`.
+
+{#aula08-codigo02}
+<<[Exemplo de código 02 - Sintaxe do `for`](code/exemplo82.txt)

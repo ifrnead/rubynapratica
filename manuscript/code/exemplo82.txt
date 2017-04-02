@@ -1,3 +1,0 @@
-for <variável> in <expressão>
-  // Código a ser executado repetidamente
-end

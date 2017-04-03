@@ -9,7 +9,7 @@ X> ## Atividade 8.1
 X>
 X> Crie um _script_ em Ruby que lê um número inteiro e mostra a tabuada de multiplicação desse número de 1 a 10.
 
-Para resolver o problema proposto na [Atividade 8.1](#aula08-atividade01), provavelmente você produziu um script parecido com o ilustrado no [Exemplo de código 01](#aula08-codigo01).
+Para resolver o problema proposto na [Atividade 8.1](#aula08-atividade01), provavelmente você produziu um _script_ parecido com o ilustrado no [Exemplo de código 01](#aula08-codigo01).
 
 {#aula08-codigo01}
 <<[Exemplo de código 01 - Solução da Atividade 8.1](code/exemplo81.rb)
@@ -29,7 +29,7 @@ O `for` (para) é uma estrutura de repetição muito comum e presente em quase t
 {#aula08-codigo02}
 <<[Exemplo de código 02 - Sintaxe do `for`](code/exemplo82.rb)
 
-O Exemplo de código 03 ilustra um exemplo de uso do `for`.
+O [Exemplo de código 03](#aula08-codigo03) ilustra um exemplo de uso do `for`.
 
 {#aula08-codigo03}
 <<[Exemplo de código 03 - Sintaxe do `for`](code/exemplo83.rb)
@@ -98,7 +98,7 @@ X> Crie um _script_ em Ruby que leia um número inteiro X e mostre todos os núm
 
 ### Estrutura de repetição: `times`
 
-Na realidade, o `times` não é uma estrutura de controle de repetição, mas sim um método da classe Integer, conforme vamos estudar mais à frente, quando estivermos aprendendo sobre Programação Orientada a Objetos. Contudo, o método `times` também é muito utilizado para executar trechos de código repetidamente. Assim como o `each`, também existem duas formas de se construir o `times`. Observe a sintaxe do times no [Exemplo de código 09](#aula08-codigo09) e no [Exemplo de código 10](#aula09-codigo10).
+Na realidade, o `times` (vezes) não é uma estrutura de controle de repetição, mas sim um método da classe Integer, conforme vamos estudar mais à frente, quando estivermos aprendendo sobre Programação Orientada a Objetos. Contudo, o método `times` também é muito utilizado para executar trechos de código repetidamente. Assim como o `each`, também existem duas formas de se construir o `times`. Observe a sintaxe do times no [Exemplo de código 09](#aula08-codigo09) e no [Exemplo de código 10](#aula09-codigo10).
 
 {#aula08-codigo09}
 <<[Exemplo de código 09 - Sintaxe do times](code/exemplo89.rb)
@@ -155,7 +155,7 @@ As execuções dos laços podem ser controladas através dos comandos `break`, `
 
 ### O comando `break`
 
-O comando `break` interrompe a execução do laço. O [Exemplo de código 13](#aula08-codigo13) ilustra um exemplo de uso do comando `break`.
+O comando `break` (quebrar/romper) interrompe a execução do laço. O [Exemplo de código 13](#aula08-codigo13) ilustra um exemplo de uso do comando `break`.
 
 {#aula08-codigo13}
 <<[Exemplo de código 13 - Exemplo de uso do break](code/exemplo813.rb)
@@ -179,7 +179,7 @@ O código apresentado no [Exemplo de código 14](#aula08-codigo14) possui dois `
 
 ### O comando `next`
 
-O comando `next` é usado para pular a execução de uma iteração. O [Exemplo de código 15](#aula08-codigo15) ilustra um exemplo de uso do comando `next`.
+O comando `next` (próximo) é usado para pular a execução de uma iteração. O [Exemplo de código 15](#aula08-codigo15) ilustra um exemplo de uso do comando `next`.
 
 {#aula08-codigo15}
 <<[Exemplo de código 15 - Exemplo de uso do next](code/exemplo815.rb)
@@ -201,7 +201,7 @@ Vale salientar que, quando o comando `next` é executado dentro de um laço anin
 
 ### O comando `redo`
 
-O comando `redo` reexecuta a iteração atual. Observe o comportamento do `redo` no [Exemplo de código 16](#aula08-codigo16).
+O comando `redo` (refazer) reexecuta a iteração atual. Observe o comportamento do `redo` no [Exemplo de código 16](#aula08-codigo16).
 
 {#aula08-codigo16}
 <<[Exemplo de código 16 - Exemplo de uso do redo](code/exemplo816.rb)
@@ -241,16 +241,16 @@ X>
 X> h) Um número é primo se os únicos divisores dele são 1 e o próprio número. Faça um _script_ em Ruby para ler um número inteiro positivo e determinar se ele é ou não um número primo.
 X>
 X> i) No dia da estreia do filme “O Senhor dos Anéis”, uma grande emissora de TV realizou uma pesquisa logo após o encerramento do filme. Cada espectador respondeu a um questionário no qual constava sua idade e a sua opinião em relação ao filme: 3 – excelente; 2 – bom; 1 – regular. Criar um _script_ em Ruby que receba a idade e a opinião de 20 espectadores, calcule e imprima:
-X>   a. A média das idades das pessoas que responderam excelente;
-X>   b. A quantidade de pessoas que responderam regular;
-X>   c. A percentagem de pessoas que responderam bom entre todos os espectadores analisados.
+X>   - A média das idades das pessoas que responderam excelente;
+X>   - A quantidade de pessoas que responderam regular;
+X>   - A percentagem de pessoas que responderam bom entre todos os espectadores analisados.
 X>
 X> j) Crie um _script_ em Ruby que imprima todas as tabuadas de multiplicação de 1 a 10.
 X>
 X> k) Criar um _script_ em Ruby em que o usuário entre com 2 notas (de 0 a 100) de cada aluno de uma turma de 5 alunos, e imprima:
-X>   a. A média de cada aluno;
-X>   b. A média da turma;
-X>   c. O percentual de alunos com média maior ou igual a 60.
+X>   - A média de cada aluno;
+X>   - A média da turma;
+X>   - O percentual de alunos com média maior ou igual a 60.
 
 ## Referências
 

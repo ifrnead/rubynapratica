@@ -241,7 +241,6 @@ X>
 X> h) Um número é primo se os únicos divisores dele são 1 e o próprio número. Faça um _script_ em Ruby para ler um número inteiro positivo e determinar se ele é ou não um número primo.
 X>
 X> i) No dia da estreia do filme “O Senhor dos Anéis”, uma grande emissora de TV realizou uma pesquisa logo após o encerramento do filme. Cada espectador respondeu a um questionário no qual constava sua idade e a sua opinião em relação ao filme: 3 – excelente; 2 – bom; 1 – regular. Criar um _script_ em Ruby que receba a idade e a opinião de 20 espectadores, calcule e imprima:
-X>
 X> * A média das idades das pessoas que responderam excelente;
 X>
 X> * A quantidade de pessoas que responderam regular;
@@ -251,7 +250,6 @@ X>
 X> j) Crie um _script_ em Ruby que imprima todas as tabuadas de multiplicação de 1 a 10.
 X>
 X> k) Criar um _script_ em Ruby em que o usuário entre com 2 notas (de 0 a 100) de cada aluno de uma turma de 5 alunos, e imprima:
-X>
 X> * A média de cada aluno;
 X>
 X> * A média da turma;

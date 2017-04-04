@@ -1,0 +1,1 @@
+codigo until condicao

@@ -224,23 +224,23 @@ Observe que as duas iterações são executadas normalmente, e ao chegar na 3ª 
 {#aula08-atividade05}
 X> ## Atividade 8.5
 X>
-X> a) Faça um _script_ em Ruby que leia um número n e mostre a tabuada de multiplicação de 1 a 10 deste número.
+X> 1) Faça um _script_ em Ruby que leia um número n e mostre a tabuada de multiplicação de 1 a 10 deste número.
 X>
-X> b) Faça um _script_ em Ruby que mostre os números pares entre 1 e 100.
+X> 2) Faça um _script_ em Ruby que mostre os números pares entre 1 e 100.
 X>
-X> c) Faça um _script_ em Ruby que mostre o somatório dos números pares entre 1 e N, onde N é um valor definido pelo usuário.
+X> 3) Faça um _script_ em Ruby que mostre o somatório dos números pares entre 1 e N, onde N é um valor definido pelo usuário.
 X>
-X> d) Desenvolva um _script_ em Ruby que mostre todos os números entre 1 e 200 que são divisíveis por 3 ou por 5.
+X> 4) Desenvolva um _script_ em Ruby que mostre todos os números entre 1 e 200 que são divisíveis por 3 ou por 5.
 X>
-X> e) Desenvolva um _script_ em Ruby que leia n números (o número n deve informado pelo usuário), e diga quantos são pares e quantos são ímpares. Imprima também a soma dos números pares, e a soma dos números ímpares.
+X> 5) Desenvolva um _script_ em Ruby que leia n números (o número n deve informado pelo usuário), e diga quantos são pares e quantos são ímpares. Imprima também a soma dos números pares, e a soma dos números ímpares.
 X>
-X> f) Desenvolva um _script_ em Ruby que, dados 2 números inteiros X e Y, calcule o valor de XY. Faça isso sem usar o operador de potenciação (**).
+X> 6) Desenvolva um _script_ em Ruby que, dados 2 números inteiros X e Y, calcule o valor de XY. Faça isso sem usar o operador de potenciação (**).
 X>
-X> g) Faça um _script_ em Ruby que calcule o fatorial de um número inteiro dado pelo usuário. O fatorial de um número é calculado através da multiplicação do próprio número pelos seus antecessores. Exemplo: o fatorial de 4 é 4 x 3 x 2 x 1 = 24.
+X> 7) Faça um _script_ em Ruby que calcule o fatorial de um número inteiro dado pelo usuário. O fatorial de um número é calculado através da multiplicação do próprio número pelos seus antecessores. Exemplo: o fatorial de 4 é 4 x 3 x 2 x 1 = 24.
 X>
-X> h) Um número é primo se os únicos divisores dele são 1 e o próprio número. Faça um _script_ em Ruby para ler um número inteiro positivo e determinar se ele é ou não um número primo.
+X> 8) Um número é primo se os únicos divisores dele são 1 e o próprio número. Faça um _script_ em Ruby para ler um número inteiro positivo e determinar se ele é ou não um número primo.
 X>
-X> i) No dia da estreia do filme “O Senhor dos Anéis”, uma grande emissora de TV realizou uma pesquisa logo após o encerramento do filme. Cada espectador respondeu a um questionário no qual constava sua idade e a sua opinião em relação ao filme: 3 – excelente; 2 – bom; 1 – regular. Criar um _script_ em Ruby que receba a idade e a opinião de 20 espectadores, calcule e imprima:
+X> 9) No dia da estreia do filme “O Senhor dos Anéis”, uma grande emissora de TV realizou uma pesquisa logo após o encerramento do filme. Cada espectador respondeu a um questionário no qual constava sua idade e a sua opinião em relação ao filme: 3 – excelente; 2 – bom; 1 – regular. Criar um _script_ em Ruby que receba a idade e a opinião de 20 espectadores, calcule e imprima:
 X>
 X> * A média das idades das pessoas que responderam excelente;
 X>
@@ -248,9 +248,9 @@ X> * A quantidade de pessoas que responderam regular;
 X>
 X> * A percentagem de pessoas que responderam bom entre todos os espectadores analisados.
 X>
-X> j) Crie um _script_ em Ruby que imprima todas as tabuadas de multiplicação de 1 a 10.
+X> 10) Crie um _script_ em Ruby que imprima todas as tabuadas de multiplicação de 1 a 10.
 X>
-X> k) Criar um _script_ em Ruby em que o usuário entre com 2 notas (de 0 a 100) de cada aluno de uma turma de 5 alunos, e imprima:
+X> 11) Criar um _script_ em Ruby em que o usuário entre com 2 notas (de 0 a 100) de cada aluno de uma turma de 5 alunos, e imprima:
 X>
 X> * A média de cada aluno;
 X>

@@ -108,81 +108,81 @@ Novamente, a única diferença entre usar o `until` ou `while` é que, com o whi
 
 Vale salientar também que os comandos `break`, `next` e `redo`, apresentados na aula passada, também funcionam com os laços condicionais.
 
-X> ## Atividade 9.3
-X>
-X> Algumas questões dessa atividade não precisam ser resolvidas, necessariamente, utilizando estruturas de repetição condicionais.
-X>
-X> 1) Crie um _script_ em Ruby que permita que o usuário digite vários números e imprima o triplo de cada número digitado. O _script_ deve acabar quanto o número -999 for digitado;
-X>
-X> 2) Crie um _script_ em Ruby que permita que o usuário digite vários números positivos. Quando um número negativo for digitado, o _script_ deve apresentar quantos números positivos foram digitados;
-X>
-X> 3) Crie um _script_ em Ruby que permita ao usuário digitar vários números positivos. Quando um número negativo for digitado, o _script_ deve imprimir a média dos números positivos digitados;
-X>
-X> 4) Crie um _script_ em Ruby que permita ao usuário digitar vários números. Quando o número 0 (zero) for digitado, o _script_ deve informar quantos números entre 100 e 200 foram digitados pelo usuário;
-X>
-X> 5) Crie um _script_ em Ruby que permita que o usuário digite os nomes de várias profissões. Quando o usuário teclar ENTER sem digitar nada, o _script_ deve informar quantas vezes "dentista" foi digitado;
-X>
-X> 6) Crie um _script_ em Ruby que permita que o usuário digite o sexo de várias pessoas ("m" para masculino ou "f" para feminino). Quando o usuário teclar ENTER sem digitar nada, o _script_ deve informar quantas vezes foi digitado "m";
-X>
-X> 7) Crie um _script_ em Ruby que permita ao usuário digitar vários números. Após ler cada número, o _script_ deve mostrar o quadrado desse número. O _script_ deverá encerrar quando o usuário digitar um número múltiplo de 6;
-X>
-X> 8) Crie um _script_ que permita ao usuário digitar vários números. O _script_ deve se encerrar quando o usuário digitar -999. Para cada número digitado, o _script_ deve imprimir todos os seus divisores;
-X>
-X> 9) Dado um país A, com 5 milhões de habitantes e uma taxa de natalidade de 3% ao ano, e um país B com 7 milhões de habitantes e uma taxa de natalidade de 2% ao ano, crie um _script_ em Ruby que calcule e imprima o tempo necessário para que a população do país A ultrapasse a população do país B;
-X>
-X> 10) Chico tem 1,50 metros e cresce 2 cm por ano, enquanto Juca tem 1,10 metros e cresce 3 cm por ano. Crie um _script_ em Ruby que calcule e imprima quantos anos serão necessários para que Juca seja maior que Chico;
-X>
-X> 11) Uma empresa de fornecimento de energia elétrica faz a leitura mensal dos medidores de consumo. Para cada consumidor, são digitados os seguintes dados:
-X>
-X> * Número do consumidor;
-X> * Quantidade de kWh consumidos durante o mês;
-X> * Tipo (código) do consumidor: 1 – residencial (R$ 0,03 por kWh); 2 – comercial (R$ 0,05 por kWh); 3 – industrial (R$ 0,07 por kWh).
-X>
-X> Os dados devem ser lidos até que seja encontrado um consumidor com o número 0 (zero). Crie um _script_ em Ruby que calcule e imprima:
-X>
-X> * O custo total para cada consumidor;
-X> * O total de consumo para os três tipos de consumidor;
-X> * A média de consumo dos tipos 1 e 2.
-X>
-X> 12) Criar um _script_ em Ruby que leia vários números inteiros e apresente o fatorial de cada número. O _script_ se encerra quando o usuário digitar um número menor do que 1. Dica: o fatorial de um número é a multiplicação dele por todos os seus antecessores. Exemplo: o fatorial de 5 é 5 x 4 x 3 x 2 x 1 = 120;
-X>
-X> 13) Crie um _script_ em Ruby que permita que o usuário digite a idade de várias pessoas. O _script_ deve parar quando uma idade negativa for digitada. O _script_ deve mostrar:
-X>
-X> * A média das idades;
-X> * Total de pessoas com menos de 21 anos;
-X> * Total de pessoas com mais de 50 anos;
-X>
-X> 14) Crie um _script_ em Ruby que que leia vários números inteiros e imprima a quantidade de números primos dentre os números que foram digitados. O _script_ acaba quando se digita um número menor ou igual a 0 (zero);
-X>
-X> 15) Crie um _script_ que permita ao usuário digitar vários números. Para cada número digitado, o _script_ deve verificar se ele é um número triangular. Dica: um número é triangular quando é resultado do produto de três números consecutivos. Exemplo: 2 x 3 x 4 = 24. O _script_ deve se encerrar quando o número 0 (zero) for digitado;
-X>
-X> 16) Crie um _script_ em Ruby que permita ao usuário digitar vários números. O _script_ acaba quando se digita -9999. Por fim, o _script_ deve apresentar o maior número digitado pelo usuário;
-X>
-X> 17) Crie um _script_ em Ruby que permita ao usuário digitar o número da conta e o saldo de várias pessoas. Após a digitação dos dados de cada conta, o _script_ deve apresentar o número da conta e informar se o saldo é positivo ou negativo. O _script_ deve terminar quando um número de conta negativo for digitado. Ao final, o _script_ deve mostrar o percentual de contas com o saldo negativo;
-X>
-X> 18) Crie um _script_ em Ruby que leia vários números. A leitura se encerra quando o usuário digitar 0 (zero). O _script_ deve mostrar os números que forem múltiplos de sua posição na sequência. Exemplo: supondo que o usuário digitou os números 3, 7, 8 e 16. O número 3 foi o 1o a ser digitado, o número 7 foi o 2o, o 8 foi o 3o e o 16 foi o 4o. Nesse exemplo, o _script_ deve apresentar os valores 3 e 16, pois 1 (posição do número 3) é múltiplo de 3, e 4 (posição do número 16) é múltiplo de 16;
-X>
-X> 19) Crie um _script_ em Ruby que calcule o Mínimo Múltiplo Comum (MMC) entre dois números lidos. Dica: o MMC de dois números é o menor número múltiplo dos dois números informados;
-X>
-X> 20) Crie um _script_ em Ruby que calcule o Máximo Divisor Comum (MDC) entre dois números inteiros lidos. Dica: o MDC de dois números é o maior número divisor dos dois números informados;
-X>
-X> 21) Repare a seguinte característica do número 3025: 30 + 25 = 55 e 552 = 3025. Criar um _script_ que possa ler vários números inteiros de 4 algarismos, um de cada vez, e diga se o número apresenta a mesma característica (repare que 3025 / 100 = 30 com resto 25). O _script_ termina quando for lido um valor menor que 1000 ou maior que 9999;
-X>
-X> 22) Crie um _script_ que leia vários números inteiros positivos e imprima a média dos números múltiplos de 3. O _script_ deve se encerrar quando 0 (zero) for digitado;
-X>
-X> 23) Criar um _script_ em Ruby que leia vários números inteiros positivos e imprima o produto dos números ímpares e a soma dos pares. O _script_ deve terminar quando o número 0 (zero) for digitado;
-X>
-X> 24) Criar um _script_ em Ruby que possa ler um conjunto de pedidos de compra e calcule o valor total da compra. Cada pedido é composto pelos seguintes campos:
-X>
-X> * Número do pedido;
-X> * Preço unitário;
-X> * Quantidade.
-X>
-X> O _script_ deverá processar novos pedidos até que o usuário digite 0 (zero) como número do pedido;
-X>
-X> 25) Criar um _script_ que leia a idade e sexo (0 para masculino e 1 para feminino) de várias pessoas. Calcule e imprima a idade média, o total de pessoas do sexo feminino com idade entre 30-45 (inclusive), e o número total de pessoas do sexo masculino. O _script_ termina quando se digita 0 (zero) para a idade;
-X>
-X> 26) Na Usina de Angra dos Reis, os técnicos analisam a perda de massa de um material radioativo. Sabendo-se que esse material perde 25% de sua massa a cada 30 segundos, criar um _script_ em Ruby que leia um valor real que representa o peso do material e mostre o tempo necessário para que a massa desse material se torne menor que 10 gramas.
+# Exercícios
+
+Algumas questões dessa atividade não precisam ser resolvidas, necessariamente, utilizando estruturas de repetição condicionais.
+
+1) Crie um _script_ em Ruby que permita que o usuário digite vários números e imprima o triplo de cada número digitado. O _script_ deve acabar quanto o número -999 for digitado;
+
+2) Crie um _script_ em Ruby que permita que o usuário digite vários números positivos. Quando um número negativo for digitado, o _script_ deve apresentar quantos números positivos foram digitados;
+
+3) Crie um _script_ em Ruby que permita ao usuário digitar vários números positivos. Quando um número negativo for digitado, o _script_ deve imprimir a média dos números positivos digitados;
+
+4) Crie um _script_ em Ruby que permita ao usuário digitar vários números. Quando o número 0 (zero) for digitado, o _script_ deve informar quantos números entre 100 e 200 foram digitados pelo usuário;
+
+5) Crie um _script_ em Ruby que permita que o usuário digite os nomes de várias profissões. Quando o usuário teclar ENTER sem digitar nada, o _script_ deve informar quantas vezes "dentista" foi digitado;
+
+6) Crie um _script_ em Ruby que permita que o usuário digite o sexo de várias pessoas ("m" para masculino ou "f" para feminino). Quando o usuário teclar ENTER sem digitar nada, o _script_ deve informar quantas vezes foi digitado "m";
+
+7) Crie um _script_ em Ruby que permita ao usuário digitar vários números. Após ler cada número, o _script_ deve mostrar o quadrado desse número. O _script_ deverá encerrar quando o usuário digitar um número múltiplo de 6;
+
+8) Crie um _script_ que permita ao usuário digitar vários números. O _script_ deve se encerrar quando o usuário digitar -999. Para cada número digitado, o _script_ deve imprimir todos os seus divisores;
+
+9) Dado um país A, com 5 milhões de habitantes e uma taxa de natalidade de 3% ao ano, e um país B com 7 milhões de habitantes e uma taxa de natalidade de 2% ao ano, crie um _script_ em Ruby que calcule e imprima o tempo necessário para que a população do país A ultrapasse a população do país B;
+
+10) Chico tem 1,50 metros e cresce 2 cm por ano, enquanto Juca tem 1,10 metros e cresce 3 cm por ano. Crie um _script_ em Ruby que calcule e imprima quantos anos serão necessários para que Juca seja maior que Chico;
+
+11) Uma empresa de fornecimento de energia elétrica faz a leitura mensal dos medidores de consumo. Para cada consumidor, são digitados os seguintes dados:
+
+* Número do consumidor;
+* Quantidade de kWh consumidos durante o mês;
+* Tipo (código) do consumidor: 1 – residencial (R$ 0,03 por kWh); 2 – comercial (R$ 0,05 por kWh); 3 – industrial (R$ 0,07 por kWh).
+
+Os dados devem ser lidos até que seja encontrado um consumidor com o número 0 (zero). Crie um _script_ em Ruby que calcule e imprima:
+
+* O custo total para cada consumidor;
+* O total de consumo para os três tipos de consumidor;
+* A média de consumo dos tipos 1 e 2.
+
+12) Criar um _script_ em Ruby que leia vários números inteiros e apresente o fatorial de cada número. O _script_ se encerra quando o usuário digitar um número menor do que 1. Dica: o fatorial de um número é a multiplicação dele por todos os seus antecessores. Exemplo: o fatorial de 5 é 5 x 4 x 3 x 2 x 1 = 120;
+
+13) Crie um _script_ em Ruby que permita que o usuário digite a idade de várias pessoas. O _script_ deve parar quando uma idade negativa for digitada. O _script_ deve mostrar:
+
+* A média das idades;
+* Total de pessoas com menos de 21 anos;
+* Total de pessoas com mais de 50 anos;
+
+14) Crie um _script_ em Ruby que que leia vários números inteiros e imprima a quantidade de números primos dentre os números que foram digitados. O _script_ acaba quando se digita um número menor ou igual a 0 (zero);
+
+15) Crie um _script_ que permita ao usuário digitar vários números. Para cada número digitado, o _script_ deve verificar se ele é um número triangular. Dica: um número é triangular quando é resultado do produto de três números consecutivos. Exemplo: 2 x 3 x 4 = 24. O _script_ deve se encerrar quando o número 0 (zero) for digitado;
+
+16) Crie um _script_ em Ruby que permita ao usuário digitar vários números. O _script_ acaba quando se digita -9999. Por fim, o _script_ deve apresentar o maior número digitado pelo usuário;
+
+17) Crie um _script_ em Ruby que permita ao usuário digitar o número da conta e o saldo de várias pessoas. Após a digitação dos dados de cada conta, o _script_ deve apresentar o número da conta e informar se o saldo é positivo ou negativo. O _script_ deve terminar quando um número de conta negativo for digitado. Ao final, o _script_ deve mostrar o percentual de contas com o saldo negativo;
+
+18) Crie um _script_ em Ruby que leia vários números. A leitura se encerra quando o usuário digitar 0 (zero). O _script_ deve mostrar os números que forem múltiplos de sua posição na sequência. Exemplo: supondo que o usuário digitou os números 3, 7, 8 e 16. O número 3 foi o 1o a ser digitado, o número 7 foi o 2o, o 8 foi o 3o e o 16 foi o 4o. Nesse exemplo, o _script_ deve apresentar os valores 3 e 16, pois 1 (posição do número 3) é múltiplo de 3, e 4 (posição do número 16) é múltiplo de 16;
+
+19) Crie um _script_ em Ruby que calcule o Mínimo Múltiplo Comum (MMC) entre dois números lidos. Dica: o MMC de dois números é o menor número múltiplo dos dois números informados;
+
+20) Crie um _script_ em Ruby que calcule o Máximo Divisor Comum (MDC) entre dois números inteiros lidos. Dica: o MDC de dois números é o maior número divisor dos dois números informados;
+
+21) Repare a seguinte característica do número 3025: 30 + 25 = 55 e 552 = 3025. Criar um _script_ que possa ler vários números inteiros de 4 algarismos, um de cada vez, e diga se o número apresenta a mesma característica (repare que 3025 / 100 = 30 com resto 25). O _script_ termina quando for lido um valor menor que 1000 ou maior que 9999;
+
+22) Crie um _script_ que leia vários números inteiros positivos e imprima a média dos números múltiplos de 3. O _script_ deve se encerrar quando 0 (zero) for digitado;
+
+23) Criar um _script_ em Ruby que leia vários números inteiros positivos e imprima o produto dos números ímpares e a soma dos pares. O _script_ deve terminar quando o número 0 (zero) for digitado;
+
+24) Criar um _script_ em Ruby que possa ler um conjunto de pedidos de compra e calcule o valor total da compra. Cada pedido é composto pelos seguintes campos:
+
+* Número do pedido;
+* Preço unitário;
+* Quantidade.
+
+O _script_ deverá processar novos pedidos até que o usuário digite 0 (zero) como número do pedido;
+
+25) Criar um _script_ que leia a idade e sexo (0 para masculino e 1 para feminino) de várias pessoas. Calcule e imprima a idade média, o total de pessoas do sexo feminino com idade entre 30-45 (inclusive), e o número total de pessoas do sexo masculino. O _script_ termina quando se digita 0 (zero) para a idade;
+
+26) Na Usina de Angra dos Reis, os técnicos analisam a perda de massa de um material radioativo. Sabendo-se que esse material perde 25% de sua massa a cada 30 segundos, criar um _script_ em Ruby que leia um valor real que representa o peso do material e mostre o tempo necessário para que a massa desse material se torne menor que 10 gramas.
 
 # Referências
 

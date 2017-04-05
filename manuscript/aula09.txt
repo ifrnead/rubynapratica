@@ -108,7 +108,7 @@ Novamente, a única diferença entre usar o `until` ou `while` é que, com o whi
 
 Vale salientar também que os comandos `break`, `next` e `redo`, apresentados na aula passada, também funcionam com os laços condicionais.
 
-# Exercícios
+## Exercícios
 
 Algumas questões dessa atividade não precisam ser resolvidas, necessariamente, utilizando estruturas de repetição condicionais.
 
@@ -184,7 +184,7 @@ O _script_ deverá processar novos pedidos até que o usuário digite 0 (zero) c
 
 26) Na Usina de Angra dos Reis, os técnicos analisam a perda de massa de um material radioativo. Sabendo-se que esse material perde 25% de sua massa a cada 30 segundos, criar um _script_ em Ruby que leia um valor real que representa o peso do material e mostre o tempo necessário para que a massa desse material se torne menor que 10 gramas.
 
-# Referências
+## Referências
 
 POINT, T. Ruby Tutorial. Tutorials Point. 2015. Disponivel em: <http://www.tutorialspoint.com/ruby/>. Acesso em: 12 nov. 2015.
 

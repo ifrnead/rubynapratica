@@ -1,0 +1,304 @@
+# Aula 10 - Arrays
+
+## Introdução
+
+Até a presente aula, a única forma que conhecemos para armazenar dados na memória é através de variáveis simples, conforme aprendemos na [Aula 03](#aula03). Nesta aula, iremos aprender a trabalhar com _arrays_, que são estruturas capazes de armazenar dados organizados numa sequência, e que nos fornecem métodos para que possamos manipular esses dados (SOUZA, 2012).
+
+Observe a [Figura 01](#aula10-figura01), que mostra uma representação gráfica de uma variável chamada `idade` e que armazena o valor `9` na memória do computador. Se for necessário armazenar outro valor, 10 por exemplo, será preciso criar uma outra variável para armazená-lo, pois, se tentarmos utilizar a mesma variável, perderemos o valor que está guardado nela.
+
+{float=center}
+{#aula10-figura01}
+![Figura 01 - Representação gráfica de uma variável na memória.](images/variaveis.png)
+
+Para armazenar vários valores, o indicado é utilizar um _array_, pois essa é uma estrutura capaz de armazenar um conjunto de valores sem a necessidade de criar várias variáveis. Observe a [Figura 02](#aula10-figura02), que ilustra uma representação gráfica de um _array_ na memória do computador. Observe que o _array_ é capaz de guardar vários valores com apenas uma referência para a memória (idades).
+
+{float=center}
+{#aula10-figura02}
+![Figura 02 - Representação gráfica de um array na memória.](images/arrays.png)
+
+Para melhor ilustrar a estrutura de um _array_ e como eles funcionam, observe a [Figura 03](#aula10-figura03).
+
+{float=center}
+{#aula10-figura03}
+![Figura 03 - Estrutura de um array.](images/estrutura-array.png)
+
+Conforme já foi explicado anteriormente, o _array_ é uma estrutura capaz de guardar um conjunto de valores. Cada valor é guardado numa posição do _array_ e cada posição é endereçada (também chamamos de indexada) por um índice, que é um número inteiro que marca cada posição no _array_. Portanto, conforme ilustrado na [Figura 03](#aula10-figura03), o valor da posição 0 é 10, o valor da posição 1 é 14, o valor da posição 2 é 20, etc. O primeiro índice sempre será 0 (zero), portanto, num _array_ com X posições, o último índice será sempre X - 1.
+
+# Arrays em Ruby
+
+Em Ruby os _arrays_ são dinâmicos, portanto você não precisa definir seu tamanho inicial, mas se preferir definir você também pode. Caso tenha criado um _array_ com 10 posições e precise guardar um novo dado no array, você poderá fazê-lo sem problemas pois o _array_ será expandido automaticamente conforme a necessidade.
+
+Diferentemente de outras linguagens, em Ruby os _arrays_ também podem guardar tipos de dados distintos. Portanto, você pode guardar uma String na primeira posição, um número inteiro na segunda, um número real na terceira, um objeto na quarta, etc.
+
+## Criando um Array
+
+Primeiramente, vamos aprender algumas formas de criar um _array_ em Ruby. Para isso, abra o IRB, digite a primeira linha do [Exemplo de código 01](#aula10-codigo01) e observe a resposta dada pelo IRB.
+
+{#aula10-codigo01}
+<<[Exemplo de código 01 - Criando um array em Ruby](code/exemplo101.rb)
+
+Digitando `meu_array = Array.new` (atenção para o A maiúsculo de Array), estamos criando um novo _array_ vazio e guardando-o na variável `meu_array`. Sim, são as variáveis que guardam os _arrays_, que, por sua vez, são capazes de guardar um conjunto de valores. Vale salientar que o nome da variável é escolhido por você e deve obedecer às regras de nomenclatura de variáveis apresentadas na [Aula 03](#aula03).
+
+{#aula10-atividade01}
+X> ## Atividade 10.1
+X>
+X> Abra o IRB e crie um novo _array_ vazio, conforme ilustrado no [Exemplo de código 01](#aula10-codigo01).
+
+O [Exemplo de código 02](#aula10-codigo02) apresenta como criar um _array_ com 10 posições utilizando `Array.new`.
+
+{#aula10-codigo02}
+<<[Exemplo de código 02 - Criando um array com 10 posições](code/exemplo102.rb)
+
+Observe que a resposta dada pelo IRB indica que foi criado um novo array com 10 posições, na qual cada uma possui o valor `nil` (nulo).
+
+{#aula10-atividade02}
+X> ## Atividade 10.2
+X>
+X> Abra o IRB e crie um novo _array_ vazio com cinco posições usando `Array.new`, conforme ilustrado no [Exemplo de código 02](#aula10-codigo02).
+
+Outra forma de criar um _array_ é ilustrada no [Exemplo de código 03](#aula10-codigo03).
+
+{#aula10-codigo03}
+<<[Exemplo de código 03 - Criando um array em Ruby](code/exemplo103.rb)
+
+Atribuindo `[]` a uma variável estamos criando um novo _array_ vazio.
+
+{#aula10-atividade03}
+X> ## Atividade 10.3
+X>
+X> Abra o IRB e crie um novo _array_ vazio usando `[]`, conforme ilustrado no [Exemplo de código 03](#aula10-codigo03).
+
+Utilizando essa mesma sintaxe podemos criar um _array_ com valores iniciais, conforme apresenta o [Exemplo de código 04](#aula10-codigo04).
+
+{#aula10-codigo04}
+<<[Exemplo de código 04 - Criando um array em Ruby](code/exemplo104.rb)
+
+Observe, na resposta do IRB, que foi criado um novo _array_ com os valores definidos na primeira linha.
+
+{#aula10-atividade04}
+X> ## Atividade 10.4
+X>
+X> Abra o IRB e crie um _array_ com valores iniciais quaisquer, conforme ilustrado no [Exemplo de código 04](#aula10-codigo04).
+
+Conforme explicado anteriormente, os _arrays_ em Ruby permitem guardar diferentes tipos de dados. Confira essa situação no [Exemplo de código 05](#aula10-codigo05).
+
+{#aula10-codigo05}
+<<[Exemplo de código 05 - Criando um array em Ruby](code/exemplo105.rb)
+
+No exemplo anterior, criamos um _array_ com cinco posições: a primeira contém um número inteiro, a segunda contém uma String, a terceira contém um valor booleano, a quarta contém um nulo e a quinta contém um número real.
+
+{#aula10-atividade05}
+X> ## Atividade 10.5
+X>
+X> Abra o IRB e crie um novo _array_ com valores iniciais quaisquer, mas sendo de tipos diferentes, conforme ilustra o [Exemplo de código 05](#aula10-codigo05).
+
+## Guardando valores no array
+
+Agora vamos aprender como guardar valores e acessar valores em um _array_. Existem pelo menos duas formas de se adicionar valores a um _array_: você pode especificar uma posição (índice) do _array_ para guardar o novo valor ou usar a próxima posição disponível. Inicialmente vamos aprender como guardar um valor no _array_ usando a próxima posição disponível.
+
+Para melhor ilustrar, vamos utilizar como exemplo o _array_ apresentado no [Exemplo de código 04](#aula10-codigo04), que é apresentado graficamente abaixo.
+
+| 10 | 20 | 30 | 40 | 50 |
+| 0  | 1  | 2  | 3  | 4  |
+
+O _array_ que estamos usando como exemplo possui cinco posições, e todas elas já estão ocupadas com valores. Portanto, qual é a próxima posição disponível nesse _array_? A posição com índice 5! Lembre-se que os _arrays_ em Ruby são automaticamente expansíveis, portanto você pode adicionar novos valores mesmo que não haja posições vazias.
+
+Observe o [Exemplo de código 06](#aula10-codigo06), que ilustra como adicionar um novo valor ao _array_.
+
+{#aula10-codigo06}
+<<[Exemplo de código 06 - Adicionando um novo elemento na próxima posição disponível](code/exemplo106.rb)
+
+Conforme ilustrado na linha 1 do [Exemplo de código 06](#aula10-codigo06), o operador `<<` permite a adição de um novo valor ao _array_. Esse novo valor será adicionado na próxima posição disponível, que nesse caso é a sexta posição (índice 5). Observe a resposta do IRB que mostra que o novo valor foi adicionado no final do _array_ (índice 5).
+
+{#aula10-atividade06}
+X> ## Atividade 10.6
+X>
+X> Abra o IRB, crie um _array_ com valores iniciais quaisquer e adicione um novo elemento usando o operador `<<`, conforme ilustrado no [Exemplo de código 06](#aula10-codigo06).
+
+A segunda forma que iremos apresentar para adicionar novos elementos a um _array_ é aquela em que o novo elemento é colocado numa posição (índice) específica. Observe como fazer isso no [Exemplo de código 07](#aula10-codigo07).
+
+{lang=irb}
+    > meu_array
+    => [10, 20, 30, 40, 50, 60]
+    > meu_array[0] = "dez"
+    => ["dez", 20, 30, 40, 50, 60]
+<<[Exemplo de código 07 - Adicionando um novo elemento numa posição específica]
+
+Observe, no [Exemplo de código 07](#aula10-codigo07), que estamos usando o mesmo _array_ produzido no exemplo anterior. Para adicionar um elemento numa posição específica do _array_, basta definir o índice entre `[` e `]`, conforme ilustrado na linha 3. Nesse exemplo, adicionamos "dez" na primeira posição (índice 0) do _array_, substituindo o valor que havia nessa posição.
+
+{#aula10-atividade07}
+X> ## Atividade 10.7
+X>
+X> Abra o IRB, crie um _array_ com valores iniciais quaisquer e adicione um novo elemento numa posição específica, conforme ilustrado no [Exemplo de código 07](#aula10-codigo07).
+
+## Acessando valores do array
+
+Para acessar valores armazenados em um _array_, basta usar o nome da variável que guarda o _array_, seguido do índice da posição que se deseja acessar entre `[` e `]`. Observe, no [Exemplo de código 08](#aula10-codigo08), como acessar o valor armazenado na segunda posição (índice 1).
+
+{lang=irb}
+    > meu_array
+    => [“dez”, 20, 30, 40, 50, 60]
+    > meu_array[1]
+    20
+<<[Exemplo de código 08 - Acessando valores armazenados no array]
+
+Caso você acesse uma posição que não guarda valor algum, o resultado será `nil`.
+
+{#aula10-atividade08}
+X> ## Atividade 10.8
+X>
+X> Abra o IRB, crie um _array_ com valores iniciais quaisquer e depois acesse uma posição qualquer do _array_, conforme ilustrado no [Exemplo de código 08](#aula10-codigo08).
+
+## Métodos e operadores auxiliares
+
+Existem alguns métodos e operadores que auxiliam a manipulação de dados em _arrays_. Nesta seção, iremos apresentar apenas alguns deles, mas
+você pode obter maiores informações sobre eles e sobre outros métodos e operadores na página oficial da documentação do Ruby: <http://docs.ruby-lang.org/en/2.0.0/Array.html> (em inglês).
+
+Para ilustrar os métodos e operadores auxiliares, iremos utilizar os dois _arrays_ apresentados no [Exemplo de código 09](#aula10-codigo09).
+
+{lang=irb}
+    > array1 = [1, 2, 3]
+    => [1, 2, 3]
+    > array2 = [3, 4, 5]
+    => [3, 4, 5]
+<<[Exemplo de código 09 - Arrays que serão usados como exemplo]
+
+O operador `&`, ilustrado no [Exemplo de código 10](#aula10-codigo10), retorna (dá como resultado) um novo _array_ contendo os elementos em comum nos dois _arrays_ (`array1` e `array2`), sem duplicatas.
+
+{lang=irb}
+    > array1 & array2
+    => [3]
+<<[Exemplo de código 10 - Operador &]
+
+O operador `+`, ilustrado no [Exemplo de código 11](#aula10-codigo11), retorna um novo _array_ produzido pela concatenação (união) dos dois _arrays_ (`array1` e `array2`).
+
+{lang=irb}
+    > array1 + array2
+    => [1, 2, 3, 3, 4, 5]
+<<[Exemplo de código 11 - Operador +]
+
+O operador `-`, ilustrado no [Exemplo de código 12](#aula10-codigo12), retorna uma cópia do _array1_ removendo os elementos que também constam no _array2_.
+
+{lang=irb}
+    > array1 - array2
+    => [1, 2]
+<<[Exemplo de código 12 - Operador -]
+
+O operador `==`, ilustrado no [Exemplo de código 13](#aula10-codigo13), irá retornar verdadeiro caso o `array1` e o `array2` tenham a mesma quantidade de elementos e se cada elemento do `array1` for igual ao seu correspondente (mesma posição) no `array2`.
+
+{lang=irb}
+    > array1 == array2
+    => false
+<<[Exemplo de código 13 - Operador ==]
+
+O método `clear`, ilustrado no [Exemplo de código 14](#aula10-codigo14), remove todos os elementos do `array1`.
+
+{lang=irb}
+    > array1.clear
+    => []
+<<[Exemplo de código 14 - Método clear]
+
+O método `delete`, ilustrado no [Exemplo de código 15](#aula10-codigo15), recebe um elemento como parâmetro e o remove do _array_. O método irá retornar o próprio valor removido ou `nil` caso o elemento passado como parâmetro não seja encontrado no _array_.
+
+{lang=irb}
+    > array1.delete(1)
+    => 1
+<<[Exemplo de código 15 - Método delete]
+
+O método `delete_at`, ilustrado no [Exemplo de código 16](#aula10-codigo16), recebe um índice (número inteiro) como parâmetro e remove o elemento armazenado naquela posição. O método irá retornar o valor removido ou `nil` caso o índice passado como parâmetro esteja fora das dimensões do _array_.
+
+{lang=irb}
+    > array2.delete_at(1)
+    => 4
+<<[Exemplo de código 16 - Método delete_at]
+
+O método `empty?`, ilustrado no [Exemplo de código 17](#aula10-codigo17), irá retornar verdadeiro caso o _array_ esteja vazio e falso caso contrário.
+
+{lang=irb}
+    > array1.empty?
+    => false
+<<[Exemplo de código 17 - Método empty?]
+
+O método `include?`, ilustrado no [Exemplo de código 18](#aula10-codigo18), recebe um elemento como parâmetro e retorna verdadeiro caso esse elemento esteja presente dentro do _array_, e falso caso contrário.
+
+{lang=irb}
+    > array1.include?(1)
+    => true
+<<[Exemplo de código 18 - Método include?]
+
+O método `size`, ilustrado no [Exemplo de código 19](#aula10-codigo19), retorna o número de elementos armazenados no _array_.
+
+{lang=irb}
+    > array2.size
+    => 3
+<<[Exemplo de código 19 - Método size]
+
+## Iterando em arrays
+
+É muito comum, em diversas situações, precisarmos iterar, ou seja, verificar cada um dos elementos de um _array_, e fazer algum processamento se for necessário. Nesta seção, iremos apresentar como iterar entre os elementos de um _array_ usando alguns dos laços já apresentados em aulas anteriores.
+
+Confira o [Exemplo de código 20](#aula10-codigo20) que ilustra como iterar entre os elementos de um _array_ usando o `each`.
+
+{#aula10-codigo20}
+<<[Exemplo de código 20 - Iterando entre os elementos do array com each](code/exemplo1020.rb)
+
+{#aula10-atividade09}
+X> ## Atividade 10.9
+X>
+X> Crie um _script_ em Ruby com o código apresentado no [Exemplo de código 20](#aula10-codigo20), execute-o e observe o resultado.
+
+Na linha 1, criamos um _array_ com cinco elementos numéricos quaisquer. Na linha 3, usamos o método `each` no `meu_array` para que possamos iterar entre seus elementos. A cada iteração do laço, um dos valores armazenados no `meu_array` será atribuído à variável `elemento` (definida entre `|` e `|`). Portanto, nesse caso, na primeira iteração, o valor de `elemento` será `10`; na segunda iteração, o valor de `elemento` será `20`; na terceira iteração, o valor de `elemento` será `30`, e assim sucessivamente, até que a variável `elemento` tenha assumido o valor de cada posição do `meu_array`. Vale salientar que, o nome da variável `elemento` é definido pelo próprio programador, obedecendo as normas de nomenclatura de variáveis.
+
+Outra forma de iterar entre os elementos de um _array_ usando o método `each` é passando um bloco de código através de chaves (`{` e `}`), conforme ilustra o [Exemplo de código 21](#aula10-codigo21).
+
+{#aula10-codigo21}
+<<[Exemplo de código 21 - Iterando entre os elementos do array com each e bloco de código](code/exemplo1021.rb)
+
+{#aula10-atividade10}
+X> ## Atividade 10.10
+X>
+X> Crie um _script_ em Ruby com o código apresentado no [Exemplo de código 21](#aula10-codigo21), execute-o e observe o resultado.
+
+Novamente o nome da variável auxiliar é definido entre `|` e `|`, contudo, ao invés de usar o `do` e o `end` como marcadores de início e fim do bloco de código, estamos usando as chaves (`{` e `}`). A variável `elemento` irá assumir cada valor armazenado no `meu_array`. Outra forma de iterar entre os elementos de um _array_ é usando a instrução `for`, conforme ilustra o [Exemplo de código 22](#aula10-codigo22).
+
+{#aula10-codigo22}
+<<[Exemplo de código 22 - Iterando entre os elementos do array com for](code/exemplo1022.rb)
+
+{#aula10-atividade11}
+X> ## Atividade 10.11
+X>
+X> Crie um _script_ em Ruby com o código apresentado no [Exemplo de código 22](#aula10-codigo22), execute-o e observe o resultado.
+
+Usando o `for`, o nome da variável auxiliar é definido logo após o `for` e o nome da variável que guarda o _array_ é colocado após o `in`. No [Exemplo de código 22](#aula10-codigo22), a variável `elemento` irá assumir cada um dos valores armazenados no `meu_array`.
+
+## Exercícios
+
+1) Crie um _script_ em Ruby que leia 10 nomes e armazene-os num _array_. Imprimir os nomes numa lista numerada;
+
+2) Crie um _script_ em Ruby que leia 15 números inteiros e guarde-os em um _array_. Depois, imprimir cada um dos números, dizendo se ele é par ou ímpar;
+
+3) Crie um _script_ em Ruby que leia e armazene 8 números inteiros em um _array_ e imprima todos os números. Ao final, imprimir o total de números múltiplos de 6;
+
+4) Crie um _script_ em Ruby que leia e armazene 10 números inteiros em um _array_. Para cada valor guardado numa posição “p”, verificar se o valor contido na posição “p-1” é divisor do valor guardado na posição “p”;
+
+5) Crie um _script_ em Ruby que leia e armazene os nomes e os salários de 20 pessoas. Calcular e armazenar o novo salário, sabendo-se que houve um reajuste de 8%. Imprimir uma listagem com os nomes e o novo salário de cada funcionário;
+
+6) Crie um _script_ em Ruby que leia e armazene os nomes e as idades de 10 pessoas. Depois, o algoritmo deve imprimir o nome e a idade da pessoa mais nova, e o nome e a idade da pessoa mais velha;
+
+7) Crie um _script_ em Ruby que leia 5 números inteiros para o conjunto A, e 5 números inteiros para o conjunto B. Depois, o _script_ deve imprimir o conjunto intersecção entre A e B, ou seja, imprimir os valores que estão em A e em B;
+
+8) Crie um _script_ em Ruby que leia 10 números inteiros e armazene-os num _array_. Depois, o _script_ deve calcular o fatorial de cada um desses 10 números, e armazenar os resultados num outro _array_. Depois, imprimir os valores contidos nesse segundo _array_;
+
+9) Crie um _script_ em Ruby que leia 10 números inteiros e armazene-os num _array_. Depois, o _script_ deve ordenar esses números em ordem crescente e imprimi-los;
+
+10) Crie um _script_ em Ruby que leia 10 números inteiros e armazene-os num _array_. Depois, o _script_ deve ordenar esses números em ordem decrescente e imprimi-los.
+
+## Referências
+
+POINT, T. Ruby Tutorial. Tutorials Point. 2015. Disponivel em: <http://www.tutorial-spoint.com/ruby/>. Acesso em: 12 nov. 2015.
+
+RANGEL, E. Conhecendo Ruby. [S.l.]: Leanpub, 2014.
+
+RUBY LANG. Class Array. Ruby Documentation. 2015. Disponivel em: <http://docs.ruby-lang.org/en/2.0.0/Array.html>. Acesso em: 04 fev. 2016.
+
+SOUZA, L. Ruby: aprenda a programar na linguagem mais divertida. 1. ed. São Paulo: Casa do Código, 2012. v. I.

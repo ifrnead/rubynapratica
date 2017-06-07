@@ -119,7 +119,7 @@ X> Abra o IRB, crie um _array_ com valores iniciais quaisquer e adicione um novo
 A segunda forma que iremos apresentar para adicionar novos elementos a um _array_ é aquela em que o novo elemento é colocado numa posição (índice) específica. Observe como fazer isso no [Exemplo de código 07](#aula10-codigo07).
 
 {#aula10-codigo07}
-<<[Exemplo de código 07 - Adicionando um novo elemento numa posição específica](code/exemplo1007.rb)
+<<[Exemplo de código 07 - Adicionando um novo elemento numa posição específica](code/exemplo107.rb)
 
 Observe, no [Exemplo de código 07](#aula10-codigo07), que estamos usando o mesmo _array_ produzido no exemplo anterior. Para adicionar um elemento numa posição específica do _array_, basta definir o índice entre `[` e `]`, conforme ilustrado na linha 3. Nesse exemplo, adicionamos "dez" na primeira posição (índice 0) do _array_, substituindo o valor que havia nessa posição.
 
@@ -132,12 +132,8 @@ X> Abra o IRB, crie um _array_ com valores iniciais quaisquer e adicione um novo
 
 Para acessar valores armazenados em um _array_, basta usar o nome da variável que guarda o _array_, seguido do índice da posição que se deseja acessar entre `[` e `]`. Observe, no [Exemplo de código 08](#aula10-codigo08), como acessar o valor armazenado na segunda posição (índice 1).
 
-{lang=irb}
-    > meu_array
-    => [“dez”, 20, 30, 40, 50, 60]
-    > meu_array[1]
-    20
-<<[Exemplo de código 08 - Acessando valores armazenados no array]
+{#aula10-codigo08}
+<<[Exemplo de código 08 - Acessando valores armazenados no array](code/exemplo108.rb)
 
 Caso você acesse uma posição que não guarda valor algum, o resultado será `nil`.
 
@@ -153,82 +149,58 @@ você pode obter maiores informações sobre eles e sobre outros métodos e oper
 
 Para ilustrar os métodos e operadores auxiliares, iremos utilizar os dois _arrays_ apresentados no [Exemplo de código 09](#aula10-codigo09).
 
-{lang=irb}
-    > array1 = [1, 2, 3]
-    => [1, 2, 3]
-    > array2 = [3, 4, 5]
-    => [3, 4, 5]
-<<[Exemplo de código 09 - Arrays que serão usados como exemplo]
+{#aula10-codigo09}
+<<[Exemplo de código 09 - Arrays que serão usados como exemplo](code/exemplo109.rb)
 
 O operador `&`, ilustrado no [Exemplo de código 10](#aula10-codigo10), retorna (dá como resultado) um novo _array_ contendo os elementos em comum nos dois _arrays_ (`array1` e `array2`), sem duplicatas.
 
-{lang=irb}
-    > array1 & array2
-    => [3]
-<<[Exemplo de código 10 - Operador &]
+{#aula10-codigo10}
+<<[Exemplo de código 10 - Operador &](code/exemplo1010.rb)
 
 O operador `+`, ilustrado no [Exemplo de código 11](#aula10-codigo11), retorna um novo _array_ produzido pela concatenação (união) dos dois _arrays_ (`array1` e `array2`).
 
-{lang=irb}
-    > array1 + array2
-    => [1, 2, 3, 3, 4, 5]
-<<[Exemplo de código 11 - Operador +]
+{#aula10-codigo11}
+<<[Exemplo de código 11 - Operador +](code/exemplo1011.rb)
 
 O operador `-`, ilustrado no [Exemplo de código 12](#aula10-codigo12), retorna uma cópia do _array1_ removendo os elementos que também constam no _array2_.
 
-{lang=irb}
-    > array1 - array2
-    => [1, 2]
-<<[Exemplo de código 12 - Operador -]
+{#aula10-codigo12}
+<<[Exemplo de código 12 - Operador -](code/exemplo1012.rb)
 
 O operador `==`, ilustrado no [Exemplo de código 13](#aula10-codigo13), irá retornar verdadeiro caso o `array1` e o `array2` tenham a mesma quantidade de elementos e se cada elemento do `array1` for igual ao seu correspondente (mesma posição) no `array2`.
 
-{lang=irb}
-    > array1 == array2
-    => false
-<<[Exemplo de código 13 - Operador ==]
+{#aula10-codigo13}
+<<[Exemplo de código 13 - Operador ==](code/exemplo1013.rb)
 
 O método `clear`, ilustrado no [Exemplo de código 14](#aula10-codigo14), remove todos os elementos do `array1`.
 
-{lang=irb}
-    > array1.clear
-    => []
-<<[Exemplo de código 14 - Método clear]
+{#aula10-codigo14}
+<<[Exemplo de código 14 - Método clear](code/exemplo1014.rb)
 
 O método `delete`, ilustrado no [Exemplo de código 15](#aula10-codigo15), recebe um elemento como parâmetro e o remove do _array_. O método irá retornar o próprio valor removido ou `nil` caso o elemento passado como parâmetro não seja encontrado no _array_.
 
-{lang=irb}
-    > array1.delete(1)
-    => 1
-<<[Exemplo de código 15 - Método delete]
+{#aula10-codigo15}
+<<[Exemplo de código 15 - Método delete](code/exemplo1015.rb)
 
 O método `delete_at`, ilustrado no [Exemplo de código 16](#aula10-codigo16), recebe um índice (número inteiro) como parâmetro e remove o elemento armazenado naquela posição. O método irá retornar o valor removido ou `nil` caso o índice passado como parâmetro esteja fora das dimensões do _array_.
 
-{lang=irb}
-    > array2.delete_at(1)
-    => 4
-<<[Exemplo de código 16 - Método delete_at]
+{#aula10-codigo16}
+<<[Exemplo de código 16 - Método delete_at](code/exemplo1016.rb)
 
 O método `empty?`, ilustrado no [Exemplo de código 17](#aula10-codigo17), irá retornar verdadeiro caso o _array_ esteja vazio e falso caso contrário.
 
-{lang=irb}
-    > array1.empty?
-    => false
-<<[Exemplo de código 17 - Método empty?]
+{#aula10-codigo17}
+<<[Exemplo de código 17 - Método empty?](code/exemplo1017.rb)
 
 O método `include?`, ilustrado no [Exemplo de código 18](#aula10-codigo18), recebe um elemento como parâmetro e retorna verdadeiro caso esse elemento esteja presente dentro do _array_, e falso caso contrário.
 
-{lang=irb}
-    > array1.include?(1)
-    => true
-<<[Exemplo de código 18 - Método include?]
+{#aula10-codigo18}
+<<[Exemplo de código 18 - Método include?](code/exemplo1018.rb)
 
 O método `size`, ilustrado no [Exemplo de código 19](#aula10-codigo19), retorna o número de elementos armazenados no _array_.
 
-{lang=irb}
-    > array2.size
-    => 3
-<<[Exemplo de código 19 - Método size]
+{#aula10-codigo19}
+<<[Exemplo de código 19 - Método size](code/exemplo1019.rb)
 
 ### Iterando em arrays
 

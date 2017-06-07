@@ -24,13 +24,13 @@ Para melhor ilustrar a estrutura de um _array_ e como eles funcionam, observe a 
 
 Conforme já foi explicado anteriormente, o _array_ é uma estrutura capaz de guardar um conjunto de valores. Cada valor é guardado numa posição do _array_ e cada posição é endereçada (também chamamos de indexada) por um índice, que é um número inteiro que marca cada posição no _array_. Portanto, conforme ilustrado na [Figura 03](#aula10-figura03), o valor da posição 0 é 10, o valor da posição 1 é 14, o valor da posição 2 é 20, etc. O primeiro índice sempre será 0 (zero), portanto, num _array_ com X posições, o último índice será sempre X - 1.
 
-# Arrays em Ruby
+## Arrays em Ruby
 
 Em Ruby os _arrays_ são dinâmicos, portanto você não precisa definir seu tamanho inicial, mas se preferir definir você também pode. Caso tenha criado um _array_ com 10 posições e precise guardar um novo dado no array, você poderá fazê-lo sem problemas pois o _array_ será expandido automaticamente conforme a necessidade.
 
 Diferentemente de outras linguagens, em Ruby os _arrays_ também podem guardar tipos de dados distintos. Portanto, você pode guardar uma String na primeira posição, um número inteiro na segunda, um número real na terceira, um objeto na quarta, etc.
 
-## Criando um Array
+### Criando um Array
 
 Primeiramente, vamos aprender algumas formas de criar um _array_ em Ruby. Para isso, abra o IRB, digite a primeira linha do [Exemplo de código 01](#aula10-codigo01) e observe a resposta dada pelo IRB.
 
@@ -92,13 +92,14 @@ X> ## Atividade 10.5
 X>
 X> Abra o IRB e crie um novo _array_ com valores iniciais quaisquer, mas sendo de tipos diferentes, conforme ilustra o [Exemplo de código 05](#aula10-codigo05).
 
-## Guardando valores no array
+### Guardando valores no array
 
 Agora vamos aprender como guardar valores e acessar valores em um _array_. Existem pelo menos duas formas de se adicionar valores a um _array_: você pode especificar uma posição (índice) do _array_ para guardar o novo valor ou usar a próxima posição disponível. Inicialmente vamos aprender como guardar um valor no _array_ usando a próxima posição disponível.
 
 Para melhor ilustrar, vamos utilizar como exemplo o _array_ apresentado no [Exemplo de código 04](#aula10-codigo04), que é apresentado graficamente abaixo.
 
 | 10 | 20 | 30 | 40 | 50 |
+|:--:|:--:|:--:|:--:|:--:|
 | 0  | 1  | 2  | 3  | 4  |
 
 O _array_ que estamos usando como exemplo possui cinco posições, e todas elas já estão ocupadas com valores. Portanto, qual é a próxima posição disponível nesse _array_? A posição com índice 5! Lembre-se que os _arrays_ em Ruby são automaticamente expansíveis, portanto você pode adicionar novos valores mesmo que não haja posições vazias.
@@ -117,12 +118,8 @@ X> Abra o IRB, crie um _array_ com valores iniciais quaisquer e adicione um novo
 
 A segunda forma que iremos apresentar para adicionar novos elementos a um _array_ é aquela em que o novo elemento é colocado numa posição (índice) específica. Observe como fazer isso no [Exemplo de código 07](#aula10-codigo07).
 
-{lang=irb}
-    > meu_array
-    => [10, 20, 30, 40, 50, 60]
-    > meu_array[0] = "dez"
-    => ["dez", 20, 30, 40, 50, 60]
-<<[Exemplo de código 07 - Adicionando um novo elemento numa posição específica]
+{#aula10-codigo07}
+<<[Exemplo de código 07 - Adicionando um novo elemento numa posição específica](code/exemplo1007.rb)
 
 Observe, no [Exemplo de código 07](#aula10-codigo07), que estamos usando o mesmo _array_ produzido no exemplo anterior. Para adicionar um elemento numa posição específica do _array_, basta definir o índice entre `[` e `]`, conforme ilustrado na linha 3. Nesse exemplo, adicionamos "dez" na primeira posição (índice 0) do _array_, substituindo o valor que havia nessa posição.
 
@@ -131,7 +128,7 @@ X> ## Atividade 10.7
 X>
 X> Abra o IRB, crie um _array_ com valores iniciais quaisquer e adicione um novo elemento numa posição específica, conforme ilustrado no [Exemplo de código 07](#aula10-codigo07).
 
-## Acessando valores do array
+### Acessando valores do array
 
 Para acessar valores armazenados em um _array_, basta usar o nome da variável que guarda o _array_, seguido do índice da posição que se deseja acessar entre `[` e `]`. Observe, no [Exemplo de código 08](#aula10-codigo08), como acessar o valor armazenado na segunda posição (índice 1).
 
@@ -149,7 +146,7 @@ X> ## Atividade 10.8
 X>
 X> Abra o IRB, crie um _array_ com valores iniciais quaisquer e depois acesse uma posição qualquer do _array_, conforme ilustrado no [Exemplo de código 08](#aula10-codigo08).
 
-## Métodos e operadores auxiliares
+### Métodos e operadores auxiliares
 
 Existem alguns métodos e operadores que auxiliam a manipulação de dados em _arrays_. Nesta seção, iremos apresentar apenas alguns deles, mas
 você pode obter maiores informações sobre eles e sobre outros métodos e operadores na página oficial da documentação do Ruby: <http://docs.ruby-lang.org/en/2.0.0/Array.html> (em inglês).
@@ -233,7 +230,7 @@ O método `size`, ilustrado no [Exemplo de código 19](#aula10-codigo19), retorn
     => 3
 <<[Exemplo de código 19 - Método size]
 
-## Iterando em arrays
+### Iterando em arrays
 
 É muito comum, em diversas situações, precisarmos iterar, ou seja, verificar cada um dos elementos de um _array_, e fazer algum processamento se for necessário. Nesta seção, iremos apresentar como iterar entre os elementos de um _array_ usando alguns dos laços já apresentados em aulas anteriores.
 

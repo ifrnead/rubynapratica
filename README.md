@@ -24,6 +24,7 @@
 - [ ] Metaprogramação
 - [ ] Gerenciamento de dependências
 - [ ] Concorrência e paralelismo
+- [ ] Design Patterns
 
 ## Como posso utilizar o livro?
 

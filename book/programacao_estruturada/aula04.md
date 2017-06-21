@@ -14,8 +14,13 @@ Para criar um _script_, podemos utilizar um editor de textos qualquer como o Blo
 
 Crie um novo arquivo usando o Atom ou seu editor de código preferido. No Atom, clique no menu File (canto superior esquerdo) e depois em New File. O Atom irá abrir uma nova janela, permitindo que você possa editar o conteúdo desse novo arquivo. Digite o código abaixo, conforme ilustra o [Exemplo de código 01](#aula04-codigo01).
 
-{#aula04-codigo01}
-<<[Exemplo de código 01 - Olá mundo!](code/exemplo41.rb)
+```ruby
+puts "Hello world!"
+a = "Hello"
+b = "World"
+puts "#{a} #{b}!"
+```
+###### Exemplo de código 01 - Olá mundo {#aula04-codigo01}
 
 Observe que, no [Exemplo de código 01](#aula04-codigo01), incluímos a numeração das linhas do código, portanto você não precisa digitar o número que aparece no início de cada linha. Após digitar o código acima, salve o arquivo clicando em _File_ (canto superior esquerdo) e depois em _Save_. Uma janela será aberta para que você indique o nome e o local onde o arquivo deverá ser salvo. Salve o arquivo com o nome "exemplo1.rb" (sem aspas) no local onde você preferir. Você pode usar outro nome para o seu arquivo, contudo ele precisa ter a extensão ".rb", pois é isso o que vai indicar para o nosso Windows que esse arquivo é um _script_ escrito em Ruby.
 

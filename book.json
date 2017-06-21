@@ -1,0 +1,30 @@
+{
+  "root": "./book",
+  "title": "Ruby na Prática: Programação Estruturada e Orientada a Objetos em Ruby",
+  "description": "Livro didático construído colaborativamente para ensino de programação estruturada e orientada a objetos em Ruby.",
+  "author": "Jalerson Lima",
+  "language": "pt",
+  "plugins": [
+    "youtube",
+    "disqus",
+    "expand-active-chapter",
+    "block-align",
+    "snippet@git+https://github.com/cucumber-ltd/gitbook-plugin-snippet.git",
+    "-highlight",
+    "prism",
+    "prism-themes"
+  ],
+  "pluginsConfig": {
+    "disqus": {
+      "shortName": "rubynapratica"
+    },
+    "snippet": {
+      "problem": "fail"
+    },
+    "prism": {
+      "css": [
+        "prismjs/themes/prism-okaidia.css"
+      ]
+    }
+  }
+}

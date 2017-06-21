@@ -1,0 +1,14 @@
+p, blockquote, ul, ol, dl, table, pre {
+  text-align: justify;
+}
+
+.markdown-section h6 {
+  margin-top: 0;
+  text-align: center;
+  font-size: 0.75em;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}

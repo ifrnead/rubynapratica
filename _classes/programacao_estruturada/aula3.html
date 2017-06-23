@@ -1,3 +1,11 @@
+---
+title: Memória, variáveis e constantes
+author: Jalerson Lima
+layout: content
+unit: programacao_estruturada
+order: 3
+---
+
 # Aula 03 - Memória, variáveis e constantes {#aula03}
 
 ## Memória
@@ -21,9 +29,10 @@ Agora vamos aprender como guardar informações na memória temporária do nosso
 
 Em Ruby, criar uma variável e armazenar um dado dentro dela é muito simples. Abra o IRB, digite o código abaixo e aperte ENTER.
 
-{lang=irb}
-    irb(main):001:0> numero = 3
-    => 3
+```
+irb(main):001:0> numero = 3
+=> 3
+```
 
 No exemplo anterior, criamos uma variável chamada `numero` (sem acento) e armazenamos o valor 3 dentro dela.
 
@@ -33,7 +42,7 @@ O primeiro detalhe a ser percebido no exemplo anterior é que as variáveis poss
 
 * Nomes de variáveis não podem começar com número. Por exemplo, você não pode criar uma variável chamada 3x;
 
-* Se você precisar usar um nome composto (com mais de uma palavra) para a sua variável, use o underline (_) para separar as palavras. Por exemplo: `nome_completo`;
+* Se você precisar usar um nome composto (com mais de uma palavra) para a sua variável, use o underline (\_) para separar as palavras. Por exemplo: `nome_completo`;
 
 * As palavras abaixo são reservadas pela linguagem Ruby, portanto, você não poderá usar nenhuma delas para nomear as suas variáveis.
 
@@ -49,81 +58,88 @@ O primeiro detalhe a ser percebido no exemplo anterior é que as variáveis poss
 
 Ao longo desse livro, iremos estudar e conhecer a maioria das palavras reservadas. Abaixo você pode conferir alguns exemplos válidos de criação de variáveis.
 
-{lang=irb}
-    irb(main):001:0> numero = 2
-    => 2
-    irb(main):002:0> nome_completo = "Adam Sandler"
-    => "Adam Sandler"
-    irb(main):003:0> idade = 26
-    => 26
-    irb(main):004:0> preco_promocional = 2.33
-    => 2.33
+```
+irb(main):001:0> numero = 2
+=> 2
+irb(main):002:0> nome_completo = "Adam Sandler"
+=> "Adam Sandler"
+irb(main):003:0> idade = 26
+=> 26
+irb(main):004:0> preco_promocional = 2.33
+=> 2.33
+```
 
 Perceba que estamos usando nomes de variáveis que indicam o que está guardado nelas. É muito comum ver aqueles que estão aprendendo a linguagem usando péssimos nomes para variáveis, conforme ilustramos abaixo.
 
-{lang=irb}
-    irb(main):001:0> x = 2
-    => 2
-    irb(main):002:0> z = "Adam Sandler"
-    => "Adam Sandler"
-    irb(main):003:0> z2 = 26
-    => 26
-    irb(main):004:0> x1 = 2.33
-    => 2.33
+```
+irb(main):001:0> x = 2
+=> 2
+irb(main):002:0> z = "Adam Sandler"
+=> "Adam Sandler"
+irb(main):003:0> z2 = 26
+=> 26
+irb(main):004:0> x1 = 2.33
+=> 2.33
+```
 
 Os nomes das variáveis ilustrados no exemplo anterior não indicam o que elas estão guardando e, portanto, poderão confundi-lo ao construir seus programas.
 
 Outro detalhe a ser percebido, nos exemplos anteriores, é que nós não apenas criamos novas variáveis, mas também guardamos valores dentro delas. Para guardar um valor dentro de uma variável, nós usamos o sinal de atribuição, que é o sinal de igual (=). Veja o exemplo abaixo.
 
-{lang=irb}
-    irb(main):001:0> numero = 2
-    => 2
+```
+irb(main):001:0> numero = 2
+=> 2
+```
 
 No exemplo acima, criamos uma variável chamada `numero` que armazena o número inteiro `2`.
 
 Você se lembra dos métodos `puts` e `gets.chomp` que aprendemos na aula anterior? Eles são comandos de entrada e saída de dados e também podem ser usados com variáveis! Observe o próximo exemplo.
 
-{lang=irb}
-    irb(main):001:0> numero = 2
-    irb(main):002:0> puts numero
-    2
-    => nil
+```
+irb(main):001:0> numero = 2
+irb(main):002:0> puts numero
+2
+=> nil
+```
 
 No exemplo acima, criamos uma variável chamada `numero`, armazenamos o valor 2 dentro dela e, em seguida, usamos o método `puts` para exibir o valor da variável na tela.
 
 Como permitir que o usuário digite um dado no teclado e essa informação seja guardada numa variável? Observe o próximo exemplo.
 
-{lang=irb}
-    irb(main):002:0> nome = gets.chomp
-    Drew Barrymore
-    => "Drew Barrymore"
-    irb(main):003:0> puts nome
-    "Drew Barrymore"
-    => nil
+```
+irb(main):002:0> nome = gets.chomp
+Drew Barrymore
+=> "Drew Barrymore"
+irb(main):003:0> puts nome
+"Drew Barrymore"
+=> nil
+```
 
 Na primeira linha do exemplo anterior, usamos os métodos `gets.chomp` para permitir que o usuário digite o seu nome. Os métodos `gets.chomp` irão retornar (devolver como resultado) o valor digitado pelo usuário (uma String), e esse valor será guardado na variável `nome`. Na quarta linha do exemplo, usamos o método `puts` para exibir o valor guardado na variável `nome`, que será o nome digitado por você. Agora observe o exemplo abaixo.
 
-{lang=irb}
-    irb(main):001:0> idade = gets.chomp
-    29
-    => 29
-    irb(main):002:0> idade_em_10_anos = idade + 10
-    TypeError: no implicit conversion of Fixnum into String
-    from (irb):51:in `+’
-    from (irb):51
-    from C:/Ruby22-x64/bin/irb:11:in `<main>’
+```
+irb(main):001:0> idade = gets.chomp
+29
+=> 29
+irb(main):002:0> idade_em_10_anos = idade + 10
+TypeError: no implicit conversion of Fixnum into String
+from (irb):51:in `+’
+from (irb):51
+from C:/Ruby22-x64/bin/irb:11:in `<main>’
+```
 
 Algo deu errado. Você consegue perceber por quê? Na aula anterior, vimos que o retorno, ou seja, o resultado dado pelos métodos `gets.chomp` é uma String. Portanto, apesar de o usuário digitar um valor numérico (sua idade), essa informação será guardada na variável `idade` como uma String. Quando tentamos calcular a idade do usuário daqui a 10 anos, tentamos somar a variável `idade` (que guarda uma String) com o valor inteiro 10 e, como já vimos na aula passada, não é possível somar uma String com um número. Portanto, para que o exemplo anterior funcione, é preciso converter o valor digitado pelo usuário para inteiro, e, só depois disso, poderemos somá-lo com 10. Observe abaixo o exemplo corrigido.
 
-{lang=irb}
-    irb(main):001:0> idade = gets.chomp.to_i
-    29
-    => 29
-    irb(main):002:0> idade_em_10_anos = idade + 10
-    => 39
-    irb(main):003:0> puts idade_em_10_anos
-    39
-    => nil
+```
+irb(main):001:0> idade = gets.chomp.to_i
+29
+=> 29
+irb(main):002:0> idade_em_10_anos = idade + 10
+=> 39
+irb(main):003:0> puts idade_em_10_anos
+39
+=> nil
+```
 
 Lembra-se do método `to_i` que aprendemos na aula anterior? Ele está sendo usado na primeira linha do exemplo para converter o retorno (resultado) do método `chomp`, que é uma String, em um número inteiro. Portanto, o valor guardado na variável `idade` é um inteiro. Agora nós podemos fazer a operação de soma entre a variável `idade` e o valor `10`.
 

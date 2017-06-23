@@ -1,0 +1,10 @@
+{% assign classes = site.classes | sort: 'order' %}
+<ul class="chapter">
+  {% for class in classes %}
+    {% if class.unit == include.unit %}
+      <li>
+        <a href="{{site.baseurl}}/classes/{{ class.unit }}/aula{{ forloop.index }}.html"><strong>Aula {{ forloop.index }}.</strong> {{ class.title }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

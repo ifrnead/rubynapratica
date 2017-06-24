@@ -1,9 +1,9 @@
-{% assign classes = site.classes | sort: 'order' %}
+{% assign lessons = site.lessons | sort: 'order' %}
 <ul class="chapter">
-  {% for class in classes %}
-    {% if class.unit == include.unit %}
+  {% for lesson in lessons %}
+    {% if lesson.unit == include.unit %}
       <li>
-        <a href="{{site.baseurl}}/classes/{{ class.unit }}/aula{{ forloop.index }}.html"><strong>Aula {{ forloop.index }}.</strong> {{ class.title }}</a>
+        <a href="{{site.baseurl}}/lessons/{{ lesson.unit }}/{{ lesson.slug }}.html"><strong>Aula {{ forloop.index }}.</strong> {{ lesson.title }}</a>
       </li>
     {% endif %}
   {% endfor %}

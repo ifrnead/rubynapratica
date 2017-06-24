@@ -25,7 +25,7 @@ author:
   github: "https://github.com/jalerson"
 
 collections:
-  classes:
+  lessons:
     output: true
 
 # Build settings

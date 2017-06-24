@@ -12,13 +12,11 @@ body {
 .hidden {
   display: none;
 }
-h2,
-h3 {
-  margin-top: 2.5em;
+h2 {
+  margin-top: 1.5em;
 }
-h4,
-h5 {
-  margin-top: 2em;
+h3, h4, h5 {
+  margin-top: 1em;
 }
 .header + .header h3,
 .header + .header h4,
@@ -436,4 +434,37 @@ figure figcaption {
   margin-top: 0.5em;
   text-align: center;
   font-size: 0.9em;
+}
+div.panel {
+  border: 1px solid transparent;
+  border-radius: 0.3em;
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+div.panel.atividade {
+  border-color: #4183c4;
+}
+div.panel div.panel-heading {
+  padding: 0.5em 1em;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 0.2em;
+  border-top-right-radius: 0.2em;
+}
+div.panel.atividade div.panel-heading {
+  color: #fff;
+  background-color: #4183c4;
+  border-color: #4183c4;
+}
+div.panel div.panel-heading h4 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1em;
+  color: inherit;
+}
+div.panel div.panel-body {
+  padding: 1em;
+}
+div.panel div.panel-body p {
+  margin: 0;
 }

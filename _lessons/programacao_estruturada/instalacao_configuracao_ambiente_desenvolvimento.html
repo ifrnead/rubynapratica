@@ -1,9 +1,11 @@
 ---
 title: Instalação e Configuração do Ambiente de Desenvolvimento
+slug: instalacao_configuracao_ambiente_desenvolvimento
 author: Jalerson Lima
 layout: content
 unit: programacao_estruturada
 order: 1
+comments: true
 ---
 
 <h1 id="aula1">Aula 1 - Instalação e Configuração do Ambiente de Desenvolvimento</h1>
@@ -31,7 +33,7 @@ order: 1
 </p>
 
 <figure id="figura1">
-  <img src="{{site.baseurl}}/images/ruby.jpg" alt="Logo do Ruby">
+  <img src="{{site.baseurl}}/assets/images/ruby.jpg" alt="Logo do Ruby">
   <figcaption><strong>Figura 1</strong> - Logo da linguagem Ruby. Fonte: Ruby, 2015</figcaption>
 </figure>
 
@@ -52,7 +54,7 @@ order: 1
 </p>
 
 <figure id="figura2">
-  <img src="{{site.baseurl}}/images/rubyinstaller-download.png" alt="Página de download do RubyInstaller">
+  <img src="{{site.baseurl}}/assets/images/rubyinstaller-download.png" alt="Página de download do RubyInstaller">
   <figcaption><strong>Figura 2</strong> - Downloads do RubyInstaller</figcaption>
 </figure>
 
@@ -69,7 +71,7 @@ order: 1
 </p>
 
 <figure id="figura3">
-  <img src="{{site.baseurl}}/images/instalacao-ruby-tela1.png" alt="Configuração do idioma do instalador">
+  <img src="{{site.baseurl}}/assets/images/instalacao-ruby-tela1.png" alt="Configuração do idioma do instalador">
   <figcaption><strong>Figura 3</strong> - Configuração do idioma do instalador</figcaption>
 </figure>
 
@@ -78,7 +80,7 @@ order: 1
 </p>
 
 <figure id="figura4">
-  <img src="{{site.baseurl}}/images/instalacao-ruby-tela2.png" alt="Licença de uso">
+  <img src="{{site.baseurl}}/assets/images/instalacao-ruby-tela2.png" alt="Licença de uso">
   <figcaption><strong>Figura 4</strong> - Licença de uso</figcaption>
 </figure>
 
@@ -87,7 +89,7 @@ order: 1
 </p>
 
 <figure id="figura5">
-  <img src="{{site.baseurl}}/images/instalacao-ruby-tela3.png" alt="Local de instalação e demais configurações">
+  <img src="{{site.baseurl}}/assets/images/instalacao-ruby-tela3.png" alt="Local de instalação e demais configurações">
   <figcaption><strong>Figura 5</strong> - Local de instalação e demais configurações</figcaption>
 </figure>
 
@@ -96,13 +98,11 @@ order: 1
 </p>
 
 <figure id="figura6">
-  <img src="{{site.baseurl}}/images/instalacao-ruby-tela4.png" alt="Finalizando a instalação">
+  <img src="{{site.baseurl}}/assets/images/instalacao-ruby-tela4.png" alt="Finalizando a instalação">
   <figcaption><strong>Figura 6</strong> - Finalizando a instalação</figcaption>
 </figure>
 
-<p>
-  Parabéns! Você concluiu a instalação do Ruby no Windows!
-</p>
+<p>Parabéns! Você concluiu a instalação do Ruby no Windows!</p>
 
 <h2 id="instalacao-do-ruby-no-linux">Instalação do Ruby no Linux</h2>
 
@@ -110,85 +110,109 @@ order: 1
   Instalaremos o Ruby no Linux usando o RVM (<i>Ruby Version Manager</i>), que é um gerenciador de versões do Ruby. O RVM permite-nos ter mais de uma versão do Ruby instalada. Mas antes de instalar o RVM, vamos iniciar instalando algumas dependências.
 </p>
 
-<pre class="command-line" data-user="aluno" data-host="local">
-  sudo apt-get update
-  sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
+<pre class="command-line language-bash" data-user="user" data-host="localhost" id="codigo1">
+  <code class="command-line-prompt">
+    sudo apt-get update
+    sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
+  </code>
 </pre>
 
-Uma vez concluída a instalação dessas dependências, podemos dar início à instalação do RVM.
+<p>Uma vez concluída a instalação dessas dependências, podemos dar início à instalação do RVM.</p>
 
-```
-$ sudo apt-get install libgdbm-dev libncurses5-dev automake libtool bison libffi-dev
-$ curl -L https://get.rvm.io | bash -s stable
-```
+<pre class="command-line language-bash" data-user="user" data-host="localhost" id="codigo2">
+  <code class="command-line-prompt">
+    sudo apt-get install libgdbm-dev libncurses5-dev automake libtool bison libffi-dev
+    curl -L https://get.rvm.io | bash -s stable
+  </code>
+</pre>
 
-Após a execução dos comandos acima, use o RVM para instalar a versão 2.2.3 do Ruby usando os comandos abaixo.
+<p>Após a execução dos comandos acima, use o RVM para instalar a versão 2.2.3 do Ruby usando os comandos abaixo.</p>
 
-```
-$ source ~/.rvm/scripts/rvm
-$ rvm install 2.2.3
-$ rvm use 2.2.3 -default
-```
+<pre class="command-line language-bash" data-user="user" data-host="localhost" id="codigo3">
+  <code class="command-line-prompt">
+    source ~/.rvm/scripts/rvm
+    rvm install 2.2.3
+    rvm use 2.2.3 -default
+  </code>
+</pre>
 
-Parabéns! Você acabou de concluir a instalação do Ruby no Linux!
+<p>Parabéns! Você acabou de concluir a instalação do Ruby no Linux!</p>
 
-<div class="atividade">
-  <h4>Atividade 1.1</h4>
-  <p>Agora é a sua vez! Siga os passos descritos nesta aula para instalar o Ruby no seu Windows ou Linux.</p>
+<div class="panel atividade" id="atividade1">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 1.1</h4>
+  </div>
+  <div class="panel-body">
+    <p>Agora é a sua vez! Siga os passos descritos nesta aula para instalar o Ruby no seu Windows ou Linux.</p>
+  </div>
 </div>
 
-## Instalação da ferramenta de desenvolvimento {#aula01-instalacao-da-ferramenta-de-desenvolvimento}
+<h2 id="instalacao-da-ferramenta-de-desenvolvimento">Instalação da ferramenta de desenvolvimento</h2>
 
-Uma ferramenta de desenvolvimento é um programa que usamos para codificar. Como segundo passo para a nossa jornada de aprendizado, precisamos instalar e configurar o Atom (ATOM, 2015), que é uma ferramenta de desenvolvimento muito leve e versátil, pois conta com plug-ins e temas que nos permitem personalizá-la, deixando a ferramenta adaptada às preferências de cada programador. Vamos aprender como instalar o Atom no Windows o no Linux.
+<p>Uma ferramenta de desenvolvimento é um programa que usamos para codificar. Como segundo passo para a nossa jornada de aprendizado, precisamos instalar e configurar o Atom (ATOM, 2015), que é uma ferramenta de desenvolvimento muito leve e versátil, pois conta com plug-ins e temas que nos permitem personalizá-la, deixando a ferramenta adaptada às preferências de cada programador. Vamos aprender como instalar o Atom no Windows o no Linux.</p>
 
-![Instalar e configurar o Atom](../images/atom.png)
-###### Figura 07 - Instalar e configurar o Atom. Fonte: (ATOM, 2015) {#aula01-figura07}
+<figure id="figura7">
+  <img src="{{site.baseurl}}/assets/images/atom.png" alt="Instalar e configurar o Atom">
+  <figcaption><strong>Figura 7</strong> - Instalar e configurar o Atom. Fonte: (ATOM, 2015)</figcaption>
+</figure>
 
-### Instalação do Atom no Windows {#aula01-instalacao-do-atom-no-windows}
+<h3 id="instalacao-atom-windows">Instalação do Atom no Windows</h3>
 
-A instalação do Atom no Windows é bem simples: primeiro faça o download do instalador através do endereço [http://atom.io](http://atom.io). Na página inicial, ilustrada na [Figura 08](#aula01-figura08), clique em *Download Windows Installer* para fazer o download do instalador do Atom para Windows.
+<p>A instalação do Atom no Windows é bem simples: primeiro faça o download do instalador através do endereço <a href="http://atom.io" target="_blank">http://atom.io</a>. Na página inicial, ilustrada na <a href="#figura8">Figura 8</a>, clique em <i>Download Windows Installer</i> para fazer o download do instalador do Atom para Windows.</p>
 
-![Download do Atom para Windows](../images/download-atom.png)
-###### Figura 08 - Download do Atom para Windows. Fonte: (ATOM, 2015) {#aula01-figura08}
+<figure id="figura8">
+  <img src="{{site.baseurl}}/assets/images/download-atom.png" alt="Download do Atom para Windows">
+  <figcaption><strong>Figura 8</strong> - Download do Atom para Windows. Fonte: (ATOM, 2015)</figcaption>
+</figure>
 
-Uma vez concluído o download, execute o instalador e aguarde. Quando a instalação for concluída, o Atom será aberto conforme ilustra a [Figura 09](#aula01-figura09).
+<p>Uma vez concluído o download, execute o instalador e aguarde. Quando a instalação for concluída, o Atom será aberto conforme ilustra a <a href="#figura9">Figura 9</a></p>
 
-![Tela inicial do Atom após a conclusão da instalação](../images/atom-instalado.png)
-###### Figura 09 - Tela inicial do Atom após a conclusão da instalação {#aula01-figura09}
+<figure id="figura9">
+  <img src="{{site.baseurl}}/assets/images/atom-instalado.png" alt="Tela inicial do Atom após a conclusão da instalação" width="100%">
+  <figcaption><strong>Figura 9</strong> - Tela inicial do Atom após a conclusão da instalação</figcaption>
+</figure>
 
-Muito bem! Você acabou de concluir a instalação do Atom no seu Windows. Não iremos criar nem um projeto ou codificar no momento, portanto você pode fechá-lo.
+<p>Muito bem! Você acabou de concluir a instalação do Atom no seu Windows. Não iremos criar nem um projeto ou codificar no momento, portanto você pode fechá-lo.</p>
 
-### Instalação do Atom no Linux {#aula01-instalacao-do-atom-no-linux}
+<h3 id="instalacao-atom-linux">Instalação do Atom no Linux</h3>
 
-Para instalar o Atom no Linux, faça o download do pacote Debian (<https://atom.io/download/deb>) ou RPM (<https://atom.io/download/rpm>), e faça a instalação do pacote usando o comando apropriado.
+<p>Para instalar o Atom no Linux, faça o download do pacote Debian (<a href="https://atom.io/download/deb" target="_blank">https://atom.io/download/deb</a>) ou RPM (<a href="https://atom.io/download/rpm" target="_blank">https://atom.io/download/rpm</a>), e faça a instalação do pacote usando o comando apropriado.</p>
 
-Para instalar o Atom usando o pacote Debian, use o comando abaixo.
+<p>Para instalar o Atom usando o pacote Debian, use o comando abaixo.</p>
 
-```
-$ sudo dpkg -i atom-amd64.deb
-```
+<pre class="command-line language-bash" data-user="user" data-host="localhost" id="codigo3">
+  <code class="command-line-prompt">
+    sudo dpkg -i atom-amd64.deb
+  </code>
+</pre>
 
-Para instalar o Atom usando o pacote RPM, use o comando abaixo.
+<p>Para instalar o Atom usando o pacote RPM, use o comando abaixo.</p>
 
-```
-$ rpm -i atom.x86_64.rpm
-```
+<pre class="command-line language-bash" data-user="user" data-host="localhost" id="codigo3">
+  <code class="command-line-prompt">
+    rpm -i atom.x86_64.rpm
+  </code>
+</pre>
 
-Ótimo! Você concluiu a instalação do Atom no Linux!
+<p>Ótimo! Você concluiu a instalação do Atom no Linux!</p>
 
-<div class="atividade">
-  <h4>Atividade 1.2</h4>
-  <p>Agora que você viu como fazer a instalação do Atom no Windows e no Linux, proceda com a instalação do Atom no seu sistema operacional.</p>
+<div class="panel atividade" id="atividade2">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 1.2</h4>
+  </div>
+  <div class="panel-body">
+    <p>Agora que você viu como fazer a instalação do Atom no Windows e no Linux, proceda com a instalação do Atom no seu sistema operacional.</p>
+  </div>
 </div>
 
-## Referências
+<h2>Referências</h2>
 
-ATOM. Atom. Atom, 2015. Disponivel em: <http://atom.io>. Acesso em: 14 set. 2015.
+<p>ATOM. Atom. Atom, 2015. Disponivel em: <a href="http://atom.io" target="_blank">http://atom.io</a>. Acesso em: 14 set. 2015.</p>
 
-INSTALLER, R. Ruby Installer for Windows. Ruby Installer for Windows, 2015. Disponivel em: <http://rubyinstaller.org/>. Acesso em: 23 out. 2015.
+<p>INSTALLER, R. Ruby Installer for Windows. Ruby Installer for Windows, 2015. Disponivel em: <a href="http://rubyinstaller.org"  target="_blank">http://rubyinstaller.org</a>. Acesso em: 23 out. 2015.</p>
 
-RUBY. The Ruby Logo. Ruby Language, 2015. Disponivel em: <https://www.ruby-lang.org/en/about/logo/>. Acesso em: 21 out. 2015.
+<p>RUBY. The Ruby Logo. Ruby Language, 2015. Disponivel em: <a href="https://www.ruby-lang.org/en/about/logo/"  target="_blank">https://www.ruby-lang.org/en/about/logo/</a>. Acesso em: 21 out. 2015.</p>
 
-WIKIPÉDIA. Ruby. Wikipédia, 2015. Disponivel em: <https://pt.wikipedia.org/wiki/Ruby_(linguagem_de_programa%C3%A7%C3%A3o)>. Acesso em: 21 out. 2015.
+<p>WIKIPÉDIA. Ruby. Wikipédia, 2015. Disponivel em: <a href="https://pt.wikipedia.org/wiki/Ruby_(linguagem_de_programa%C3%A7%C3%A3o)"  target="_blank">https://pt.wikipedia.org/wiki/Ruby_(linguagem_de_programa%C3%A7%C3%A3o)</a>. Acesso em: 21 out. 2015.</p>
 
-WIKIPÉDIA. Yukihiro Matsumoto. Wikipédia, 2015. Disponivel em: <https://pt.wikipedia.org/wiki/Yukihiro_Matsumoto>. Acesso em: 21 out. 2015.
+<p>WIKIPÉDIA. Yukihiro Matsumoto. Wikipédia, 2015. Disponivel em: <a href="https://pt.wikipedia.org/wiki/Yukihiro_Matsumoto"  target="_blank">https://pt.wikipedia.org/wiki/Yukihiro_Matsumoto</a>. Acesso em: 21 out. 2015.</p>

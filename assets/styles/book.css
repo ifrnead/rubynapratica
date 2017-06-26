@@ -468,3 +468,6 @@ div.panel div.panel-body {
 div.panel div.panel-body p {
   margin: 0;
 }
+.full-width {
+  width: 100%;
+}

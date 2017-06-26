@@ -5,232 +5,297 @@ author: Jalerson Lima
 layout: content
 unit: programacao_estruturada
 order: 2
+comments: true
 ---
 
-# Aula 02 - IRB, tipos de dados e operações de entrada e saída {#aula02}
+<h1 id="aula2">Aula 02 - IRB, tipos de dados e operações de entrada e saída</h1>
 
-## IRB
+<h2 id="irb">IRB</h2>
 
-Quando você fez a instalação do Ruby, no seu sistema operacional, também foi instalado um programa chamado IRB. O IRB (Interactive Ruby) é uma ferramenta que nos permite executar o código Ruby e receber a resposta desses comandos imediatamente. Isso é muito útil quando queremos executar comandos simples para aprender a linguagem. Ele se parece muito com um terminal de comandos, como o prompt de comandos do Windows (INTERACTIVE, 2015).
+<p>Quando você fez a instalação do Ruby, no seu sistema operacional, também foi instalado um programa chamado IRB. O IRB (<i>Interactive Ruby</i>) é uma ferramenta que nos permite executar o código Ruby e receber a resposta desses comandos imediatamente. Isso é muito útil quando queremos executar comandos simples para aprender a linguagem. Ele se parece muito com um terminal de comandos, como o prompt de comandos do Windows (INTERACTIVE, 2015).</p>
 
-Abra o IRB, no seu Windows, que deve se parecer com o programa ilustrado na [Figura 01](#aula02-figura01).
+<p>Abra o IRB, no seu Windows, que deve se parecer com o programa ilustrado na <a href="figura1">Figura 1</a>.</p>
 
-![IRB](../images/irb.png)
-###### Figura 01 - IRB {#aula02-figura01}
+<figure id="figura1">
+  <img src="{{site.baseurl}}/assets/images/irb.png" alt="IRB">
+  <figcaption><strong>Figura 1</strong> - IRB</figcaption>
+</figure>
 
-Perceba que nós podemos escrever na primeira linha, na qual aparece `irb(main):001:0>`. Vamos explorar um pouco o IRB e a linguagem Ruby? Digite o valor 1 e aperte ENTER, conforme ilustrado a seguir.
+<p>Perceba que nós podemos escrever na primeira linha, na qual aparece <code class="language-bash">irb(main):001:0></code>. Vamos explorar um pouco o IRB e a linguagem Ruby? Digite o valor <code class="language-bash">1</code> e aperte ENTER, conforme ilustrado a seguir.</p>
 
-```
-irb(main):001:0> 1
-=> 1
-```
+<pre class="language-bash" id="codigo1">
+  <code>
+    irb(main):001:0> 1
+    => 1
+  </code>
+</pre>
 
-Observe a resposta do IRB: `=>1`. O sinal `=>` indica que o que aparece em seguida é o resultado de um comando, trecho de código ou expressão dada por você. Nesse caso, você digitou 1 e a resposta foi 1. O que acabou de acontecer? O IRB avalia expressões, trechos de código e instruções em Ruby, isto é, ele executa e dá alguma resposta. Nesse caso, a expressão que fornecemos foi 1 e a resposta, naturalmente, foi 1 porque não houve nenhuma operação matemática ou processamento a ser feito. Vamos tentar algo diferente. Digite `1 + 1` e tecle ENTER.
+<p>Observe a resposta do IRB: <code class="language-bash">=>1</code>. O sinal <code class="language-bash">=></code> indica que o que aparece em seguida é o resultado de um comando, trecho de código ou expressão dada por você. Nesse caso, você digitou <code class="language-bash">1</code> e a resposta foi <code class="language-bash">1</code>. O que acabou de acontecer? O IRB avalia expressões, trechos de código e instruções em Ruby, isto é, ele executa e dá alguma resposta. Nesse caso, a expressão que fornecemos foi <code class="language-bash">1</code> e a resposta, naturalmente, foi <code class="language-bash">1</code> porque não houve nenhuma operação matemática ou processamento a ser feito. Vamos tentar algo diferente. Digite <code class="language-bash">1 + 1</code> e tecle ENTER.</p>
 
-```
-irb(main):001:0> 1 + 1
-=> 2
-```
+<pre class="language-bash" id="codigo2">
+  <code>
+    irb(main):001:0> 1 + 1
+    => 2
+  </code>
+</pre>
 
-Nesse segundo exemplo, fizemos uma operação matemática de soma entre dois números, e o resultado foi a soma deles. Vamos tentar algo um pouco mais complexo?
+<p>Nesse segundo exemplo, fizemos uma operação matemática de soma entre dois números, e o resultado foi a soma deles. Vamos tentar algo um pouco mais complexo?</p>
 
-```
-irb(main):001:0> 2 + 1 –
-irb(main):002:0*
-```
+<pre class="language-bash" id="codigo3">
+  <code>
+    irb(main):001:0> 2 + 1 –
+    irb(main):002:0*
+  </code>
+</pre>
 
-O que aconteceu? Observe que, na segunda linha, o caractere `>` foi substituído por `*`. Mas por que isso aconteceu? Porque nós digitamos uma expressão incompleta na primeira linha. Conforme vamos ver em uma aula futura, os operadores de soma e subtração precisam de dois operandos (um de cada lado do operador). Portanto, está faltando um operando ao lado do sinal de subtração. O IRB ainda não executou a expressão que digitamos porque ela ainda está incompleta. A segunda linha nos permite digitar o que falta da expressão. Digite 3 na segunda linha e tecle ENTER, conforme o exemplo abaixo.
+<p>O que aconteceu? Observe que, na segunda linha, o caractere <code class="language-bash">></code> foi substituído por <code class="language-bash">*</code>. Mas por que isso aconteceu? Porque nós digitamos uma expressão incompleta na primeira linha. Conforme vamos ver em uma aula futura, os operadores de soma e subtração precisam de dois operandos (um de cada lado do operador). Portanto, está faltando um operando ao lado do sinal de subtração. O IRB ainda não executou a expressão que digitamos porque ela ainda está incompleta. A segunda linha nos permite digitar o que falta da expressão. Digite <code class="language-bash">3</code> na segunda linha e tecle ENTER, conforme o exemplo abaixo.</p>
 
-```
-irb(main):001:0> 2 + 1 –
-irb(main):002:0* 3
-=> 0
-```
+<pre class="language-bash" id="codigo4">
+  <code>
+    irb(main):001:0> 2 + 1 –
+    irb(main):002:0* 3
+    => 0
+  </code>
+</pre>
 
-Pronto! Agora o operador de subtração tem dois operandos (1 e 3). Pode não parecer, mas o que você está começando a fazer é construir seus próprios programas de computador. Parabéns! Vamos continuar nossos estudos aprendendo sobre os tipos de dados disponíveis na linguagem Ruby. Dessa forma, poderemos construir programas um pouco mais complexos.
+<p>Pronto! Agora o operador de subtração tem dois operandos (<code class="language-bash">1</code> e <code class="language-bash">3</code>). Pode não parecer, mas o que você está começando a fazer é construir seus próprios programas de computador. Parabéns! Vamos continuar nossos estudos aprendendo sobre os tipos de dados disponíveis na linguagem Ruby. Dessa forma, poderemos construir programas um pouco mais complexos.</p>
 
-<div class="atividade">
-  <h4>Atividade 2.1</h4>
-  <p>Use o IRB para realizar operações matemáticas usando os operadores + (soma), - (subtração), * (multiplicação) e / (divisão).</p>
+<div class="panel atividade" id="atividade1">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 2.1</h4>
+  </div>
+  <div class="panel-body">
+    <p>Use o IRB para realizar operações matemáticas usando os operadores + (soma), - (subtração), * (multiplicação) e / (divisão).</p>
+  </div>
 </div>
 
-## Tipos de Dados
+<h2>Tipos de Dados</h2>
 
-Quando estamos desenvolvendo um sistema de software, precisamos lidar com dados a todo momento. Conforme ilustrado na [Figura 02](#aula02-figura02), a linguagem Ruby suporta um conjunto de onze tipos de dados organizados de forma hierárquica.
+<p>Quando estamos desenvolvendo um sistema de software, precisamos lidar com dados a todo momento. Conforme ilustrado na <a href="#figura2">Figura 2</a>, a linguagem Ruby suporta um conjunto de onze tipos de dados organizados de forma hierárquica.</p>
 
-![Tipos de dados em Ruby](../images/tipos-dados.png)
-###### Figura 02 - Tipos de dados {#aula02-figura02}
+<figure id="figura2">
+  <img src="{{site.baseurl}}/assets/images/tipos-dados.png" alt="Tipos de dados" class="full-width">
+  <figcaption><strong>Figura 2</strong> - Tipos de dados</figcaption>
+</figure>
 
-O que podemos entender com a [Figura 02](#aula02-figura02)? Todos os tipos de dados são subtipos de __Object__; existem dois subtipos numéricos (__Numeric__): __Integer__ e __Float__; e dois subtipos inteiros (__Integer__): __Fixnum__ e __Bignum__. Não se preocupe com todos os tipos agora, porque vamos aprendê-los aos poucos. Vamos continuar o estudo da nossa linguagem com os tipos de dados numéricos (__Integer__ e __Float__) e texto (__String__). Os outros tipos de dados serão apresentados em aulas futuras.
+<p>O que podemos entender com a <a href="#figura2">Figura 2</a>? Todos os tipos de dados são subtipos de <i>Object</i>; existem dois subtipos numéricos (<i>Numeric</i>): <i>Integer</i> e <i>Float</i>; e dois subtipos inteiros (<i>Integer</i>): <i>Fixnum</i> e <i>Bignum</i>. Não se preocupe com todos os tipos agora, porque vamos aprendê-los aos poucos. Vamos continuar o estudo da nossa linguagem com os tipos de dados numéricos (<i>Integer</i> e <i>Float</i>) e texto (<i>String</i>). Os outros tipos de dados serão apresentados em aulas futuras.</p>
 
-### Tipos de Dados Numéricos
+<h3 id="tipos-dados-numericos">Tipos de Dados Numéricos</h3>
 
-Conforme mencionado anteriormente, existem dois tipos de dados numéricos: inteiro (__Integer__) e real (__Float__).
+<p>Conforme mencionado anteriormente, existem dois tipos de dados numéricos: inteiro (<i>Integer</i>) e real (<i>Float</i>).</p>
 
-Números inteiros (__Integer__) são aqueles que não têm parte fracionária. Veja alguns exemplos de números inteiros abaixo. Quais informações poderiam ser representadas por números inteiros? A sua idade, o dia, o mês e o ano do seu nascimento, a quantidade de irmãos que você tem, etc.
+<p>Números inteiros (<i>Integer</i>) são aqueles que não têm parte fracionária. Veja alguns exemplos de números inteiros abaixo. Quais informações poderiam ser representadas por números inteiros? A sua idade, o dia, o mês e o ano do seu nascimento, a quantidade de irmãos que você tem, etc.</p>
 
-```
-irb(main):001:0> 1
-=> 1
-irb(main):002:0> 2
-=> 2
-irb(main):003:0> 10
-=> 10
-irb(main):004:0> 34
-=> 34
-```
+<pre class="language-bash" id="codigo5">
+  <code>
+    irb(main):001:0> 1
+    => 1
+    irb(main):002:0> 2
+    => 2
+    irb(main):003:0> 10
+    => 10
+    irb(main):004:0> 34
+    => 34
+  </code>
+</pre>
 
-Em Ruby, os números inteiros ainda podem ser classificados em __Fixnum__ e __Bignum__. __Fixnum__ é o tipo de dado para números inteiros pequenos (até 4.611.686.018.427.387.903), enquanto o __Bignum__ é destinado para números inteiros grandes (a partir de 4.611.686.018.427.387.904) (HOW, 2014).
+<p>Em Ruby, os números inteiros ainda podem ser classificados em <i>Fixnum</i> e <i>Bignum</i>. <i>Fixnum</i> é o tipo de dado para números inteiros pequenos (até 4.611.686.018.427.387.903), enquanto o <i>Bignum</i> é destinado para números inteiros grandes (a partir de 4.611.686.018.427.387.904) (HOW, 2014).</p>
 
-Números reais (__Float__) são aqueles que têm parte fracionária, por exemplo: 3.14, 21.2, 4.583, etc. Observe que usamos o ponto ao invés da vírgula! Nas linguagens de programação em geral, e isso vale para Ruby também, nós devemos escrever 3.14 e não 3,14. Alguns exemplos de números reais são a quantidade de dinheiro que você tem em sua conta bancária, o seu peso, a distância que você percorre quando corre, etc.
+<p>Números reais (<i>Float</i>) são aqueles que têm parte fracionária, por exemplo: 3.14, 21.2, 4.583, etc. Observe que usamos o ponto ao invés da vírgula! Nas linguagens de programação em geral, e isso vale para Ruby também, nós devemos escrever 3.14 e não 3,14. Alguns exemplos de números reais são a quantidade de dinheiro que você tem em sua conta bancária, o seu peso, a distância que você percorre quando corre, etc.</p>
 
-```
-irb(main):001:0> 3.14
-=> 3.14
-irb(main):002:0> 21.2
-=> 21.2
-irb(main):003:0> 4.583
-=> 4.583
-```
+<pre class="language-bash" id="codigo6">
+  <code>
+    irb(main):001:0> 3.14
+    => 3.14
+    irb(main):002:0> 21.2
+    => 21.2
+    irb(main):003:0> 4.583
+    => 4.583
+  </code>
+</pre>
 
-### Texto (String)
+<h3>Texto (String)</h3>
 
-Vale salientar que, quando queremos nos referir a texto, não usamos a palavra "texto", e sim "String". Portanto, de agora em diante, quando nos referirmos a String, você já sabe que estamos nos referindo a texto. Esse tipo de dado, tão comum, deve ser escrito usando aspas simples ou duplas no início e no final do valor (SOUZA, 2012). Veja alguns exemplos abaixo.
+<p>Vale salientar que, quando queremos nos referir a texto, não usamos a palavra "texto", e sim "String". Portanto, de agora em diante, quando nos referirmos a String, você já sabe que estamos nos referindo a texto. Esse tipo de dado, tão comum, deve ser escrito usando aspas simples ou duplas no início e no final do valor (SOUZA, 2012). Veja alguns exemplos abaixo.</p>
 
-```
-irb(main):001:0> "Ser ou não ser, eis a questão!""
-=> "Ser ou n\xC6o ser, eis a quest\xC6o"
-irb(main):002:0> 'Hasta la vista, baby'
-=> "Hasta la vista, baby"
-```
+<pre class="language-bash" id="codigo7">
+  <code>
+    irb(main):001:0> "Ser ou não ser, eis a questão!"
+    => "Ser ou n\xC6o ser, eis a quest\xC6o"
+    irb(main):002:0> 'Hasta la vista, baby'
+    => "Hasta la vista, baby"
+  </code>
+</pre>
 
-Observe que, no primeiro exemplo, usamos aspas duplas para definir `"Ser ou não ser, eis a questão!"`. Esse é um dado do tipo String. Veja também a reposta dada pelo IRB: `"Ser ou n\xC6o ser, eis a quest\ xC6o"`. Percebeu que a resposta dada pelo IRB foi um pouco estranha? Não se preocupe com isso agora, isso se deve aos caracteres especiais que usamos na String.
+<p>Observe que, no primeiro exemplo, usamos aspas duplas para definir <code class="language-bash">"Ser ou não ser, eis a questão!"</code>. Esse é um dado do tipo String. Veja também a reposta dada pelo IRB: <code class="language-bash">"Ser ou n\xC6o ser, eis a quest\ xC6o"</code>. Percebeu que a resposta dada pelo IRB foi um pouco estranha? Não se preocupe com isso agora, isso se deve aos caracteres especiais que usamos na String.</p>
 
-No segundo exemplo, usamos aspas simples para indicar que `'Hasta la vista, baby'` é uma String. Os dois exemplos têm o mesmo efeito e ambos são String. O cuidado que precisamos ter é que, quando iniciarmos uma String com aspas duplas, ela precisa ser finalizada com aspas duplas. Quando iniciarmos com aspas simples, precisamos finalizá-la com aspas simples. Alguns exemplos de String que podem ser usadas em um programa de computador são o seu nome, o seu endereço, um poema, etc.
+<p>No segundo exemplo, usamos aspas simples para indicar que <code class="language-bash">'Hasta la vista, baby'</code> é uma String. Os dois exemplos têm o mesmo efeito e ambos são String. O cuidado que precisamos ter é que, quando iniciarmos uma String com aspas duplas, ela precisa ser finalizada com aspas duplas. Quando iniciarmos com aspas simples, precisamos finalizá-la com aspas simples. Alguns exemplos de String que podem ser usadas em um programa de computador são o seu nome, o seu endereço, um poema, etc.</p>
 
-### Conversões de Tipos
+<h3>Conversões de Tipos</h3>
 
-Tudo entendido até aqui? Então temos uma pergunta para você: "1" é um inteiro ou é uma String? E agora? O que você acha? "1" é uma String! Porque ele está entre aspas duplas. Se não estivesse entre aspas duplas, seria um número inteiro. Agora faça o seguinte exemplo no IRB.
+<p>Tudo entendido até aqui? Então temos uma pergunta para você: "1" é um inteiro ou é uma String? E agora? O que você acha? "1" é uma String! Porque ele está entre aspas duplas. Se não estivesse entre aspas duplas, seria um número inteiro. Agora faça o seguinte exemplo no IRB.</p>
 
-```
-irb(main):001:0> "1" + 1
-TypeError: no implicit conversion of Fixnum into String
-    from (irb):9:in `+’
-    from (irb):9
-    from C:/Ruby22-x64/bin/irb:11:in `<main>’
-```
+<pre class="language-bash" id="codigo8">
+  <code>
+    irb(main):001:0> "1" + 1
+    TypeError: no implicit conversion of Fixnum into String
+        from (irb):9:in `+’
+        from (irb):9
+        from C:/Ruby22-x64/bin/irb:11:in `<main>’
+  </code>
+</pre>
 
-Recebemos a nossa primeira mensagem de erro. Consegue imaginar a causa do problema? O que ocorreu foi um erro de tipo (`TypeError`): nós usamos o operador de soma (+) com uma String ("1") e um número inteiro (1). Mas isso faz algum sentido? Faria sentido tentar somar `"a" + 1`? Claro que não! Apesar da String "1" conter um valor numérico escrito, para o Ruby "1" é uma String e, sendo assim, não é possível somar uma String com um número. Logo, se tivermos um valor numérico escrito numa String, primeiro precisamos converter essa String para número.
+<p>Recebemos a nossa primeira mensagem de erro. Consegue imaginar a causa do problema? O que ocorreu foi um erro de tipo (<code class="language-bash">TypeError</code>): nós usamos o operador de soma (<code class="language-bash">+</code>) com uma String (<code class="language-bash">"1"</code>) e um número inteiro (<code class="language-bash">1</code>). Mas isso faz algum sentido? Faria sentido tentar somar <code class="language-bash">"a" + 1</code>? Claro que não! Apesar da String <code class="language-bash">"1"</code> conter um valor numérico escrito, para o Ruby <code class="language-bash">"1"</code> é uma String e, sendo assim, não é possível somar uma String com um número. Logo, se tivermos um valor numérico escrito numa String, primeiro precisamos converter essa String para número.</p>
 
-Isso é o que chamamos de conversão de tipos. Ou seja, transformar o dado de um tipo em um dado de outro tipo. Por exemplo: transformar "1" (String) em 1 (Integer), 10 (Integer) em "10" (String), '3.14' (String) em 3.14 (Float), etc. Para converter tipos, devemos usar os métodos `to_i`, `to_f` e `to_s`.
+<p>Isso é o que chamamos de conversão de tipos. Ou seja, transformar o dado de um tipo em um dado de outro tipo. Por exemplo: transformar "1" (String) em 1 (Integer), 10 (Integer) em "10" (String), '3.14' (String) em 3.14 (Float), etc. Para converter tipos, devemos usar os métodos `to_i`, `to_f` e `to_s`.</p>
 
-| Método       | Descrição                                         | Exemplo     |
-|--------------|---------------------------------------------------|-------------|
-| <valor>.to_i | Converte <valor> para um número inteiro (Integer) | "10".to_i   |
-| <valor>.to_f | Converte <valor> para um número real (Float)      | "3.14".to_f |
-| <valor>.to_s | Converte <valor> para uma String                  | 12.to_s     |
+<table id="tabela1">
+  <caption><strong>Tabela 1</strong> - Métodos para conversão de tipos</caption>
+  <thead>
+    <th>Método</th>
+    <th>Descrição</th>
+    <th>Exemplo</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-bash">&lt;valor&gt;.to_i</code></td>
+      <td>Converte &lt;valor&gt; para um número inteiro (Integer)</td>
+      <td><code class="language-bash">"10".to_i</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-bash">&lt;valor&gt;.to_f</code></td>
+      <td>Converte &lt;valor&gt; para um número real (Float)</td>
+      <td><code class="language-bash">"3.14".to_f</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-bash">&lt;valor&gt;.to_s</code></td>
+      <td>Converte &lt;valor&gt; para uma String</td>
+      <td><code class="language-bash">12.to_s</code></td>
+    </tr>
+  </tbody>
+</table>
 
-Observe os exemplos abaixo.
+<p>Observe os exemplos abaixo.</p>
 
-```
-irb(main):001:0> "10".to_i
-=> 10
-irb(main):002:0> "3.14".to_f
-=> 3.14
-irb(main):003:0> 30.to_s
-=> "30"
-irb(main):004:0> 3.to_f
-=> 3.0
-```
+<pre class="language-bash" id="codigo9">
+  <code>
+    irb(main):001:0> "10".to_i
+    => 10
+    irb(main):002:0> "3.14".to_f
+    => 3.14
+    irb(main):003:0> 30.to_s
+    => "30"
+    irb(main):004:0> 3.to_f
+    => 3.0
+  </code>
+</pre>
 
-Agora nós podemos corrigir o exemplo apresentado anteriormente.
+<p>Agora nós podemos corrigir o exemplo apresentado anteriormente.</p>
 
-```
-irb(main):001:0> "1".to_i + 1
-=> 2
-```
+<pre class="language-bash" id="codigo10">
+  <code>
+    irb(main):001:0> "1".to_i + 1
+    => 2
+  </code>
+</pre>
 
-Entendeu? O método `to_i` converteu "1" (String) em 1 (Integer) e depois a operação de soma foi executada, resultando em 2. Observe o próximo exemplo.
+<p>Entendeu? O método <code class="language-bash">to_i</code> converteu <code class="language-bash">"1"</code> (String) em <code class="language-bash">1</code> (Integer) e depois a operação de soma foi executada, resultando em <code class="language-bash">2</code>. Observe o próximo exemplo.</p>
 
-```
-irb(main):001:0> "a".to_i
-=> 0
-```
+<pre class="language-bash" id="codigo11">
+  <code>
+    irb(main):001:0> "a".to_i
+    => 0
+  </code>
+</pre>
 
-No exemplo anterior, tentamos converter a String "a" para um valor inteiro. Obviamente, isso não faz nenhum sentido, porque não é possível converter uma letra em um número. Quando tentamos converter um valor não-numérico para String, o Ruby sempre nos dá zero como resultado.
+<p>No exemplo anterior, tentamos converter a String <code class="language-bash">"a"</code> para um valor inteiro. Obviamente, isso não faz nenhum sentido, porque não é possível converter uma letra em um número. Quando tentamos converter um valor não-numérico para String, o Ruby sempre nos dá zero como resultado.</p>
 
-## Entrada e Saída de Dados
+<h2 id="entrada-saida-dados">Entrada e Saída de Dados</h2>
 
-As operações de entrada de dados são aquelas que permitem ao usuário passar informações para o programa (entrada), e as operações de saída são aquelas que permitem o programa apresentar informações para o usuário. Vamos iniciar os estudos com a operação de saída de dados, para que possamos fazer o programa mais famoso do mundo: o "Olá Mundo!".
+<p>As operações de entrada de dados são aquelas que permitem ao usuário passar informações para o programa (entrada), e as operações de saída são aquelas que permitem o programa apresentar informações para o usuário. Vamos iniciar os estudos com a operação de saída de dados, para que possamos fazer o programa mais famoso do mundo: o Olá Mundo!</p>
 
-### Saída de Dados
+<h3 id="saida-dados">Saída de Dados</h3>
 
-Conforme explicado anteriormente, a operação de saída de dados permite que o programa apresente informações para o usuário. Para fazer isso, devemos usar o método `puts`. Mas o que é um método? Por enquanto, pense no método como sendo um comando que irá fazer alguma tarefa para você. Nesse caso, o método puts apresenta alguma informação na tela do usuário. As informações apresentadas na tela são aquelas que você digitar ao lado do método.
+<p>Conforme explicado anteriormente, a operação de saída de dados permite que o programa apresente informações para o usuário. Para fazer isso, devemos usar o método <code class="language-bash">puts</code>. Mas o que é um método? Por enquanto, pense no método como sendo um comando que irá fazer alguma tarefa para você. Nesse caso, o método <code class="language-bash">puts</code> apresenta alguma informação na tela do usuário. As informações apresentadas na tela são aquelas que você digitar ao lado do método.</p>
 
-Vamos fazer o programa "Olá Mundo!" para exemplificar o uso do método `puts`. Digite o seguinte comando no IRB e depois tecle ENTER.
+<p>Vamos fazer o programa "Olá Mundo!" para exemplificar o uso do método <code class="language-bash">puts</code>puts</code>. Digite o seguinte comando no IRB e depois tecle ENTER.</p>
 
-```
-irb(main):001:0> puts "Olá mundo!"
-Olá mundo!
-=> nil
-```
+<pre class="language-bash" id="codigo12">
+  <code>
+    irb(main):001:0> puts "Olá mundo!"
+    Olá mundo!
+    => nil
+  </code>
+</pre>
 
-Observe que usamos o método `puts` e, logo em seguida, digitamos a String `"Olá mundo!"`. Quando fazemos isso, estamos informando para o método `puts` que desejamos que ele mostre `"Olá mundo!"` na tela e foi exatamente isso o que aconteceu. Observe também que apareceu `=> nil`. `nil` é um valor especial que significa nulo, ou seja, algo inexistente. Ele foi exibido porque o método `puts` sempre retorna (dá como resultado) `nil`, além de mostrar a informação na tela.
+<p>Observe que usamos o método <code class="language-bash">puts</code> e, logo em seguida, digitamos a String <code class="language-bash">"Olá mundo!"</code>. Quando fazemos isso, estamos informando para o método <code class="language-bash">puts</code> que desejamos que ele mostre <code class="language-bash">"Olá mundo!"</code> na tela e foi exatamente isso o que aconteceu. Observe também que apareceu <code class="language-bash">=> nil</code>. <code class="language-bash">nil</code> é um valor especial que significa nulo, ou seja, algo inexistente. Ele foi exibido porque o método <code class="language-bash">puts</code> sempre retorna (dá como resultado) <code class="language-bash">nil</code>, além de mostrar a informação na tela.</p>
 
-Caso tenha ocorrido algum erro, verifique se você digitou corretamente, pois o código só será executado se ele estiver sintaticamente correto, ou seja, se ele estiver bem construído e formatado. Observe o que acontece quando digitamos algo errado.
+<p>Caso tenha ocorrido algum erro, verifique se você digitou corretamente, pois o código só será executado se ele estiver sintaticamente correto, ou seja, se ele estiver bem construído e formatado. Observe o que acontece quando digitamos algo errado.</p>
 
-```
-irb(main):001:0> put "Olá mundo!"
-NoMethodError: undefined method `put’ for main:Object
-  from (irb):27
-  from C:/Ruby22-x64/bin/irb:11:in `<main>’
-```
+<pre class="language-bash" id="codigo13">
+  <code>
+    irb(main):001:0> put "Olá mundo!"
+    NoMethodError: undefined method `put’ for main:Object
+      from (irb):27
+      from C:/Ruby22-x64/bin/irb:11:in `<main>’
+  </code>
+</pre>
 
-Novamente, recebemos um erro. Você consegue perceber o que fizemos de errado? Nós escrevemos `put` ao invés de `puts`! Nesse caso, houve um `NoMethodError`, dizendo que o método `put` não foi encontrado.
+<p>Novamente, recebemos um erro. Você consegue perceber o que fizemos de errado? Nós escrevemos <code class="language-bash">put</code> ao invés de <code class="language-bash">puts</code>! Nesse caso, houve um <code class="language-bash">NoMethodError</code>, dizendo que o método <code class="language-bash">put</code> não foi encontrado.</p>
 
-Outro método para saída de dados bastante utilizado é o `print`. Mas qual é a diferença entre o `puts` e o `print`? A diferença é que o `puts` dá uma quebra de linha após exibir a String, enquanto o `print` não o faz. Observe o exemplo abaixo para compreender melhor a diferença entre os dois
+<p>Outro método para saída de dados bastante utilizado é o <code class="language-bash">print</code>. Mas qual é a diferença entre o <code class="language-bash">puts</code> e o <code class="language-bash">print</code>? A diferença é que o <code class="language-bash">puts</code> dá uma quebra de linha após exibir a String, enquanto o <code class="language-bash">print</code> não o faz. Observe o exemplo abaixo para compreender melhor a diferença entre os dois.</p>
 
-```
-irb(main):001> puts "Com quebra de linha"
-Com quebra de linha
-=> nil
-irb(main):002> print "Sem quebra de linha"
-Sem quebra de linha => nil
-```
+<pre class="language-bash" id="codigo14">
+  <code>
+    irb(main):001> puts "Com quebra de linha"
+    Com quebra de linha
+    => nil
+    irb(main):002> print "Sem quebra de linha"
+    Sem quebra de linha => nil
+  </code>
+</pre>
 
-Observe que, quando usamos o `puts`, a String `"Com quebra de linha"` apareceu numa linha e o `=> nil` apareceu em outra. Isso ocorreu porque o `puts` dá uma quebra de linha após exibir a String `"Com quebra de linha"`. Quando usamos o `print`, a String `"Sem quebra de linha"` e o `=> nil` aparecem na mesma linha, pois nesse caso não há quebra de linha entre eles.
+<p>Observe que, quando usamos o <code class="language-bash">puts</code>, a String <code class="language-bash">"Com quebra de linha"</code> apareceu numa linha e o <code class="language-bash">=> nil</code> apareceu em outra. Isso ocorreu porque o <code class="language-bash">puts</code> dá uma quebra de linha após exibir a String <code class="language-bash">"Com quebra de linha"</code>. Quando usamos o <code class="language-bash">print</code>, a String <code class="language-bash">"Sem quebra de linha"</code> e o <code class="language-bash">=> nil</code> aparecem na mesma linha, pois nesse caso não há quebra de linha entre eles.</p>
 
-### Entrada de Dados
+<h3>Entrada de Dados</h3>
 
-A entrada de dados é uma operação que permite que o usuário forneça dados para o programa. Essa operação é realizada usando o método `gets`. Observe o exemplo abaixo.
+<p>A entrada de dados é uma operação que permite que o usuário forneça dados para o programa. Essa operação é realizada usando o método <code class="language-bash">gets</code>. Observe o exemplo abaixo.</p>
 
-```
-irb(main):001:0> gets
-Um texto qualquer
-=> "Um texto qualquer\n"
-```
+<pre class="language-bash" id="codigo15">
+  <code>
+    irb(main):001:0> gets
+    Um texto qualquer
+    => "Um texto qualquer\n"
+  </code>
+</pre>
 
-No exemplo anterior, usamos o método `gets` para permitir que o usuário digite algo. Ao executar o método `gets`, o Ruby fica aguardando que o usuário digite algo na linha seguinte e tecle ENTER. No exemplo, digitamos a String "Um texto qualquer" (sem aspas) e o resultado foi a String que digitamos seguido de `\n`. Mas de onde veio esse `\n`? Esse é um caractere especial que significa nova linha e ele foi enviado pelo nosso teclado quando apertamos ENTER. E como evitamos isso? Usamos o método `chomp` sobre o retorno (resultado) do método `gets` da seguinte forma.
+<p>No exemplo anterior, usamos o método <code class="language-bash">gets</code> para permitir que o usuário digite algo. Ao executar o método <code class="language-bash">gets</code>, o Ruby fica aguardando que o usuário digite algo na linha seguinte e tecle ENTER. No exemplo, digitamos a String "Um texto qualquer" (sem aspas) e o resultado foi a String que digitamos seguido de <code class="language-bash">\n</code>. Mas de onde veio esse <code class="language-bash">\n</code>? Esse é um caractere especial que significa nova linha e ele foi enviado pelo nosso teclado quando apertamos ENTER. E como evitamos isso? Usamos o método <code class="language-bash">chomp</code> sobre o retorno (resultado) do método <code class="language-bash">gets</code> da seguinte forma.</p>
 
-```
-irb(main):001:0> gets.chomp
-Um texto qualquer
-=> "Um texto qualquer"
-```
+<pre class="language-bash" id="codigo16">
+  <code>
+    irb(main):001:0> gets.chomp
+    Um texto qualquer
+    => "Um texto qualquer"
+  </code>
+</pre>
 
-Pronto, dessa forma, o método `gets` irá retornar (dará como resultado) aquilo que o usuário digitar no teclado. O método `chomp` será executado sobre o retorno do método `gets` (aquilo que o usuário digitou) e irá remover caracteres como o de nova linha. Vale salientar que os métodos `gets` e `chomp` sempre retornam (dão como resultado) um dado do tipo String. Não se preocupe nesse momento em entender como capturar o valor digitado pelo usuário e realizar algum processamento com ele, pois isso será tema da nossa próxima aula.
+<p>Pronto, dessa forma, o método <code class="language-bash">gets</code> irá retornar (dará como resultado) aquilo que o usuário digitar no teclado. O método <code class="language-bash">chomp</code> será executado sobre o retorno do método <code class="language-bash">gets</code> (aquilo que o usuário digitou) e irá remover caracteres como o de nova linha. Vale salientar que os métodos <code class="language-bash">gets</code> e <code class="language-bash">chomp</code> sempre retornam (dão como resultado) um dado do tipo String. Não se preocupe nesse momento em entender como capturar o valor digitado pelo usuário e realizar algum processamento com ele, pois isso será tema da nossa próxima aula.</p>
 
-<div class="atividade">
-  <h4>Atividade 2.2</h4>
-  <p>Use o IRB para escrever o primeiro programa de todo programador: o "Olá Mundo!". Abra o IRB no seu computador e escreva <code>puts "Olá mundo!</code></p>
+<div class="panel atividade" id="atividade2">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 2.2</h4>
+  </div>
+  <div class="panel-body">
+    <p>Use o IRB para escrever o primeiro programa de todo programador: o "Olá Mundo!". Abra o IRB no seu computador e escreva <code class="language-bash">puts "Olá mundo!</code></p>
+  </div>
 </div>
 
-## Referências
+<h2 id="referencias">Referências</h2>
 
-DOC, R. IRB. Ruby Doc. 2015. Disponivel em: <http://ruby-doc.org/stdlib-2.2.3/libdoc/irb/rdoc/IRB.html>. Acesso em: 24 out. 2015.
+<p>DOC, R. IRB. Ruby Doc. 2015. Disponivel em: <a href="http://ruby-doc.org/stdlib-2.2.3/libdoc/irb/rdoc/IRB.html" target="_blank">http://ruby-doc.org/stdlib-2.2.3/libdoc/irb/rdoc/IRB.html</a>. Acesso em: 24 out. 2015.</p>
 
-INTERACTIVE Ruby=Ruby interativo. 2015. Disponível em: <http://ruby-doc.org/stdlib-2.2.3/libdoc/irb/rdoc/IRB.html>. Acesso em: 24 out. 2015.
+<p>INTERACTIVE Ruby=Ruby interativo. 2015. Disponível em: <a href="http://ruby-doc.org/stdlib-2.2.3/libdoc/irb/rdoc/IRB.html"target="_blank">http://ruby-doc.org/stdlib-2.2.3/libdoc/irb/rdoc/IRB.html</a>. Acesso em: 24 out. 2015.</p>
 
-HOW Big is a Bignum? Pat Shaughnessy. 2014. Disponivel em: <http://patshaugh-nessy.net/2014/1/9/how-big-is-a-bignum>. Acesso em: 24 out. 2015.
+<p>HOW Big is a Bignum? Pat Shaughnessy. 2014. Disponivel em: <a href="http://patshaugh-nessy.net/2014/1/9/how-big-is-a-bignum"target="_blank">http://patshaugh-nessy.net/2014/1/9/how-big-is-a-bignum</a>. Acesso em: 24 out. 2015.</p>
 
-SOUZA, L. Ruby: aprenda a programar na linguagem mais divertida. 1. ed. São Paulo: Casa do Código, 2012 .v. I.
+<p>SOUZA, L. Ruby: aprenda a programar na linguagem mais divertida. 1. ed. São Paulo: Casa do Código, 2012 .v. I.</p>

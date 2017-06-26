@@ -1,5 +1,7 @@
 # Ruby na Prática
 
+[![Join the chat at https://gitter.im/ifrnead/rubynapratica](https://badges.gitter.im/ifrnead/rubynapratica.svg)](https://gitter.im/ifrnead/rubynapratica?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 <p align="justify">
   O Ruby na Prática é um livro didático escrito colaborativamente para ensino de programação estruturada e orientada a
   objetos em Ruby.

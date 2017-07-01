@@ -8,210 +8,300 @@ order: 3
 comments: true
 ---
 
-# Aula 03 - Memória, variáveis e constantes {#aula03}
+<h1 id="aula3">Aula 03 - Memória, variáveis e constantes</h1>
 
-## Memória
+<h2 id="memoria">Memória</h2>
 
-Os computadores atuais se baseiam numa arquitetura conhecida como Arquitetura de von Neumann (pronuncia-se Nôimánn), desenhada pelo matemático húngaro John von Neumann, que consiste nos seguintes componentes: memórias, unidade aritmética e lógica, unidade central de processamento, unidade de controle, além de interfaces de entrada e saída de dados (TANENBAUM, 2007).
+<p>Os computadores atuais se baseiam numa arquitetura conhecida como Arquitetura de von Neumann (pronuncia-se Nôimánn), desenhada pelo matemático húngaro John von Neumann, que consiste nos seguintes componentes: memórias, unidade aritmética e lógica, unidade central de processamento, unidade de controle, além de interfaces de entrada e saída de dados (TANENBAUM, 2007).</p>
 
-Nesta aula, vamos nos ater a discutir sobre a memória do computador e sobre como usá-la a fim de construir programas de computador mais sofisticados. É interessante notar como as memórias de computador foram desenvolvidas baseadas em dois tipos de memórias do cérebro humano: a memória de curto prazo e a memória de longo prazo.
+<p>Nesta aula, vamos nos ater a discutir sobre a memória do computador e sobre como usá-la a fim de construir programas de computador mais sofisticados. É interessante notar como as memórias de computador foram desenvolvidas baseadas em dois tipos de memórias do cérebro humano: a memória de curto prazo e a memória de longo prazo.</p>
 
-Assim como as memórias do cérebro humano, as memórias de computador são mecanismos que permitem ao computador guardar informações de forma temporária ou permanente. As memórias temporárias, também conhecidas como memória principal, são equivalentes às nossas memórias de curto prazo, que guardam informações temporariamente. Um exemplo desse tipo de memória é a RAM. Quando o fornecimento de energia da memória temporária é cortado, os dados guardados nela são perdidos. Mas, qual seria a utilidade de uma memória que perde informações? A resposta para essa pergunta é simples: algumas informações não precisam ser guardadas de forma permanente. Por exemplo: quando você "decora" o endereço de um colega para ir visitá-lo, você só precisa dessa informação até chegar a casa dele. Você não precisa dessa informação para o resto da sua vida.
+<p>Assim como as memórias do cérebro humano, as memórias de computador são mecanismos que permitem ao computador guardar informações de forma temporária ou permanente. As memórias temporárias, também conhecidas como memória principal, são equivalentes às nossas memórias de curto prazo, que guardam informações temporariamente. Um exemplo desse tipo de memória é a RAM. Quando o fornecimento de energia da memória temporária é cortado, os dados guardados nela são perdidos. Mas, qual seria a utilidade de uma memória que perde informações? A resposta para essa pergunta é simples: algumas informações não precisam ser guardadas de forma permanente. Por exemplo: quando você "decora" o endereço de um colega para ir visitá-lo, você só precisa dessa informação até chegar a casa dele. Você não precisa dessa informação para o resto da sua vida.</p>
 
-Já as memórias permanentes, também conhecidas como memória secundária ou de massa, são equivalentes às nossas memórias de longo prazo e guardam informações permanentemente. As informações guardadas nesse tipo de memória só serão descartadas se você excluí-las. Um exemplo desse tipo de memória é o HD (Hard Disk). Quando o fornecimento de energia é cortado, os dados guardados nesse tipo de memória são preservados. Conforme mencionado anteriormente, esse tipo de memória equivale à nossa memória de longo prazo, que guarda informações por longos períodos de tempo.
+<p>Já as memórias permanentes, também conhecidas como memória secundária ou de massa, são equivalentes às nossas memórias de longo prazo e guardam informações permanentemente. As informações guardadas nesse tipo de memória só serão descartadas se você excluí-las. Um exemplo desse tipo de memória é o HD (Hard Disk). Quando o fornecimento de energia é cortado, os dados guardados nesse tipo de memória são preservados. Conforme mencionado anteriormente, esse tipo de memória equivale à nossa memória de longo prazo, que guarda informações por longos períodos de tempo.</p>
 
-É interessante notar que qualquer informação guardada na memória permanente precisa, necessariamente, passar pela memória temporária antes, ou seja, primeiro, a informação é guardada na memória temporária e só depois ela é copiada para a memória permanente. Esse processo também acontece no nosso cérebro: quando estamos aprendendo algo, as informações são guardadas, inicialmente, na nossa memória temporária, portanto, são mais passíveis de esquecimento. Depois, à medida que estudamos e nos esforçamos mais para aprender, as informações passam da
-memória temporária para a memória permanente, e, a partir daí, podemos dizer que, de fato, aprendemos.
+<p>É interessante notar que qualquer informação guardada na memória permanente precisa, necessariamente, passar pela memória temporária antes, ou seja, primeiro, a informação é guardada na memória temporária e só depois ela é copiada para a memória permanente. Esse processo também acontece no nosso cérebro: quando estamos aprendendo algo, as informações são guardadas, inicialmente, na nossa memória temporária, portanto, são mais passíveis de esquecimento. Depois, à medida que estudamos e nos esforçamos mais para aprender, as informações passam da memória temporária para a memória permanente, e, a partir daí, podemos dizer que, de fato, aprendemos.</p>
 
-Existe um filme chamado "Como se fosse a primeira vez", estrelado por Adam Sandler e Drew Barrymore, que ilustra, de forma bem-humorada, a diferença entre a memória temporária e a memória permanente. No enredo do filme, Lucy (Drew Barrymore) sofreu um acidente que afetou seu cérebro de forma que ela não consegue mais reter novas informações em sua memória permanente. Ela armazena novas informações apenas na sua memória temporária, que é apagada quando ela dorme. O bom humor do filme ocorre quando Henry (Adam Sandler) tenta conquistá-la, mesmo sabendo que, no dia seguinte, ela não se lembrará dele.
+<p>Existe um filme chamado "Como se fosse a primeira vez", estrelado por Adam Sandler e Drew Barrymore, que ilustra, de forma bem-humorada, a diferença entre a memória temporária e a memória permanente. No enredo do filme, Lucy (Drew Barrymore) sofreu um acidente que afetou seu cérebro de forma que ela não consegue mais reter novas informações em sua memória permanente. Ela armazena novas informações apenas na sua memória temporária, que é apagada quando ela dorme. O bom humor do filme ocorre quando Henry (Adam Sandler) tenta conquistá-la, mesmo sabendo que, no dia seguinte, ela não se lembrará dele.</p>
 
-## Variáveis
+<h2>Variáveis</h2>
 
-Agora vamos aprender como guardar informações na memória temporária do nosso computador, ou seja, na nossa memória RAM. As variáveis são o mecanismo usado para guardar informações na memória temporária, ou seja, nosso programa pode guardar dados dentro das variáveis, que ficarão armazenadas na memória temporária. Vale salientar que esses dados são perdidos quando o nosso programa encerrar ou o computador for desligado.
+<p>Agora vamos aprender como guardar informações na memória temporária do nosso computador, ou seja, na nossa memória RAM. As variáveis são o mecanismo usado para guardar informações na memória temporária, ou seja, nosso programa pode guardar dados dentro das variáveis, que ficarão armazenadas na memória temporária. Vale salientar que esses dados são perdidos quando o nosso programa encerrar ou o computador for desligado.</p>
 
-Em Ruby, criar uma variável e armazenar um dado dentro dela é muito simples. Abra o IRB, digite o código abaixo e aperte ENTER.
+<p>Em Ruby, criar uma variável e armazenar um dado dentro dela é muito simples. Abra o IRB, digite o código abaixo e aperte ENTER.</p>
 
-```
-irb(main):001:0> numero = 3
-=> 3
-```
+<pre class="language-bash" id="codigo1">
+  <code>
+    irb(main):001:0> numero = 3
+    => 3
+  </code>
+</pre>
 
-No exemplo anterior, criamos uma variável chamada `numero` (sem acento) e armazenamos o valor 3 dentro dela.
+<p>No exemplo anterior, criamos uma variável chamada <code class="language-bash">numero</code> (sem acento) e armazenamos o valor <code class="language-bash">3</code> dentro dela.</p>
 
-O primeiro detalhe a ser percebido no exemplo anterior é que as variáveis possuem nomes. Os nomes são usados para diferenciar as variáveis, portanto, lembre-se bem dos nomes das variáveis que você utilizou. Ao nomear uma variável, você precisa seguir algumas regras básicas.
+<p>O primeiro detalhe a ser percebido no exemplo anterior é que as variáveis possuem nomes. Os nomes são usados para diferenciar as variáveis, portanto, lembre-se bem dos nomes das variáveis que você utilizou. Ao nomear uma variável, você precisa seguir algumas regras básicas.</p>
 
-* Não use acentos e caracteres especiais, prefira sempre nomes simples e que representem a informação que será guardada dentro dela;
+<ul>
+  <li>Não use acentos e caracteres especiais, prefira sempre nomes simples e que representem a informação que será guardada dentro dela;</li>
+  <li>Nomes de variáveis não podem começar com número. Por exemplo, você não pode criar uma variável chamada <code class="language-bash">3x</code>;</li>
+  <li>Se você precisar usar um nome composto (com mais de uma palavra) para a sua variável, use o <i>underline</i> (_) para separar as palavras. Por exemplo: <code class="language-bash">nome_completo</code>;</li>
+  <li>As palavras abaixo são reservadas pela linguagem Ruby, portanto, você não poderá usar nenhuma delas para nomear as suas variáveis.</li>
+</ul>
 
-* Nomes de variáveis não podem começar com número. Por exemplo, você não pode criar uma variável chamada 3x;
+<table id="tabela1">
+  <caption><strong>Tabela 1</strong> - Palavras reservadas pela linguagem Ruby</caption>
+  <tbody>
+    <tr>
+      <td><code class="language-ruby">__ENCODING__</code></td>
+      <td><code class="language-ruby">__LINE__</code></td>
+      <td><code class="language-ruby">__FILE__</code></td>
+      <td><code class="language-ruby">BEGIN</code></td>
+      <td><code class="language-ruby">END</code></td>
+      <td><code class="language-ruby">alias</code></td>
+      <td><code class="language-ruby">and</code></td>
+      <td><code class="language-ruby">begin</code></td>
+      <td><code class="language-ruby">break</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">case</code></td>
+      <td><code class="language-ruby">class</code></td>
+      <td><code class="language-ruby">def</code></td>
+      <td><code class="language-ruby">defined?</code></td>
+      <td><code class="language-ruby">do</code></td>
+      <td><code class="language-ruby">else</code></td>
+      <td><code class="language-ruby">elsif</code></td>
+      <td><code class="language-ruby">end</code></td>
+      <td><code class="language-ruby">ensure</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">false</code></td>
+      <td><code class="language-ruby">for</code></td>
+      <td><code class="language-ruby">if</code></td>
+      <td><code class="language-ruby">in</code></td>
+      <td><code class="language-ruby">module</code></td>
+      <td><code class="language-ruby">next</code></td>
+      <td><code class="language-ruby">nil</code></td>
+      <td><code class="language-ruby">not</code></td>
+      <td><code class="language-ruby">or</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">redo</code></td>
+      <td><code class="language-ruby">rescue</code></td>
+      <td><code class="language-ruby">retry</code></td>
+      <td><code class="language-ruby">return</code></td>
+      <td><code class="language-ruby">self</code></td>
+      <td><code class="language-ruby">super</code></td>
+      <td><code class="language-ruby">then</code></td>
+      <td><code class="language-ruby">true</code></td>
+      <td><code class="language-ruby">undef</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">unless</code></td>
+      <td><code class="language-ruby">until</code></td>
+      <td><code class="language-ruby">when</code></td>
+      <td><code class="language-ruby">while</code></td>
+      <td><code class="language-ruby">yield</code></td>
+    </tr>
+  </tbody>
+</table>
 
-* Se você precisar usar um nome composto (com mais de uma palavra) para a sua variável, use o underline (\_) para separar as palavras. Por exemplo: `nome_completo`;
+<p>Ao longo desse livro, iremos estudar e conhecer a maioria das palavras reservadas. Abaixo você pode conferir alguns exemplos válidos de criação de variáveis.</p>
 
-* As palavras abaixo são reservadas pela linguagem Ruby, portanto, você não poderá usar nenhuma delas para nomear as suas variáveis.
+<pre class="language-bash" id="codigo2">
+  <code>
+    irb(main):001:0> numero = 2
+    => 2
+    irb(main):002:0> nome_completo = "Adam Sandler"
+    => "Adam Sandler"
+    irb(main):003:0> idade = 26
+    => 26
+    irb(main):004:0> preco_promocional = 2.33
+    => 2.33
+  </code>
+</pre>
 
-| \_\_ENCODING\_\_ | case     | false  | redo   | unless |
-| \_\_LINE\_\_     | class    | for    | rescue | until  |
-| \_\_FILE\_\_     | def      | if     | retry  | when   |
-| BEGIN            | defined? | in     | return | while  |
-| END              | do       | module | self   | yield  |
-| alias            | else     | next   | super  |        |
-| and              | elsif    | nil    | then   |        |
-| begin            | end      | not    | true   |        |
-| break            | ensure   | or     | undef  |        |
+<p>Perceba que estamos usando nomes de variáveis que indicam o que está guardado nelas. É muito comum ver aqueles que estão aprendendo a linguagem usando péssimos nomes para variáveis, conforme ilustramos abaixo.</p>
 
-Ao longo desse livro, iremos estudar e conhecer a maioria das palavras reservadas. Abaixo você pode conferir alguns exemplos válidos de criação de variáveis.
+<pre class="language-bash" id="codigo3">
+  <code>
+    irb(main):001:0> x = 2
+    => 2
+    irb(main):002:0> z = "Adam Sandler"
+    => "Adam Sandler"
+    irb(main):003:0> z2 = 26
+    => 26
+    irb(main):004:0> x1 = 2.33
+    => 2.33
+  </code>
+</pre>
 
-```
-irb(main):001:0> numero = 2
-=> 2
-irb(main):002:0> nome_completo = "Adam Sandler"
-=> "Adam Sandler"
-irb(main):003:0> idade = 26
-=> 26
-irb(main):004:0> preco_promocional = 2.33
-=> 2.33
-```
+<p>Os nomes das variáveis ilustrados no exemplo anterior não indicam o que elas estão guardando e, portanto, poderão confundi-lo ao construir seus programas.</p>
 
-Perceba que estamos usando nomes de variáveis que indicam o que está guardado nelas. É muito comum ver aqueles que estão aprendendo a linguagem usando péssimos nomes para variáveis, conforme ilustramos abaixo.
+<p>Outro detalhe a ser percebido, nos exemplos anteriores, é que nós não apenas criamos novas variáveis, mas também guardamos valores dentro delas. Para guardar um valor dentro de uma variável, nós usamos o sinal de atribuição, que é o sinal de igual (<code class="language-bash">=</code>). Veja o exemplo abaixo.</p>
 
-```
-irb(main):001:0> x = 2
-=> 2
-irb(main):002:0> z = "Adam Sandler"
-=> "Adam Sandler"
-irb(main):003:0> z2 = 26
-=> 26
-irb(main):004:0> x1 = 2.33
-=> 2.33
-```
+<pre class="language-bash" id="codigo4">
+  <code>
+    irb(main):001:0> numero = 2
+    => 2
+  </code>
+</pre>
 
-Os nomes das variáveis ilustrados no exemplo anterior não indicam o que elas estão guardando e, portanto, poderão confundi-lo ao construir seus programas.
+<p>No exemplo acima, criamos uma variável chamada <code class="language-bash">numero</code> que armazena o número inteiro <code class="language-bash">2</code>.</p>
 
-Outro detalhe a ser percebido, nos exemplos anteriores, é que nós não apenas criamos novas variáveis, mas também guardamos valores dentro delas. Para guardar um valor dentro de uma variável, nós usamos o sinal de atribuição, que é o sinal de igual (=). Veja o exemplo abaixo.
+<p>Você se lembra dos métodos <code class="language-bash">puts</code> e <code class="language-bash">gets.chomp</code> que aprendemos na aula anterior? Eles são comandos de entrada e saída de dados e também podem ser usados com variáveis! Observe o próximo exemplo.</p>
 
-```
-irb(main):001:0> numero = 2
-=> 2
-```
+<pre class="language-bash" id="codigo5">
+  <code>
+    irb(main):001:0> numero = 2
+    irb(main):002:0> puts numero
+    2
+    => nil
+  </code>
+</pre>
 
-No exemplo acima, criamos uma variável chamada `numero` que armazena o número inteiro `2`.
+<p>No exemplo acima, criamos uma variável chamada <code class="language-bash">numero</code>, armazenamos o valor <code class="language-bash">2</code> dentro dela e, em seguida, usamos o método <code class="language-bash">puts</code> para exibir o valor da variável na tela.</p>
 
-Você se lembra dos métodos `puts` e `gets.chomp` que aprendemos na aula anterior? Eles são comandos de entrada e saída de dados e também podem ser usados com variáveis! Observe o próximo exemplo.
+<p>Como permitir que o usuário digite um dado no teclado e essa informação seja guardada numa variável? Observe o próximo exemplo.</p>
 
-```
-irb(main):001:0> numero = 2
-irb(main):002:0> puts numero
-2
-=> nil
-```
+<pre class="language-bash" id="codigo6">
+  <code>
+    irb(main):002:0> nome = gets.chomp
+    Drew Barrymore
+    => "Drew Barrymore"
+    irb(main):003:0> puts nome
+    "Drew Barrymore"
+    => nil
+  </code>
+</pre>
 
-No exemplo acima, criamos uma variável chamada `numero`, armazenamos o valor 2 dentro dela e, em seguida, usamos o método `puts` para exibir o valor da variável na tela.
+<p>Na primeira linha do exemplo anterior, usamos os métodos <code class="language-bash">gets.chomp</code> para permitir que o usuário digite o seu nome. Os métodos <code class="language-bash">gets.chomp</code> irão retornar (devolver como resultado) o valor digitado pelo usuário (uma String), e esse valor será guardado na variável <code class="language-bash">nome</code>. Na quarta linha do exemplo, usamos o método <code class="language-bash">puts</code> para exibir o valor guardado na variável <code class="language-bash">nome</code>, que será o nome digitado por você. Agora observe o exemplo abaixo.</p>
 
-Como permitir que o usuário digite um dado no teclado e essa informação seja guardada numa variável? Observe o próximo exemplo.
+<pre class="language-bash" id="codigo7">
+  <code>
+    irb(main):001:0> idade = gets.chomp
+    29
+    => 29
+    irb(main):002:0> idade_em_10_anos = idade + 10
+    TypeError: no implicit conversion of Fixnum into String
+    from (irb):51:in `+’
+    from (irb):51
+    from C:/Ruby22-x64/bin/irb:11:in `&lt;main&gt;’
+  </code>
+</pre>
 
-```
-irb(main):002:0> nome = gets.chomp
-Drew Barrymore
-=> "Drew Barrymore"
-irb(main):003:0> puts nome
-"Drew Barrymore"
-=> nil
-```
+<p>Algo deu errado. Você consegue perceber por quê? Na aula anterior, vimos que o retorno, ou seja, o resultado dado pelos métodos <code class="language-bash">gets.chomp</code> é uma String. Portanto, apesar do usuário digitar um valor numérico (sua idade), essa informação será guardada na variável <code class="language-bash">idade</code> como uma String. Quando tentamos calcular a idade do usuário daqui a 10 anos, tentamos somar a variável <code class="language-bash">idade</code> (que guarda uma String) com o valor inteiro <code class="language-bash">10</code> e, como já vimos na aula passada, não é possível somar uma String com um número. Portanto, para que o exemplo anterior funcione, é preciso converter o valor digitado pelo usuário para inteiro, e, só depois disso, poderemos somá-lo com <code class="language-bash">10</code>10</code>. Observe abaixo o exemplo corrigido.</p>
 
-Na primeira linha do exemplo anterior, usamos os métodos `gets.chomp` para permitir que o usuário digite o seu nome. Os métodos `gets.chomp` irão retornar (devolver como resultado) o valor digitado pelo usuário (uma String), e esse valor será guardado na variável `nome`. Na quarta linha do exemplo, usamos o método `puts` para exibir o valor guardado na variável `nome`, que será o nome digitado por você. Agora observe o exemplo abaixo.
+<pre class="language-bash" id="codigo8">
+  <code>
+    irb(main):001:0> idade = gets.chomp.to_i
+    29
+    => 29
+    irb(main):002:0> idade_em_10_anos = idade + 10
+    => 39
+    irb(main):003:0> puts idade_em_10_anos
+    39
+    => nil
+  </code>
+</pre>
 
-```
-irb(main):001:0> idade = gets.chomp
-29
-=> 29
-irb(main):002:0> idade_em_10_anos = idade + 10
-TypeError: no implicit conversion of Fixnum into String
-from (irb):51:in `+’
-from (irb):51
-from C:/Ruby22-x64/bin/irb:11:in `<main>’
-```
+<p>Lembra-se do método <code class="language-bash">to_i</code> que aprendemos na aula anterior? Ele está sendo usado na primeira linha do exemplo para converter o retorno (resultado) do método <code class="language-bash">chomp</code>, que é uma String, em um número inteiro. Portanto, o valor guardado na variável <code class="language-bash">idade</code> é um inteiro. Agora nós podemos fazer a operação de soma entre a variável <code class="language-bash">idade</code> e o valor <code class="language-bash">10</code>.</p>
 
-Algo deu errado. Você consegue perceber por quê? Na aula anterior, vimos que o retorno, ou seja, o resultado dado pelos métodos `gets.chomp` é uma String. Portanto, apesar de o usuário digitar um valor numérico (sua idade), essa informação será guardada na variável `idade` como uma String. Quando tentamos calcular a idade do usuário daqui a 10 anos, tentamos somar a variável `idade` (que guarda uma String) com o valor inteiro 10 e, como já vimos na aula passada, não é possível somar uma String com um número. Portanto, para que o exemplo anterior funcione, é preciso converter o valor digitado pelo usuário para inteiro, e, só depois disso, poderemos somá-lo com 10. Observe abaixo o exemplo corrigido.
+<p>Em alguns momentos, essa questão dos tipos das variáveis, ou seja, os tipos de dados que as variáveis guardam, pode ficar confusa. Isso ocorre porque Ruby é uma linguagem de "tipagem" dinâmica. Lembra que mencionamos isso na nossa primeira aula? Sendo o Ruby uma linguagem de tipagem dinâmica, você não precisa definir qual tipo de dado será guardado na variável ao criá-la. Um outro exemplo de tipagem é a estática, que exige que o programador, ao criar uma variável, informe qual tipo de dado será guardado nela. Observe o exemplo de código abaixo escrito na linguagem Java. Não tente fazer isso no IRB, pois esse exemplo está escrito em outra linguagem.</p>
 
-```
-irb(main):001:0> idade = gets.chomp.to_i
-29
-=> 29
-irb(main):002:0> idade_em_10_anos = idade + 10
-=> 39
-irb(main):003:0> puts idade_em_10_anos
-39
-=> nil
-```
-
-Lembra-se do método `to_i` que aprendemos na aula anterior? Ele está sendo usado na primeira linha do exemplo para converter o retorno (resultado) do método `chomp`, que é uma String, em um número inteiro. Portanto, o valor guardado na variável `idade` é um inteiro. Agora nós podemos fazer a operação de soma entre a variável `idade` e o valor `10`.
-
-Em alguns momentos, essa questão dos tipos das variáveis, ou seja, os tipos de dados que as variáveis guardam, pode ficar confusa. Isso ocorre porque Ruby é uma linguagem de "tipagem" dinâmica. Lembra que mencionamos isso na nossa primeira aula? Sendo o Ruby uma linguagem de tipagem dinâmica, você não precisa definir qual tipo de dado será guardado na variável ao criá-la. Um outro exemplo de tipagem é a estática, que exige que o programador, ao criar uma variável, informe qual tipo de dado será guardado nela. Observe o exemplo de código abaixo escrito na linguagem Java. Não tente fazer isso no IRB, pois esse exemplo está escrito em outra linguagem.
-
-{lang=java}
+<pre class="language-java" id="codigo9">
+  <code>
     int idade = 29;
+  </code>
+</pre>
 
-Quais diferenças você consegue perceber entre a criação de uma variável em Java e em Ruby? A primeira delas é a presença do `int` antes do nome da variável. Isso indica que essa variável irá guardar um número inteiro, portanto, ela não será capaz de guardar outros tipos de dados. A segunda diferença é a presença do ponto e vírgula no final da linha. Em Java, o final de cada instrução deve ser marcado com ponto e vírgula.
+<p>Quais diferenças você consegue perceber entre a criação de uma variável em Java e em Ruby? A primeira delas é a presença do <code class="language-java">int</code> antes do nome da variável. Isso indica que essa variável irá guardar um número inteiro, portanto, ela não será capaz de guardar outros tipos de dados. A segunda diferença é a presença do ponto e vírgula no final da linha. Em Java, o final de cada instrução deve ser marcado com ponto e vírgula.</p>
 
-Portanto, em linguagens de tipagem dinâmica como Ruby, você não precisa definir o tipo da variável ao criar uma. Já em linguagens de tipagem estática como Java, você precisa definir o tipo da variável ao criá-la. Em Ruby, você pode fazer algo do tipo:
+<p>Portanto, em linguagens de tipagem dinâmica como Ruby, você não precisa definir o tipo da variável ao criar uma. Já em linguagens de tipagem estática como Java, você precisa definir o tipo da variável ao criá-la. Em Ruby, você pode fazer algo do tipo:</p>
 
-{lang=irb}
+<pre class="language-bash" id="codigo10">
+  <code>
     irb(main):001:0> variavel = 3
     => 3
     irb(main):002:0> variavel = "Ruby usa tipagem dinâmica"
     => "Ruby usa tipagem din\x83mica"
+  </code>
+</pre>
 
-Observe que usamos a mesma variável para guardar um número inteiro e, em seguida, guardar uma String. Porém, toda essa flexibilidade tem um preço: em alguns momentos, pode ficar difícil saber qual tipo de dado está sendo guardado em cada variável. Para atenuar esse problema, existem meios de descobrir qual tipo de dado está guardado em cada variável. Observe o exemplo abaixo.
+<p>Observe que usamos a mesma variável para guardar um número inteiro e, em seguida, guardar uma String. Porém, toda essa flexibilidade tem um preço: em alguns momentos, pode ficar difícil saber qual tipo de dado está sendo guardado em cada variável. Para atenuar esse problema, existem meios de descobrir qual tipo de dado está guardado em cada variável. Observe o exemplo abaixo.</p>
 
-{lang=irb}
+<pre class="language-bash" id="codigo11">
+  <code>
     irb(main):001:0> variavel_desconhecida = 20
     => 20
     irb(main):002:0> variavel_desconhecida.class
     => Fixnum
+  </code>
+</pre>
 
-No exemplo de código acima, usamos o método `class` para descobrir o tipo de dado guardado na variável `variavel_desconhecida`. Perceba que
-o retorno (resultado) do método foi `Fixnum`, que é um tipo de dado inteiro. Observe mais exemplos abaixo.
+<p>No exemplo de código acima, usamos o método <code class="language-bash">class</code> para descobrir o tipo de dado guardado na variável <code class="language-bash">variavel_desconhecida</code>. Perceba que o retorno (resultado) do método foi <code class="language-bash">Fixnum</code>, que é um tipo de dado inteiro. Observe mais exemplos abaixo.</p>
 
-{lang=irb}
+<pre class="language-bash" id="codigo12">
+  <code>
     irb(main):001:0> variavel_desconhecida = "Tipo de dado desconhecido"
     => "Tipo de dado desconhecido"
     irb(main):002:0> variavel_desconhecida.class
     => String
+  </code>
+</pre>
 
-X> ## Atividade 3.1
-X>
-X> Usando o IRB, crie uma variável chamada `nome` e atribua o seu nome a ela. Crie outra variável chamada `idade` e atribua a sua idade a ela. Em seguida, mostre os valores de `nome` e `idade` na tela.
+<div class="panel atividade" id="atividade1">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 3.1</h4>
+  </div>
+  <div class="panel-body">
+    <p>Usando o IRB, crie uma variável chamada <code class="language-bash">nome</code> e atribua o seu nome a ela. Crie outra variável chamada <code class="language-bash">idade</code> e atribua a sua idade a ela. Em seguida, mostre os valores de <code class="language-bash">nome</code> e <code class="language-bash">idade</code> na tela.</p>
+  </div>
+</div>
 
-X> ## Atividade 3.2
-X>
-X> Usando os métodos apresentados nesta aula, descubra os tipos de dados armazenados nas variáveis `nome` e `idade` criadas na Atividade 3.1.
+<div class="panel atividade" id="atividade2">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 3.2</h4>
+  </div>
+  <div class="panel-body">
+    <p>Usando os métodos apresentados nesta aula, descubra os tipos de dados armazenados nas variáveis <code class="language-bash">nome</code> e <code class="language-bash">idade</code> criadas na Atividade 3.1.</p>
+  </div>
+</div>
 
-## Constantes
+<h2>Constantes</h2>
 
-Uma constante é como uma variável, ou seja, um espaço na memória do computador na qual é possível guardar informações. Nas variáveis, esse valor pode mudar, enquanto nas constantes esse valor, tecnicamente, não pode ser alterado (por isso o nome). Contudo, o interpretador Ruby permite que você altere valores de constantes, mas ele dará um aviso para alertá-lo que você está alterando o valor de uma constante (GURU-SP, 2015).
+<p>Uma constante é como uma variável, ou seja, um espaço na memória do computador na qual é possível guardar informações. Nas variáveis, esse valor pode mudar, enquanto nas constantes esse valor, tecnicamente, não pode ser alterado (por isso o nome). Contudo, o interpretador Ruby permite que você altere valores de constantes, mas ele dará um aviso para alertá-lo que você está alterando o valor de uma constante (GURU-SP, 2015).</p>
 
-Para criar uma constante, basta criar uma ‘variável’ com a primeira letra maiúscula. Observe o exemplo abaixo.
+<p>Para criar uma constante, basta criar uma <code class="language-bash">variável</code> com a primeira letra maiúscula. Observe o exemplo abaixo.</p>
 
-{lang=irb}
+<pre class="language-bash" id="codigo13">
+  <code>
     irb(main):001:0> Minha_constante = 2
     => 2
     irb(main):001:0> Minha_constante = 3
     (irb):3: warning: already initialized constant Minha_constante
     (irb):1: warning: previous definition of Minha_constante was here
+  </code>
+</pre>
 
-No exemplo anterior, criamos uma constante chamada `Minha_constante`, na primeira linha, e atribuímos o valor 2 a ela. Em seguida, na linha 3, alteramos o valor da constante para 3 e recebemos o _warning_ (alerta) do Ruby dizendo que a constante já havia sido criada e que o valor dela foi definido na linha 1.
+<p>No exemplo anterior, criamos uma constante chamada <code class="language-bash">Minha_constante</code>, na primeira linha, e atribuímos o valor <code class="language-bash">2</code> a ela. Em seguida, na linha 3, alteramos o valor da constante para <code class="language-bash">3</code> e recebemos o <i>warning</i> (alerta) do Ruby dizendo que a constante já havia sido criada e que o valor dela foi definido na linha 1.</p>
 
-Em Ruby e em várias outras linguagens de programação existem as convenções. Convenções são normas que são adotadas pelos desenvolvedores para melhor organizar o código. Mas as convenções não são regras da linguagem, portanto se você não segui-las, seu código funcionará perfeitamente, contudo, ele não irá atender a essa convenção (acordo). É uma boa prática de programação seguir todas as convenções da linguagem, e aqui vai uma delas: por convenção, as constantes são escritas com todas as letras em maiúsculas. Por exemplo: `MINHA_CONSTANTE`, `IDADE`, `NOME`, etc.
+<p>Em Ruby e em várias outras linguagens de programação existem as convenções. Convenções são normas que são adotadas pelos desenvolvedores para melhor organizar o código. Mas as convenções não são regras da linguagem, portanto se você não segui-las, seu código funcionará perfeitamente, contudo, ele não irá atender a essa convenção (acordo). É uma boa prática de programação seguir todas as convenções da linguagem, e aqui vai uma delas: por convenção, as constantes são escritas com todas as letras em maiúsculas. Por exemplo: <code class="language-bash">MINHA_CONSTANTE</code>, <code class="language-bash">IDADE</code>, <code class="language-bash">NOME</code>, etc.</p>
 
-X> ## Atividade 3.3
-X>
-X> Crie uma constante chamada `IDADE` e atribua a sua idade a ela. Em seguida, mostre na tela o valor da constante criada por você usando o método `puts`.
+<div class="panel atividade" id="atividade3">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 3.3</h4>
+  </div>
+  <div class="panel-body">
+    <p>Crie uma constante chamada <code class="language-bash">IDADE</code> e atribua a sua idade a ela. Em seguida, mostre na tela o valor da constante criada por você usando o método <code class="language-bash">puts</code>.</p>
+  </div>
+</div>
 
-## Referências
+<h2>Referências</h2>
 
-DOC, R. Keywords. Ruby Doc. 2015. Disponivel em: <http://ruby-doc.org/core-2.2.3/doc/keywords_rdoc.html>. Acesso em: 24 out. 2015.
+<p>DOC, R. Keywords. Ruby Doc. 2015. Disponivel em: <a href="http://ruby-doc.org/core-2.2.3/doc/keywords_rdoc.html" target="_blank">http://ruby-doc.org/core-2.2.3/doc/keywords_rdoc.html</a>. Acesso em: 24 out. 2015.</p>
 
-FOUNDATION, P. S. Lexical Analysis. PyDoc. 2015. Disponivel em: <https://docs.python.org/3/reference/lexical_analysis.html>. Acesso em: 13 out. 2015.
+<p>FOUNDATION, P. S. Lexical Analysis. PyDoc. 2015. Disponivel em: <a href="http://ruby-doc.org/core-2.2.3/doc/keywords_rdoc.html" target="_blank">http://ruby-doc.org/core-2.2.3/doc/keywords_rdoc.html</a>. Acesso em: 13 out. 2015.</p>
 
-GURU-SP. Constantes. Tutorial de Ruby do GURU-SP. 2015. Disponivel em: <http://guru-sp.github.io/tutorial_ruby/constantes.html>. Acesso em: 27 out. 2015.
+<p>GURU-SP. Constantes. Tutorial de Ruby do GURU-SP. 2015. Disponivel em: <a href="http://guru-sp.github.io/tutorial_ruby/constantes.html" target="_blank">http://guru-sp.github.io/tutorial_ruby/constantes.html</a>. Acesso em: 27 out. 2015.</p>
 
-TANENBAUM, A. S. Organização Estruturada de Computadores. São Paulo: Pearson Prentice Hall, 2007.
+<p>TANENBAUM, A. S. Organização Estruturada de Computadores. São Paulo: Pearson Prentice Hall, 2007.</p>

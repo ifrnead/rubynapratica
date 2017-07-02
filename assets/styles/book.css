@@ -430,7 +430,7 @@ figure img {
   margin-left: auto;
   margin-right: auto;
 }
-figure figcaption {
+figure figcaption, p.caption {
   margin-top: 0.5em;
   text-align: center;
   font-size: 0.9em;

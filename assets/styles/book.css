@@ -471,3 +471,6 @@ div.panel div.panel-body p {
 .full-width {
   width: 100%;
 }
+div.right-buttons a i.fa {
+  color: #ccc;
+}

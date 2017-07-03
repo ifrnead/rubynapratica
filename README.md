@@ -1,6 +1,6 @@
 # Ruby na Prática
 
-[![Join the chat at https://gitter.im/ifrnead/rubynapratica](https://badges.gitter.im/ifrnead/rubynapratica.svg)](https://gitter.im/ifrnead/rubynapratica?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+<a href="https://discord.gg/ucapfAG" target="_blank"><img src="https://discordapp.com/assets/41484d92c876f76b20c7f746221e8151.svg" width="5%"></a>&nbsp;&nbsp;<a href="https://facebook.com/groups/rubynapratica" target="_blank"><img src="https://www.iconfinder.com/icons/970002/download/svg/128" width="5%"></a>&nbsp;&nbsp;<a href="https://ifrnead.github.io/rubynapratica/" target="_blank"><img src="https://www.iconfinder.com/icons/214658/download/svg/128" width="5%"></a>
 
 <p align="justify">
   O Ruby na Prática é um livro didático escrito colaborativamente para ensino de programação estruturada e orientada a
@@ -43,9 +43,7 @@
   </a>
 </p>
 
-### Download
-
-<p>Nenhuma versão do livro disponível até o momento.</p>
+<p>O livro está disponível através do endereço: <a href="https://ifrnead.github.io/rubynapratica" target="_blank">https://ifrnead.github.io/rubynapratica</a></p>
 
 ## Autores e colaboradores
 

@@ -463,10 +463,11 @@ div.panel div.panel-heading h4 {
   color: inherit;
 }
 div.panel div.panel-body {
-  padding: 1em;
+  padding: 1em 1em 0.5em 1em;
 }
 div.panel div.panel-body p {
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0.5em;
 }
 .full-width {
   width: 100%;

@@ -8,28 +8,68 @@ order: 5
 comments: true
 ---
 
-# Aula 05 - Operadores aritméticos e relacionais
+<h1 id="aula5">Aula 05 - Operadores aritméticos e relacionais</h1>
 
-## Introdução
+<h2 id="introducao">Introdução</h2>
 
-A linguagem Ruby, bem como as outras linguagens, possui pelo menos três tipos de operadores: os aritméticos, os lógicos e os relacionais. Os operadores nos permitem realizar determinadas operações com os dados. Nesta aula, iremos aprender sobre os operadores aritméticos.
+<p>A linguagem Ruby, bem como as outras linguagens, possui pelo menos três tipos de operadores: os aritméticos, os lógicos e os relacionais. Os operadores nos permitem realizar determinadas operações com os dados. Nesta aula, iremos aprender sobre os operadores aritméticos.</p>
 
-## Operadores Aritméticos
+<h2 id="operadores_aritmeticos">Operadores Aritméticos</h2>
 
-Os operadores aritméticos são aqueles que aprendemos nas aulas de matemática: soma, subtração, multiplicação, divisão, entre outros. Em Ruby, nós temos seis operadores aritméticos a nossa disposição.
+<p>Os operadores aritméticos são aqueles que aprendemos nas aulas de matemática: soma, subtração, multiplicação, divisão, entre outros. Em Ruby, nós temos seis operadores aritméticos a nossa disposição.</p>
 
-| Nome           | Símbolo | Descrição                                     | Exemplo    |
-|----------------|---------|-----------------------------------------------|------------|
-| Adição ou soma | +       | Soma dois valores                             | 2 + 3 = 5  |
-| Subtração      | -       | Subtrai dois valores                          | 4 - 2 = 2  |
-| Multiplicação  | *       | Multiplica dois valores                       | 2 * 2 = 4  |
-| Divisão        | /       | Divide dois valores                           | 13 / 4 = 3 |
-| Módulo         | %       | Calcula o resto da divisão entre dois valores | 13 % 4 = 1 |
-| Potência       | **      | Calcula a potência entre dois valores         | 2 ** 3 = 8 |
+<table id="tabela1">
+  <caption><strong>Tabela 1</strong> - Operadores aritméticos</caption>
+  <thead>
+    <th>Nome</th>
+    <th>Símbolo</th>
+    <th>Descrição</th>
+    <th>Exemplo</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Adição ou soma</td>
+      <td><code class="language-ruby">+</code></td>
+      <td>Soma dois valores</td>
+      <td><code class="language-ruby">2 + 3 = 5</code></td>
+    </tr>
+    <tr>
+      <td>Subtração</td>
+      <td><code class="language-ruby">-</code></td>
+      <td>Subtrai dois valores</td>
+      <td><code class="language-ruby">4 - 2 = 2</code></td>
+    </tr>
+    <tr>
+      <td>Multiplicação</td>
+      <td><code class="language-ruby">*</code></td>
+      <td>Multiplica dois valores</td>
+      <td><code class="language-ruby">2 * 2 = 4</code></td>
+    </tr>
+    <tr>
+      <td>Divisão</td>
+      <td><code class="language-ruby">/</code></td>
+      <td>Divide dois valores</td>
+      <td><code class="language-ruby">13 / 4 = 3</code></td>
+    </tr>
+    <tr>
+      <td>Módulo (resto da divisão)</td>
+      <td><code class="language-ruby">%</code></td>
+      <td>Calcula o resto da divisão entre dois valores</td>
+      <td><code class="language-ruby">13 % 4 = 1</code></td>
+    </tr>
+    <tr>
+      <td>Potência</td>
+      <td><code class="language-ruby">**</code></td>
+      <td>Calcula a potência entre dois valores</td>
+      <td><code class="language-ruby">2 ** 3 = 8</code></td>
+    </tr>
+  </tbody>
+</table>
 
-Observe abaixo alguns exemplos de uso dos operadores aritméticos.
+<p>Observe abaixo alguns exemplos de uso dos operadores aritméticos.</p>
 
-{lang=irb}
+<pre class="language-bash" id="codigo1">
+  <code>
     irb(main):001:0> 5 + 5
     => 10
     irb(main):002:0> 3 – 5
@@ -46,48 +86,88 @@ Observe abaixo alguns exemplos de uso dos operadores aritméticos.
         ZeroDivisionError: divided by 0
         from (irb):7:in `/’
         from (irb):7
-        from C:/Ruby22-x64/bin/irb:11:in `<main>’
+        from C:/Ruby22-x64/bin/irb:11:in `&lt;main&gt;’
+  </code>
+</pre>
 
-Observe que, quando tentamos calcular `12 / 0`, o Ruby apresentou um erro: `ZeroDivisionError`. Esse erro ocorreu porque não é possível dividir nem um valor por zero.
+<p>Observe que, quando tentamos calcular <code class="language-ruby">12 / 0</code>, o Ruby apresentou um erro: <code class="language-ruby">ZeroDivisionError</code>. Esse erro ocorreu porque não é possível dividir nem um valor por zero.</p>
 
-{#aula05-atividade01}
-X> ## Atividade 5.1
-X>
-X> Crie um script Ruby usando o Atom ou seu editor de código preferido. Nesse script, realize, pelo menos, uma operação com cada um dos operadores aritméticos apresentados.
+<div class="panel atividade" id="atividade1">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 5.1</h4>
+  </div>
+  <div class="panel-body">
+    <p>Crie um <i>script</i> Ruby usando o Atom ou seu editor de código preferido. Nesse <i>script</i>, realize, pelo menos, uma operação com cada um dos operadores aritméticos apresentados.</p>
+  </div>
+</div>
 
-### Operadores Aritméticos e Variáveis
+<h3 id="operadores_aritmeticos_variaveis">Operadores aritméticos e variáveis</h3>
 
-Lembra-se das variáveis? Também é possível utilizar os operadores aritméticos com variáveis. Confira abaixo o [Exemplo de código 01](#aula05-codigo01).
+<p>Lembra-se das variáveis? Também é possível utilizar os operadores aritméticos com variáveis. Confira abaixo o <a href="#codigo1">Exemplo de código 1</a>.</p>
 
-{#aula05-codigo01}
-<<[Exemplo de código 01 - Usando operadores aritméticos com variáveis](code/exemplo51.rb)
+<pre class="language-ruby line-numbers" id="codigo1">
+  <code>
+    a = 4
+    b = 2
+    puts a + b
+    puts a - b
+    puts a * b
+    puts a / b
+    puts a % b
+    puts a ** b
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 1</strong> - Operadores aritméticos</p>
 
-Nas linhas 1 e 2 do [Exemplo de código 01](#aula05-codigo01), criamos duas variáveis `a` e `b` e atribuímos valores a elas. Em seguida, usamos os operadores aritméticos para fazer operações matemáticas com os valores dessas variáveis. Observe que usamos o método `puts` para apresentar os resultados das operações.
+<p>Nas linhas 1 e 2 do <a href="#codigo1">Exemplo de código 1</a>, criamos duas variáveis <code class="language-ruby">a</code> e <code class="language-ruby">b</code> e atribuímos valores a elas. Em seguida, usamos os operadores aritméticos para fazer operações matemáticas com os valores dessas variáveis. Observe que usamos o método <code class="language-ruby">puts</code> para apresentar os resultados das operações.</p>
 
-{#aula05-atividade02}
-X> ## Atividade 5.2
-X>
-X> Crie um _script_ Ruby usando o Atom ou seu editor de código preferido. Nesse _script_, realize pelo menos uma operação com cada um dos operadores aritméticos usando variáveis, conforme ilustrado no [Exemplo de código 01](#aula05-codigo01).
+<div class="panel atividade" id="atividade2">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 5.2</h4>
+  </div>
+  <div class="panel-body">
+    <p>Crie um <i>script</i> Ruby usando o Atom ou seu editor de código preferido. Nesse <i>script</i>, realize pelo menos uma operação com cada um dos operadores aritméticos usando variáveis, conforme ilustrado no <a href="#codigo1">Exemplo de código 1</a>.</p>
+  </div>
+</div>
 
-### Operadores Aritméticos e Variáveis Definidas pelo Usuário
+<h3 id="operadores_aritmeticos_variaveis_definidas_usuario">Operadores Aritméticos e Variáveis Definidas pelo Usuário</h3>
 
-Agora vamos um pouco além: vamos permitir que o usuário digite os valores das variáveis `a` e `b` e, em seguida, vamos usar esses valores para realizar operações matemáticas usando os operadores aritméticos. Observe abaixo o [Exemplo de código 02](#aula05-codigo02).
+<p>Agora vamos um pouco além: vamos permitir que o usuário digite os valores das variáveis <code class="language-ruby">a</code> e <code class="language-ruby">b</code> e, em seguida, vamos usar esses valores para realizar operações matemáticas usando os operadores aritméticos. Observe abaixo o <a href="#codigo2">Exemplo de código 2</a>.</p>
 
-{#aula05-codigo02}
-<<[Exemplo de código 02 - Usando operadores com valores definidos pelo usuário](code/exemplo52.rb)
+<pre class="language-ruby line-numbers" id="codigo2">
+  <code>
+    puts "Digite um valor"
+    a = gets.chomp.to_i
+    puts "Digite outro valor"
+    b = gets.chomp.to_i
 
-Observe que, nas linhas 1 e 3, usamos o método `puts` para apresentar uma mensagem na tela solicitando que o usuário digite um valor. Nas linhas 2 e 4, usamos os métodos `gets.chomp.to_i` para permitir que o usuário digite um valor numérico no teclado. Esses valores digitados pelo usuário são guardados nas variáveis `a` e `b`.
+    puts a + b
+    puts a - b
+    puts a * b
+    puts a / b
+    puts a % b
+    puts a ** b
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 2</strong> - Usando operadores com valores definidos pelo usuário</p>
 
-{#aula05-atividade03}
-X> ## Atividade 5.3
-X>
-X> Crie um _script_ Ruby usando o Atom ou seu editor de código preferido. Nesse script, digite o código apresentado no [Exemplo de código 02](#aula05-codigo02), execute-o e verifique os resultados.
+<p>Observe que, nas linhas 1 e 3, usamos o método <code class="language-ruby">puts</code> para apresentar uma mensagem na tela solicitando que o usuário digite um valor. Nas linhas 2 e 4, usamos os métodos <code class="language-ruby">gets.chomp.to_i</code> para permitir que o usuário digite um valor numérico no teclado. Esses valores digitados pelo usuário são guardados nas variáveis <code class="language-ruby">a</code> e <code class="language-ruby">b</code>.</p>
 
-## Apresentando melhor os resultados
+<div class="panel atividade" id="atividade3">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 5.3</h4>
+  </div>
+  <div class="panel-body">
+    <p>Crie um <i>script</i> Ruby usando o Atom ou seu editor de código preferido. Nesse script, digite o código apresentado no <a href="#codigo2">Exemplo de código 2</a>, execute-o e verifique os resultados.</p>
+  </div>
+</div>
 
-Se você realizou a [Atividade 5.3](#aula05-atividade03), deve ter observado que a execução do _script_ apresentou algo parecido com o seguinte resultado.
+<h2 id="apresentando_melhor_resultados">Apresentando melhor os resultados</h2>
 
-{lang=irb}
+<p>Se você realizou a <a href="#atividade3">Atividade 5.3</a>, deve ter observado que a execução do <i>script</i> apresentou algo parecido com o seguinte resultado.</p>
+
+<pre class="language-bash">
+  <code>
     Digite um valor
     2
     Digite outro valor
@@ -97,44 +177,82 @@ Se você realizou a [Atividade 5.3](#aula05-atividade03), deve ter observado que
     6
     0
     2
+  </code>
+</pre>
 
-O resultado apresentado pelo _script_ não deixa claro para o usuário quais foram as operações matemáticas realizadas. Para ver quais foram as operações aritméticas realizadas, o usuário teria de ver o código do _script_. Contudo, é possível melhorar a apresentação dos resultados. Para isso, iremos utilizar a substituição de expressões (RUBY, 2015).
+<p>O resultado apresentado pelo <i>script</i> não deixa claro para o usuário quais foram as operações matemáticas realizadas. Para ver quais foram as operações aritméticas realizadas, o usuário teria de ver o código do <i>script</i>. Contudo, é possível melhorar a apresentação dos resultados. Para isso, iremos utilizar a substituição de expressões (RUBY, 2015).</p>
 
-A substituição de expressões permite-nos incluir expressões dentro de Strings. Observe abaixo o [Exemplo de código 03](#aula05-codigo03).
+<p>A substituição de expressões permite-nos incluir expressões dentro de Strings. Observe abaixo o <a href="#codigo3">Exemplo de código 3</a>.</p>
 
-{#aula05-codigo03}
-<<[Exemplo de código 03 - Exemplo com substituição de expressões](code/exemplo53.rb)
+<pre class="language-ruby line-numbers" id="codigo3">
+  <code>
+    puts "Digite um valor"
+    a = gets.chomp.to_i
+    puts "Digite outro valor"
+    b = gets.chomp.to_i
+    puts "Calculando a soma entre #{a} e #{b}..."
+    puts "O resultado da soma é #{a + b}"
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 3</strong> - Exemplo com substituição de expressões</p>
 
-{#aula05-atividade04}
-X> ## Atividade 5.4
-X>
-X> Crie um _script_ Ruby usando o Atom ou seu editor de código preferido. Nesse _script_, digite o código apresentado no [Exemplo de código 03](#aula05-codigo03), execute-o e verifique os resultados.
+<div class="panel atividade" id="atividade4">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 5.4</h4>
+  </div>
+  <div class="panel-body">
+    <p>Crie um <i>script</i> Ruby usando o Atom ou seu editor de código preferido. Nesse <i>script</i>, digite o código apresentado no <a href="#codigo3">Exemplo de código 3</a>, execute-o e verifique os resultados.</p>
+  </div>
+</div>
 
-Ao realizar o exercício proposto na [Atividade 5.4](#aula05-atividade04), você deve ter observado um resultado parecido com o apresentado abaixo.
+<p>Ao realizar o exercício proposto na <a href="#atividade4">Atividade 5.4</a>, você deve ter observado um resultado parecido com o apresentado abaixo.</p>
 
-{lang=irb}
+<pre class="language-bash">
+  <code>
     Digite um valor
     2
     Digite outro valor
     3
     Calculando a soma entre 2 e 3...
     O resultado da soma é 5
+  </code>
+</pre>
 
-Observe que o resultado apresentado não inclui `#{a}`, `#{b}` e `#{a + b}` que aparecem nas linhas 5 e 6 do [Exemplo de código 03](#aula05-codigo03). Na realidade, #{a} foi substituído pelo valor da variável `a`, `#{b}` foi substituído pelo valor da variável `b`, e `#{a + b}` foi substituído pelo resultado da soma entre `a` e `b`.
+<p>Observe que o resultado apresentado não inclui <code class="language-ruby">#{a}</code>, <code class="language-ruby">#{b}</code> e <code class="language-ruby">#{a + b}</code> que aparecem nas linhas 5 e 6 do <a href="#codigo3">Exemplo de código 3</a>. Na realidade, <code class="language-ruby">#{a}</code> foi substituído pelo valor da variável <code class="language-ruby">a</code>, <code class="language-ruby">#{b}</code> foi substituído pelo valor da variável <code class="language-ruby">b</code>, e <code class="language-ruby">#{a + b}</code> foi substituído pelo resultado da soma entre <code class="language-ruby">a</code> e <code class="language-ruby">b</code>.</p>
 
-Compreendido como funciona a substituição de expressões, agora podemos melhorar o nosso código. Observe a seguir o [Exemplo de código 4](#aula05-codigo04).
+<p>Compreendido como funciona a substituição de expressões, agora podemos melhorar o nosso código. Observe a seguir o <a href="#codigo4">Exemplo de código 4</a>.</p>
 
-{#aula05-codigo04}
-<<[Exemplo de código 04 - Melhorando nosso código](code/exemplo54.rb)
+<pre class="language-ruby line-numbers" id="codigo4">
+  <code>
+    puts "Digite um valor"
+    a = gets.chomp.to_i
+    puts "Digite outro valor"
+    b = gets.chomp.to_i
+    puts "Você digitou os valores #{a} e #{b}, calculando..."
 
-{#aula05-atividade05}
-X> ## Atividade 5.5
-X>
-X> Crie um _script_ Ruby usando o Atom ou seu editor de código preferido. Nesse script, digite o código apresentado no [Exemplo de código 04](#aula05-codigo04), execute-o e verifique os resultados.
+    puts "A soma entre #{a} e #{b} é #{a + b}"
+    puts "A subtração entre #{a} e #{b} é #{a - b}"
+    puts "A multiplicação entre #{a} e #{b} é #{a * b}"
+    puts "A divisão entre #{a} e #{b} é #{a + b}"
+    puts "O resto da divisão entre #{a} e #{b} é #{a % b}"
+    puts "A potência entre #{a} e #{b} é #{a ** b}"
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 4</strong> - Melhorando nosso código</p>
 
-Ao realizar o exercício proposto na [Atividade 5.5]{#aula05-atividade05}, você deve visualizar resultados parecidos com estes apresentados abaixo.
+<div class="panel atividade" id="atividade5">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 5.5</h4>
+  </div>
+  <div class="panel-body">
+    <p>Crie um <i>script</i> Ruby usando o Atom ou seu editor de código preferido. Nesse <i>script</i>, digite o código apresentado no <a href="#codigo4">Exemplo de código 4</a>, execute-o e verifique os resultados.</p>
+  </div>
+</div>
 
-{lang=irb}
+<p>Ao realizar o exercício proposto na <a href="#atividade5">Atividade 5.5</a>, você deve visualizar resultados parecidos com estes apresentados abaixo.</p>
+
+<pre class="language-bash">
+  <code>
     Digite um valor
     2
     Digite outro valor
@@ -146,32 +264,79 @@ Ao realizar o exercício proposto na [Atividade 5.5]{#aula05-atividade05}, você
     A divisão entre 2 e 3 é 5
     O resto da divisão entre 2 e 3 é 2
     A potência entre 2 e 3 é 8
+  </code>
+</pre>
 
-Bem melhor, concorda? Observe que usamos bastante a substituição de expressões, no código, para que o Ruby substituísse os nomes das variáveis pelos seus respectivos valores, bem como as operações matemáticas pelos seus respectivos resultados.
+<p>Bem melhor, concorda? Observe que usamos bastante a substituição de expressões, no código, para que o Ruby substituísse os nomes das variáveis pelos seus respectivos valores, bem como as operações matemáticas pelos seus respectivos resultados.</p>
 
-## Operadores Relacionais
+<h2>Operadores Relacionais</h2>
 
-Os operadores relacionais, também conhecidos como operadores de comparação, permitem-nos realizar comparações entre dois valores distintos (ou duas variáveis). Mas, antes de começarmos a discutir sobre esses operadores, vamos aprender um pouco sobre valores _booleanos_.
+<p>Os operadores relacionais, também conhecidos como operadores de comparação, permitem-nos realizar comparações entre dois valores distintos (ou duas variáveis). Mas, antes de começarmos a discutir sobre esses operadores, vamos aprender um pouco sobre valores <i>booleanos</i>.</p>
 
-Um valor booleano é um tipo de dado primitivo que só pode assumir dois possíveis valores: verdadeiro, também conhecido como 1 (um) ou true; e falso, também conhecido como 0 (zero) ou false. Os valores booleanos vêm da Lógica de Boole, criada pelo inglês George Boole (LÓGICA, 2015).
+<p>Um valor booleano é um tipo de dado primitivo que só pode assumir dois possíveis valores: verdadeiro, também conhecido como 1 (um) ou <i>true</i>; e falso, também conhecido como 0 (zero) ou <i>false</i>. Os valores booleanos vêm da Lógica de Boole, criada pelo inglês George Boole (LÓGICA, 2015).</p>
 
-Mas por que estamos discutindo valores booleanos? Porque os operadores relacionais, na maioria das vezes, dão como retorno (resposta) valores booleanos. Ou seja, quando você fizer a comparação entre dois valores ou variáveis usando operadores relacionais, o resultado será _true_ (verdadeiro) ou _false_ (falso). Há um único operador que resulta em um valor inteiro ao invés de um valor booleano, que será apresentado a seguir.
+<p>Mas por que estamos discutindo valores booleanos? Porque os operadores relacionais, na maioria das vezes, dão como retorno (resposta) valores booleanos. Ou seja, quando você fizer a comparação entre dois valores ou variáveis usando operadores relacionais, o resultado será <i>true</i> (verdadeiro) ou <i>false</i> (falso). Há um único operador que resulta em um valor inteiro ao invés de um valor booleano, que será apresentado a seguir.</p>
 
-A linguagem Ruby conta com sete operadores relacionais, apresentados na Tabela 2.
+<p>A linguagem Ruby conta com sete operadores relacionais, apresentados na <a href="#tabela2">Tabela 2</a>.</p>
 
-| Operador | Nome      | Exemplo | Descrição                                                                  |
-|----------|-----------|---------|----------------------------------------------------------------------------|
-| ==       | Igualdade | a == b  | Resulta `true` se `a` for igual a `b`, resulta `false` caso contrário      |
-| !=       | Diferente | a != b  | Resulta `true` se `a` for diferente de `b`, resulta `false` caso contrário |
-| >        | Maior que | a > b   | Resulta `true` se `a` for maior que `b`, resulta `false` caso contrário    |
-| <        | Menor que | a < b   | Resulta `true` se `a` for menor que 'b', resulta `false` caso contrário    |
-| >=       | Maior ou igual | a >= b | Resulta `true` se `a` for maior ou igual a `b`, resulta `false` caso contrário |
-| <=       | Menor ou igual | a <= b | Resulta `true` se `a` for menor ou igual a `b`, resulta `false` caso contrário |
-| <=>      | -              | a <=> b | Resulta 0 se `a` for igual a `b`. Retorna 1 se `a` for maior que `b` e retorna -1 se `a` for menor que `b` |
+<table id="tabela2">
+  <caption><strong>Tabela 1</strong> - Operadores relacionais</caption>
+  <thead>
+    <th>Operador</th>
+    <th>Nome</th>
+    <th>Exemplo</th>
+    <th>Descrição</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-ruby">==</code></td>
+      <td>Igualdade</td>
+      <td><code class="language-ruby">a == b</code></td>
+      <td>Resulta <code class="language-ruby">true</code> se <code class="language-ruby">a</code> for igual a <code class="language-ruby">b</code>, resulta <code class="language-ruby">false</code> caso contrário</td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">!=</code></td>
+      <td>Diferente</td>
+      <td><code class="language-ruby">a != b</code></td>
+      <td>Resulta <code class="language-ruby">true</code> se <code class="language-ruby">a</code> for diferente de <code class="language-ruby">b</code>, resulta <code class="language-ruby">false</code> caso contrário</td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">></code></td>
+      <td>Maior que</td>
+      <td><code class="language-ruby">a > b</code></td>
+      <td>Resulta <code class="language-ruby">true</code> se <code class="language-ruby">a</code> for maior que <code class="language-ruby">b</code>, resulta <code class="language-ruby">false</code> caso contrário</td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby"><</code></td>
+      <td>Menor que</td>
+      <td><code class="language-ruby">a < b</code></td>
+      <td>Resulta <code class="language-ruby">true</code> se <code class="language-ruby">a</code> for menor que <code class="language-ruby">b</code>, resulta <code class="language-ruby">false</code> caso contrário</td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">>=</code></td>
+      <td>Maior ou igual</td>
+      <td><code class="language-ruby">a >= b</code></td>
+      <td>Resulta <code class="language-ruby">true</code> se <code class="language-ruby">a</code> for maior ou igual a <code class="language-ruby">b</code>, resulta <code class="language-ruby">false</code> caso contrário</td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby"><=</code></td>
+      <td>Menor ou igual</td>
+      <td><code class="language-ruby">a <= b</code></td>
+      <td>Resulta <code class="language-ruby">true</code> se <code class="language-ruby">a</code> for menor ou igual a <code class="language-ruby">b</code>, resulta <code class="language-ruby">false</code> caso contrário</td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby"><=></code></td>
+      <td>-</td>
+      <td><code class="language-ruby">a <=> b</code></td>
+      <td>Resulta <code class="language-ruby">0</code> se <code class="language-ruby">a</code> for igual a <code class="language-ruby">b</code>. Retorna 1 se <code class="language-ruby">a</code> for maior que <code class="language-ruby">b</code> e retorna <code class="language-ruby">-1</code> se <code class="language-ruby">a</code> for menor que <code class="language-ruby">b</code></td>
+    </tr>
+  </tbody>
+</table>
 
-Vamos ilustrar o uso dos operadores relacionais através de alguns exemplos. Confira a seguir.
+<p>Vamos ilustrar o uso dos operadores relacionais através de alguns exemplos. Confira a seguir.</p>
 
-{lang=irb}
+<pre class="language-bash">
+  <code>
     irb(main):001:0> 1 == 1
     => true
     irb(main):002:0> 1 == 2
@@ -196,20 +361,39 @@ Vamos ilustrar o uso dos operadores relacionais através de alguns exemplos. Con
     => 1
     irb(main):012:0> 12 <=> 12
     => 0
+  </code>
+</pre>
 
-Observe que o operador `<=>` é o único que retorna um valor inteiro e não um valor booleano. Observe os exemplos a seguir para ver como os operadores relacionais também podem ser usados com variáveis.
+<p>Observe que o operador <code class="language-ruby"><=></code> é o único que retorna um valor inteiro e não um valor booleano. Observe os exemplos a seguir para ver como os operadores relacionais também podem ser usados com variáveis.</p>
 
-{#aula05-codigo05}
-<<[Exemplo de código 05 - Usando operadores relacionais com variáveis](code/exemplo55.rb)
+<pre class="language-ruby line-numbers" id="codigo5">
+  <code>
+    a = 2
+    b = 4
+    puts a == b
+    puts a != b
+    puts a < b
+    puts a > b
+    puts a <= b
+    puts a >= b
+    puts a <=> b
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 5</strong> - Usando operadores relacionais com variáveis</p>
 
-{#aula05-atividade06}
-X> ## Atividade 5.6
-X>
-X> Crie um _script_ Ruby e digite o código ilustrado no [Exemplo de código 5](#aula05-codigo05). Por fim, execute o código e verifique o resultado apresentado pelo _script_.
+<div class="panel atividade" id="atividade6">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 5.6</h4>
+  </div>
+  <div class="panel-body">
+    <p>Crie um <i>script</i> Ruby e digite o código ilustrado no <a href="#codigo5">Exemplo de código 5</a>. Por fim, execute o código e verifique o resultado apresentado pelo <i>script</i>.</p>
+  </div>
+</div>
 
-Após executar o _script_ apresentado no [Exemplo de código 5](#aula05-codigo05), você deve observar o seguinte resultado.
+<p>Após executar o <i>script</i> apresentado no <a href="#codigo5">Exemplo de código 5</a>, você deve observar o seguinte resultado.</p>
 
-{lang=irb}
+<pre class="language-bash">
+  <code>
     false
     true
     true
@@ -217,13 +401,20 @@ Após executar o _script_ apresentado no [Exemplo de código 5](#aula05-codigo05
     true
     false
     -1
+  </code>
+</pre>
 
-{#aula05-atividade07}
-X> ## Atividade 5.7
-X>
-X> Modifique o _script_ Ruby apresentado no [Exemplo de código 5](#aula05-codigo05) para permitir que o usuário digite os valores das duas variáveis e melhore a apresentação dos resultados usando a substituição de expressões. Ao concluir essa atividade, seu _script_ deverá apresentar algo parecido com o ilustrado abaixo.
+<div class="panel atividade" id="atividade7">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 5.7</h4>
+  </div>
+  <div class="panel-body">
+    <p>Crie um <i>script</i> Ruby e digite o código ilustrado no <a href="#codigo5">Exemplo de código 5</a>. Por fim, execute o código e verifique o resultado apresentado pelo <i>script</i>.</p>
+  </div>
+</div>
 
-{lang=irb}
+<pre class="language-bash">
+  <code>
     Digite um número inteiro:
     2
     Digite outro número inteiro:
@@ -234,41 +425,36 @@ X> Modifique o _script_ Ruby apresentado no [Exemplo de código 5](#aula05-codig
     2 é maior que 3? false
     2 é menor ou igual que 3? true
     2 é maior ou igual que 3? false
+  </code>
+</pre>
 
-## Exercícios
+<div class="panel atividade" id="atividade8">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 5.8</h4>
+  </div>
+  <div class="panel-body">
+    <p>1) Crie um <i>script</i> em Ruby que leia um número inteiro e mostre seu sucessor.</p>
+    <p>2) Crie um <i>script</i> em Ruby que leia um número inteiro e mostre seu antecessor.</p>
+    <p>3) Crie um <i>script</i> em Ruby que leia um número inteiro e mostre o dobro desse número.</p>
+    <p>4) Crie um <i>script</i> em Ruby que leia um número inteiro e mostre a metade desse número.</p>
+    <p>5) Crie um <i>script</i> em Ruby que leia dois números inteiros, X e Y, e mostre o quociente e o resto da divisão de X por Y.</p>
+    <p>6) Crie um <i>script</i> em Ruby que leia uma idade e calcule quantos dias essa pessoa já viveu.</p>
+    <p>7) Crie um <i>script</i> em Ruby que leia dois números reais, calcule e mostre a soma deles, o produto e o quociente.</p>
+    <p>8) Crie um <i>script</i> em Ruby que leia dois números, X e Y, calcule X elevado a Y e mostre o resultado.</p>
+    <p>9) Crie um <i>script</i> em Ruby que leia dois números, X e Y e mostre o resto da divisão entre eles.</p>
+    <p>10) Crie um <i>script</i> em Ruby que leia o salário de um funcionário, reajuste o salário em 7% e mostre o resultado.</p>
+    <p>11) Crie um <i>script</i> em Ruby que leia um valor real em dólar e converta o valor para reais. Considere que a cotação é US$ 1 = R$ 3,20.</p>
+    <p>12) Crie um <i>script</i> em Ruby que leia uma distância (em Km) entre dois pontos e o preço da gasolina em reais. Depois, calcule e mostre quantos litros de gasolina o carro irá consumir e quanto será o gasto em reais. Considere que o carro consegue percorrer 12 km com um litro de gasolina.</p>
+    <p>13) Crie um <i>script</i> em Ruby que leia as variáveis inteiras `n1` e `n2` e troque o valor dessas variáveis. Isto é, `n1` deve ficar com o valor de `n2` e `n2` deve ficar com o valor de `n1`. Em seguida mostre os valores depois da troca.</p>
+  </div>
+</div>
 
-1) Crie um _script_ em Ruby que leia um número inteiro e mostre seu sucessor.
+<h2>Referências</h2>
 
-2) Crie um _script_ em Ruby que leia um número inteiro e mostre seu antecessor.
+<p>POINT, T. Ruby Operators. Tutorials Point. 2015. Disponível em: <a href="http://www.tutorialspoint.com/ruby/ruby_operators.htm" target="_blank">http://www.tutorialspoint.com/ruby/ruby_operators.htm</a>. Acesso em: 3 nov. 2015.</p>
 
-3) Crie um _script_ em Ruby que leia um número inteiro e mostre o dobro desse número.
+<p>POINT, T. Ruby Strings. Tutorials Point. 2015. Disponível em: <a href="http://www.tutorialspoint.com/ruby/ruby_strings.htm" target="_blank">http://www.tutorialspoint.com/ruby/ruby_strings.htm</a>. Acesso em: 4 nov. 2015.</p>
 
-4) Crie um _script_ em Ruby que leia um número inteiro e mostre a metade desse número.
+<p>SOUZA, L. Ruby: aprenda a programar na linguagem mais divertida. 1. ed. São Paulo: Casa do Código, 2012. v. I.</p>
 
-5) Crie um _script_ em Ruby que leia dois números inteiros, X e Y, e mostre o quociente e o resto da divisão de X por Y.
-
-6) Crie um _script_ em Ruby que leia uma idade e calcule quantos dias essa pessoa já viveu.
-
-7) Crie um _script_ em Ruby que leia dois números reais, calcule e mostre a soma deles, o produto e o quociente.
-
-8) Crie um _script_ em Ruby que leia dois números, X e Y, calcule X elevado a Y e mostre o resultado.
-
-9) Crie um _script_ em Ruby que leia dois números, X e Y e mostre o resto da divisão entre eles.
-
-10) Crie um _script_ em Ruby que leia o salário de um funcionário, reajuste o salário em 7% e mostre o resultado.
-
-11) Crie um _script_ em Ruby que leia um valor real em dólar e converta o valor para reais. Considere que a cotação é US$ 1 = R$ 3,20.
-
-12) Crie um _script_ em Ruby que leia uma distância (em Km) entre dois pontos e o preço da gasolina em reais. Depois, calcule e mostre quantos litros de gasolina o carro irá consumir e quanto será o gasto em reais. Considere que o carro consegue percorrer 12 km com um litro de gasolina.
-
-13) Crie um _script_ em Ruby que leia as variáveis inteiras `n1` e `n2` e troque o valor dessas variáveis. Isto é, `n1` deve ficar com o valor de `n2` e `n2` deve ficar com o valor de `n1`. Em seguida mostre os valores depois da troca.
-
-## Referências
-
-POINT, T. Ruby Operators. Tutorials Point. 2015. Disponível em: <http://www.tutorialspoint.com/ruby/ruby_operators.htm>. Acesso em: 3 nov. 2015.
-
-POINT, T. Ruby Strings. Tutorials Point. 2015. Disponível em: <http://www.tutorialspoint.com/ruby/ruby_strings.htm>. Acesso em: 4 nov. 2015.
-
-SOUZA, L. Ruby: aprenda a programar na linguagem mais divertida. 1. ed. São Paulo: Casa do Código, 2012. v. I.
-
-TECMUNDO. Lógica booleana? Saiba um pouco mais sobre esta lógica e como ela funciona. Disponivel em: <http://www.tecmundo.com.br/programacao/1527-logica-booleana-saiba-um-pouco-mais-sobre-esta-logica-e-como-ela-funciona.htm>. Acesso em: 13 nov. 2015.
+<p>TECMUNDO. Lógica booleana? Saiba um pouco mais sobre esta lógica e como ela funciona. Disponivel em: <a href="http://www.tecmundo.com.br/programacao/1527-logica-booleana-saiba-um-pouco-mais-sobre-esta-logica-e-como-ela-funciona.htm" target="_blank">http://www.tecmundo.com.br/programacao/1527-logica-booleana-saiba-um-pouco-mais-sobre-esta-logica-e-como-ela-funciona.htm</a>. Acesso em: 13 nov. 2015.</p>

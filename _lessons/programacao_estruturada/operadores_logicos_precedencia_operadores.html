@@ -8,15 +8,16 @@ order: 6
 comments: true
 ---
 
-# Aula 06 - Operadores lógicos e precedência de operadores
+<h1 id="aula6">Aula 06 - Operadores lógicos e precedência de operadores</h1>
 
-## Introdução
+<h2 id="introducao">Introdução</h2>
 
-Vamos dar continuidade aos estudos dos operadores em Ruby e, dessa vez, vamos abordar os operadores lógicos. Os operadores lógicos permitem- nos construir expressões complexas usando valores booleanos, e o retorno (resultado) é sempre um valor booleano. A linguagem Ruby possui sete desses operadores. Mas antes de começarmos a tratar sobre eles, vamos a alguns exemplos para nos recordar sobre a sua utilidade.
+<p>Vamos dar continuidade aos estudos dos operadores em Ruby e, dessa vez, vamos abordar os operadores lógicos. Os operadores lógicos permitem-nos construir expressões complexas usando valores booleanos, e o retorno (resultado) é sempre um valor booleano. A linguagem Ruby possui sete desses operadores. Mas antes de começarmos a tratar sobre eles, vamos a alguns exemplos para nos recordar sobre a sua utilidade.</p>
 
-Um dos operadores lógicos é o `and`, que significa "e" em inglês. O operador lógico `and` retorna verdadeiro (_true_) apenas quando as duas proposições são verdadeiras. Em todos os outros casos, esse operador irá retornar falso (_false_). Para exemplificar o uso desse operador, considere o exemplo abaixo.
+<p>Um dos operadores lógicos é o <code class="language-ruby">and</code>, que significa "e" em inglês. O operador lógico <code class="language-ruby">and</code> retorna verdadeiro (<i>true</i>) apenas quando as duas proposições são verdadeiras. Em todos os outros casos, esse operador irá retornar falso (<i>false</i>). Para exemplificar o uso desse operador, considere o exemplo abaixo.</p>
 
-{lang=irb}
+<pre class="language-bash">
+  <code>
     irb(main):001:0> a = true
     => true
     irb(main):002:0> b = true
@@ -29,109 +30,280 @@ Um dos operadores lógicos é o `and`, que significa "e" em inglês. O operador 
     => false
     irb(main):006:0> b and c
     => false
+  </code>
+</pre>
 
-Observe que o operador `and` retornou verdadeiro (`true`) quando as duas variáveis eram verdadeiras (`true`). Quando pelo menos uma das variáveis era falsa (`false`), o retorno foi falso (`false`).
+<p>Observe que o operador <code class="language-ruby">and</code> retornou verdadeiro (<code class="language-ruby">true</code>) quando as duas variáveis eram verdadeiras (<code class="language-ruby">true</code>). Quando pelo menos uma das variáveis era falsa (<code class="language-ruby">false</code>), o retorno foi falso (<code class="language-ruby">false</code>).</p>
 
-## Operadores Lógicos em Ruby
+<h2 id="operadores_logicos_ruby">Operadores Lógicos em Ruby</h2>
 
-Ruby possui sete operadores lógicos que representam quatro operações lógicas.
+<p>Ruby possui sete operadores lógicos, ilustrados na <a href="#tabela1">Tabela 1</a>, que representam quatro operações lógicas.</p>
 
-| Operador | Nome         | Descrição                                                                                                    |
-|----------|--------------|--------------------------------------------------------------------------------------------------------------|
-| and      | E            | Resulta verdadeiro quando os dois operandos forem verdadeiros, resulta falso caso contrário                  |
-| &&       | E            | Resulta verdadeiro quando os dois operandos forem verdadeiros, resulta falso caso contrário                  |
-| or       | Ou           | Resulta verdadeiro quando pelo menos um dos dois operandos for verdadeiro, resulta falso caso contrário      |
-| \|\|     | Ou           | Resulta verdadeiro quando pelo menos um dos dois operandos for verdadeiro, resulta falso caso contrário      |
-| ^        | Ou exclusivo | Resulta verdadeiro quando apenas um operando for verdadeiro. Quando os dois forem verdadeiros, retorna falso |
-| !        | Negador      | Inverte o valor lógico do operando                                                                           |
-| not      | Negador      | Inverte o valor lógico do operando                                                                           |
+<table id="tabela1">
+  <caption><strong>Tabela 1</strong> - Operadores lógicos</caption>
+  <thead>
+    <th>Operação lógica</th>
+    <th>Operador</th>
+    <th>Descrição</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2">E</td>
+      <td><code class="language-ruby">and</code></td>
+      <td rowspan="2">Resulta verdadeiro quando os dois operandos forem verdadeiros, resulta falso caso contrário</td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">&&</code></td>
+    </tr>
+    <tr>
+      <td rowspan="2">Ou</td>
+      <td><code class="language-ruby">or</code></td>
+      <td rowspan="2">Resulta verdadeiro quando pelo menos um dos dois operandos for verdadeiro, resulta falso caso contrário</td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">||</code></td>
+    </tr>
+    <tr>
+      <td>Ou exclusivo</td>
+      <td><code class="language-ruby">^</code></td>
+      <td>Resulta verdadeiro quando apenas um operando for verdadeiro. Quando os dois forem verdadeiros, retorna falso</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Negação</td>
+      <td><code class="language-ruby">!</code></td>
+      <td rowspan="2">Inverte o valor lógico do operando</td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">not</code></td>
+    </tr>
+  </tbody>
+</table>
 
-O quadro acima apresenta todos os operadores lógicos disponíveis em Ruby. Observe que alguns deles representam a mesma operação lógica, como o `and` e o `&&`, o `||` e o `or`, o `!` e o `not`.
+<p>A <a href="#tabela1">Tabela 1</a> acima apresenta todos os operadores lógicos disponíveis em Ruby. Observe que alguns deles representam a mesma operação lógica, como o <code class="language-ruby">and</code> e o <code class="language-ruby">&&</code>, o <code class="language-ruby">||</code> e o <code class="language-ruby">or</code>, o <code class="language-ruby">!</code> e o <code class="language-ruby">not</code>.</p>
 
-### Operação lógica: AND
+<h3 id="operacao_logica_and">Operação lógica: AND</h3>
 
-A operação lógica `and` irá retornar verdadeiro apenas quando os dois operandos forem verdadeiros. Observe a tabela da verdade do operador `and` no quadro abaixo.
+<p>A operação lógica <code class="language-ruby">and</code> irá retornar verdadeiro apenas quando os dois operandos forem verdadeiros. Observe a tabela da verdade do operador <code class="language-ruby">and</code> na <a href="#tabela2">Tabela 2</a>.</p>
 
-| A          | B          | A and B    |
-|------------|------------|------------|
-| Verdadeiro | Verdadeiro | Verdadeiro |
-| Verdadeiro | Falso      | Falso      |
-| Falso      | Verdadeiro | Falso      |
-| Falso      | Falso      | Falso      |
+<table id="tabela2">
+  <caption><strong>Tabela 2</strong> - Tabela da verdade do operador AND</caption>
+  <thead>
+    <th>A</th>
+    <th>B</th>
+    <th>A and B</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Verdadeiro</td>
+      <td>Verdadeiro</td>
+      <td>Verdadeiro</td>
+    </tr>
+    <tr>
+      <td>Verdadeiro</td>
+      <td>Falso</td>
+      <td>Falso</td>
+    </tr>
+    <tr>
+      <td>Falso</td>
+      <td>Verdadeiro</td>
+      <td>Falso</td>
+    </tr>
+    <tr>
+      <td>Falso</td>
+      <td>Falso</td>
+      <td>Falso</td>
+    </tr>
+  </tbody>
+</table>
 
-A operação lógica `and` pode ser executada utilizando um dos dois operadores lógicos: `and` ou `&&`. Observe alguns exemplos de uso desse operador no [Exemplo de código 01](#aula06-codigo01).
+<p>A operação lógica <code class="language-ruby">and</code> pode ser executada utilizando um dos dois operadores lógicos: <code class="language-ruby">and</code> ou <code class="language-ruby">&&</code>. Observe alguns exemplos de uso desse operador no <a href="#codigo1">Exemplo de código 1</a>.</p>
 
-{#aula06-codigo01}
-<<[Exemplo de código 01 - Exemplos de uso do operador lógico `and`](code/exemplo61.rb)
+<pre class="language-ruby line-numbers" id="codigo1">
+  <code>
+    puts "true and true = #{true and true}"
+    puts "true && false = #{true && false}"
+    puts "false and true = #{false and true}"
+    puts "false && false = #{false and false}"
+  </code>
+</pre>
+<p class="caption">Exemplos de uso do operador lógico <code class="language-ruby">and</code></p>
 
-### Operação lógica: OR
+<h3 id="operacao_logica_or">Operação lógica: OR</h3>
 
-A operação lógica `or` irá retornar verdadeiro quando pelo menos um dos operandos for verdadeiro. Observe a tabela da verdade do operador `or` no quadro abaixo.
+<p>A operação lógica <code class="language-ruby">or</code> irá retornar verdadeiro quando pelo menos um dos operandos for verdadeiro. Observe a tabela da verdade do operador <code class="language-ruby">or</code> na <a href="#tabela3">Tabela 3</a>.</p>
 
-| A          | B          | A or B     |
-|------------|------------|------------|
-| Verdadeiro | Verdadeiro | Verdadeiro |
-| Verdadeiro | Falso      | Verdadeiro |
-| Falso      | Verdadeiro | Verdadeiro |
-| Falso      | Falso      | Falso      |
+<table id="tabela3">
+  <caption><strong>Tabela 3</strong> - Tabela da verdade do operador OR</caption>
+  <thead>
+    <th>A</th>
+    <th>B</th>
+    <th>A or B</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Verdadeiro</td>
+      <td>Verdadeiro</td>
+      <td>Verdadeiro</td>
+    </tr>
+    <tr>
+      <td>Verdadeiro</td>
+      <td>Falso</td>
+      <td>Verdadeiro</td>
+    </tr>
+    <tr>
+      <td>Falso</td>
+      <td>Verdadeiro</td>
+      <td>Verdadeiro</td>
+    </tr>
+    <tr>
+      <td>Falso</td>
+      <td>Falso</td>
+      <td>Falso</td>
+    </tr>
+  </tbody>
+</table>
 
-A operação lógica `or` pode ser executada utilizando um dos dois operadores lógicos: `or` ou `||`. Observe alguns exemplos de uso desse operador no [Exemplo de código 02](#aula06-codigo02).
+<p>A operação lógica <code class="language-ruby">or</code> pode ser executada utilizando um dos dois operadores lógicos: <code class="language-ruby">or</code> ou <code class="language-ruby">||</code>. Observe alguns exemplos de uso desse operador no <a href="#codigo2">Exemplo de código 2</a>.</p>
 
-{#aula06-codigo02}
-<<[Exemplo de código 02 - Exemplos de uso do operador lógico `or`](code/exemplo62.rb)
+<pre class="language-ruby line-numbers" id="codigo2">
+  <code>
+    puts "true or true = #{true or true}"
+    puts "true || false = #{true || false}"
+    puts "false or true = #{false or true}"
+    puts "false || false = #{false || false}"
+  </code>
+</pre>
+<p class="caption">Exemplos de uso do operador lógico <code class="language-ruby">or</code></p>
 
-### Operação lógica: Ou exclusivo
+<h3 id="operacao_logica_ou_exclusivo">Operação lógica: Ou exclusivo</h3>
 
-A operação lógica ‘ou exclusivo’, também conhecida como _xor_ (do inglês _exclusive or_), retorna verdadeiro quando apenas um dos operadores é verdadeiro. Em todos os outros casos, será retornado falso. Observe a tabela da verdade do ‘ou exclusivo’ no quadro abaixo.
+<p>A operação lógica ‘ou exclusivo’, também conhecida como <i>xor</i> (do inglês <i>exclusive or</i>), retorna verdadeiro quando apenas um dos operadores é verdadeiro. Em todos os outros casos, será retornado falso. Observe a tabela da verdade do ‘ou exclusivo’ na <a href="#tabela4">Tabela 4</a>.</p>
 
-| A          | B          | A ^ B      |
-|------------|------------|------------|
-| Verdadeiro | Verdadeiro | Falso      |
-| Verdadeiro | Falso      | Verdadeiro |
-| Falso      | Verdadeiro | Verdadeiro |
-| Falso      | Falso      | Falso      |
+<table id="tabela4">
+  <caption><strong>Tabela 4</strong> - Tabela da verdade do operador <code class="language-ruby">^</code></caption>
+  <thead>
+    <th>A</th>
+    <th>B</th>
+    <th>A ^ B</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Verdadeiro</td>
+      <td>Verdadeiro</td>
+      <td>Falso</td>
+    </tr>
+    <tr>
+      <td>Verdadeiro</td>
+      <td>Falso</td>
+      <td>Verdadeiro</td>
+    </tr>
+    <tr>
+      <td>Falso</td>
+      <td>Verdadeiro</td>
+      <td>Verdadeiro</td>
+    </tr>
+    <tr>
+      <td>Falso</td>
+      <td>Falso</td>
+      <td>Falso</td>
+    </tr>
+  </tbody>
+</table>
 
-A operação lógica _xor_ pode ser executada utilizando o operador `^`. Observe os exemplos de uso desse operador no [Exemplo de código 03](#aula06-codigo03).
+<p>A operação lógica <i>xor</i> pode ser executada utilizando o operador <code class="language-ruby">^</code>. Observe os exemplos de uso desse operador no <a href="#codigo3">Exemplo de código 3</a>.</p>
 
-{#aula06-codigo03}
-<<[Exemplo de código 03 - Exemplos de uso do operador lógico `^`](code/exemplo63.rb)
+<pre class="language-ruby line-numbers" id="codigo3">
+  <code>
+    puts "true ^ true = #{true ^ true}"
+    puts "true ^ false = #{true ^ false}"
+    puts "false ^ true = #{false ^ true}"
+    puts "false ^ false = #{false ^ false}"
+  </code>
+</pre>
+<p class="caption">Exemplos de uso do operador lógico <code class="language-ruby">^</code></p>
 
-### Operação lógica: Negador
+<h3>Operação lógica: Negação</h3>
 
-A operação lógica de negação inverte o valor lógico do operando. Se o operando for verdadeiro ele se tornará falso e se for falso se tornará verdadeiro. Observe a tabela da verdade do operador `not` no quadro abaixo.
+<p>A operação lógica de negação inverte o valor lógico do operando. Se o operando for verdadeiro ele se tornará falso e se for falso se tornará verdadeiro. Observe a tabela da verdade do operador <code class="language-ruby">not</code> no quadro abaixo.</p>
 
-| A          | not A |
-|------------|-------|
-| Verdadeiro | Falso |
-| Falso | Verdadeiro |
+<table id="tabela5">
+  <caption><strong>Tabela 5</strong> - Tabela da verdade do operador <code class="language-ruby">not</code></caption>
+  <thead>
+    <th>A</th>
+    <th>not A</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Verdadeiro</td>
+      <td>Falso</td>
+    </tr>
+    <tr>
+      <td>Falso</td>
+      <td>Verdadeiro</td>
+    </tr>
+  </tbody>
+</table>
 
-A operação lógica `not` pode ser executada utilizando um dos seguintes operadores: `not` ou `!`. Observe os exemplos de uso desse operador no [Exemplo de código 04](#aula06-codigo04).
+<p>A operação lógica <code class="language-ruby">not</code> pode ser executada utilizando um dos seguintes operadores: <code class="language-ruby">not</code> ou <code class="language-ruby">!</code>. Observe os exemplos de uso desse operador no <a href="#codigo4">Exemplo de código 4</a>.</p>
 
-{#aula06-codigo04}
-<<[Exemplo de código 04 - Exemplos de uso do operador lógico `not`](code/exemplo64.rb)
+<pre class="language-ruby line-numbers" id="codigo4">
+  <code>
+    puts "not true = #{not true}"
+    puts "! false = #{! false}"
+  </code>
+</pre>
+<p class="caption">Exemplos de uso do operador lógico <code class="language-ruby">not</code></p>
 
-{#aula06-atividade01}
-X> ## Atividade 6.1
-X>
-X> Crie um _script_ em Ruby com o código apresentado nos Exemplos de código 1, 2, 3 e 4. Execute o _script_ e veja o resultado apresentado.
+<div class="panel atividade" id="atividade1">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 6.1</h4>
+  </div>
+  <div class="panel-body">
+    <p>Crie um <i>script</i> em Ruby com o código apresentado nos Exemplos de código 1, 2, 3 e 4. Execute o <i>script</i> e veja o resultado apresentado.</p>
+  </div>
+</div>
 
-## Expressões Lógicas
+<h2 id="expressoes_logicas">Expressões lógicas</h2>
 
-Utilizando operadores lógicos e relacionais, nós somos capazes de construir expressões lógicas mais complexas. Confira os exemplos no [Exemplo de código 05](#aula06-codigo05).
+<p>Utilizando operadores lógicos e relacionais, nós somos capazes de construir expressões lógicas mais complexas. Confira os exemplos no <a href="#codigo5">Exemplo de código 5</a>.</p>
 
-{#aula06-codigo05}
-<<[Exemplo de código 05 - Exemplos com operadores lógicos e relacionais](code/exemplo65.rb)
+<pre class="language-ruby line-numbers" id="codigo5">
+  <code>
+    a = true
+    b = false
+    c = true
+    d = false
 
-{#aula06-atividade02}
-X> ## Atividade 6.2
-X>
-X> Antes de executar o [Exemplo de código 05](#aula06-codigo05), tente determinar o resultado de cada expressão lógica (linhas de 6 a 10). Depois, execute o código e confira se você acertou.
+    exemplo1 = (a and b) or (b and c)
+    exemplo2 = (d or c) and not a
+    exemplo3 = (a or b) or !c
+    exemplo4 = (3 < 4) or (a ^ c)
+    exemplo5 = (10 >= 10) and (a or b) or not d
 
-Se você tentou determinar o resultado de cada expressão lógica da [Atividade 6.2](#aula06-atividade02), você, provavelmente, deve ter achado algo estranho na expressão da linha 7 e talvez não saiba explicar o porquê. A expressão é a seguinte: `(d or c) and not a`. Considerando que `d` é `false` e `c` é `true`, o resultado de `(d or c)` é `true`, e, considerando que `a` é `true`, `not a` resulta em `false`. Por fim, temos `true and false` que resulta em `false`. Contudo, na linha 13, o valor da variável `exemplo2`, que guarda o resultado da expressão da linha 7, é `true`! Como isso é possível?
+    puts "(a and b) or (b and c) = #{exemplo1}"
+    puts "(d or c) and not a = #{exemplo2}"
+    puts "(a or b) or !c = #{exemplo3}"
+    puts "(3 < 4) or (a ^ c) = #{exemplo4}"
+    puts "(10 >= 10) and (a or b) or not d = #{exemplo5}"
+  </code>
+</pre>
+<p class="caption">Exemplos com operadores lógicos e relacionais</p>
 
-Para complicar mais, se você teve a curiosidade de tentar executar a expressão da linha 7 no IRB, vai ver que o resultado da expressão é, de fato, `false`. Observe o exemplo abaixo.
+<div class="panel atividade" id="atividade2">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 6.2</h4>
+  </div>
+  <div class="panel-body">
+    <p>Antes de executar o <a href="#codigo5">Exemplo de código 5</a>, tente determinar o resultado de cada expressão lógica (linhas de 6 a 10). Depois, execute o código e confira se você acertou.</p>
+  </div>
+</div>
 
-{lang=irb}
+<p>Se você tentou determinar o resultado de cada expressão lógica da <a href="#atividade2">Atividade 6.2</a>, você, provavelmente, deve ter achado algo estranho na expressão da linha 7 e talvez não saiba explicar o porquê. A expressão é a seguinte: <code class="language-ruby">(d or c) and not a</code>. Considerando que <code class="language-ruby">d</code> é <code class="language-ruby">false</code> e <code class="language-ruby">c</code> é <code class="language-ruby">true</code>, o resultado de <code class="language-ruby">(d or c)</code> é <code class="language-ruby">true</code>, e, considerando que <code class="language-ruby">a</code> é <code class="language-ruby">true</code>, <code class="language-ruby">not a</code> resulta em <code class="language-ruby">false</code>. Por fim, temos <code class="language-ruby">true and false</code> que resulta em <code class="language-ruby">false</code>. Contudo, na linha 13, o valor da variável <code class="language-ruby">exemplo2</code>, que guarda o resultado da expressão da linha 7, é <code class="language-ruby">true</code>! Como isso é possível?</p>
+
+<p>Para complicar mais, se você teve a curiosidade de tentar executar a expressão da linha 7 no IRB, vai ver que o resultado da expressão é, de fato, <code class="language-ruby">false</code>. Observe o exemplo abaixo.</p>
+
+<pre class="language-bash">
+  <code>
     irb(main):001:0> a = true
     => true
     irb(main):002:0> b = false
@@ -147,65 +319,118 @@ Para complicar mais, se você teve a curiosidade de tentar executar a expressão
     irb(main):007:0> exemplo2
     => true
     irb(main):008:0>
+  </code>
+</pre>
 
-No exemplo anterior, definimos os valores das variáveis `a`, `b`, `c` e `d`, conforme o [Exemplo de código 5](#aula06-codigo05) e, em seguida, executamos a expressão `(d or c) and not a`, que resultou em `false`. Quando atribuímos o resultado dessa mesma expressão para a variável `exemplo2`, o valor dela é `true`. Como é possível que o resultado da expressão seja `false`, mas o valor atribuído à variável seja `true`? A resposta para essa pergunta está na precedência de operadores.
+<p>No exemplo anterior, definimos os valores das variáveis <code class="language-ruby">a</code>, <code class="language-ruby">b</code>, <code class="language-ruby">c</code> e <code class="language-ruby">d</code>, conforme o <a href="#codigo5">Exemplo de código 5</a> e, em seguida, executamos a expressão <code class="language-ruby">(d or c) and not a</code>, que resultou em <code class="language-ruby">false</code>. Quando atribuímos o resultado dessa mesma expressão para a variável <code class="language-ruby">exemplo2</code>, o valor dela é <code class="language-ruby">true</code>. Como é possível que o resultado da expressão seja <code class="language-ruby">false</code>, mas o valor atribuído à variável seja <code class="language-ruby">true</code>? A resposta para essa pergunta está na precedência de operadores.</p>
 
-## Precedência de Operadores
+<h2 id="precedencia_operadores">Precedência de Operadores</h2>
 
-Para explicar a precedência de operadores, vamos usar um exemplo da matemática. Qual é o resultado da expressão aritmética abaixo?
+<p>Para explicar a precedência de operadores, vamos usar um exemplo da matemática. Qual é o resultado da expressão aritmética abaixo?</p>
 
-{float=center}
-3 * 4 + 2
+<p class="center">3 * 4 + 2 = ?</p>
 
-Se você respondeu que o resultado é 14, parabéns! Você acertou! E se você acertou, você levou em consideração a precedência de operadores. Mas o que é isso? A precedência de operadores determina quais operações serão executadas primeiro e quais serão executadas depois. Nesse exemplo, sabemos que o operador de multiplicação tem precedência sobre o operador de soma, portanto devemos primeiro multiplicar e depois somar.
+<p>Se você respondeu que o resultado é 14, parabéns! Você acertou! E se você acertou, você levou em consideração a precedência de operadores. Mas o que é isso? A precedência de operadores determina a ordem de execução dos operadores. Ou seja, quais operações serão executadas primeiro e quais serão executadas depois. Nesse exemplo, sabemos que o operador de multiplicação tem precedência sobre o operador de soma, portanto devemos primeiro multiplicar e depois somar.</p>
 
-Assim como a matemática, as linguagens de programação também possuem precedência de operadores. O quadro abaixo apresenta operadores em ordem de precedência, ou seja, os operadores que aparecem no topo do quadro têm precedência (ou seja, devem ser executados primeiro) sobre os operadores que aparecem da parte de baixo no quadro subsequentes a eles.
+<p>Assim como a matemática, as linguagens de programação também possuem precedência de operadores. A <a href="#tabela6">Tabela 6</a> apresenta operadores em ordem de precedência, ou seja, os operadores que aparecem no topo do quadro têm precedência (ou seja, devem ser executados primeiro) sobre os operadores que aparecem da parte de baixo no quadro subsequentes a eles.</p>
 
-| Operador                  |
-|---------------------------|
-| !, ~ e +                  |
-| **                        |
-| \-                        |
-| *, / e %                  |
-| + e -                     |
-| << e >>                   |
-| &                         |
-| \| e ^                    |
-| >, >=, < e <=             |
-| <=>, ==, ===, !=, =~ e !~ |
-| &&                        |
-| \|\|                      |
-| .. e ...                  |
-| ? e :                     |
-| rescue                    |
-| =, +=, -=, etc.           |
-| defined?                  |
-| not                       |
-| or e and                  |
-| if, unless, while e until |
-| { } blocks                |
+<table id="tabela6">
+  <caption><strong>Tabela 6</strong> - Precedência em Ruby</caption>
+  <thead>
+    <th>Operador</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-ruby">!</code>, <code class="language-ruby">~</code>, <code class="language-ruby">+</code> unário</td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">**</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">-</code> unário</td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">*</code>, <code class="language-ruby">/</code>, <code class="language-ruby">%</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">+</code>, <code class="language-ruby">-</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby"><<</code>, <code class="language-ruby">>></code></td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">&</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">|</code>, <code class="language-ruby">^</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">></code>, <code class="language-ruby">>=</code>, <code class="language-ruby"><</code>, <code class="language-ruby"><=</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby"><=></code>, <code class="language-ruby">==</code>, <code class="language-ruby">===</code>, <code class="language-ruby">!=</code>, <code class="language-ruby">=~</code>, <code class="language-ruby">!~</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">&&</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">||</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">..</code>, <code class="language-ruby"><code class="language-ruby">...</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">?</code>, <code class="language-ruby">:</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">rescue</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">=</code>, <code class="language-ruby">+=</code>, <code class="language-ruby">-=</code>, etc.</td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">defined?</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">not</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">or</code>, <code class="language-ruby">and</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-ruby">if</code>, <code class="language-ruby">unless</code>, <code class="language-ruby">while</code>, <code class="language-ruby">until</code></td>
+    </tr>
+    <tr>
+      <td>blocos <code class="language-ruby">{ }</code></td>
+    </tr>
+  </tbody>
+</table>
 
-Vale salientar que, assim como na matemática, o uso de parênteses garante a precedência de execução da expressão que está entre os parênteses. Um exemplo clássico é a fórmula para calcular a média aritmética entre dois números (ilustrada abaixo).
+<p>Vale salientar que, assim como na matemática, o uso de parênteses garante a precedência de execução da expressão que está entre os parênteses. Um exemplo clássico é a fórmula para calcular a média aritmética entre dois números (ilustrada abaixo).</p>
 
-    media = (a+b)/2
+<p class="center">media = (a+b)/2</p>
 
-Os parênteses garantem que a soma `a + b` será executada antes da divisão por 2, e isso é necessário porque a divisão tem precedência sobre a soma.
+<p>Os parênteses garantem que a soma <code class="language-ruby">a + b</code> será executada antes da divisão por 2, e isso é necessário porque a divisão tem precedência sobre a soma.</p>
 
-Para explicar porque a variável `exemplo2` ficou com o valor `true` quando recebeu o resultado da expressão `(d or c) and not a` no [Exemplo de código 05](#aula06-codigo05), precisamos levar em consideração a precedência de operadores. Observe, no quadro de precedência de operadores, que o operador de atribuição (=) tem precedência sobre os operadores `not`, `or` e `and`, portanto a atribuição é executada primeiro.
+<p>Para explicar porque a variável <code class="language-ruby">exemplo2</code> ficou com o valor <code class="language-ruby">true</code> quando recebeu o resultado da expressão <code class="language-ruby">(d or c) and not a</code> no <a href="#codigo5">Exemplo de código 5</a>, precisamos levar em consideração a precedência de operadores. Observe, no quadro de precedência de operadores, que o operador de atribuição (<code class="language-ruby">=</code>) tem precedência sobre os operadores <code class="language-ruby">not</code>, <code class="language-ruby">or</code> e <code class="language-ruby">and</code>, portanto a atribuição é executada primeiro.</p>
 
-Agora vamos repensar a execução de `exemplo2 = (d or c) and not a` levando em consideração a precedência de operadores. A primeira parte da expressão a ser executada é `(d or c)` porque ela está entre parênteses, e o resultado será `true`. Pela precedência de operadores, o próximo operador a ser executado é a atribuição (=), e é por isso que a variável `exemplo2` recebe o valor `true` (resultado de `d or c`). O próximo operador a ser executado é o `not`, portanto `not a` resulta em `false`. Por fim, o que resta da expressão é `true and false`, que resulta em `false`.
+<p>Agora vamos repensar a execução de <code class="language-ruby">exemplo2 = (d or c) and not a</code> levando em consideração a precedência de operadores. A primeira parte da expressão a ser executada é <code class="language-ruby">(d or c)</code> porque ela está entre parênteses, e o resultado será <code class="language-ruby">true</code>. Pela precedência de operadores, o próximo operador a ser executado é a atribuição (=), e é por isso que a variável <code class="language-ruby">exemplo2</code> recebe o valor <code class="language-ruby">true</code> (resultado de <code class="language-ruby">d or c</code>). O próximo operador a ser executado é o <code class="language-ruby">not</code>, portanto <code class="language-ruby">not a</code> resulta em <code class="language-ruby">false</code>. Por fim, o que resta da expressão é <code class="language-ruby">true and false</code>, que resulta em <code class="language-ruby">false</code>.</p>
 
-Isso explica porque o resultado da expressão `(d or c) and not a` é `false`, mas quando se introduz o sinal de atribuição (`exemplo2 = (d or c) and not a`), a variável `exemplo2` irá receber `true`, que é o resultado de apenas parte da expressão (`d or c`), e não dela toda.
+<p>Isso explica porque o resultado da expressão <code class="language-ruby">(d or c) and not a</code> é <code class="language-ruby">false</code>, mas quando se introduz o sinal de atribuição (<code class="language-ruby">exemplo2 = (d or c) and not a</code>), a variável <code class="language-ruby">exemplo2</code> irá receber <code class="language-ruby">true</code>, que é o resultado de apenas parte da expressão (<code class="language-ruby">d or c</code>), e não dela toda.</p>
 
-{#aula06-atividade03}
-X> ## Atividade 6.3
-X>
-X> Crie três variáveis lógicas (com valores booleanos) e combine-as utilizando os operadores lógicos. Tente prever o resultado da expressão lógica antes de executá-la no IRB.
+<div class="panel atividade" id="atividade3">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 6.3</h4>
+  </div>
+  <div class="panel-body">
+    <p>Crie três variáveis lógicas (com valores booleanos) e combine-as utilizando os operadores lógicos. Tente prever o resultado da expressão lógica antes de executá-la no IRB.</p>
+  </div>
+</div>
 
-## Referências
+<h2 id="referencias">Referências</h2>
 
-RUBY Operators Precedence: Operators Precedence. W3resource. 2015. Disponivel em: <http://www.w3resource.com/ruby/ruby-operators-precedence.php>. Acesso em: 23 nov. 2015.
+<p>RUBY DOC. Precedence. Disponível em: <a href="https://ruby-doc.org/core-2.4.1/doc/syntax/precedence_rdoc.html" target="_blank">https://ruby-doc.org/core-2.4.1/doc/syntax/precedence_rdoc.html</a>. Acesso em: 05 jul. 2017.</p>
 
-POINT, T. Ruby Operators. Tutorials Point. 2015. Disponivel em: <http://www.tutorialspoint.com/ruby/ruby_operators.htm>. Acesso em: 03 nov. 2015.
+<p>POINT, T. Ruby Operators. Tutorials Point. 2015. Disponivel em: <a href="http://www.tutorialspoint.com/ruby/ruby_operators.htm" target="_blank">http://www.tutorialspoint.com/ruby/ruby_operators.htm</a>. Acesso em: 03 nov. 2015.</p>
 
-SOUZA, L. Ruby: aprenda a programar na linguagem mais divertida. São Paulo: Casa do Código, 2012. v. 1.
+<p>SOUZA, L. Ruby: aprenda a programar na linguagem mais divertida. São Paulo: Casa do Código, 2012. v. 1.</p>

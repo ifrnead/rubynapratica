@@ -475,3 +475,6 @@ div.panel div.panel-body p {
 div.right-buttons a i.fa {
   color: #ccc;
 }
+.center {
+  text-align: center;
+}

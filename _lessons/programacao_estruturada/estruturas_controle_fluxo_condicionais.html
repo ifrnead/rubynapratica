@@ -8,237 +8,418 @@ comments: true
 order: 7
 ---
 
-# Aula 07 - Estruturas de controle de fluxo condicionais
+<h1 id="aula7">Aula 07 - Estruturas de controle de fluxo condicionais</h1>
 
-## Introdução
+<h2 id="introducao">Introdução</h2>
 
-Daremos início ao estudo das estruturas de controle de fluxo, que são comandos e instruções que nos permitem controlar como a execução do código será realizada. Os códigos que produzimos até o presente momento não incluíram nenhuma estrutura de controle de fluxo, e, portanto, a execução deles é simplesmente linear, ou seja, inicia na primeira linha, segue a execução das linhas seguintes e termina na última, sem nenhum trecho de código condicional ou repetição.
+<p>Daremos início ao estudo das estruturas de controle de fluxo, que são comandos e instruções que nos permitem controlar como a execução do código será realizada. Os códigos que produzimos até o presente momento não incluíram nenhuma estrutura de controle de fluxo, e, portanto, a execução deles é simplesmente linear, ou seja, inicia na primeira linha, segue a execução das linhas seguintes e termina na última, sem nenhum trecho de código condicional ou repetição.</p>
 
-Nesta aula, iremos estudar apenas uma categoria das estruturas de controle de fluxo: as estruturas condicionais. Essas estruturas permitem que trechos de código sejam executados dependendo de uma condição (expressão lógica). Essa condição normalmente é construída utilizando operadores lógicos e relacionais.
+<p>Nesta aula, iremos estudar apenas uma categoria das estruturas de controle de fluxo: as estruturas condicionais. Essas estruturas permitem que trechos de código sejam executados dependendo de uma condição (expressão lógica). Essa condição normalmente é construída utilizando operadores lógicos e relacionais.</p>
 
-Para ilustrar como funciona uma das estruturas de controle de fluxo condicionais, vamos usar um exemplo do cotidiano: uma receita de brigadeiro adaptada do site Como Fazer Brigadeiro (http://www.comofazerbrigadeiro.com.br/). Confira a receita abaixo.
+<p>Para ilustrar como funciona uma das estruturas de controle de fluxo condicionais, vamos usar um exemplo do cotidiano: uma receita de brigadeiro adaptada do site Como Fazer Brigadeiro (<a href="http://www.comofazerbrigadeiro.com.br" target="_blank">http://www.comofazerbrigadeiro.com.br</a>). Confira a receita abaixo.</p>
 
-> 1. Aqueça a panela em fogo médio;
-> 2. Acrescente 1 colher de sopa de manteiga;
-> 3. Acrescente todo o leite condensado;
-> 4. Se desejar fazer brigadeiro de chocolate, acrescente 4 colheres de sopa
-de chocolate em pó;
-> 5. Mexa sem parar até que o brigadeiro esteja desgrudando da panela;
-> 6. Unte um recipiente na qual a mistura será despejada;
-> 7. Molde os brigadeiros com as mãos, passando-os no chocolate granulado.
+<ol>
+  <li>Aqueça a panela em fogo médio;</li>
+  <li>Acrescente 1 colher de sopa de manteiga;</li>
+  <li>Acrescente todo o leite condensado;</li>
+  <li>Se desejar fazer brigadeiro de chocolate, acrescente 4 colheres de sopa
+  de chocolate em pó;</li>
+  <li>Mexa sem parar até que o brigadeiro esteja desgrudando da panela;</li>
+  <li>Unte um recipiente na qual a mistura será despejada;</li>
+  <li>Molde os brigadeiros com as mãos, passando-os no chocolate granulado.</li>
+</ol>
 
-Observe que a receita é uma sequência simples de instruções, mas o passo 4 é uma estrutura de controle condicional, pois você só irá acrescentar 4 colheres de sopa de chocolate em pó se desejar fazer brigadeiro de chocolate. Numa linguagem de programação, essa estrutura poderia ser reescrita da seguinte forma.
+<p>Observe que a receita é uma sequência simples de instruções, mas o passo 4 é uma estrutura de controle condicional, pois você só irá acrescentar 4 colheres de sopa de chocolate em pó se desejar fazer brigadeiro de chocolate. Numa linguagem de programação, essa estrutura poderia ser reescrita da seguinte forma.</p>
 
-{lang=text}
+<pre class="language-bash">
+  <code>
     se desejar fazer brigadeiro de chocolate
       acrescente 4 colheres de sopa de chocolate em pó
     fim
+  </code>
+</pre>
 
-Observe que, na primeira linha, escrevemos a condição (_se desejar fazer brigadeiro de chocolate_), e, na segunda linha, escrevemos a instrução que deverá ser "executada" apenas se a condição da primeira linha for verdadeira. Na última linha escrevemos "fim" para marcar o fim da estrutura condicional. Observe que a estrutura condicional segue o formato apresentado abaixo.
+<p>Observe que, na primeira linha, escrevemos a condição (<i>se desejar fazer brigadeiro de chocolate</i>), e, na segunda linha, escrevemos a instrução que deverá ser "executada" apenas se a condição da primeira linha for verdadeira. Na última linha escrevemos "fim" para marcar o fim da estrutura condicional. Observe que a estrutura condicional segue o formato apresentado abaixo.</p>
 
-{lang=text}
-    se <condição>
-      <instruções a serem executadas caso a condição seja verdadeira>
+<pre class="language-bash">
+  <code>
+    se &lt;condição&gt;
+      &lt;instruções a serem executadas caso a condição seja verdadeira&gt;
     fim
-
-Um outro detalhe a ser observado nos exemplos de código acima é o espaçamento dado antes da segunda linha, de forma que a linha de código fica deslocada para a direita. Essa técnica é chamada de indentação de código e visa melhorar a legibilidade, ou seja, a facilidade de leitura e compreensão.
-
-A indentação permite identificar visualmente que um trecho de código está dentro de uma estrutura. Nos exemplos apresentados anteriormente, é possível identificar que a segunda linha está dentro da estrutura do "se". Vale salientar, contudo, que a indentação de código é opcional em Ruby, portanto, seu código terá o mesmo comportamento se você usar a indentação ou não. Contudo, indentar seu código é altamente recomendado, tendo em vista que essa técnica melhora muito a facilidade de leitura, especialmente em _scripts_ complexos e longos.
-
-## Estruturas de Controle Condicionais em Ruby
-
-### Estruturas condicionais: _if_ e _else_
-
-A primeira estrutura condicional que vamos estudar é o `if`, que significa "se" em inglês. Na linguagem Ruby, o `if` é construído conforme a sintaxe ilustrada no [Exemplo de código 01](#aula07-codigo01).
-
-{#aula07-codigo01}
-<<[Exemplo de código 01 - Sintaxe do `if`](code/exemplo71.rb)
-
-Vale salientar que devemos sempre substituir o código que aparece entre `<` e `>` pelo que desejamos. Confira o [Exemplo de código 02](#aula07-codigo02) que ilustra um exemplo de uso do `if`.
-
-{#aula07-codigo02}
-<<[Exemplo de código 02 - Exemplo de uso do `if`](code/exemplo72.rb)
-
-Na linha 4 do [Exemplo de código 02](#aula07-codigo02) escrevemos a instrução `if` seguida da condição `idade >= 18`. A linha 5 só será executada caso essa condição seja verdadeira, ou seja, caso o valor da variável `idade` seja maior ou igual a 18. Na linha 6 escrevemos a instrução `end` que marca o fim da estrutura condicional. Caso seja dada uma idade inferior a 18 anos, a execução do código irá literalmente pular a linha 5.
-
-{#aula07-atividade01}
-X> ## Atividade 7.1
-X>
-X> Crie um _script_ em Ruby, digite o código apresentado no [Exemplo de código 02](#aula07-codigo02) e o execute-o.
-
-Ao realizar a [Atividade 7.1](#aula07-atividade01), você deve ter percebido que, ao digitar uma idade inferior a 18 anos, o _script_ não apresenta resposta. Idealmente ele deveria apresentar uma mensagem informando que o usuário é menor de idade. Para fazer isso, vamos utilizar uma outra instrução chamada `else`, que significa "senão" em inglês. Confira a sintaxe do `else` no [Exemplo de código 03](#aula07-codigo03).
-
-{#aula07-codigo03}
-<<[Exemplo de código 03 - Sintaxe do `else`](code/exemplo73.rb)
-
-O primeiro trecho de código será executado quando a condição for verdadeira e o segundo será executado quando a condição for falsa. Vale salientar que o `else` só pode ser usado acompanhado de um `if`, porque o `else` depende da condição do `if`. Agora, confira o [Exemplo de código 04](#aula07-codigo04), que ilustra o exemplo apresentado anteriormente usando o `else`.
-
-{#aula07-codigo04}
-<<[Exemplo de código 04 - Exemplo da maioridade usando o `else`](code/exemplo74.rb)
-
-No [Exemplo de código 04](#aula07-codigo04), se atribuirmos uma idade inferior a 18 à variável `idade`, o _script_ irá apresentar a mensagem "Você é maior de idade!", caso contrário, o _script_ irá apresentar "Você é menor de idade!". Observe que as duas mensagens nunca serão apresentadas ao mesmo tempo, porque a condição só pode dar um resultado lógico: verdadeiro ou falso.
-
-Observe novamente que a indentação de código nos permite identificar facilmente que o comando `puts` (linha 5) está dentro da estrutura do `if` e, portanto, só será executado se a condição for verdadeira. Além disso, é fácil ver que o outro `puts` (linha 7) está dentro da estrutura do `else`, e, portanto, será executado quando a condição for falsa.
-
-{#aula07-atividade02}
-X> ## Atividade 7.2
-X>
-X> Crie um _script_ em Ruby que permita que o usuário digite um número inteiro e verifique se esse número é par ou ímpar.
-
-Uma forma mais simples de escrever o `if` é ilustrada [Exemplo de código 05](#aula07-codigo05).
-
-{#aula07-codigo05}
-<<[Exemplo de código 05 - Sintaxe do `if` _inline_](code/exemplo75.rb)
-
-Apesar da estrutura simplificada, o funcionamento permanece o mesmo: o trecho de código só será executado se a condição for verdadeira. Observe um exemplo de uso no [Exemplo de código 06](#aula07-codigo06).
-
-{#aula07-codigo06}
-<<[Exemplo de código 06 - Exemplo de uso com `if` _inline_](code/exemplo76.rb)
-
-### Estrutura Condicional: _elsif_
-
-Outra estrutura de controle condicional é o `elsif`, que é uma combinação de um `if` com um `else`. Para melhor ilustrar a utilidade do `elsif`, tente resolver o exercício proposto na [Atividade 7.3](#aula07-atividade03).
-
-{#aula07-atividade03}
-X> ## Atividade 7.3
-X>
-X> Crie um _script_ em Ruby que permita que o usuário digite uma nota de 0 a 100 (número inteiro) e calcule o conceito relativo à nota. Se a nota for entre 0 e 20, o conceito é "E"; entre 21 e 40, conceito "D"; entre 41 e 60, conceito "C"; entre 61 e 80, conceito "B"; entre 81 e 100, conceito "A".
-
-Uma das soluções possíveis para o exercício proposto na [Atividade 7.3](#aula07-atividade03) é o código ilustrado no [Exemplo de código 07](#aula07-codigo07).
-
-{#aula07-codigo07}
-<<[Exemplo de código 07 - Solução da Atividade 7.3](code/exemplo77.rb)
-
-Observe, no [Exemplo de código 07](#aula07-codigo07), que o código se desloca para a direita por causa da indentação. Uma opção para melhorar a legibilidade é usar o `elsif`, conforme ilustra o [Exemplo de código 08](#aula07-codigo07).
-
-{#aula07-codigo08}
-<<[Exemplo de código 08 - Exemplo de uso do `elsif`](code/exemplo78.rb)
-
-Observe que o código ficou mais curto pois com o uso do `elsif` foi possível eliminar a repetição de vários `if` e `else`.
-
-{#aula07-atividade04}
-X> ## Atividade 7.4
-X>
-X> Crie um _script_ em Ruby, digite o código apresentado no [Exemplo de código 08](#aula07-codigo08) e execute-o.
-
-A construção do `elsif` sempre segue o formato apresentado no [Exemplo de código 09](#aula07-codigo09).
-
-{#aula07-codigo09}
-<<[Exemplo de código 09 - Sintaxe do `elsif`](code/exemplo79.rb)
-
-{#aula07-atividade05}
-X> ## Atividade 7.5
-X>
-X> Crie um _script_ em Ruby que calcule o IMC (Índice de Massa Corporal) de uma pessoa. O script deve ler dois números reais. O primeiro número é o peso de uma pessoa em Kg, e o segundo é a altura de uma pessoa em metros. A fórmula para calcular o IMC é a seguinte:
-X>
-X> IMC = peso / altura²
-X>
-X> Se o IMC for abaixo de 17: apresentar "Muito abaixo do peso";
-X>
-X> Se o IMC for entre 17 e 18,49: apresentar "Abaixo do peso";
-X>
-X> Se o IMC for entre 18,5 e 24,99: apresentar "Peso normal";
-X>
-X> Se o IMC for entre 25 e 29,99: apresentar "Um pouco acima do peso";
-X>
-X> Se o IMC for entre 30 e 34,99: apresentar "Obeso";
-X>
-X> Se o IMC for entre 35 e 39,99: apresentar "Obesidade severa".
-
-### Estrutura condicional: _unless_
-
-O `unless`, que em inglês significa "a menos que", tem um comportamento inverso ao do `if`. O trecho de código abaixo do `if` é executado quando a condição é verdadeira. O trecho de código abaixo do `unless` é executado quando a condição for falsa. Observe a sintaxe do `unless` no [Exemplo de código 10](#aula07-codigo10).
-
-{#aula07-codigo10}
-<<[Exemplo de código 10 - Sintaxe do `unless`](code/exemplo710.rb)
-
-No [Exemplo de código 10](#aula07-codigo10), o trecho de código da linha 2 só será executado quando a condição do `unless` for falsa. Para exemplificar o uso do `unless`, vamos usar um método chamado `empty?`. O método `empty?` é executado sobre uma variável que guarda uma _string_ e verifica se ela está vazia ou não, portanto, seria o equivalente a testar `variavel == ""`. Esse método retorna `true` quando a _string_ está vazia, e `false` caso contrário.
-
-{#aula07-codigo11}
-<<[Exemplo de código 11 - Exemplo de uso do `empty?`](code/exemplo711.rb)
-
-O [Exemplo de código 11](#aula07-codigo11) permite que o usuário digite o seu nome (_string_), que será guardado na variável `nome`. Em seguida, o _script_ verifica, usando o método `empty?`, se o usuário de fato digitou algo. Mas, e se quiséssemos executar um trecho de código apenas quando o usuário digitar algo? É nesse tipo de situação que o `unless` pode ser útil, conforme ilustra [Exemplo de código 12](#aula07-codigo12).
-
-{#aula07-codigo12}
-<<[Exemplo de código 12 - Exemplo de uso do `unless`](code/exemplo712.rb)
-
-É claro que, ao invés de ter usado o `unless`, nós poderíamos ter usado apenas `if nome != ""` na condição da linha 4, mas a intenção aqui era apenas ilustrar um exemplo do `unless`.
-
-{#aula07-atividade06}
-X> ## Atividade 7.6
-X>
-X> Crie um _script_ em Ruby, digite o código apresentado no [Exemplo de código 12](#aula07-codigo12) e execute-o.
-
-Assim como o `if`, o `unless` também tem uma forma mais simples de ser escrita, conforme ilustra o [Exemplo de código 13](#aula07-codigo13).
-
-{#aula07-codigo13}
-<<[Exemplo de código 13 - Sintaxe do `unless` _inline_](code/exemplo713.rb)
-
-O trecho de código só será executado caso a condição seja falsa. Observe um exemplo de uso do `unless` _inline_ no [Exemplo de código 14](#aula07-codigo14).
-
-{#aula07-codigo14}
-<<[Exemplo de código 14 - Exemplo de uso do `unless` _inline_](code/exemplo714.rb)
-
-### Estrutura condicional: case
-
-O `case` é uma estrutura condicional interessante que nos permite substituir vários testes com `if`. Observe a sintaxe do `case` no [Exemplo de código 15](#aula07-codigo15).
-
-{#aula07-codigo15}
-<<[Exemplo de código 15 - Sintaxe do `case`](code/exemplo715.rb)
-
-O `case` funciona da seguinte forma: uma variável é colocada ao lado do `case` (linha 1). O valor dessa variável é comparado com os valores que aparecem ao lado dos `when` (linhas 2 e 4). Caso o valor da variável seja igual ao valor que aparece no `when`, o trecho de código correspondente é executado. Caso o valor da variável não combine com nenhum dos valores, o trecho de código do `else` é executado. Vale salientar, contudo, que o `else` é opcional.
-
-Vamos a alguns exemplos para melhor ilustrar o uso do `case`.
-
-{#aula07-atividade07}
-X> ## Atividade 7.7
-X>
-X> Crie um _script_ em Ruby que permita ao usuário digitar um número inteiro que representa um mês do ano (1 para janeiro, 2 para fevereiro, 3 para março, etc.). O _script_ deve apresentar o nome do mês e quantos dias ele tem.
-
-Uma solução para o exercício proposto na [Atividade 7.7](#aula07-atividade07) é ilustrado no [Exemplo de código 16](#aula07-codigo16).
-
-{#aula07-codigo16}
-<<[Exemplo de código 16 - Solução do exercício proposto na Atividade 7.7](code/exemplo716.rb)
-
-Quando o valor da variável `mes` for igual a 1, a linha 6 será executada. Quando o valor da variável `mes` for igual a 2, a linha 8 será executada, e assim sucessivamente. Caso o valor da variável não seja igual ao valor de nenhum `when`, o trecho de código do `else` será executado, nesse caso, a linha 30.
-
-{#aula07-atividade08}
-X> ## Atividade 7.8
-X>
-X> Resolva o exercício proposto na [Atividade 7.3](#aula07-atividade03) usando a estrutura condicional `case`.
-
-O [Exemplo de código 17](#aula07-exemplo17) apresenta uma solução para o exercício proposto na [Atividade 7.8](#aula07-atividade08).
-
-{#aula07-codigo17}
-<<[Exemplo de código 17 - Solução do exercício proposto na Atividade 7.3 usando `case`](code/exemplo717.rb)
-
-Observe, no [Exemplo de código 17](#aula07-exemplo17), que também é possível usar faixas de valores ao lado do `when`. Dessa forma, se o valor da variável `nota` estiver entre 0 e 20, a linha 6 será executada; se estiver entre 21 e 40, a linha 8 será executada; se estiver entre 41 e 60, a linha 10 será executada, e assim sucessivamente. Se a nota não estiver entre 0 e 100, a linha 16 será executada.
-
-{#aula07-atividade09}
-X> ## Atividade 7.9
-X>
-X> Resolva o exercício proposto na [Atividade 7.5](#aula07-atividade05) usando a estrutura condicional `case`.
-
-## Exercícios
-
-1) Crie um _script_ em Ruby que leia três valores, 'a', 'b' e 'c' e diga se estes valores podem ser os lados de um triângulo. Para um triângulo ser formado, a soma de dois lados deve ser maior do que o terceiro lado: a + b > c e a + c > b e b + c > a.
-
-2) Modifique a questão anterior para contemplar o seguinte: quando os lados do triângulo forem válidos, o algoritmo deve informar qual é o tipo de triângulo formado pelos lados. O triângulo equilátero é formado quando os três lados são iguais. O triângulo isósceles é formado quando dois lados quaisquer são iguais, e o triângulo escaleno é formado quando os três lados são diferentes entre si.
-
-3) Crie um _script_ em Ruby que permita ao usuário digitar um ano. Em seguida, o _script_ deve informar se o ano (informado pelo usuário) é ou não bissexto. Dica: um ano é bissexto se ele for divisível por 400, ou se ele for divisível por 4 e não por 100.
-
-4) Crie um _script_ em Ruby que receba três notas, calcule e mostre a média aritmética e, além disso, mostre a situação do aluno (aprovado, recuperação ou reprovado). Se a média for maior ou igual a 7, o aluno está aprovado; se for menor que 7 e maior ou igual a 5, o aluno está de recuperação; se for menor que 5, o aluno está reprovado.
-
-5) Desenvolva um _script_ em Ruby que leia a velocidade máxima permitida em uma avenida e a velocidade com que o motorista estava dirigindo nela. Calcule e mostre a multa que uma pessoa vai receber, sabendo que são pagos: R$ 50 reais se o motorista ultrapassar em até 10km/h a velocidade permitida; R$ 100 reais, se o motorista ultrapassar de 11 a 30 km/h a velocidade permitida; e R$ 200 reais, se estiver acima de 31km/h da velocidade permitida.
-
-6) O imposto de renda de uma pessoa varia segundo uma tabela. Se o salário for menor do que R$ 1.000,00, não há imposto, se for entre R$ 1.000,00 e R$ 2.200,00, o imposto é de 13%, se for maior do que 2.200,00, o imposto é de 22%. Crie um _script_ em Ruby que, dado um valor em reais informado pelo usuário, correspondente a um salário, informe o valor que será recebido (total menos o imposto).
-
-7) Desenvolva um _script_ em Ruby que informe se uma data é válida ou não. O _script_ deverá ler 3 números inteiros, que representem o dia, o mês e o ano da data. Uma data é considerada válida quando o dia estiver entre 1 e 31, o mês estiver entre 1 e 12 e o ano for maior que zero.
-
-## Referências
-
-RANGEL, E. Conhecendo Ruby. [S.l.]: Leanpub, 2014.
-
-SOUZA, L. Ruby - Ruby: Aprenda a programar na linguagem mais divertida. 1. ed. São Paulo: Casa do Código, 2012. v. I.
-
-WIKIPÉDIA. Identação. 2015. Disponivel em: <https://pt.wikipedia.org/wiki/Indenta%C3%A7%C3%A3o>. Acesso em: 24 nov. 2015.
+  </code>
+</pre>
+
+<p>Um outro detalhe a ser observado nos exemplos de código acima é o espaçamento dado antes da segunda linha, de forma que a linha de código fica deslocada para a direita. Essa técnica é chamada de indentação de código e visa melhorar a legibilidade, ou seja, a facilidade de leitura e compreensão.</p>
+
+<p>A indentação permite identificar visualmente que um trecho de código está dentro de uma estrutura. Nos exemplos apresentados anteriormente, é possível identificar que a segunda linha está dentro da estrutura do "se". Vale salientar, contudo, que a indentação de código é opcional em Ruby, portanto, seu código terá o mesmo comportamento se você usar a indentação ou não. Contudo, indentar seu código é altamente recomendado, tendo em vista que essa técnica melhora muito a facilidade de leitura, especialmente em <i>scripts</i> complexos e longos.</p>
+
+<h2 id="estruturas_controle_condicionais_ruby">Estruturas de Controle Condicionais em Ruby</h2>
+
+<h3 id="estruturas_condicionais_if_else">Estruturas condicionais: <i>if</i> e <i>else</i></h3>
+
+<p>A primeira estrutura condicional que vamos estudar é o <code class="language-ruby">if</code>, que significa "se" em inglês. Na linguagem Ruby, o <code class="language-ruby">if</code> é construído conforme a sintaxe ilustrada no <a href="#codigo1">Exemplo de código 1</a>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo1">
+  <code>
+    if condicao
+      # trecho de código a ser executado quando a condição for verdadeira
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 1</strong> - Sintaxe do <code class="language-ruby">if</code></p>
+
+<p>Vale salientar que devemos sempre substituir o código que aparece entre <code class="language-ruby"><</code> e <code class="language-ruby">></code> pelo que desejamos. Confira o [Exemplo de código 02](#aula07-codigo02) que ilustra um exemplo de uso do <code class="language-ruby">if</code>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo2">
+  <code>
+    puts "Digite a sua idade:"
+    idade = gets.chomp.to_i
+
+    if idade >= 18
+      puts "Você é maior de idade!"
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 2</strong> - Exemplo de uso do <code class="language-ruby">if</code></p>
+
+<p>Na linha 4 do <a href="#codigo2">Exemplo de código 2</a> escrevemos a instrução <code class="language-ruby">if</code> seguida da condição <code class="language-ruby">idade >= 18</code>. A linha 5 só será executada caso essa condição seja verdadeira, ou seja, caso o valor da variável <code class="language-ruby">idade</code> seja maior ou igual a 18. Na linha 6 escrevemos a instrução <code class="language-ruby">end</code> que marca o fim da estrutura condicional. Caso seja dada uma idade inferior a 18 anos, a execução do código irá literalmente pular a linha 5.</p>
+
+<div class="panel atividade" id="atividade1">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 7.1</h4>
+  </div>
+  <div class="panel-body">
+    <p>Crie um <i>script</i> em Ruby, digite o código apresentado no <a href="#codigo2">Exemplo de código 2</a> e execute-o.</p>
+  </div>
+</div>
+
+<p>Ao realizar a <a href="#atividade1">Atividade 7.1</a>, você deve ter percebido que, ao digitar uma idade inferior a 18 anos, o <i>script</i> não apresenta resposta. Idealmente ele deveria apresentar uma mensagem informando que o usuário é menor de idade. Para fazer isso, vamos utilizar uma outra instrução chamada <code class="language-ruby">else</code>, que significa "senão" em inglês. Confira a sintaxe do <code class="language-ruby">else</code> no <a href="#codigo3">Exemplo de código 3</a>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo3">
+  <code>
+    if condicao
+      # trecho de código a ser executado quando a condição for verdadeira
+    else
+      # trecho de código a ser executado quando a condição for falsa
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 3</strong> - Sintaxe do <code class="language-ruby">else</code></p>
+
+<p>O primeiro trecho de código será executado quando a condição for verdadeira e o segundo será executado quando a condição for falsa. Vale salientar que o <code class="language-ruby">else</code> só pode ser usado acompanhado de um <code class="language-ruby">if</code>, porque o <code class="language-ruby">else</code> depende da condição do <code class="language-ruby">if</code>. Agora, confira o <a href="#codigo4">Exemplo de código 4</a>, que ilustra o exemplo apresentado anteriormente usando o <code class="language-ruby">else</code>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo4">
+  <code>
+    puts "Digite a sua idade:"
+    idade = gets.chomp.to_i
+
+    if idade >= 18
+      puts "Você é maior de idade!"
+    else
+      puts "Você é menor de idade!"
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 4</strong> - Exemplo da maioridade usando o <code class="language-ruby">else</code></p>
+
+<p>No <a href="#codigo4">Exemplo de código 4</a>, se atribuirmos uma idade inferior a 18 à variável <code class="language-ruby">idade</code>, o <i>script</i> irá apresentar a mensagem <code class="language-ruby">"Você é maior de idade!"</code>, caso contrário, o <i>script</i> irá apresentar <code class="language-ruby">"Você é menor de idade!"</code>. Observe que as duas mensagens nunca serão apresentadas ao mesmo tempo, porque a condição só pode dar um resultado lógico: verdadeiro ou falso.</p>
+
+<p>Observe novamente que a indentação de código nos permite identificar facilmente que o comando <code class="language-ruby">puts</code> (linha 5) está dentro da estrutura do <code class="language-ruby">if</code> e, portanto, só será executado se a condição for verdadeira. Além disso, é fácil ver que o outro <code class="language-ruby">puts</code> (linha 7) está dentro da estrutura do <code class="language-ruby">else</code>, e, portanto, será executado quando a condição for falsa.</p>
+
+<div class="panel atividade" id="atividade2">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 7.2</h4>
+  </div>
+  <div class="panel-body">
+    <p>Crie um <i>script</i> em Ruby que permita que o usuário digite um número inteiro e verifique se esse número é par ou ímpar.</p>
+  </div>
+</div>
+
+<p>Uma forma mais simples de escrever o <code class="language-ruby">if</code> é ilustrada <a href="#codigo5">Exemplo de código 5</a>.</p>
+
+<pre class="language-ruby" id="codigo5">
+  <code>
+    trecho_de_codigo if condicao
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 5</strong> - Sintaxe do <code class="language-ruby">if</code> <i>inline</i></p>
+
+<p>Apesar da estrutura simplificada, o funcionamento permanece o mesmo: o trecho de código só será executado se a condição for verdadeira. Observe um exemplo de uso no <a href="#codigo6">Exemplo de código 6</a>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo6">
+  <code>
+    puts "Digite a sua idade:"
+    idade = gets.chomp.to_i
+
+    puts "Você é maior de idade!" if idade >= 18
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 6</strong> - Exemplo de uso com <code class="language-ruby">if</code> <i>inline</i></p>
+
+<h3 id="estrutura_condicional_elsif">Estrutura Condicional: <i>elsif</i></h3>
+
+<p>Outra estrutura de controle condicional é o <code class="language-ruby">elsif</code>, que é uma combinação de um <code class="language-ruby">if</code> com um <code class="language-ruby">else</code>. Para melhor ilustrar a utilidade do <code class="language-ruby">elsif</code>, tente resolver o exercício proposto na <a href="#atividade3">Atividade 7.3</a>.</p>
+
+<div class="panel atividade" id="atividade3">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 7.3</h4>
+  </div>
+  <div class="panel-body">
+    <p>Crie um <i>script</i> em Ruby que permita que o usuário digite uma nota de 0 a 100 (número inteiro) e calcule o conceito relativo à nota. Se a nota for entre 0 e 20, o conceito é "E"; entre 21 e 40, conceito "D"; entre 41 e 60, conceito "C"; entre 61 e 80, conceito "B"; entre 81 e 100, conceito "A".</p>
+  </div>
+</div>
+
+<p>Uma das soluções possíveis para o exercício proposto na <a href="#atividade3">Atividade 7.3</a> é o código ilustrado no <a href="#codigo7">Exemplo de código 7</a>.</p>
+
+<pre class="language-ruby line-numbers" data-src="{{site.baseurl}}/assets/code/exemplo77.rb" id="codigo7"></pre>
+<p class="caption"><strong>Exemplo de código 7</strong> - Solução da <a href="#atividade3"></a> Atividade 7.3</p>
+
+<p>Observe, no <a href="#codigo7">Exemplo de código 7</a>, que o código se desloca para a direita por causa da indentação. Uma opção para melhorar a legibilidade é usar o <code class="language-ruby">elsif</code>, conforme ilustra o <a href="#codigo8">Exemplo de código 8</a>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo8">
+  <code>
+    puts "Digite uma nota de 0 a 100:"
+    nota = gets.chomp.to_i
+
+    if nota < 0 or nota > 100
+      puts "Nota inválida! Digite uma nota entre 0 e 100!"
+    elsif nota <= 20
+      puts "Conceito E"
+    elsif nota <= 40
+      puts "Conceito D"
+    elsif nota <= 60
+      puts "Conceito C"
+    elsif nota <= 80
+      puts "Conceito B"
+    else
+      puts "Conceito A"
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 8</strong> - Exemplo de uso do <code class="language-ruby">elsif</code></p>
+
+<p>Observe que o código ficou mais curto pois com o uso do <code class="language-ruby">elsif</code> foi possível eliminar a repetição de vários <code class="language-ruby">if</code> e <code class="language-ruby">else</code>.</p>
+
+<div class="panel atividade" id="atividade4">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 7.4</h4>
+  </div>
+  <div class="panel-body">
+    <p>Crie um <i>script</i> em Ruby, digite o código apresentado no <a href="#codigo8">Exemplo de código 8</a> e execute-o.</p>
+  </div>
+</div>
+
+<p>A construção do <code class="language-ruby">elsif</code> sempre segue o formato apresentado no <a href="#codigo9">Exemplo de código 9</a>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo9">
+  <code>
+    if condicao_1
+      # trecho código a ser executado quando a condição_1 for verdadeira
+    elsif condicao_2
+      # trecho de código a ser executado quando a condição_2 for verdadeira
+    elsif condicao_3
+      # trecho de código a ser executado quando a condição_3 for verdadeira
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 9</strong> - Sintaxe do <code class="language-ruby">elsif</code></p>
+
+<div class="panel atividade" id="atividade5">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 7.5</h4>
+  </div>
+  <div class="panel-body">
+    <p>Crie um <i>script</i> em Ruby que calcule o IMC (Índice de Massa Corporal) de uma pessoa. O <i>script</i> deve ler dois números reais. O primeiro número é o peso de uma pessoa em Kg, e o segundo é a altura de uma pessoa em metros. A fórmula para calcular o IMC é a seguinte:</p>
+    <p class="center">IMC = peso / altura²</p>
+    <ul>
+      <li>Se o IMC for abaixo de 17: apresentar "Muito abaixo do peso";</li>
+      <li>Se o IMC for entre 17 e 18,49: apresentar "Abaixo do peso";</li>
+      <li>Se o IMC for entre 18,5 e 24,99: apresentar "Peso normal";</li>
+      <li>Se o IMC for entre 25 e 29,99: apresentar "Um pouco acima do peso";</li>
+      <li>Se o IMC for entre 30 e 34,99: apresentar "Obeso";</li>
+      <li>Se o IMC for entre 35 e 39,99: apresentar "Obesidade severa".</li>
+    </ul>
+  </div>
+</div>
+
+<h3 id="estrutura_condicional_unless">Estrutura condicional: <i>unless</i></h3>
+
+<p>O <code class="language-ruby">unless</code>, que em inglês significa "a menos que", tem um comportamento inverso ao do <code class="language-ruby">if</code>. O trecho de código abaixo do <code class="language-ruby">if</code> é executado quando a condição é verdadeira. O trecho de código abaixo do <code class="language-ruby">unless</code> é executado quando a condição for falsa. Observe a sintaxe do <code class="language-ruby">unless</code> no <a href="#codigo10">Exemplo de código 10</a>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo10">
+  <code>
+    unless condicao
+      # trecho de código a ser executado quando a condição for falsa
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 10</strong> - Sintaxe do <code class="language-ruby">unless</code></p>
+
+<p>No <a href="#codigo10">Exemplo de código 10</a>, o trecho de código da linha 2 só será executado quando a condição do <code class="language-ruby">unless</code> for falsa. Para exemplificar o uso do <code class="language-ruby">unless</code>, vamos usar um método chamado <code class="language-ruby">empty?</code>. O método <code class="language-ruby">empty?</code> é executado sobre uma variável que guarda uma <i>string</i> e verifica se ela está vazia ou não, portanto, seria o equivalente a testar <code class="language-ruby">variavel == ""</code>. Esse método retorna <code class="language-ruby">true</code> quando a <i>string</i> está vazia, e <code class="language-ruby">false</code> caso contrário.</p>
+
+<pre class="language-ruby line-numbers" id="codigo11">
+  <code>
+    puts "Digite o seu nome:"
+    nome = gets.chomp
+
+    if nome.empty?
+      puts "Você não digitou seu nome."
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 11</strong> - Exemplo de uso do <code class="language-ruby">empty?</code></p>
+
+<p>O <a href="#codigo11">Exemplo de código 11</a> permite que o usuário digite o seu nome (<i>string</i>), que será guardado na variável <code class="language-ruby">nome</code>. Em seguida, o <i>script</i> verifica, usando o método <code class="language-ruby">empty?</code>, se o usuário de fato digitou algo. Mas, e se quiséssemos executar um trecho de código apenas quando o usuário digitar algo? É nesse tipo de situação que o <code class="language-ruby">unless</code> pode ser útil, conforme ilustra <a href="#codigo12">Exemplo de código 12</a>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo12">
+  <code>
+    puts "Digite o seu nome:"
+    nome = gets.chomp
+
+    unless nome.empty?
+      puts "Olá #{noem} Seja bem-vindo(a)!"
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 12</strong> - Exemplo de uso do <code class="language-ruby">unless</code></p>
+
+<p>É claro que, ao invés de ter usado o <code class="language-ruby">unless</code>, nós poderíamos ter usado apenas <code class="language-ruby">if nome != ""</code> na condição da linha 4, mas a intenção aqui era apenas ilustrar um exemplo do <code class="language-ruby">unless</code>.</p>
+
+<div class="panel atividade" id="atividade6">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 7.6</h4>
+  </div>
+  <div class="panel-body">
+    <p>Crie um <i>script</i> em Ruby, digite o código apresentado no <a href="#codigo12">Exemplo de código 12</a> e execute-o.</p>
+  </div>
+</div>
+
+<p>Assim como o <code class="language-ruby">if</code>, o <code class="language-ruby">unless</code> também tem uma forma mais simples de ser escrita, conforme ilustra o <a href="#codigo13">Exemplo de código 13</a>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo13">
+  <code>
+    trecho_de_codigo unless condicao
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 13</strong> - Sintaxe do <code class="language-ruby">unless</code> <i>inline</i></p>
+
+<p>O trecho de código só será executado caso a condição seja falsa. Observe um exemplo de uso do <code class="language-ruby">unless</code> <i>inline</i> no <a href="#codigo14">Exemplo de código 14</a>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo14">
+  <code>
+    trecho_de_codigo unless condicao
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 14</strong> - Exemplo de uso do <code class="language-ruby">unless</code> <i>inline</i></p>
+
+<h3 id="estrutura_condicional_case">Estrutura condicional: case</h3>
+
+<p>O <code class="language-ruby">case</code> é uma estrutura condicional interessante que nos permite substituir vários testes com <code class="language-ruby">if</code>. Observe a sintaxe do <code class="language-ruby">case</code> no <a href="#codigo15">Exemplo de código 15</a>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo15">
+  <code>
+    case variavel
+      when valor1
+        # trecho de código 1
+      when valor2
+        # trecho de código 2
+      else
+        # trecho de código 3
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 15</strong> - Sintaxe do <code class="language-ruby">case</code></p>
+
+<p>O <code class="language-ruby">case</code> funciona da seguinte forma: uma variável é colocada ao lado do <code class="language-ruby">case</code> (linha 1). O valor dessa variável é comparado com os valores que aparecem ao lado dos <code class="language-ruby">when</code> (linhas 2 e 4). Caso o valor da variável seja igual ao valor que aparece no <code class="language-ruby">when</code>, o trecho de código correspondente é executado. Caso o valor da variável não combine com nenhum dos valores, o trecho de código do <code class="language-ruby">else</code> é executado. Vale salientar, contudo, que o <code class="language-ruby">else</code> é opcional.</p>
+
+<p>Vamos a alguns exemplos para melhor ilustrar o uso do <code class="language-ruby">case</code>.</p>
+
+<div class="panel atividade" id="atividade7">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 7.7</h4>
+  </div>
+  <div class="panel-body">
+    <p>Crie um <i>script</i> em Ruby que permita ao usuário digitar um número inteiro que representa um mês do ano (1 para janeiro, 2 para fevereiro, 3 para março, etc.). O <i>script</i> deve apresentar o nome do mês e quantos dias ele tem.</p>
+  </div>
+</div>
+
+<p>Uma solução para o exercício proposto na <a href="#atividade7">Atividade 7.7</a> é ilustrado no <a href="#codigo16">Exemplo de código 16</a>.</p>
+
+<pre class="language-ruby line-numbers" data-src="{{site.baseurl}}/assets/code/exemplo716.rb" id="codigo16"></pre>
+<p class="caption"><strong>Exemplo de código 16</strong> - Solução do exercício proposto na <a href="#atividade7">Atividade 7.7</a></p>
+
+<p>Quando o valor da variável <code class="language-ruby">mes</code> for igual a 1, a linha 6 será executada. Quando o valor da variável <code class="language-ruby">mes</code> for igual a 2, a linha 8 será executada, e assim sucessivamente. Caso o valor da variável não seja igual ao valor de nenhum <code class="language-ruby">when</code>, o trecho de código do <code class="language-ruby">else</code> será executado, nesse caso, a linha 30.</p>
+
+<div class="panel atividade" id="atividade8">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 7.8</h4>
+  </div>
+  <div class="panel-body">
+    <p>Resolva o exercício proposto na <a href="#atividade3">Atividade 7.3</a> usando a estrutura condicional <code class="language-ruby">case</code>.</p>
+  </div>
+</div>
+
+<p>O <a href="#codigo17">Exemplo de código 17</a> apresenta uma solução para o exercício proposto na <a href="#atividade8">Atividade 7.8</a>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo17">
+  <code>
+    puts "Digite uma nota de 0 a 100:"
+    nota = gets.chomp.to_i
+
+    case nota
+    when 0..20
+      puts "Conceito E"
+    when 21..40
+      puts "Conceito D"
+    when 41..60
+      puts "Conceito C"
+    when 61..80
+      puts "Conceito B"
+    when 81..100
+      puts "Conceito A"
+    else
+      puts "Digite uma nota de 0 a 100!"
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 17</strong> - Solução do exercício proposto na Atividade 7.3 usando <code class="language-ruby">case</code></p>
+
+<p>Observe, no <a href="#codigo17">Exemplo de código 17</a>, que também é possível usar faixas de valores ao lado do <code class="language-ruby">when</code>. Dessa forma, se o valor da variável <code class="language-ruby">nota</code> estiver entre 0 e 20, a linha 6 será executada; se estiver entre 21 e 40, a linha 8 será executada; se estiver entre 41 e 60, a linha 10 será executada, e assim sucessivamente. Se a nota não estiver entre 0 e 100, a linha 16 será executada.</p>
+
+<div class="panel atividade" id="atividade9">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 7.9</h4>
+  </div>
+  <div class="panel-body">
+    <p>Resolva o exercício proposto na <a href="#atividade5">Atividade 7.5</a> usando a estrutura condicional <code class="language-ruby">case</code>.</p>
+  </div>
+</div>
+
+<div class="panel atividade" id="atividade10">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 7.10</h4>
+  </div>
+  <div class="panel-body">
+    <p>1) Crie um <i>script</i> em Ruby que leia três valores, 'a', 'b' e 'c' e diga se estes valores podem ser os lados de um triângulo. Para um triângulo ser formado, a soma de dois lados deve ser maior do que o terceiro lado: a + b > c e a + c > b e b + c > a.</p>
+
+    <p>2) Modifique a questão anterior para contemplar o seguinte: quando os lados do triângulo forem válidos, o algoritmo deve informar qual é o tipo de triângulo formado pelos lados. O triângulo equilátero é formado quando os três lados são iguais. O triângulo isósceles é formado quando dois lados quaisquer são iguais, e o triângulo escaleno é formado quando os três lados são diferentes entre si.</p>
+
+    <p>3) Crie um <i>script</i> em Ruby que permita ao usuário digitar um ano. Em seguida, o <i>script</i> deve informar se o ano (informado pelo usuário) é ou não bissexto. Dica: um ano é bissexto se ele for divisível por 400, ou se ele for divisível por 4 e não por 100.</p>
+
+    <p>4) Crie um <i>script</i> em Ruby que receba três notas, calcule e mostre a média aritmética e, além disso, mostre a situação do aluno (aprovado, recuperação ou reprovado). Se a média for maior ou igual a 7, o aluno está aprovado; se for menor que 7 e maior ou igual a 5, o aluno está de recuperação; se for menor que 5, o aluno está reprovado.</p>
+
+    <p>5) Desenvolva um <i>script</i> em Ruby que leia a velocidade máxima permitida em uma avenida e a velocidade com que o motorista estava dirigindo nela. Calcule e mostre a multa que uma pessoa vai receber, sabendo que são pagos: R$ 50 reais se o motorista ultrapassar em até 10km/h a velocidade permitida; R$ 100 reais, se o motorista ultrapassar de 11 a 30 km/h a velocidade permitida; e R$ 200 reais, se estiver acima de 31km/h da velocidade permitida.</p>
+
+    <p>6) O imposto de renda de uma pessoa varia segundo uma tabela. Se o salário for menor do que R$ 1.000,00, não há imposto, se for entre R$ 1.000,00 e R$ 2.200,00, o imposto é de 13%, se for maior do que 2.200,00, o imposto é de 22%. Crie um <i>script</i> em Ruby que, dado um valor em reais informado pelo usuário, correspondente a um salário, informe o valor que será recebido (total menos o imposto).</p>
+
+    <p>7) Desenvolva um <i>script</i> em Ruby que informe se uma data é válida ou não. O <i>script</i> deverá ler 3 números inteiros, que representem o dia, o mês e o ano da data. Uma data é considerada válida quando o dia estiver entre 1 e 31, o mês estiver entre 1 e 12 e o ano for maior que zero.</p>
+  </div>
+</div>
+
+<h2 id="referencias">Referências</h2>
+
+<p>RANGEL, E. Conhecendo Ruby. [S.l.]: Leanpub, 2014.</p>
+
+<p>SOUZA, L. Ruby - Ruby: Aprenda a programar na linguagem mais divertida. 1. ed. São Paulo: Casa do Código, 2012. v. I.</p>
+
+<p>WIKIPÉDIA. Identação. 2015. Disponivel em: <a href="https://pt.wikipedia.org/wiki/Indenta%C3%A7%C3%A3o" target="_blank">https://pt.wikipedia.org/wiki/Indenta%C3%A7%C3%A3o</a>. Acesso em: 24 nov. 2015.</p>

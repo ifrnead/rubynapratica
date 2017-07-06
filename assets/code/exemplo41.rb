@@ -1,1 +1,0 @@
-puts "Olá mundo!"

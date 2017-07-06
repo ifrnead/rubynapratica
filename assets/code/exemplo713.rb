@@ -1,1 +1,0 @@
-trecho_de_codigo unless condicao

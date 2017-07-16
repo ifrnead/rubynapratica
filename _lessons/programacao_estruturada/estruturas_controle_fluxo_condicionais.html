@@ -171,7 +171,34 @@ order: 7
 
 <p>Uma das soluções possíveis para o exercício proposto na <a href="#atividade3">Atividade 7.3</a> é o código ilustrado no <a href="#codigo7">Exemplo de código 7</a>.</p>
 
-<pre class="language-ruby line-numbers" data-src="{{site.baseurl}}/assets/code/exemplo77.rb" id="codigo7"></pre>
+<pre class="language-ruby line-numbers" id="codigo7">
+  <code>
+    puts "Digite uma nota de 0 a 100:"
+    nota = gets.chomp.to_i
+
+    if nota < 0 or nota > 100
+      puts "Nota inválida! Digite uma nota entre 0 e 100!"
+    else
+      if nota <= 20
+        puts "Conceito E"
+      else
+        if nota <= 40
+          puts "Conceito D"
+        else
+          if nota <= 60
+            puts "Conceito C"
+          else
+            if nota <= 80
+              puts "Conceito B"
+            else
+              puts "Conceito A"
+            end
+          end
+        end
+      end
+    end
+  </code>
+</pre>
 <p class="caption"><strong>Exemplo de código 7</strong> - Solução da <a href="#atividade3"></a> Atividade 7.3</p>
 
 <p>Observe, no <a href="#codigo7">Exemplo de código 7</a>, que o código se desloca para a direita por causa da indentação. Uma opção para melhorar a legibilidade é usar o <code class="language-ruby">elsif</code>, conforme ilustra o <a href="#codigo8">Exemplo de código 8</a>.</p>

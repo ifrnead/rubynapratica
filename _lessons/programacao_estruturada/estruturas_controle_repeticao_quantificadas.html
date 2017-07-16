@@ -8,47 +8,80 @@ order: 8
 comments: true
 ---
 
-# Aula 08 - Estruturas de Controle de Repetição Quantificadas
+<h1 id="aula8">Aula 08 - Estruturas de Controle de Repetição Quantificadas</h1>
 
-## Introdução
+<h2 id="introducao">Introdução</h2>
 
-Para ilustrar a utilidade das estruturas de controle de repetição quantificadas, também conhecidas como laços, iremos usar o exercício proposto na [Atividade 8.1](#aula08-atividade01). Tente resolver esse exercício com os conhecimentos que você já possui.
+<p>Para ilustrar a utilidade das estruturas de controle de repetição quantificadas, também conhecidas como laços, iremos usar o exercício proposto na <a href="#atividade1">Atividade 8.1</a>. Tente resolver esse exercício com os conhecimentos que você já possui.</p>
 
-{#aula08-atividade01}
-X> ## Atividade 8.1
-X>
-X> Crie um _script_ em Ruby que lê um número inteiro e mostra a tabuada de multiplicação desse número de 1 a 10.
+<div class="panel atividade" id="atividade1">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 8.1</h4>
+  </div>
+  <div class="panel-body">
+    <p>Crie um <i>script</i> em Ruby que lê um número inteiro e mostra a tabuada de multiplicação desse número de 1 a 10.</p>
+  </div>
+</div>
 
-Para resolver o problema proposto na [Atividade 8.1](#aula08-atividade01), provavelmente você produziu um _script_ parecido com o ilustrado no [Exemplo de código 01](#aula08-codigo01).
+Para resolver o problema proposto na <a href="#atividade1">Atividade 8.1</a>, provavelmente você produziu um <i>script</i> parecido com o ilustrado no <a href="#codigo1">Exemplo de código 1</a>.
 
-{#aula08-codigo01}
-<<[Exemplo de código 01 - Solução da Atividade 8.1](code/exemplo81.rb)
+<pre class="language-ruby" id="codigo1">
+  <code>
+    puts "Digite um número: "
+    numero = gets.chomp.to_i
 
-Observe que, para resolver esse problema usando apenas os conhecimentos que temos atualmente, precisamos escrever repetidas vezes uma ação específica: multiplicar o número informado pelo usuário por um outro número (linhas 4 a 13). Para esse problema específico, precisamos realizar essa ação apenas 10 vezes, mas e se o problema exigisse que executássemos a ação 100 vezes? Ou 1000 vezes? Iríamos escrever a mesma linha de código várias vezes? E pior: o problema pode exigir que a ação seja executada um número variável de vezes.
+    puts "#{numero} x 1 = #{numero * 1}"
+    puts "#{numero} x 2 = #{numero * 2}"
+    puts "#{numero} x 3 = #{numero * 3}"
+    puts "#{numero} x 4 = #{numero * 4}"
+    puts "#{numero} x 5 = #{numero * 5}"
+    puts "#{numero} x 6 = #{numero * 6}"
+    puts "#{numero} x 7 = #{numero * 7}"
+    puts "#{numero} x 8 = #{numero * 8}"
+    puts "#{numero} x 9 = #{numero * 9}"
+    puts "#{numero} x 10 = #{numero * 10}"
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 1</strong> - Solução da <a href="#atividade1">Atividade 8.1</a> sem usar laços</p>
 
-Para resolver problemas como esse, em que ações precisam ser feitas repetidas vezes, é que devemos utilizar as estruturas de controle de repetição quantificadas. Essas estruturas são ditas quantificadas porque elas executam um número determinado de vezes.
+<p>Observe que, para resolver esse problema usando apenas os conhecimentos que temos atualmente, precisamos escrever repetidas vezes uma ação específica: multiplicar o número informado pelo usuário por um outro número (linhas 4 a 13). Para esse problema específico, precisamos realizar essa ação apenas 10 vezes, mas e se o problema exigisse que executássemos a ação 100 vezes? Ou 1000 vezes? Iríamos escrever a mesma linha de código várias vezes? E pior: o problema pode exigir que a ação seja executada um número variável de vezes.</p>
 
-## Estruturas de controle de repetição quantificadas em Ruby
+<p>Para resolver problemas como esse, em que ações precisam ser feitas repetidas vezes, é que devemos utilizar as estruturas de controle de repetição quantificadas. Essas estruturas são ditas quantificadas porque elas executam um número determinado de vezes.</p>
 
-A linguagem Ruby possui três estruturas de controle de repetição quantificadas: o `for`, o `each` e o `times`.
+<h2 id="estruturas_controle_repeticao_quantificadas">Estruturas de controle de repetição quantificadas em Ruby</h2>
 
-### Estrutura de repetição: `for`
+<p>A linguagem Ruby possui três estruturas de controle de repetição quantificadas: o <code class="language-ruby">for</code>, o <code class="language-ruby">each</code> e o <code class="language-ruby">times</code>.</p>
 
-O `for` (para) é uma estrutura de repetição muito comum e presente em quase todas as linguagens de programação. O [Exemplo de código 02](#aula08-codigo02) ilustra a sintaxe do `for`.
+<h2 id="estrutura_repeticao_for">Estrutura de repetição: <code class="language-ruby">for</code></h2>
 
-{#aula08-codigo02}
-<<[Exemplo de código 02 - Sintaxe do `for`](code/exemplo82.rb)
+<p>O <code class="language-ruby">for</code> (para) é uma estrutura de repetição muito comum e presente em quase todas as linguagens de programação. O <a href="#codigo2">Exemplo de código 2</a> ilustra a sintaxe do <code class="language-ruby">for</code>.</p>
 
-O [Exemplo de código 03](#aula08-codigo03) ilustra um exemplo de uso do `for`.
+<pre class="language-ruby" id="codigo2">
+  <code>
+    for variavel in expressao
+      # Código a ser executado repetidamente
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 2</strong> - Sintaxe do <code class="language-ruby">for</code></p>
 
-{#aula08-codigo03}
-<<[Exemplo de código 03 - Sintaxe do `for`](code/exemplo83.rb)
+<p>O <a href="#codigo3">Exemplo de código 3</a> ilustra um exemplo de uso do <code class="language-ruby">for</code>.</p>
 
-Conforme explicamos anteriormente, o `for` é uma estrutura de repetição que executa um trecho de código várias vezes. Cada execução do `for` é chamada de iteração. Portanto dizemos que um `for` que executa 10 vezes possui 10 iterações. Observe, no [Exemplo de código 03](#aula08-codigo03), que declaramos a variável `i`. Essa variável só existe dentro do `for` e ela assume um valor entre 1 e 10 a cada iteração. Na primeira execução do `for`, o valor de `i` é 1; na segunda execução do `for`, o valor de `i` é 2; na terceira execução do `for`, o valor de `i` é 3, e assim sucessivamente. O último valor que a variável `i` vai receber é 10.
+<pre class="language-ruby" id="codigo3">
+  <code>
+    for i in 1..10
+      puts "O valor de i é #{i}"
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 3</strong> - Exemplo de uso do <code class="language-ruby">for</code></p>
 
-Ao executar o código apresentado no [Exemplo de código 03](#aula08-codigo03), você deverá observar o resultado abaixo.
+<p>Conforme explicamos anteriormente, o <code class="language-ruby">for</code> é uma estrutura de repetição que executa um trecho de código várias vezes. Cada execução do <code class="language-ruby">for</code> é chamada de iteração. Portanto dizemos que um <code class="language-ruby">for</code> que executa 10 vezes possui 10 iterações. Observe, no <a href="#codigo3">Exemplo de código 3</a>, que declaramos a variável <code class="language-ruby">i</code>. Essa variável só existe dentro do <code class="language-ruby">for</code> e ela assume um valor entre 1 e 10 a cada iteração. Na primeira execução do <code class="language-ruby">for</code>, o valor de <code class="language-ruby">i</code> é 1; na segunda execução do <code class="language-ruby">for</code>, o valor de <code class="language-ruby">i</code> é 2; na terceira execução do <code class="language-ruby">for</code>, o valor de <code class="language-ruby">i</code> é 3, e assim sucessivamente. O último valor que a variável <code class="language-ruby">i</code> vai receber é 10.</p>
 
-{lang=text}
+<p>Ao executar o código apresentado no <a href="#codigo3">Exemplo de código 3</a>, você deverá observar o resultado abaixo.</p>
+
+<pre class="language-bash">
+  <code>
     O valor de i é 1
     O valor de i é 2
     O valor de i é 3
@@ -59,71 +92,142 @@ Ao executar o código apresentado no [Exemplo de código 03](#aula08-codigo03), 
     O valor de i é 8
     O valor de i é 9
     O valor de i é 10
+  </code>
+</pre>
 
-Observe que o trecho de código dentro do `for` foi executado 10 vezes, e a cada iteração foi apresentado o valor da variável `i`.
+<p>Observe que o trecho de código dentro do <code class="language-ruby">for</code> foi executado 10 vezes, e a cada iteração foi apresentado o valor da variável <code class="language-ruby">i</code>.</p>
 
-{#aula08-atividade02}
-X> ## Atividade 8.2
-X>
-X> Resolva o problema proposto na [Atividade 8.1](#aula08-atividade01) utilizando o `for`.
+<div class="panel atividade" id="atividade2">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 8.2</h4>
+  </div>
+  <div class="panel-body">
+    <p>Resolva o problema proposto na <a href="#atividade1">Atividade 8.1</a> utilizando o <code class="language-ruby">for</code>.</p>
+  </div>
+</div>
 
-O [Exemplo de código 04](#aula08-codigo04) ilustra uma solução para o problema proposto na [Atividade 8.2](#aula08-atividade02).
+<p>O <a href="#codigo4">Exemplo de código 4</a> ilustra uma solução para o problema proposto na <a href="#atividade2">Atividade 8.2</a>.</p>
 
-{#aula08-codigo04}
-<<[Exemplo de código 04 - Solução do problema proposto na Atividade 8.2](code/exemplo84.rb)
+<pre class="language-ruby" id="codigo4">
+  <code>
+    puts "Digite um número: "
+    numero = gets.chomp.to_i
 
-Observe, no [Exemplo de código 04](#aula08-codigo04), que a linha de código que se repetia no [Exemplo de código 01](#aula08-codigo01) foi usada apenas uma vez dentro do `for`. O `for` vai se encarregar de executar o que está dentro dele 10 vezes, conforme o intervalo definido na linha 4 (`1..10`).
+    for i in 1..10
+      puts "#{numero} x #{i} = #{numero * i}"
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 4</strong> - Solução do problema proposto na <a href="#atividade2">Atividade 8.2</a></p>
 
-{#aula08-atividade03}
-X> ## Atividade 8.3
-X>
-X> Crie um _script_ em Ruby que leia um número inteiro X e mostre os números pares entre 1 e X.
+<p>Observe, no <a href="#codigo4">Exemplo de código 4</a>, que a linha de código que se repetia no <a href="#codigo1">Exemplo de código 1</a> foi usada apenas uma vez dentro do <code class="language-ruby">for</code>. O <code class="language-ruby">for</code> vai se encarregar de executar o que está dentro dele 10 vezes, conforme o intervalo definido na linha 4 (<code class="language-ruby">1..10</code>).</p>
 
-### Estrutura de repetição: `each`
+<div class="panel atividade" id="atividade3">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 8.3</h4>
+  </div>
+  <div class="panel-body">
+    <p>Crie um <i>script</i> em Ruby que leia um número inteiro X e mostre os números pares entre 1 e X.</p>
+  </div>
+</div>
 
-O `each` (cada) é uma estrutura de repetição muito parecida com o `for`, contudo, existem duas formas de se escrever o `each`, apresentadas no [Exemplo de código 05](#aula08-codigo05) e no [Exemplo de código 06](#aula08-codigo06).
+<h3 id="estrutura_repeticao_each">Estrutura de repetição: <code class="language-ruby">each</code></h3>
 
-{#aula08-codigo05}
-<<[Exemplo de código 05 - Sintaxe da estrutura de repetição each](code/exemplo85.rb)
+<p>O <code class="language-ruby">each</code> (cada), na realidade, não é uma estrutura de repetição, mas sim um método. Os métodos serão abordados na Unidade II - Programação Orientada a Objetos, mas, como o método <code class="language-ruby">each</code> se assemelha muito e pode ser usado como uma estrutura de repetição, ele será apresentado nessa seção.</p>
 
-{#aula08-codigo06}
-<<[Exemplo de código 06 - Sintaxe da estrutura de repetição each](code/exemplo86.rb)
+<p>O <code class="language-ruby">each</code> se parece muito com o <code class="language-ruby">for</code>, contudo, existem duas formas de se escrever o <code class="language-ruby">each</code>, apresentadas no <a href="#codigo5">Exemplo de código 5</a> e no <a href="#codigo6">Exemplo de código 6</a>.</p>
 
-Não há diferença de comportamento entre as duas formas de construir o `each`, portanto, escolha aquela que preferir. O [Exemplo de código 07](#aula08-codigo07) ilustra um exemplo de uso do `each`: uma contagem de 1 a 10.
+<pre class="language-ruby" id="codigo5">
+  <code>
+    expressao.each do |variavel|
+      # Trecho de código executado repetidamente
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 5</strong> - Sintaxe da estrutura de repetição <code class="language-ruby">each</code></a></p>
 
-{#aula08-codigo07}
-<<[Exemplo de código 07 - Exemplo de uso do each](code/exemplo87.rb)
+<pre class="language-ruby" id="codigo6">
+  <code>
+    expressao.each { |variavel|
+      # Trecho de código executado repetidamente
+    }
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 6</strong> - Sintaxe da estrutura de repetição <code class="language-ruby">each</code></a></p>
 
-Ao executar o [Exemplo de código 07](#aula08-codigo07), você vai observar uma contagem de 1 a 10, pois esse foi o intervalo definido na linha 1 (`1..10`). O [Exemplo de código 08](#aula08-codigo08) ilustra uma solução da [Atividade 8.1](#aula08-atividade01) usando o `each`.
+<p>Não há diferença de comportamento entre as duas formas de construir o <code class="language-ruby">each</code>, portanto, escolha aquela que preferir. O <a href="#codigo7">Exemplo de código 7</a> ilustra um exemplo de uso do <code class="language-ruby">each</code>: uma contagem de 1 a 10.</p>
 
-{#aula08-codigo08}
-<<[Exemplo de código 08 - Solução da Atividade 8.1 usando o each](code/exemplo88.rb)
+<pre class="language-ruby" id="codigo7">
+  <code>
+    (1..10).each do |i|
+      puts "O valor de i é #{i}"
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 7</strong> - Exemplo de uso do <code class="language-ruby">each</code></a></p>
 
-Observe que, novamente, não há repetição de linhas de código, pois o `each` vai se encarregar de executar a linha 5 repetidamente (10 vezes).
+<p>Ao executar o <a href="#codigo7">Exemplo de código 7</a>, você vai observar uma contagem de 1 a 10, pois esse foi o intervalo definido na linha 1 (<code class="language-ruby">1..10</code>). O <a href="#codigo8">Exemplo de código 8</a> ilustra uma solução da <a href="#atividade1">Atividade 8.1</a> usando o <code class="language-ruby">each</code>.</p>
 
-{#aula08-atividade04}
-X> ## Atividade 8.4
-X>
-X> Crie um _script_ em Ruby que leia um número inteiro X e mostre todos os números entre 1 e X que são divisíveis por 3 ou por 5.
+<pre class="language-ruby" id="codigo8">
+  <code>
+    puts "Digite um número: "
+    numero = gets.chomp.to_i
 
-### Estrutura de repetição: `times`
+    (1..10).each do |i|
+      puts "#{numero} x #{i} = #{numero * i}"
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 8</strong> - Solução da <a href="#atividade1">Atividade 8.1</a> usando o <code class="language-ruby">each</code></a></p>
 
-Na realidade, o `times` (vezes) não é uma estrutura de controle de repetição, mas sim um método da classe Integer, conforme vamos estudar mais à frente, quando estivermos aprendendo sobre Programação Orientada a Objetos. Contudo, o método `times` também é muito utilizado para executar trechos de código repetidamente. Assim como o `each`, também existem duas formas de se construir o `times`. Observe a sintaxe do times no [Exemplo de código 09](#aula08-codigo09) e no [Exemplo de código 10](#aula09-codigo10).
+<p>Observe que, novamente, não há repetição de linhas de código, pois o <code class="language-ruby">each</code> vai se encarregar de executar a linha 5 repetidamente (10 vezes).</p>
 
-{#aula08-codigo09}
-<<[Exemplo de código 09 - Sintaxe do times](code/exemplo89.rb)
+<div class="panel atividade" id="atividade4">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 8.4</h4>
+  </div>
+  <div class="panel-body">
+    <p>Crie um <i>script</i> em Ruby que leia um número inteiro X e mostre todos os números entre 1 e X que são divisíveis por 3 ou por 5.</p>
+  </div>
+</div>
 
-{#aula08-codigo10}
-<<[Exemplo de código 10 - Sintaxe do times](code/exemplo810.rb)
+<h3 id="estrutura_repeticao_times">Estrutura de repetição: <code class="language-ruby">times</code></h3>
 
-Uma diferença entre as duas formas de construir o `times` é que a primeira forma, ilustrada no [Exemplo de código 09](#aula08-codigo09), dispensa o uso de uma variável auxiliar. Para ilustrar o exemplo da contagem usando o `times`, observe o [Exemplo de código 11](#aula08-codigo11).
+<p>O <code class="language-ruby">times</code> (vezes) também não é uma estrutura de controle de repetição, mas sim um método da classe <i>Integer</i>, conforme vamos estudar mais à frente, quando estivermos aprendendo sobre Programação Orientada a Objetos. Contudo, o método <code class="language-ruby">times</code> também é muito utilizado para executar trechos de código repetidamente. Assim como o <code class="language-ruby">each</code>, também existem duas formas de se construir o <code class="language-ruby">times</code>. Observe a sintaxe do times no <a href="#codigo9">Exemplo de código 9</a> e no <a href="#codigo10">Exemplo de código 10</a>.</p>
 
-{#aula08-codigo11}
-<<[Exemplo de código 11 - Exemplo de uso do times](code/exemplo811.rb)
+<pre class="language-ruby" id="codigo9">
+  <code>
+    expressao.times do
+      # Trecho de código executado repetidamente
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 9</strong> - Sintaxe do <code class="language-ruby">times</code></a></p>
 
-Ao executar o [Exemplo de código 11](#aula08-codigo11), você deverá observar o seguinte resultado.
+<pre class="language-ruby" id="codigo10">
+  <code>
+    expressao.times { |variavel|
+      # Trecho de código executado repetidamente
+    }
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 10</strong> - Sintaxe do <code class="language-ruby">times</code></a></p>
 
-{lang=text}
+<p>Uma diferença entre as duas formas de construir o <code class="language-ruby">times</code> é que a primeira forma, ilustrada no <a href="#codigo9">Exemplo de código 9</a>, dispensa o uso de uma variável auxiliar. Para ilustrar o exemplo da contagem usando o <code class="language-ruby">times</code>, observe o <a href="#codigo11">Exemplo de código 11</a>.</p>
+
+<pre class="language-ruby" id="codigo11">
+  <code>
+    10.times { |i|
+      puts "O valor de i é #{i}"
+    }
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 11</strong> - Exemplo de uso do <code class="language-ruby">times</code></a></p>
+
+<p>Ao executar o <a href="#codigo11">Exemplo de código 11</a>, você deverá observar o seguinte resultado.</p>
+
+<pre class="language-bash">
+  <code>
     O valor de i é 0
     O valor de i é 1
     O valor de i é 2
@@ -134,17 +238,29 @@ Ao executar o [Exemplo de código 11](#aula08-codigo11), você deverá observar 
     O valor de i é 7
     O valor de i é 8
     O valor de i é 9
+  </code>
+</pre>
 
-Observe que, diferentemente das estruturas `for` e `each`, o `times` iniciou o valor da variável auxiliar em 0 (zero). Isso ocorre porque, no `for` e no `each`, nós podemos configurar o valor inicial e final da variável auxiliar, contudo não podemos fazer o mesmo no `times`. A variável auxiliar do `times` sempre irá começar com o valor 0 (zero).
+<p>Observe que, diferentemente das estruturas <code class="language-ruby">for</code> e <code class="language-ruby">each</code>, o <code class="language-ruby">times</code> iniciou o valor da variável auxiliar em 0 (zero). Isso ocorre porque, no <code class="language-ruby">for</code> e no <code class="language-ruby">each</code>, nós podemos configurar o valor inicial e final da variável auxiliar, contudo não podemos fazer o mesmo no <code class="language-ruby">times</code>. A variável auxiliar do <code class="language-ruby">times</code> sempre irá começar com o valor 0 (zero).</p>
 
-O [Exemplo de código 12](#aula08-codigo12) ilustra uma solução da [Atividade 8.1](#aula08-atividade01) usando o `times`.
+<p>O <a href="#codigo12">Exemplo de código 12</a> ilustra uma solução da <a href="#atividade1">Atividade 8.1</a> usando o <code class="language-ruby">times</code>.</p>
 
-{#aula08-codigo12}
-<<[Exemplo de código 12 - Solução da Atividade 8.1 usando times](code/exemplo812.rb)
+<pre class="language-ruby" id="codigo12">
+  <code>
+    puts "Digite um número: "
+    numero = gets.chomp.to_i
 
-Observe, na linha 4, que precisamos usar `11.times` para que o valor da variável auxiliar varie entre 0 e 10. Ao executar o [Exemplo de código 12](#aula08-codigo12), você deverá observar algo parecido com o seguinte.
+    11.times { |i|
+      puts "#{numero} x #{i} = #{numero * i}"
+    }
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 12</strong> - Solução da <a href="#atividade1">Atividade 8.1</a> usando o <code class="language-ruby">times</code></a></p>
 
-{lang=text}
+<p>Observe, na linha 4, que precisamos usar <code class="language-ruby">11.times</code> para que o valor da variável auxiliar varie entre 0 e 10. Ao executar o <a href="#codigo12">Exemplo de código 12</a>, você deverá observar algo parecido com o seguinte.</p>
+
+<pre class="language-bash">
+  <code>
     Digite um número:
     2
     2 x 0 = 0
@@ -158,45 +274,81 @@ Observe, na linha 4, que precisamos usar `11.times` para que o valor da variáve
     2 x 8 = 16
     2 x 9 = 18
     2 x 10 = 20
+  </code>
+</pre>
 
-## Controlando a Execução de Laços
+<h2 id="controlando_execucao_lacos">Controlando a Execução de Laços</h2>
 
-As execuções dos laços podem ser controladas através dos comandos `break`, `next` e `redo`. Cada uma tem uma utilidade específica para controle de execução das estruturas de repetição, conforme será apresentado a seguir (RANGEL, 2014).
+<p>As execuções dos laços podem ser controladas através dos comandos <code class="language-ruby">break</code>, <code class="language-ruby">next</code> e <code class="language-ruby">redo</code>. Cada uma tem uma utilidade específica para controle de execução das estruturas de repetição, conforme será apresentado a seguir (RANGEL, 2014).</p>
 
-### O comando `break`
+<h3 id="comando_break">O comando <code class="language-ruby">break</code></h3>
 
-O comando `break` (quebrar/romper) interrompe a execução do laço. O [Exemplo de código 13](#aula08-codigo13) ilustra um exemplo de uso do comando `break`.
+<p>O comando <code class="language-ruby">break</code> (quebrar/romper) interrompe a execução do laço. O <a href="#codigo13">Exemplo de código 13</a> ilustra um exemplo de uso do comando <code class="language-ruby">break</code>.</p>
 
-{#aula08-codigo13}
-<<[Exemplo de código 13 - Exemplo de uso do break](code/exemplo813.rb)
+<pre class="language-ruby" id="codigo13">
+  <code>
+    for i in 1..10
+      if i == 7
+        break
+      end
+      puts "O valor de i é #{i}"
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 13</strong> - Exemplo de uso do <code class="language-ruby">break</code></p>
 
-Observe, no [Exemplo de código 13](#aula08-codigo13), que o `each` está configurado para executar 10 vezes. Dentro do `each` há um `if` para verificar se o valor da variável `i` é igual a 7. Se for, o `break` é executado, interrompendo a execução do `each`. O resultado da execução do [Exemplo de código 13](#aula08-codigo13) é apresentado abaixo.
+<p>Observe, no <a href="#codigo13">Exemplo de código 13</a>, que o <code class="language-ruby">each</code> está configurado para executar 10 vezes. Dentro do <code class="language-ruby">each</code> há um <code class="language-ruby">if</code> para verificar se o valor da variável <code class="language-ruby">i</code> é igual a 7. Se for, o <code class="language-ruby">break</code> é executado, interrompendo a execução do <code class="language-ruby">each</code>. O resultado da execução do <a href="#codigo13">Exemplo de código 13</a> é apresentado abaixo.</p>
 
-{lang=text}
+<pre class="language-bash">
+  <code>
     O valor de i é 1
     O valor de i é 2
     O valor de i é 3
     O valor de i é 4
     O valor de i é 5
     O valor de i é 6
+  </code>
+</pre>
 
-Observe que o laço é executado 6 vezes. Na 7ª execução do laço, na qual o valor de `i` é 7, a execução é interrompida com a execução do `break`. Vale salientar que, se houverem dois laços aninhados (um laço dentro do outro), o `break` irá interromper apenas a execução do laço interno. Observe o [Exemplo de código 14](#aula08-codigo14), que ilustra esse cenário.
+<p>Observe que o laço é executado 6 vezes. Na 7ª execução do laço, na qual o valor de <code class="language-ruby">i</code> é 7, a execução é interrompida com a execução do <code class="language-ruby">break</code>. Vale salientar que, se houverem dois laços aninhados (um laço dentro do outro), o <code class="language-ruby">break</code> irá interromper apenas a execução do laço interno. Observe o <a href="#codigo14">Exemplo de código 14</a>, que ilustra esse cenário.</p>
 
-{#aula08-codigo14}
-<<[Exemplo de código 14 - Exemplo de uso do break](code/exemplo814.rb)
+<pre class="language-ruby" id="codigo14">
+  <code>
+    for i in 1..10
+      puts "i = #{i}"
+      for j in 1..10
+        puts "j = #{j}"
+        if j > 5
+          break
+        end
+      end
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 14</strong> - Exemplo de uso do <code class="language-ruby">break</code></p>
 
-O código apresentado no [Exemplo de código 14](#aula08-codigo14) possui dois `for`, um externo (no qual a variável auxiliar é `i`) e um interno (no qual a variável auxiliar é `j`). Quando o `break` for executado na linha 6, ele irá interromper apenas a execução do for interno, mas não do externo.
+<p>O código apresentado no <a href="#codigo14">Exemplo de código 14</a> possui dois <code class="language-ruby">for</code>, um externo (no qual a variável auxiliar é <code class="language-ruby">i</code>) e um interno (no qual a variável auxiliar é <code class="language-ruby">j</code>). Quando o <code class="language-ruby">break</code> for executado na linha 6, ele irá interromper apenas a execução do for interno, mas não do externo.</p>
 
-### O comando `next`
+<h3 id="comando_next">O comando <code class="language-ruby">next</code></h3>
 
-O comando `next` (próximo) é usado para pular a execução de uma iteração. O [Exemplo de código 15](#aula08-codigo15) ilustra um exemplo de uso do comando `next`.
+<p>O comando <code class="language-ruby">next</code> (próximo) é usado para pular a execução de uma iteração. O <a href="#codigo15">Exemplo de código 15</a> ilustra um exemplo de uso do comando <code class="language-ruby">next</code>.</p>
 
-{#aula08-codigo15}
-<<[Exemplo de código 15 - Exemplo de uso do next](code/exemplo815.rb)
+<pre class="language-ruby" id="codigo15">
+  <code>
+    for i in 1..10
+      if i == 7
+        next
+      end
+      puts "O valor de i é #{i}"
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 15</strong> - Exemplo de uso do <code class="language-ruby">next</code></p>
 
-Observe, no [Exemplo de código 15](#aula08-codigo15), que o `for` está configurado para executar 10 vezes. Na 7ª iteração, na qual o valor de `i` é 7, o comando `next` é executado, interrompendo a execução da 7ª iteração e pulando para a próxima. Abaixo é apresentado o resultado da execução do [Exemplo de código 15](#aula08-codigo15). Observe a ausência do "O valor de i é 7".
+<p>Observe, no <a href="#codigo15">Exemplo de código 15</a>, que o <code class="language-ruby">for</code> está configurado para executar 10 vezes. Na 7ª iteração, na qual o valor de <code class="language-ruby">i</code> é 7, o comando <code class="language-ruby">next</code> é executado, interrompendo a execução da 7ª iteração e pulando para a próxima. Abaixo é apresentado o resultado da execução do <a href="#codigo15">Exemplo de código 15</a>. Observe a ausência do "O valor de i é 7".</p>
 
-{lang=text}
+<pre class="language-bash">
+  <code>
     O valor de i é 1
     O valor de i é 2
     O valor de i é 3
@@ -206,19 +358,31 @@ Observe, no [Exemplo de código 15](#aula08-codigo15), que o `for` está configu
     O valor de i é 8
     O valor de i é 9
     O valor de i é 10
+  </code>
+</pre>
 
-Vale salientar que, quando o comando `next` é executado dentro de um laço aninhado (um laço dentro de outro), ele irá pular a iteração apenas do laço interno, assim como ocorre com o `break`.
+<p>Vale salientar que, quando o comando <code class="language-ruby">next</code> é executado dentro de um laço aninhado (um laço dentro de outro), ele irá pular a iteração apenas do laço interno, assim como ocorre com o <code class="language-ruby">break</code>.</p>
 
-### O comando `redo`
+<h3 id="comando_redo">O comando <code class="language-ruby">redo</code></h3>
 
-O comando `redo` (refazer) reexecuta a iteração atual. Observe o comportamento do `redo` no [Exemplo de código 16](#aula08-codigo16).
+<p>O comando <code class="language-ruby">redo</code> (refazer) reexecuta a iteração atual. Observe o comportamento do <code class="language-ruby">redo</code> no <a href="#codigo16">Exemplo de código 16</a></p>
 
-{#aula08-codigo16}
-<<[Exemplo de código 16 - Exemplo de uso do redo](code/exemplo816.rb)
+<pre class="language-ruby" id="codigo16">
+  <code>
+    for i in 1..10
+      puts "O valor de i é #{i}"
+      if i == 3
+        redo
+      end
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 16</strong> - Exemplo de uso do <code class="language-ruby">redo</code></p>
 
-O `for` está configurado para executar 10 vezes (linha 1). Contudo, quando o valor de `i` for igual a 3, o `redo` será executado (linha 4). Isso fará com que a 3ª iteração seja executada infinitamente. Isso é chamado de _loop_ infinito: um laço que nunca para de executar. Portanto, ao executar o [Exemplo de código 16](#aula08-codigo16), não espere a execução terminar, apenas feche a janela. Abaixo é apresentado o resultado da execução do [Exemplo de código 16](#aula08-codigo16).
+<p>O <code class="language-ruby">for</code> está configurado para executar 10 vezes (linha 1). Contudo, quando o valor de <code class="language-ruby">i</code> for igual a 3, o <code class="language-ruby">redo</code> será executado (linha 4). Isso fará com que a 3ª iteração seja executada infinitamente. Isso é chamado de <i>loop</i> infinito: um laço que nunca para de executar. Portanto, ao executar o <a href="#codigo16">Exemplo de código 16</a>, não espere a execução terminar, apenas feche a janela. Abaixo é apresentado o resultado da execução do <a href="#codigo16">Exemplo de código 16</a>.</p>
 
-{lang=text}
+<pre class="language-bash">
+  <code>
     O valor de i é 1
     O valor de i é 2
     O valor de i é 3
@@ -228,45 +392,56 @@ O `for` está configurado para executar 10 vezes (linha 1). Contudo, quando o va
     O valor de i é 3
     O valor de i é 3
     ...
+  </code>
+</pre>
 
-Observe que as duas iterações são executadas normalmente, e ao chegar na 3ª iteração, o laço `for` fica preso num _loop_ infinito.
+<p>Observe que as duas primeiras iterações são executadas normalmente, e ao chegar na 3ª iteração, o laço <code class="language-ruby">for</code> fica preso num <i>loop</i> infinito.</p>
 
-## Exercícios
+<div class="panel atividade" id="atividade5">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 8.5</h4>
+  </div>
+  <div class="panel-body">
+    <p>1) Faça um <i>script</i> em Ruby que leia um número n e mostre a tabuada de multiplicação de 1 a 10 deste número.</p>
 
-1) Faça um _script_ em Ruby que leia um número n e mostre a tabuada de multiplicação de 1 a 10 deste número.
+    <p>2) Faça um <i>script</i> em Ruby que mostre os números pares entre 1 e 100.</p>
 
-2) Faça um _script_ em Ruby que mostre os números pares entre 1 e 100.
+    <p>3) Faça um <i>script</i> em Ruby que mostre o somatório dos números pares entre 1 e N, onde N é um valor definido pelo usuário.</p>
 
-3) Faça um _script_ em Ruby que mostre o somatório dos números pares entre 1 e N, onde N é um valor definido pelo usuário.
+    <p>4) Desenvolva um <i>script</i> em Ruby que mostre todos os números entre 1 e 200 que são divisíveis por 3 ou por 5.</p>
 
-4) Desenvolva um _script_ em Ruby que mostre todos os números entre 1 e 200 que são divisíveis por 3 ou por 5.
+    <p>5) Desenvolva um <i>script</i> em Ruby que leia n números (o número n deve informado pelo usuário), e diga quantos são pares e quantos são ímpares. Imprima também a soma dos números pares, e a soma dos números ímpares.</p>
 
-5) Desenvolva um _script_ em Ruby que leia n números (o número n deve informado pelo usuário), e diga quantos são pares e quantos são ímpares. Imprima também a soma dos números pares, e a soma dos números ímpares.
+    <p>6) Desenvolva um <i>script</i> em Ruby que, dados 2 números inteiros X e Y, calcule o valor de X elevado a Y. Faça isso sem usar o operador de potenciação (**).</p>
 
-6) Desenvolva um _script_ em Ruby que, dados 2 números inteiros X e Y, calcule o valor de XY. Faça isso sem usar o operador de potenciação (**).
+    <p>7) Faça um <i>script</i> em Ruby que calcule o fatorial de um número inteiro dado pelo usuário. O fatorial de um número é calculado através da multiplicação do próprio número pelos seus antecessores. Exemplo: o fatorial de 4 é 4 x 3 x 2 x 1 = 24.</p>
 
-7) Faça um _script_ em Ruby que calcule o fatorial de um número inteiro dado pelo usuário. O fatorial de um número é calculado através da multiplicação do próprio número pelos seus antecessores. Exemplo: o fatorial de 4 é 4 x 3 x 2 x 1 = 24.
+    <p>8) Um número é primo se os únicos divisores dele são 1 e o próprio número. Faça um <i>script</i> em Ruby para ler um número inteiro positivo e determinar se ele é ou não um número primo.</p>
 
-8) Um número é primo se os únicos divisores dele são 1 e o próprio número. Faça um _script_ em Ruby para ler um número inteiro positivo e determinar se ele é ou não um número primo.
+    <p>9) No dia da estreia do filme “O Senhor dos Anéis”, uma grande emissora de TV realizou uma pesquisa logo após o encerramento do filme. Cada espectador respondeu a um questionário no qual constava sua idade e a sua opinião em relação ao filme: 3 – excelente; 2 – bom; 1 – regular. Criar um <i>script</i> em Ruby que receba a idade e a opinião de 20 espectadores, calcule e imprima:</p>
 
-9) No dia da estreia do filme “O Senhor dos Anéis”, uma grande emissora de TV realizou uma pesquisa logo após o encerramento do filme. Cada espectador respondeu a um questionário no qual constava sua idade e a sua opinião em relação ao filme: 3 – excelente; 2 – bom; 1 – regular. Criar um _script_ em Ruby que receba a idade e a opinião de 20 espectadores, calcule e imprima:
+    <ul>
+      <li>A média das idades das pessoas que responderam excelente;</li>
+      <li>A quantidade de pessoas que responderam regular;</li>
+      <li>A percentagem de pessoas que responderam bom entre todos os espectadores analisados.</li>
+    </ul>
 
-* A média das idades das pessoas que responderam excelente;
-* A quantidade de pessoas que responderam regular;
-* A percentagem de pessoas que responderam bom entre todos os espectadores analisados.
+    <p>10) Crie um <i>script</i> em Ruby que imprima todas as tabuadas de multiplicação de 1 a 10.</p>
 
-10) Crie um _script_ em Ruby que imprima todas as tabuadas de multiplicação de 1 a 10.
+    <p>11) Criar um <i>script</i> em Ruby em que o usuário entre com 2 notas (de 0 a 100) de cada aluno de uma turma de 5 alunos, e imprima:</p>
 
-11) Criar um _script_ em Ruby em que o usuário entre com 2 notas (de 0 a 100) de cada aluno de uma turma de 5 alunos, e imprima:
+    <ul>
+      <li>A média de cada aluno;</li>
+      <li>A média da turma;</li>
+      <li>O percentual de alunos com média maior ou igual a 60.</li>
+    </ul>
+  </div>
+</div>
 
-* A média de cada aluno;
-* A média da turma;
-* O percentual de alunos com média maior ou igual a 60.
+<h2 id="referencias">Referências</h2>
 
-## Referências
+<p>POINT, T. Ruby Tutorial. Tutorials Point. 2015. Disponivel em: <a href="http://www.tutorialspoint.com/ruby/" target="_blank">http://www.tutorialspoint.com/ruby/</a>. Acesso em: 12 nov. 2015.</p>
 
-POINT, T. Ruby Tutorial. Tutorials Point. 2015. Disponivel em: <http://www.tutorialspoint.com/ruby/>. Acesso em: 12 nov. 2015.
+<p>RANGEL, E. Conhecendo Ruby. [S.l.]: Leanpub, 2014.</p>
 
-RANGEL, E. Conhecendo Ruby. [S.l.]: Leanpub, 2014.
-
-SOUZA, L. Ruby: aprenda a programar na linguagem mais divertida. 1. ed. São Paulo: Casa do Código, 2012. v. I.
+<p>SOUZA, L. Ruby: aprenda a programar na linguagem mais divertida. 1. ed. São Paulo: Casa do Código, 2012. v. I.</p>

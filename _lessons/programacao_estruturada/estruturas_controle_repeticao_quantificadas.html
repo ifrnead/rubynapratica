@@ -25,7 +25,7 @@ comments: true
 
 Para resolver o problema proposto na <a href="#atividade1">Atividade 8.1</a>, provavelmente você produziu um <i>script</i> parecido com o ilustrado no <a href="#codigo1">Exemplo de código 1</a>.
 
-<pre class="language-ruby" id="codigo1">
+<pre class="language-ruby line-numbers" id="codigo1">
   <code>
     puts "Digite um número: "
     numero = gets.chomp.to_i
@@ -56,7 +56,7 @@ Para resolver o problema proposto na <a href="#atividade1">Atividade 8.1</a>, pr
 
 <p>O <code class="language-ruby">for</code> (para) é uma estrutura de repetição muito comum e presente em quase todas as linguagens de programação. O <a href="#codigo2">Exemplo de código 2</a> ilustra a sintaxe do <code class="language-ruby">for</code>.</p>
 
-<pre class="language-ruby" id="codigo2">
+<pre class="language-ruby line-numbers" id="codigo2">
   <code>
     for variavel in expressao
       # Código a ser executado repetidamente
@@ -67,7 +67,7 @@ Para resolver o problema proposto na <a href="#atividade1">Atividade 8.1</a>, pr
 
 <p>O <a href="#codigo3">Exemplo de código 3</a> ilustra um exemplo de uso do <code class="language-ruby">for</code>.</p>
 
-<pre class="language-ruby" id="codigo3">
+<pre class="language-ruby line-numbers" id="codigo3">
   <code>
     for i in 1..10
       puts "O valor de i é #{i}"
@@ -108,7 +108,7 @@ Para resolver o problema proposto na <a href="#atividade1">Atividade 8.1</a>, pr
 
 <p>O <a href="#codigo4">Exemplo de código 4</a> ilustra uma solução para o problema proposto na <a href="#atividade2">Atividade 8.2</a>.</p>
 
-<pre class="language-ruby" id="codigo4">
+<pre class="language-ruby line-numbers" id="codigo4">
   <code>
     puts "Digite um número: "
     numero = gets.chomp.to_i
@@ -137,7 +137,7 @@ Para resolver o problema proposto na <a href="#atividade1">Atividade 8.1</a>, pr
 
 <p>O <code class="language-ruby">each</code> se parece muito com o <code class="language-ruby">for</code>, contudo, existem duas formas de se escrever o <code class="language-ruby">each</code>, apresentadas no <a href="#codigo5">Exemplo de código 5</a> e no <a href="#codigo6">Exemplo de código 6</a>.</p>
 
-<pre class="language-ruby" id="codigo5">
+<pre class="language-ruby line-numbers" id="codigo5">
   <code>
     expressao.each do |variavel|
       # Trecho de código executado repetidamente
@@ -146,7 +146,7 @@ Para resolver o problema proposto na <a href="#atividade1">Atividade 8.1</a>, pr
 </pre>
 <p class="caption"><strong>Exemplo de código 5</strong> - Sintaxe da estrutura de repetição <code class="language-ruby">each</code></a></p>
 
-<pre class="language-ruby" id="codigo6">
+<pre class="language-ruby line-numbers" id="codigo6">
   <code>
     expressao.each { |variavel|
       # Trecho de código executado repetidamente
@@ -157,7 +157,7 @@ Para resolver o problema proposto na <a href="#atividade1">Atividade 8.1</a>, pr
 
 <p>Não há diferença de comportamento entre as duas formas de construir o <code class="language-ruby">each</code>, portanto, escolha aquela que preferir. O <a href="#codigo7">Exemplo de código 7</a> ilustra um exemplo de uso do <code class="language-ruby">each</code>: uma contagem de 1 a 10.</p>
 
-<pre class="language-ruby" id="codigo7">
+<pre class="language-ruby line-numbers" id="codigo7">
   <code>
     (1..10).each do |i|
       puts "O valor de i é #{i}"
@@ -168,7 +168,7 @@ Para resolver o problema proposto na <a href="#atividade1">Atividade 8.1</a>, pr
 
 <p>Ao executar o <a href="#codigo7">Exemplo de código 7</a>, você vai observar uma contagem de 1 a 10, pois esse foi o intervalo definido na linha 1 (<code class="language-ruby">1..10</code>). O <a href="#codigo8">Exemplo de código 8</a> ilustra uma solução da <a href="#atividade1">Atividade 8.1</a> usando o <code class="language-ruby">each</code>.</p>
 
-<pre class="language-ruby" id="codigo8">
+<pre class="language-ruby line-numbers" id="codigo8">
   <code>
     puts "Digite um número: "
     numero = gets.chomp.to_i
@@ -195,7 +195,7 @@ Para resolver o problema proposto na <a href="#atividade1">Atividade 8.1</a>, pr
 
 <p>O <code class="language-ruby">times</code> (vezes) também não é uma estrutura de controle de repetição, mas sim um método da classe <i>Integer</i>, conforme vamos estudar mais à frente, quando estivermos aprendendo sobre Programação Orientada a Objetos. Contudo, o método <code class="language-ruby">times</code> também é muito utilizado para executar trechos de código repetidamente. Assim como o <code class="language-ruby">each</code>, também existem duas formas de se construir o <code class="language-ruby">times</code>. Observe a sintaxe do times no <a href="#codigo9">Exemplo de código 9</a> e no <a href="#codigo10">Exemplo de código 10</a>.</p>
 
-<pre class="language-ruby" id="codigo9">
+<pre class="language-ruby line-numbers" id="codigo9">
   <code>
     expressao.times do
       # Trecho de código executado repetidamente
@@ -204,7 +204,7 @@ Para resolver o problema proposto na <a href="#atividade1">Atividade 8.1</a>, pr
 </pre>
 <p class="caption"><strong>Exemplo de código 9</strong> - Sintaxe do <code class="language-ruby">times</code></a></p>
 
-<pre class="language-ruby" id="codigo10">
+<pre class="language-ruby line-numbers" id="codigo10">
   <code>
     expressao.times { |variavel|
       # Trecho de código executado repetidamente
@@ -215,7 +215,7 @@ Para resolver o problema proposto na <a href="#atividade1">Atividade 8.1</a>, pr
 
 <p>Uma diferença entre as duas formas de construir o <code class="language-ruby">times</code> é que a primeira forma, ilustrada no <a href="#codigo9">Exemplo de código 9</a>, dispensa o uso de uma variável auxiliar. Para ilustrar o exemplo da contagem usando o <code class="language-ruby">times</code>, observe o <a href="#codigo11">Exemplo de código 11</a>.</p>
 
-<pre class="language-ruby" id="codigo11">
+<pre class="language-ruby line-numbers" id="codigo11">
   <code>
     10.times { |i|
       puts "O valor de i é #{i}"
@@ -245,7 +245,7 @@ Para resolver o problema proposto na <a href="#atividade1">Atividade 8.1</a>, pr
 
 <p>O <a href="#codigo12">Exemplo de código 12</a> ilustra uma solução da <a href="#atividade1">Atividade 8.1</a> usando o <code class="language-ruby">times</code>.</p>
 
-<pre class="language-ruby" id="codigo12">
+<pre class="language-ruby line-numbers" id="codigo12">
   <code>
     puts "Digite um número: "
     numero = gets.chomp.to_i
@@ -285,7 +285,7 @@ Para resolver o problema proposto na <a href="#atividade1">Atividade 8.1</a>, pr
 
 <p>O comando <code class="language-ruby">break</code> (quebrar/romper) interrompe a execução do laço. O <a href="#codigo13">Exemplo de código 13</a> ilustra um exemplo de uso do comando <code class="language-ruby">break</code>.</p>
 
-<pre class="language-ruby" id="codigo13">
+<pre class="language-ruby line-numbers" id="codigo13">
   <code>
     for i in 1..10
       if i == 7
@@ -312,7 +312,7 @@ Para resolver o problema proposto na <a href="#atividade1">Atividade 8.1</a>, pr
 
 <p>Observe que o laço é executado 6 vezes. Na 7ª execução do laço, na qual o valor de <code class="language-ruby">i</code> é 7, a execução é interrompida com a execução do <code class="language-ruby">break</code>. Vale salientar que, se houverem dois laços aninhados (um laço dentro do outro), o <code class="language-ruby">break</code> irá interromper apenas a execução do laço interno. Observe o <a href="#codigo14">Exemplo de código 14</a>, que ilustra esse cenário.</p>
 
-<pre class="language-ruby" id="codigo14">
+<pre class="language-ruby line-numbers" id="codigo14">
   <code>
     for i in 1..10
       puts "i = #{i}"
@@ -333,7 +333,7 @@ Para resolver o problema proposto na <a href="#atividade1">Atividade 8.1</a>, pr
 
 <p>O comando <code class="language-ruby">next</code> (próximo) é usado para pular a execução de uma iteração. O <a href="#codigo15">Exemplo de código 15</a> ilustra um exemplo de uso do comando <code class="language-ruby">next</code>.</p>
 
-<pre class="language-ruby" id="codigo15">
+<pre class="language-ruby line-numbers" id="codigo15">
   <code>
     for i in 1..10
       if i == 7
@@ -367,7 +367,7 @@ Para resolver o problema proposto na <a href="#atividade1">Atividade 8.1</a>, pr
 
 <p>O comando <code class="language-ruby">redo</code> (refazer) reexecuta a iteração atual. Observe o comportamento do <code class="language-ruby">redo</code> no <a href="#codigo16">Exemplo de código 16</a></p>
 
-<pre class="language-ruby" id="codigo16">
+<pre class="language-ruby line-numbers" id="codigo16">
   <code>
     for i in 1..10
       puts "O valor de i é #{i}"

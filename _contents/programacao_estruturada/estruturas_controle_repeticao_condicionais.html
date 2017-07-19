@@ -1,0 +1,222 @@
+---
+title: Estruturas de controle de repetição condicionais
+slug: estruturas_controle_repeticao_condicionais
+author: Jalerson Lima
+layout: content
+unit: programacao_estruturada
+comments: true
+order: 12
+type: lesson
+number: 9
+---
+
+<h1 id="aula9">Aula 09 - Estruturas de Controle de Repetição Condicionais</h1>
+
+<h2 id="introducao">Introdução</h2>
+
+<p>Na aula passada, demos início ao estudo das estruturas de repetição, que são estruturas de controle de fluxo que permitem a execução de trechos de código de forma repetida e é composta por dois grandes grupos: as estruturas de repetição quantificadas e as estruturas de repetição condicionais. As estruturas de controle quantificadas executam um trecho de código um determinado número de vezes, enquanto as estruturas de repetição condicionais executam um trecho de código dependendo de uma condição.</p>
+
+<p>Nesta aula, abordaremos as estruturas de controle de repetição condicionais, também conhecidas como laços condicionais, que também executam um trecho de código de forma repetida, contudo, a sua execução depende de uma condição.</p>
+
+<p>Para ilustrar a utilidade das estruturas de repetição condicionais, observe a <a href="#atividade1">Atividade 9.1</a>.</p>
+
+<div class="panel atividade" id="atividade1">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 9.1</h4>
+  </div>
+  <div class="panel-body">
+    <p>Crie um <i>script</i> em Ruby que leia um número inteiro repetidas vezes. A repetição deve terminar quando o usuário digitar um número par.</p>
+  </div>
+</div>
+
+<p>Observe que, nesse caso, não é indicado utilizar uma estrutura de repetição quantificada, pois não é possível determinar, com antecedência, quantas vezes o <i>script</i> deverá solicitar o número para o usuário. Nesse caso, a execução da estrutura depende de uma condição (o usuário digitar um número par), portanto, a estrutura de repetição indicada para esse tipo de situação é a condicional.</p>
+
+<p>Observe o <a href="#codigo1">Exemplo de código 1</a>, que ilustra uma solução para a <a href="#atividade1">Atividade 9.1</a>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo1">
+  <code>
+    begin
+      puts "Digite um número par: "
+      numero = gets.chomp.to_i
+    end while numero % 2 != 0
+
+    puts "#{numero} é par!"
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 1</strong> - Solução da <a href="#atividade9">Atividade 9.1</a></p>
+
+<p>O <code class="language-ruby">while</code> é uma estrutura de repetição condicional que executa enquanto a condição for verdadeira. Nesse caso, a condição é <code class="language-ruby">numero % 2 != 0</code>, que será falsa quando o usuário digitar um número par. O trecho de código a ser executado repetidamente se localiza entre o <code class="language-ruby">begin</code> (linha 1) e o <code class="language-ruby">end</code> (linha 4).</p>
+
+<h2 id="estruturas_repeticao_condicionais_ruby">Estruturas de repetição condicionais em Ruby</h2>
+
+<p>A linguagem Ruby possui duas estruturas de repetição condicionais que funcionam de forma semelhante: o <code class="language-ruby">while</code> e o <code class="language-ruby">until</code>, que podem ser escritas de três formas diferentes (SOUZA, 2012).</p>
+
+<h3 id="estrutura_repeticao_while">Estrutura de repetição: <code class="language-ruby">while</code></h3>
+
+<p>A estrutura de repetição <code class="language-ruby">while</code> (enquanto) pode ser escrita de três formas distintas, a primeira delas está ilustrada no <a href="#codigo2">Exemplo de código 2</a>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo2">
+  <code>
+    while condicao
+      # Trecho de código executado repetidamente
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 2</strong> - Sintaxe do <code class="language-ruby">while</code></p>
+
+<p>O trecho de código a ser executado repetidamente, localizado entre o <code class="language-ruby">while</code> (linha 1) e o <code class="language-ruby">end</code> (linha 3), será executado enquanto a <code class="language-ruby">condicao</code> for verdadeira. Tente resolver o exercício proposto na <a href="#atividade2">Atividade 9.2</a> utilizando o <code class="language-ruby">while</code>.</p>
+
+<div class="panel atividade" id="atividade2">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 9.2</h4>
+  </div>
+  <div class="panel-body">
+    <p>Crie um <i>script</i> em Ruby que leia um número inteiro repetidas vezes. A repetição deve terminar quando o usuário digitar um número múltiplo de 5.</p>
+  </div>
+</div>
+
+<p>Observe o <a href="#codigo3">Exemplo de código 3</a>, que apresenta uma solução do exercício proposto na <a href="#atividade2">Atividade 9.2</a>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo3">
+  <code>
+    condicao = true
+    while condicao
+      puts "Digite um número múltiplo de 5: "
+      numero = gets.chomp.to_i
+      if numero % 5 == 0
+        condicao = false
+      end
+    end
+    puts "#{numero} é múltiplo de 5!"
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 3</strong> - Solução da <a href="#atividade2">Atividade 9.2</a></p>
+
+<p>No <a href="#codigo3">Exemplo de código 3</a>, utilizamos a variável <code class="language-ruby">condicao</code> para indicar se o <code class="language-ruby">while</code> deve ser executado ou não. A variável <code class="language-ruby">condicao</code> inicia com o valor <code class="language-ruby">true</code> (linha 1), para que o <code class="language-ruby">while</code> seja executado. Dentro do <code class="language-ruby">while</code> (linhas 3 a 7), o <i>script</i> solicita que o usuário digite um número múltiplo de 5 (linha 3), e o valor é guardado na variável <code class="language-ruby">numero</code> (linha 4). Em seguida, um <code class="language-ruby">if</code> (linha 5) é usado para testar se o valor guardado na variável <code class="language-ruby">numero</code> é, de fato, múltiplo de 5, e caso seja, o valor da variável <code class="language-ruby">condicao</code> é alterado para <code class="language-ruby">false</code> (linha 6) para que o <code class="language-ruby">while</code> pare de executar.</p>
+
+<p>A segunda forma de escrever o <code class="language-ruby">while</code> é aquela apresentada no <a href="#codigo1">Exemplo de código 1</a>. A sintaxe dessa segunda forma é apresentada no <a href="#codigo4">Exemplo de código 4</a>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo4">
+  <code>
+    begin
+      # Código a ser executado repetidamente
+    end while condicao
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 4</strong> - Sintaxe do <code class="language-ruby">while</code></p>
+
+<p>A diferença entre essa sintaxe e aquela apresentada anteriormente (<a href="#codigo2">Exemplo de código 2</a>) é que, utilizando-o dessa forma, o <code class="language-ruby">while</code> executará pelo menos uma vez, independente da <code class="language-ruby">condicao</code> ser verdadeira ou falsa. Isso ocorre porque a avaliação da condição só ocorre no final (linha 3). Utilizando a sintaxe apresentada no <a href="#codigo2">Exemplo de código 2</a>, caso a condição seja falsa no início da execução do <code class="language-ruby">while</code>, ele não executará nenhuma vez.</p>
+
+<p>Para melhor ilustrar a diferença entre as duas formas de escrita do <code class="language-ruby">while</code>, observe e execute o <a href="#codigo5">Exemplo de código 5</a>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo5">
+  <code>
+    condicao = false
+
+    while condicao
+      puts "Executando o primeiro while..."
+    end
+
+    begin
+      puts "Executando o segundo while..."
+    end while condicao
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 5</strong> - Diferenças entre as duas formas de escrever o <code class="language-ruby">while</code></p>
+
+<p>Na linha 1, a variável <code class="language-ruby">condicao</code> foi iniciada com <code class="language-ruby">false</code>. Observe que o primeiro <code class="language-ruby">while</code> (linhas 3 a 5) não executa nenhuma iteração pois <code class="language-ruby">condicao</code> é <code class="language-ruby">false</code>. O segundo <code class="language-ruby">while</code> (linhas 7 a 9) executa uma vez mesmo com a variável <code class="language-ruby">condicao</code> sendo <code class="language-ruby">false</code>.</p>
+
+<p>Por fim, o <a href="#codigo6">Exemplo de código 6</a> apresenta a sintaxe da terceira e última forma de se construir o <code class="language-ruby">while</code>.</p>
+
+<pre class="language-ruby" id="codigo6">
+  <code>
+    codigo while condicao
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 6</strong> - Sintaxe do <code class="language-ruby">while</code></p>
+
+<p>Vale salientar que, usando a sintaxe apresentada no <a href="#codigo6">Exemplo de código 6</a>, o trecho de código a ser executado repetidamente se limita a uma única linha de código.</p>
+
+<h3 id="estrutura_repeticao_until">Estrutura de repetição: <code class="language-ruby">until</code></h3>
+
+<p>A segunda estrutura de repetição condicional disponível em Ruby é o <code class="language-ruby">until</code> (até). Assim como o <code class="language-ruby">while</code>, o <code class="language-ruby">until</code> também possui três formas distintas de se construir. Contudo, diferentemente do <code class="language-ruby">while</code>, o <code class="language-ruby">until</code> irá executar repetidamente enquanto a condição for falsa, e não verdadeira, como ocorre no <code class="language-ruby">while</code>.</p>
+
+<p>Observe a primeira forma de se escrever o <code class="language-ruby">until</code> no <a href="#codigo7">Exemplo de código 7</a>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo7">
+  <code>
+    until condicao
+      # Trecho de código a ser executado repetidamente
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 7</strong> - Sintaxe do <code class="language-ruby">until</code></p>
+
+<p>Para melhor ilustrar o <code class="language-ruby">until</code>, observe o <a href="#codigo8">Exemplo de código 8</a>, que apresenta uma solução para a <a href="#atividade2">Atividade 9.2</a> utilizando o <code class="language-ruby">until</code> ao invés do <code class="language-ruby">while</code>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo8">
+  <code>
+    condicao = false
+    until condicao
+      puts "Digite um número múltiplo de 5: "
+      numero = gets.chomp.to_i
+      if numero % 5 == 0
+        condicao = true
+      end
+    end
+    puts "#{numero} é múltiplo de 5!"
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 8</strong> - Solução da <a href="#atividade2">Atividade 9.2</a> com o <code class="language-ruby">until</code></p>
+
+<p>Observe que o <a href="#codigo8">Exemplo de código 8</a> é bem similar ao <a href="#codigo3">Exemplo de código 3</a>. Foram feitas apenas algumas mudanças no <a href="#codigo8">Exemplo de código 8</a> para que a solução utilizasse o <code class="language-ruby">until</code> ao invés do <code class="language-ruby">while</code>: na linha 1, o valor da variável <code class="language-ruby">condicao</code> foi alterado para <code class="language-ruby">false</code> para que o <code class="language-ruby">until</code> seja executado; na linha 2, o <code class="language-ruby">while</code> foi substituído pelo <code class="language-ruby">until</code>; na linha 6, a variável <code class="language-ruby">condicao</code> recebe <code class="language-ruby">true</code> para que, quando isso ocorrer, o <code class="language-ruby">until</code> pare de executar.</p>
+
+<p>A segunda forma de se construir o <code class="language-ruby">until</code> é ilustrada no <a href="#codigo9">Exemplo de código 9</a>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo9">
+  <code>
+    begin
+      # Código a ser executado repetidamente
+    end until condicao
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 9</strong> - Sintaxe do <code class="language-ruby">until</code></p>
+
+<p>Observe que a segunda forma, apresentada no <a href="#codigo9">Exemplo de código 9</a>, é bem semelhante à estrutura apresentada no <a href="#codigo4">Exemplo de código 4</a> com o <code class="language-ruby">while</code>. A diferença entre elas é que o <code class="language-ruby">while</code> executa enquanto a condição for verdadeira, e o <code class="language-ruby">until</code> executa enquanto a condição for falsa.</p>
+
+<p>Para melhor ilustrar essa segunda forma de construção do <code class="language-ruby">until</code>, observe o <a href="#codigo10">Exemplo de código 10</a>, que apresenta uma solução para a <a href="#atividade1">Atividade 9.1</a> utilizando o <code class="language-ruby">until</code>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo10">
+  <code>
+    begin
+      puts "Digite um número par: "
+      numero = gets.chomp.to_i
+    end until numero % 2 == 0
+
+    puts "#{numero} é par!"
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 10</strong> - Solução da <a href="#atividade1">Atividade 9.1</a> com o <code class="language-ruby">until</code></p>
+
+<p>Observe que, para resolver o problema proposto na <a href="#atividade1">Atividade 9.1</a> usando o <code class="language-ruby">until</code>, bastaram duas mudanças na linha 4 do <a href="#codigo1">Exemplo de código 1</a>: substituir o <code class="language-ruby">while</code> pelo <code class="language-ruby">until</code> e <code class="language-ruby">!=</code> por <code class="language-ruby">==</code> na condição, pois usando o <code class="language-ruby">until</code>, o laço para de executar quando a condição for verdadeira.</p>
+
+<p>A terceira e última forma de se escrever o <code class="language-ruby">until</code> é a mais simples, pois só permite que uma única linha de código execute repetidamente. Confira a sintaxe dessa terceira forma no <a href="#codigo11">Exemplo de código 11</a>.</p>
+
+<pre class="language-ruby" id="codigo11">
+  <code>
+    codigo until condicao
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 11</strong> - Sintaxe do <code class="language-ruby">until</code></p>
+
+<p>Novamente, a única diferença entre usar o <code class="language-ruby">until</code> ou <code class="language-ruby">while</code> é que, com o <code class="language-ruby">while</code> o código será executado enquanto a condição for verdadeira, e com o <code class="language-ruby">until</code> o código será executado enquanto a condição for falsa.</p>
+
+<p>Vale salientar também que os comandos <code class="language-ruby">break</code>, <code class="language-ruby">next</code> e <code class="language-ruby">redo</code>, apresentados na aula passada, também funcionam com os laços condicionais.</p>
+
+<h2 id="referencias">Referências</h2>
+
+<p>POINT, T. Ruby Tutorial. Tutorials Point. 2015. Disponivel em: <a href="http://www.tutorialspoint.com/ruby/" target="_blank">http://www.tutorialspoint.com/ruby/</a>. Acesso em: 12 nov. 2015.</p>
+
+<p>RANGEL, E. Conhecendo Ruby. [S.l.]: Leanpub, 2014.</p>
+
+<p>SOUZA, L. Ruby: aprenda a programar na linguagem mais divertida. 1. ed. São Paulo: Casa do Código, 2012. v. I.</p>

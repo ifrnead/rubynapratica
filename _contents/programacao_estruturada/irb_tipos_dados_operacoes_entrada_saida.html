@@ -6,6 +6,8 @@ layout: content
 unit: programacao_estruturada
 order: 2
 comments: true
+type: lesson
+number: 2
 ---
 
 <h1 id="aula2">Aula 02 - IRB, tipos de dados e operações de entrada e saída</h1>
@@ -30,7 +32,7 @@ comments: true
   </code>
 </pre>
 
-<p>Observe a resposta do IRB: <code class="language-bash">=>1</code>. O sinal <code class="language-bash">=></code> indica que o que aparece em seguida é o resultado de um comando, trecho de código ou expressão dada por você. Nesse caso, você digitou <code class="language-bash">1</code> e a resposta foi <code class="language-bash">1</code>. O que acabou de acontecer? O IRB avalia expressões, trechos de código e instruções em Ruby, isto é, ele executa e dá alguma resposta. Nesse caso, a expressão que fornecemos foi <code class="language-bash">1</code> e a resposta, naturalmente, foi <code class="language-bash">1</code> porque não houve nenhuma operação matemática ou processamento a ser feito. Vamos tentar algo diferente. Digite <code class="language-bash">1 + 1</code> e tecle ENTER.</p>
+<p>Observe a resposta do IRB: <code class="language-bash">=> 1</code>. O sinal <code class="language-bash">=></code> indica que o que aparece em seguida é o resultado de um comando, trecho de código ou expressão dada por você. Nesse caso, você digitou <code class="language-bash">1</code> e a resposta foi <code class="language-bash">1</code>. O que acabou de acontecer? O IRB avalia expressões, trechos de código e instruções em Ruby, isto é, ele executa e dá alguma resposta. Nesse caso, a expressão que fornecemos foi <code class="language-bash">1</code> e a resposta, naturalmente, foi <code class="language-bash">1</code> porque não houve nenhuma operação matemática ou processamento a ser feito. Vamos tentar algo diferente. Digite <code class="language-bash">1 + 1</code> e tecle ENTER.</p>
 
 <pre class="language-bash" id="codigo2">
   <code>
@@ -147,7 +149,9 @@ comments: true
 
 <p>Recebemos a nossa primeira mensagem de erro. Consegue imaginar a causa do problema? O que ocorreu foi um erro de tipo (<code class="language-bash">TypeError</code>): nós usamos o operador de soma (<code class="language-bash">+</code>) com uma String (<code class="language-bash">"1"</code>) e um número inteiro (<code class="language-bash">1</code>). Mas isso faz algum sentido? Faria sentido tentar somar <code class="language-bash">"a" + 1</code>? Claro que não! Apesar da String <code class="language-bash">"1"</code> conter um valor numérico escrito, para o Ruby <code class="language-bash">"1"</code> é uma String e, sendo assim, não é possível somar uma String com um número. Logo, se tivermos um valor numérico escrito numa String, primeiro precisamos converter essa String para número.</p>
 
-<p>Isso é o que chamamos de conversão de tipos. Ou seja, transformar o dado de um tipo em um dado de outro tipo. Por exemplo: transformar "1" (String) em 1 (Integer), 10 (Integer) em "10" (String), '3.14' (String) em 3.14 (Float), etc. Para converter tipos, devemos usar os métodos `to_i`, `to_f` e `to_s`.</p>
+<p>Você pode estar se perguntando: porque a linguagem Ruby não faz essa conversão automaticamente? E a resposta é: porque Ruby é uma linguagem fortemente tipada. Isso significa que a linguagem não irá fazer conversões de tipos automaticamente, portanto você terá que fazer a conversão de tipos manualmente.</p>
+
+<p>A conversão de tipos é a operação para transformar um dado de um tipo em um dado de outro tipo. Por exemplo: transformar "1" (String) em 1 (Integer), 10 (Integer) em "10" (String), '3.14' (String) em 3.14 (Float), etc. Para converter tipos, devemos usar os métodos <code class="language-ruby">to_i</code>, <code class="language-ruby">to_f</code> e <code class="language-ruby">to_s</code>.</p>
 
 <table id="tabela1">
   <caption><strong>Tabela 1</strong> - Métodos para conversão de tipos</caption>

@@ -1,0 +1,438 @@
+---
+title: Arrays
+slug: arrays
+author: Jalerson Lima
+layout: content
+unit: programacao_estruturada
+order: 14
+comments: true
+type: lesson
+number: 10
+---
+
+<h1 id="aula10">Aula 10 - Arrays</h1>
+
+<h2 id="introducao">Introdução</h2>
+
+<p>Até a presente aula, a única forma que conhecemos para armazenar dados na memória é através de variáveis simples, conforme aprendemos na <a href="{{site.baseurl}}/contents/programacao_estruturada/memoria_variaveis_constantes.html">Aula 3</a>. Nesta aula, iremos aprender a trabalhar com <i>arrays</i>, que são estruturas capazes de armazenar dados organizados numa sequência, e que nos fornecem métodos para que possamos manipular esses dados (SOUZA, 2012).</p>
+
+<p>Observe a <a href="#figura1">Figura 1</a>, que mostra uma representação gráfica de uma variável chamada <code class="language-ruby">idade</code> e que armazena o valor <code class="language-ruby">9</code> na memória do computador. Se for necessário armazenar outro valor, 10 por exemplo, será preciso criar uma outra variável para armazená-lo, pois, se tentarmos utilizar a mesma variável, perderemos o valor que está guardado nela.</p>
+
+<figure id="figura1">
+  <img src="{{site.baseurl}}/assets/images/variaveis.png" alt="Representação gráfica de uma variável na memória">
+  <figcaption><strong>Figura 1</strong> - Representação gráfica de uma variável na memória</figcaption>
+</figure>
+
+<p>Para armazenar vários valores, o indicado é utilizar um <i>array</i>, pois essa é uma estrutura capaz de armazenar um conjunto de valores sem a necessidade de criar várias variáveis. Observe a <a href="#figura2">Figura 2</a>, que ilustra uma representação gráfica de um <i>array</i> na memória do computador. Observe que o <i>array</i> é capaz de guardar vários valores com apenas uma referência para a memória (idades).</p>
+
+<figure id="figura2">
+  <img src="{{site.baseurl}}/assets/images/arrays.png" alt="Representação gráfica de um array na memória">
+  <figcaption><strong>Figura 2</strong> - Representação gráfica de um array na memória</figcaption>
+</figure>
+
+<p>Para melhor ilustrar a estrutura de um <i>array</i> e como eles funcionam, observe a <a href="#figura3">Figura 3</a>.</p>
+
+<figure id="figura3">
+  <img src="{{site.baseurl}}/assets/images/estrutura-array.png" alt="Estrutura de um array">
+  <figcaption><strong>Figura 3</strong> - Estrutura de um <i>array</i></figcaption>
+</figure>
+
+<p>Conforme já foi explicado anteriormente, o <i>array</i> é uma estrutura capaz de guardar um conjunto de valores. Cada valor é guardado numa posição do <i>array</i> e cada posição é endereçada (também chamamos de indexada) por um índice, que é um número inteiro que marca cada posição no <i>array</i>. Portanto, conforme ilustrado na <a href="#figura3">Figura 3</a>, o valor da posição 0 é 10, o valor da posição 1 é 14, o valor da posição 2 é 20, etc. O primeiro índice sempre será 0 (zero), portanto, num <i>array</i> com X posições, o último índice será sempre X - 1.</p>
+
+<h2 id="arrays_ruby">Arrays em Ruby</h2>
+
+<p>Em Ruby os <i>arrays</i> são dinâmicos, portanto você não precisa definir seu tamanho inicial, mas se preferir definir você também pode. Caso tenha criado um <i>array</i> com 10 posições e precise guardar um novo dado no <i>array</i>, você poderá fazê-lo sem problemas pois o <i>array</i> será expandido automaticamente conforme a necessidade.</p>
+
+<p>Diferentemente de outras linguagens, em Ruby os <i>arrays</i> também podem guardar tipos de dados distintos. Portanto, você pode guardar uma String na primeira posição, um número inteiro na segunda, um número real na terceira, um objeto na quarta, etc.</p>
+
+<h3 id="criando_array">Criando um Array</h3>
+
+<p>Primeiramente, vamos aprender algumas formas de criar um <i>array</i> em Ruby. Para isso, abra o IRB, digite a primeira linha do <a href="#codigo1">Exemplo de código 1</a> e observe a resposta dada pelo IRB.</p>
+
+<pre class="language-ruby" id="codigo1">
+  <code>
+    meu_array = Array.new
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 1</strong> - Criando um <i>array</i> em Ruby</p>
+
+<p>Digitando <code class="language-ruby">meu_array = Array.new</code> (atenção para o A maiúsculo de Array), estamos criando um novo <i>array</i> vazio e guardando-o na variável <code class="language-ruby">meu_array</code>. Sim, são as variáveis que guardam os <i>arrays</i>, que, por sua vez, são capazes de guardar um conjunto de valores. Vale salientar que o nome da variável é escolhido por você e deve obedecer às regras de nomenclatura de variáveis apresentadas na <a href="{{site.baseurl}}/contents/programacao_estruturada/memoria_variaveis_constantes.html">Aula 3</a>.</p>
+
+<div class="panel atividade" id="atividade1">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 10.1</h4>
+  </div>
+  <div class="panel-body">
+    <p>Abra o IRB e crie um novo <i>array</i> vazio, conforme ilustrado no <a href="#codigo1">Exemplo de código 1</a>.</p>
+  </div>
+</div>
+
+<p>O <a href="#codigo2">Exemplo de código 2</a> apresenta como criar um <i>array</i> com 10 posições utilizando <code class="language-ruby">Array.new</code>.</p>
+
+<pre class="language-ruby" id="codigo2">
+  <code>
+    meu_array = Array.new(10)
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 2</strong> - Criando um array com 10 posições</p>
+
+<p>Observe que a resposta dada pelo IRB indica que foi criado um novo array com 10 posições, na qual cada uma possui o valor <code class="language-ruby">nil</code> (nulo).</p>
+
+<div class="panel atividade" id="atividade2">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 10.2</h4>
+  </div>
+  <div class="panel-body">
+    <p>Abra o IRB e crie um novo <i>array</i> vazio com cinco posições usando <code class="language-ruby">Array.new</code>, conforme ilustrado no <a href="#codigo2">Exemplo de código 2</a>.</p>
+  </div>
+</div>
+
+<p>Outra forma de criar um <i>array</i> é ilustrada no <a href="#codigo3">Exemplo de código 3</a>.</p>
+
+<pre class="language-ruby" id="codigo3">
+  <code>
+    meu_array = []
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 3</strong> - Criando um <i>array</i></p>
+
+<p>Atribuindo <code class="language-ruby">[]</code> a uma variável estamos criando um novo <i>array</i> vazio.</p>
+
+<div class="panel atividade" id="atividade1">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 10.1</h4>
+  </div>
+  <div class="panel-body">
+    <p>Abra o IRB e crie um novo <i>array</i> vazio usando <code class="language-ruby">[]</code>, conforme ilustrado no <a href="#codigo3">Exemplo de código 3</a>.</p>
+  </div>
+</div>
+
+<p>Utilizando essa mesma sintaxe podemos criar um <i>array</i> com valores iniciais, conforme apresenta o <a href="#codigo4">Exemplo de código 4</a>.</p>
+
+<pre class="language-ruby" id="codigo4">
+  <code>
+    meu_array = [10, 20, 30, 40, 50]
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 4</strong> - Criando um <i>array</i></p>
+
+<p>Observe, na resposta do IRB, que foi criado um novo <i>array</i> com os valores definidos na primeira linha.</p>
+
+<div class="panel atividade" id="atividade4">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 10.4</h4>
+  </div>
+  <div class="panel-body">
+    <p>Abra o IRB e crie um <i>array</i> com valores iniciais quaisquer, conforme ilustrado no <a href="#codigo4">Exemplo de código 4</a>.</p>
+  </div>
+</div>
+
+<p>Conforme explicado anteriormente, os <i>arrays</i> em Ruby permitem guardar diferentes tipos de dados. Confira essa situação no <a href="#codigo5">Exemplo de código 5</a>.</p>
+
+<pre class="language-ruby" id="codigo5">
+  <code>
+    meu_array = [10, "vinte", true, nil, 3.14]
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 5</strong> - Criando um <i>array</i> em Ruby</p>
+
+<p>No exemplo anterior, criamos um <i>array</i> com cinco posições: a primeira contém um número inteiro, a segunda contém uma String, a terceira contém um valor booleano, a quarta contém um nulo e a quinta contém um número real.</p>
+
+<div class="panel atividade" id="atividade5">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 10.5</h4>
+  </div>
+  <div class="panel-body">
+    <p>Abra o IRB e crie um novo <i>array</i> com valores iniciais quaisquer, mas sendo de tipos diferentes, conforme ilustra o <a href="#codigo5">Exemplo de código 5</a>.</p>
+  </div>
+</div>
+
+<h3 id="guardando_valores_array">Guardando valores no <i>array</i></h3>
+
+<p>Agora vamos aprender como guardar valores e acessar valores em um <i>array</i>. Existem pelo menos duas formas de se adicionar valores a um <i>array</i>: você pode especificar uma posição (índice) do <i>array</i> para guardar o novo valor ou usar a próxima posição disponível. Inicialmente vamos aprender como guardar um valor no <i>array</i> usando a próxima posição disponível.</p>
+
+<p>Para melhor ilustrar, vamos utilizar como exemplo o <i>array</i> apresentado no <a href="#codigo4">Exemplo de código 4</a>, que é apresentado graficamente abaixo.</p>
+
+<table id="tabela1">
+  <thead>
+    <th>10</th>
+    <th>20</th>
+    <th>30</th>
+    <th>40</th>
+    <th>50</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>O <i>array</i> que estamos usando como exemplo possui cinco posições, e todas elas já estão ocupadas com valores. Portanto, qual é a próxima posição disponível nesse <i>array</i>? A posição com índice 5! Lembre-se que os <i>arrays</i> em Ruby são automaticamente expansíveis, portanto você pode adicionar novos valores mesmo que não haja posições vazias.</p>
+
+<p>Observe o <a href="#codigo6">Exemplo de código 6</a>, que ilustra como adicionar um novo valor ao <i>array</i>.</p>
+
+<pre class="language-ruby" id="codigo6">
+  <code>
+    meu_array << 60
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 6</strong> - Adicionando um novo elemento na próxima posição disponível</p>
+
+<p>Conforme ilustrado no <a href="#codigo6">Exemplo de código 6</a>, o operador <code class="language-ruby"><<</code> permite a adição de um novo valor ao <i>array</i>. Esse novo valor será adicionado na próxima posição disponível, que nesse caso é a sexta posição (índice 5). Observe a resposta do IRB que mostra que o novo valor foi adicionado no final do <i>array</i> (índice 5).</p>
+
+<div class="panel atividade" id="atividade6">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 10.6</h4>
+  </div>
+  <div class="panel-body">
+    <p>Abra o IRB, crie um <i>array</i> com valores iniciais quaisquer e adicione um novo elemento usando o operador <code class="language-ruby"><<</code>, conforme ilustrado no <a href="#codigo6">Exemplo de código 6</a>.</p>
+  </div>
+</div>
+
+<p>A segunda forma que iremos apresentar para adicionar novos elementos a um <i>array</i> é aquela em que o novo elemento é colocado numa posição (índice) específica. Observe como fazer isso no <a href="#"></a> <a href="#codigo7">Exemplo de código 7</a>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo7">
+  <code>
+    meu_array = [10, 20, 30, 40, 50, 60]
+    meu_array[0] = "dez"
+    # ["dez", 20, 30, 40, 50, 60]
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 7</strong> - Adicionando um novo elemento numa posição específica</p>
+
+<p>Observe, no <a href="#codigo7">Exemplo de código 7</a>, que estamos usando o mesmo <i>array</i> produzido no exemplo anterior. Para adicionar um elemento numa posição específica do <i>array</i>, basta definir o índice entre <code class="language-ruby">[</code> e <code class="language-ruby">]</code>, conforme ilustrado na linha 3. Nesse exemplo, adicionamos "dez" na primeira posição (índice 0) do <i>array</i>, substituindo o valor que havia nessa posição.</p>
+
+<div class="panel atividade" id="atividade7">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 10.7</h4>
+  </div>
+  <div class="panel-body">
+    <p>Abra o IRB, crie um <i>array</i> com valores iniciais quaisquer e adicione um novo elemento numa posição específica, conforme ilustrado no <a href="#codigo7">Exemplo de código 7</a>.</p>
+  </div>
+</div>
+
+<h3 id="acessando_valores_array">Acessando valores do <i>array</i></h3>
+
+<p>Para acessar valores armazenados em um <i>array</i>, basta usar o nome da variável que guarda o <i>array</i>, seguido do índice da posição que se deseja acessar entre <code class="language-ruby">[</code> e <code class="language-ruby">]</code>. Observe, no <a href="#codigo8">Exemplo de código 8</a>, como acessar o valor armazenado na segunda posição (índice 1).</p>
+
+<pre class="language-ruby line-numbers" id="codigo8">
+  <code>
+    meu_array = ["dez", 20, 30, 40, 50, 60]
+    meu_array[1] # 20
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 8</strong> - Acessando valores armazenados no <i>array</i></p>
+
+<p>Caso você acesse uma posição que não guarda valor algum, o resultado será <code class="language-ruby">nil</code>.</p>
+
+<div class="panel atividade" id="atividade8">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 10.8</h4>
+  </div>
+  <div class="panel-body">
+    <p>Abra o IRB, crie um <i>array</i> com valores iniciais quaisquer e depois acesse uma posição qualquer do <i>array</i>, conforme ilustrado no <a href="#codigo8">Exemplo de código 8</a>.</p>
+  </div>
+</div>
+
+<h3 id="metodos_operadores_auxiliares">Métodos e operadores auxiliares</h3>
+
+<p>Existem alguns métodos e operadores que auxiliam a manipulação de dados em <i>arrays</i>. Nesta seção, iremos apresentar apenas alguns deles, mas você pode obter maiores informações sobre eles e sobre outros métodos e operadores na página oficial da documentação do Ruby: <a href="http://docs.ruby-lang.org/en/2.0.0/Array.html" target="_blank">http://docs.ruby-lang.org/en/2.0.0/Array.html</a> (em inglês).</p>
+
+<p>Para ilustrar os métodos e operadores auxiliares, iremos utilizar os dois <i>arrays</i> apresentados no <a href="#codigo9">Exemplo de código 9</a>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo9">
+  <code>
+    array1 = [1, 2, 3]
+    array2 = [3, 4, 5]
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 9</strong> - <i>Arrays</i> que serão usados como exemplo</p>
+
+<p>O operador <code class="language-ruby">&</code>, ilustrado no <a href="#codigo9">Exemplo de código 9</a>, retorna (dá como resultado) um novo <i>array</i> contendo os elementos em comum nos dois <i>arrays</i> (<code class="language-ruby">array1</code> e <code class="language-ruby">array2</code>), sem duplicatas.</p>
+
+<pre class="language-ruby" id="codigo10">
+  <code>
+    array1 & array2
+    # [3]
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 10</strong> - Operador <code class="language-ruby">&</code></p>
+
+<p>O operador <code class="language-ruby">+</code>, ilustrado no <a href="#codigo11">Exemplo de código 11</a>, retorna um novo <i>array</i> produzido pela concatenação (união) dos dois <i>arrays</i> (<code class="language-ruby">array1</code> e <code class="language-ruby">array2</code>).</p>
+
+<pre class="language-ruby" id="codigo11">
+  <code>
+    array1 + array2
+    # [1, 2, 3, 3, 4, 5]
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 11</strong> - Operador <code class="language-ruby">+</code></p>
+
+<p>O operador <code class="language-ruby">-</code>, ilustrado no <a href="#codigo12">Exemplo de código 12</a>, retorna uma cópia do <code class="language-ruby">array1</code> removendo os elementos que também constam no <code class="language-ruby">array2</code>.</p>
+
+<pre class="language-ruby" id="codigo12">
+  <code>
+    array1 - array2
+    # [1, 2]
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 12</strong> - Operador <code class="language-ruby">-</code></p>
+
+<p>O operador <code class="language-ruby">==</code>, ilustrado no <a href="#codigo13">Exemplo de código 13</a>, irá retornar verdadeiro caso o <code class="language-ruby">array1</code> e o <code class="language-ruby">array2</code> tenham a mesma quantidade de elementos e se cada elemento do <code class="language-ruby">array1</code> for igual ao seu correspondente (mesma posição) no <code class="language-ruby">array2</code>.</p>
+
+<pre class="language-ruby" id="codigo13">
+  <code>
+    array1 == array2
+    # false
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 13</strong> - Operador <code class="language-ruby">==</code></p>
+
+<p>O método <code class="language-ruby">clear</code>, ilustrado no <a href="#codigo14">Exemplo de código 14</a>, remove todos os elementos do <code class="language-ruby">array1</code>.</p>
+
+<pre class="language-ruby" id="codigo14">
+  <code>
+    array1.clear
+    # []
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 14</strong> - Método <code class="language-ruby">clear</code></p>
+
+<p>O método <code class="language-ruby">delete</code>, ilustrado no <a href="#codigo15">Exemplo de código 15</a>, recebe um elemento como parâmetro e o remove do <i>array</i>. O método irá retornar o próprio valor removido ou <code class="language-ruby">nil</code> caso o elemento passado como parâmetro não seja encontrado no <i>array</i>.</p>
+
+<pre class="language-ruby" id="codigo15">
+  <code>
+    array1.delete(1)
+    # 1
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 15</strong> - Método <code class="language-ruby">delete</code></p>
+
+<p>O método <code class="language-ruby">delete_at</code>, ilustrado no <a href="#codigo16">Exemplo de código 16</a>, recebe um índice (número inteiro) como parâmetro e remove o elemento armazenado naquela posição. O método irá retornar o valor removido ou <code class="language-ruby">nil</code> caso o índice passado como parâmetro esteja fora das dimensões do <i>array</i>.</p>
+
+<pre class="language-ruby" id="codigo16">
+  <code>
+    array2.delete_at(1)
+    # 4
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 16</strong> - Método <code class="language-ruby">delete_at</code></p>
+
+<p>O método <code class="language-ruby">empty?</code>, ilustrado no <a href="#codigo17">Exemplo de código 17</a>, irá retornar verdadeiro caso o <i>array</i> esteja vazio e falso caso contrário.</p>
+
+<pre class="language-ruby" id="codigo17">
+  <code>
+    array1.empty?
+    # false
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 17</strong> - Método <code class="language-ruby">empty?</code></p>
+
+<p>O método <code class="language-ruby">include?</code>, ilustrado no <a href="#codigo18">Exemplo de código 18</a>, recebe um elemento como parâmetro e retorna verdadeiro caso esse elemento esteja presente dentro do <i>array</i>, e falso caso contrário.</p>
+
+<pre class="language-ruby" id="codigo18">
+  <code>
+    array1.include?(1)
+    # true
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 18</strong> - Método <code class="language-ruby">include?</code></p>
+
+<p>O método <code class="language-ruby">size</code>, ilustrado no <a href="#codigo19">Exemplo de código 19</a>, retorna o número de elementos armazenados no <i>array</i>.</p>
+
+<pre class="language-ruby" id="codigo19">
+  <code>
+    array2.size
+    # 3
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 19</strong> - Método <code class="language-ruby">size</code></p>
+
+<h3 id="iterando_arrays">Iterando em arrays</h3>
+
+<p>É muito comum, em diversas situações, precisarmos iterar, ou seja, verificar cada um dos elementos de um <i>array</i>, e fazer algum processamento se for necessário. Nesta seção, iremos apresentar como iterar entre os elementos de um <i>array</i> usando alguns dos laços já apresentados em aulas anteriores.</p>
+
+<p>Confira o <a href="#codigo20">Exemplo de código 20</a> que ilustra como iterar entre os elementos de um <i>array</i> usando o <code class="language-ruby">each</code>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo20">
+  <code>
+    meu_array = [10, 20, 30, 40, 50]
+
+    meu_array.each do |elemento|
+      puts elemento
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 20</strong> - Iterando entre os elementos do array com <code class="language-ruby">each</code></p>
+
+<div class="panel atividade" id="atividade9">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 10.9</h4>
+  </div>
+  <div class="panel-body">
+    <p>Crie um <i>script</i> em Ruby com o código apresentado no <a href="#codigo20">Exemplo de código 20</a>, execute-o e observe o resultado.</p>
+  </div>
+</div>
+
+<p>Na linha 1, criamos um <i>array</i> com cinco elementos numéricos quaisquer. Na linha 3, usamos o método <code class="language-ruby">each</code> no <code class="language-ruby">meu_array</code> para que possamos iterar entre seus elementos. A cada iteração do laço, um dos valores armazenados no <code class="language-ruby">meu_array</code> será atribuído à variável <code class="language-ruby">elemento</code> (definida entre <code class="language-ruby">|</code> e <code class="language-ruby">|</code>). Portanto, nesse caso, na primeira iteração, o valor de <code class="language-ruby">elemento</code> será <code class="language-ruby">10</code>; na segunda iteração, o valor de <code class="language-ruby">elemento</code> será <code class="language-ruby">20</code>; na terceira iteração, o valor de <code class="language-ruby">elemento</code> será <code class="language-ruby">30</code>, e assim sucessivamente, até que a variável <code class="language-ruby">elemento</code> tenha assumido o valor de cada posição do <code class="language-ruby">meu_array</code>. Vale salientar que, o nome da variável <code class="language-ruby">elemento</code> é definido pelo próprio programador, obedecendo as normas de nomenclatura de variáveis.</p>
+
+<p>Outra forma de iterar entre os elementos de um <i>array</i> usando o método <code class="language-ruby">each</code> é passando um bloco de código através de chaves (<code class="language-ruby">{</code> e <code class="language-ruby">}</code>), conforme ilustra o <a href="#codigo21">Exemplo de código 21</a>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo21">
+  <code>
+    meu_array = [10, 20, 30, 40, 50]
+
+    meu_array.each { |elemento|
+      puts elemento
+    }
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 21</strong> - Iterando entre os elementos do <i>array</i> com <code class="language-ruby">each</code> e bloco de código</p>
+
+<div class="panel atividade" id="atividade10">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 10.10</h4>
+  </div>
+  <div class="panel-body">
+    <p>Crie um <i>script</i> em Ruby com o código apresentado no <a href="#codigo21">Exemplo de código 21</a>, execute-o e observe o resultado.</p>
+  </div>
+</div>
+
+<p>Novamente o nome da variável auxiliar é definido entre <code class="language-ruby">|</code> e <code class="language-ruby">|</code>, contudo, ao invés de usar o <code class="language-ruby">do</code> e o <code class="language-ruby">end</code> como marcadores de início e fim do bloco de código, estamos usando as chaves (<code class="language-ruby">{</code> e <code class="language-ruby">}</code>). A variável <code class="language-ruby">elemento</code> irá assumir cada valor armazenado no <code class="language-ruby">meu_array</code>. Outra forma de iterar entre os elementos de um <i>array</i> é usando a instrução <code class="language-ruby">for</code>, conforme ilustra o <a href="#codigo22">Exemplo de código 22</a>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo22">
+  <code>
+    meu_array = [10, 20, 30, 40, 50]
+
+    for elemento in meu_array
+      puts elemento
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 22</strong> - Iterando entre os elementos do <i>array</i> com <code class="language-ruby">for</code></p>
+
+<div class="panel atividade" id="atividade11">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 10.11</h4>
+  </div>
+  <div class="panel-body">
+    <p>Crie um <i>script</i> em Ruby com o código apresentado no <a href="#codigo22">Exemplo de código 22</a>, execute-o e observe o resultado.</p>
+  </div>
+</div>
+
+<p>Usando o <code class="language-ruby">for</code>, o nome da variável auxiliar é definido logo após o <code class="language-ruby">for</code> e o nome da variável que guarda o <i>array</i> é colocado após o <code class="language-ruby">in</code>. No <a href="#codigo22">Exemplo de código 22</a>, a variável <code class="language-ruby">elemento</code> irá assumir cada um dos valores armazenados no <code class="language-ruby">meu_array</code>.</p>
+
+<h2 id="referencias">Referências</h2>
+
+<p>POINT, T. Ruby Tutorial. Tutorials Point. 2015. Disponivel em: <a href="http://www.tutorial-spoint.com/ruby/" target="_blank">http://www.tutorial-spoint.com/ruby/</a>. Acesso em: 12 nov. 2015.</p>
+
+<p>RANGEL, E. Conhecendo Ruby. [S.l.]: Leanpub, 2014.</p>
+
+<p>RUBY LANG. Class Array. Ruby Documentation. 2015. Disponivel em: <a href="http://docs.ruby-lang.org/en/2.0.0/Array.html" target="_blank">http://docs.ruby-lang.org/en/2.0.0/Array.html</a>. Acesso em: 04 fev. 2016.</p>
+
+<p>SOUZA, L. Ruby: aprenda a programar na linguagem mais divertida. 1. ed. São Paulo: Casa do Código, 2012. v. I.</p>

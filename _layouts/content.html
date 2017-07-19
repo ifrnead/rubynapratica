@@ -39,10 +39,10 @@
             <i id="sidebar-toggle" class="fa fa-bars"></i>
           </div>
 
-          {% if page.order %}
-            <h1 class="menu-title">Aula {{page.order}} - {{ page.title }}</h1>
+          {% if page.type == 'lesson' %}
+            <h1 class="menu-title">Aula {{page.number}} - {{ page.title }}</h1>
           {% else %}
-            <h1 class="menu-title">{{ page.title }}</h1>
+            <h1 class="menu-title">Lista {{page.number}} - {{ page.title }}</h1>
           {% endif %}
 
           <div class="right-buttons">

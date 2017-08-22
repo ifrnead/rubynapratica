@@ -1,0 +1,368 @@
+---
+title: Hashes
+slug: hashes
+author: Jalerson Lima
+layout: content
+unit: programacao_estruturada
+order: 15
+comments: true
+type: lesson
+number: 11
+---
+
+<h1 id="aula10">Aula 11 - Hashes</h1>
+
+<h2 id="introducao">Introdução</h2>
+
+<p>Na última aula estudamos os <i>arrays</i>, que são importantes estruturas de dados capazes de guardar um conjunto de dados, evitando a criação de várias variáveis. Os <i>hashes</i> também são estruturas de dados, bem semelhantes aos <i>arrays</i>, que guardam um conjunto de dados. A principal diferença entre os arrays e os <i>hashes</i> é que, nos arrays cada posição é "endereçada" (indexada) por um número inteiro, enquanto nos <i>hashes</i>, cada posição é endereçada por uma chave (SOUZA, 2012).</p>
+
+<p>Uma definição muito simples para os <i>hashes</i> é que eles são uma coleção de pares chave-valor. Confira a <a href="#figura1">Figura 1</a>, que ilustra a estrutura de um <i>hash</i>.</p>
+
+<figure id="figura1">
+  <img src="{{site.baseurl}}/assets/images/estrutura-hash.png" alt="Estrutura de um hash">
+  <figcaption><strong>Figura 1</strong> - Estrutura de um <i>hash</i></figcaption>
+</figure>
+
+<p>Observe, na <a href="#figura1">Figura 1</a>, que a estrutura de um <i>hash</i> é muito semelhante à estrutura de um array, pois, conforme explicado anteriormente, ambas são estruturas que armazenam um conjunto de dados, evitando a criação de muitas variáveis. Observe também que cada posição do <i>hash</i> é marcada por uma chave. No caso do <i>hash</i> ilustrado na Figura 1, as chaves são Strings.</p>
+
+<p>Contudo, as chaves dos <i>hashes</i> também podem ser qualquer tipo de dado, inclusive símbolos (Symbol). Um símbolo é um tipo de dado que representa apenas um marcador, uma etiqueta (tag), que não guarda valor algum. A única importância de um símbolo é marcar algo. Os símbolos são escritos com dois pontos na frente, e seus nomes obedecem às regras de nomenclatura de variáveis. O Exemplo de código 1 ilustra alguns símbolos.</p>
+
+<pre class="language-ruby" id="codigo1">
+  <code>
+    :cor
+    :nome
+    :idade
+    :tipo
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 1</strong> - Exemplos de símbolos</p>
+
+<p>Portanto, conforme explicado anteriormente, os símbolos também podem ser usados como marcadores (chaves) de posições nos <i>hashes</i>.</p>
+
+<h2 id="hashes_ruby"><i>Hashes</i> em Ruby</h2>
+
+<p>Assim como os arrays, os <i>hashes</i> em Ruby também são dinâmicos, portanto eles irão aumentar de tamanho automaticamente quando forem necessárias novas posições para armazenar novos elementos. Outra semelhança com os arrays é que os <i>hashes</i> também são capazes de armazenar elementos de diferentes tipos de dados.</p>
+
+<h3 id="criando_hash">Criando um <i>hash</i></h3>
+
+<p>Assim como fizemos com os arrays, vamos primeiramente aprender como criar um <i>hash</i>. Para isso, abra o IRB e digite o código ilustrado no <a href="#codigo2">Exemplo de código 2</a>.</p>
+
+<pre class="language-ruby" id="codigo2">
+  <code>
+    meu_hash = Hash.new
+    # {}
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 2</strong> - Criando um <i>hash</i></p>
+
+<p>Digitando <code class="language-ruby">meu_hash = Hash.new</code> (atenção para o H maiúsculo de Hash), estamos criando um novo <i>hash</i> vazio e guardando-o na variável <code class="language-ruby">meu_hash</code>. O <code class="language-ruby">{}</code> dado como resposta na segunda linha do <a href="#codigo2">Exemplo de código 2</a> indica que um <i>hash</i> vazio foi criado.</p>
+
+<p>Uma forma mais simplificada para criar um <i>hash</i> vazio é ilustrada no <a href="#codigo3">Exemplo de código 3</a>.</p>
+
+<pre class="language-ruby" id="codigo3">
+  <code>
+    meu_hash = {}
+    # {}
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 3</strong> - Criando um <i>hash</i></p>
+
+<p>Observe que simplesmente utilizando <code class="language-ruby">{}</code> criamos um <i>hash</i> vazio. Portanto, podemos criar <i>hashes</i> vazios utilizando <code class="language-ruby">Hash.new</code> ou <code class="language-ruby">{}</code>. Contudo, também é possível criar um <i>hash</i> com valores iniciais. Confira o <a href="#codigo4">Exemplo de código 4</a>, que ilustra como criar um <i>hash</i> com valores iniciais.</p>
+
+<pre class="language-ruby" id="codigo4">
+  <code>
+    meu_hash = { :nome => "Pedro", :idade => 28 }
+    # {:nome => "Pedro", :idade => 28}
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 4</strong> - Criando um <i>hash</i> com valores iniciais</p>
+
+<p>Observe, no <a href="#codigo4">Exemplo de código 4</a>, que a chave (que marca a posição) aparece antes de <code class="language-ruby">=></code>, enquanto o valor aparece depois. No exemplo acima usamos a chave <code class="language-ruby">:nome</code> para marcar a posição do valor <code class="language-ruby">"Pedro"</code> e a chave <code class="language-ruby">:idade</code> para marcar a posição do valor 28. Observe abaixo como ficou a estrutura do <i>hash</i> criado no <a href="#codigo4">Exemplo de código 4</a>.</p>
+
+<table>
+  <thead>
+    <th>"Pedro"</th>
+    <th>28</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>:nome</td>
+      <td>:idade</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="panel atividade" id="atividade1">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 11.1</h4>
+  </div>
+  <div class="panel-body">
+    <p>Abra o IRB, crie um <i>hash</i> vazio e, em seguida, um <i>hash</i> com valores iniciais quaisquer.</p>
+  </div>
+</div>
+
+<h3 id="guardando_valores_hash">Guardando valores no <i>hash</i></h3>
+
+<p>Para adicionar novos elementos num <i>hash</i>, é preciso definir a posição na qual o elemento será guardado. Nos <i>hashes</i> essa posição é definida através de uma chave (String ou símbolo). Confira o <a href="#codigo5">Exemplo de código 5</a>, que ilustra como adicionar novos elementos num <i>hash</i>.</p>
+
+<pre class="language-ruby" id="codigo5">
+  <code>
+    meu_hash[:altura] = 1.82
+    # { :nome => "Pedro", :idade => 28, :altura => 1.82 }
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 5</strong> - Guardando valores num <i>hash</i></p>
+
+<p>Observe, no <a href="#codigo5">Exemplo de código 5</a>, que usamos o nome da variável que guarda o <i>hash</i> (<code class="language-ruby">meu_hash</code>), seguido da chave <code class="language-ruby">:altura</code> (entre colchetes).
+
+<div class="panel atividade" id="atividade2">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 11.2</h4>
+  </div>
+  <div class="panel-body">
+    <p>Abra o IRB, crie um <i>hash</i> com valores iniciais e adicione um novo elemento qualquer.</p>
+  </div>
+</div>
+
+<h3 id="acessando_valores_hash">Acessando valores do <i>hash</i></h3>
+
+<p>Para acessar valores armazenados num <i>hash</i>, basta usar o nome da variável que guarda o <i>hash</i>, seguido da chave entre colchetes. Confira o <a href="#codigo6">Exemplo de código 6</a>, que ilustra como acessar os valores de posições específicas de um <i>hash</i>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo6">
+  <code>
+    meu_hash[:nome]
+    # "Pedro"
+    meu_hash[:idade]
+    # 28
+    meu_hash[:altura]
+    # 1.82
+    meu_hash[:uma_chave_inexistente]
+    # nil
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 6</strong> - Acessando valores do <i>hash</i></p>
+
+<p>Observe, no <a href="#codigo6">Exemplo de código 6</a>, que quando tentamos acessar uma posição usando uma chave qualquer inexistente, o valor retornado é <code class="language-ruby">nil</code>, pois não existe valor algum armazenado nessa posição.</p>
+
+<div class="panel atividade" id="atividade3">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 11.3</h4>
+  </div>
+  <div class="panel-body">
+    <p>Abra o IRB, crie um <i>hash</i> com valores iniciais e depois acesse um desses valores, conforme ilustrado no <a href="#codigo6">Exemplo de código 6</a>.</p>
+  </div>
+</div>
+
+<h3 id="metodos_operadores_auxiliares">Métodos e operadores auxiliares</h3>
+
+<p>Assim como nos arrays, existem alguns métodos e operadores que auxiliam a manipulação de dados em <i>hashes</i>. Assim como foi feito na aula passada, iremos apresentar apenas alguns desses métodos e operadores, contudo você pode conferir um detalhamento de todos eles na página oficial da documentação do Ruby: <a href="http://docs.ruby-lang.org/en/2.0.0/Hash.html" target="_blank">http://docs.ruby-lang.org/en/2.0.0/Hash.html</a> (em inglês).</p>
+
+<p>Para ilustrar os métodos e operadores auxiliares, iremos utilizar os dois <i>hashes</i> apresentados no <a href="#codigo7">Exemplo de código 7</a>.</p>
+
+<pre class="language-ruby" id="codigo7">
+  <code>
+    hash1 = { :um => 1, :dois => 2, :tres => 3 }
+    hash2 = { :tres => 3, :quatro => 4, :cinco => 5 }
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 7</strong> - <i>Hashes</i> que serão usados como exemplo</p>
+
+<p>O operador <a href="#codigo6">==</code>, ilustrado no <a href="#codigo8">Exemplo de código 8</a>, verifica se os dois <i>hashes</i> são iguais. Eles são considerados iguais quando eles têm a mesma quantidade de pares chave-valor, e se todos os pares chave-valor são iguais entre os <i>hashes</i>.</p>
+
+<pre class="language-ruby" id="codigo8">
+  <code>
+    hash1 == hash2
+    # false
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 8</strong> - O operador <code class="language-ruby">==</code></p>
+
+<p>O método <code class="language-ruby">clear</code>, ilustrado no <a href="#codigo9">Exemplo de código 9</a>, apaga todos os pares chave-valor armazenados no <i>hash</i>.</p>
+
+<pre class="language-ruby" id="codigo9">
+  <code>
+    hash1.clear
+    # {}
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 9</strong> - O método <code class="language-ruby">clear</code></p>
+
+<p>O método <code class="language-ruby">delete</code>, ilustrado no <a href="#codigo10">Exemplo de código 10</a>, recebe uma chave como parâmetro e apaga o par chave-valor correspondente.</p>
+
+<pre class="language-ruby" id="codigo10">
+  <code>
+    hash2.delete(:tres)
+    # 3
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 10</strong> - O método <code class="language-ruby">delete</code></p>
+
+<p>O método <code class="language-ruby">empty?</code>, ilustrado no <a href="#codigo11">Exemplo de código 11</a>, retorna verdadeiro caso o <i>hash</i> esteja vazio e falso caso contrário.</p>
+
+<pre class="language-ruby" id="codigo11">
+  <code>
+    hash1.empty?
+    # false
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 11</strong> - O método <code class="language-ruby">empty?</code></p>
+
+<p>Os métodos <code class="language-ruby">has_key?</code>, <code class="language-ruby">include?</code>, <code class="language-ruby">key?</code> e <code class="language-ruby">member?</code>, ilustrados no <a href="#codigo12">Exemplo de código 12</a>, recebem uma chave como parâmetro, retornam verdadeiro caso a chave já esteja presente no <i>hash</i> e falso caso contrário.</p>
+
+<pre class="language-ruby line-numbers" id="codigo12">
+  <code>
+    hash2.has_key?(:quatro)
+    # true
+    hash2.include?(:dez)
+    # false
+    hash1.key?(:um)
+    # true
+    hash1.member?(:dois)
+    # true
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 12</strong> - Os métodos <code class="language-ruby">has_key?</code>, <code class="language-ruby">include?</code>, <code class="language-ruby">key?</code> e <code class="language-ruby">member?</code></p>
+
+<p>Os métodos <code class="language-ruby">has_value?</code> e <code class="language-ruby">value?</code>, ilustrados no <a href="#codigo13">Exemplo de código 13</a>, recebem um valor como parâmetro, retornam verdadeiro caso esse valor esteja armazenado no <i>hash</i> e falso caso contrário.</p>
+
+<pre class="language-ruby line-numbers" id="codigo13">
+  <code>
+    hash1.has_value?(2)
+    # true
+    hash2.value?(10)
+    # false
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 13</strong> - Os métodos <code class="language-ruby">has_value?</code> e <code class="language-ruby">value?</code></p>
+
+<p>O método <code class="language-ruby">keys</code>, ilustrado no <a href="#codigo14">Exemplo de código 14</a>, retorna um array com as chaves presentes no <i>hash</i>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo14">
+  <code>
+    hash2.keys
+    # [:tres, :quatro, :cinco]
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 14</strong> - O método <code class="language-ruby">keys</code></p>
+
+<p>Os métodos size e length, ilustrados no <a href="#codigo15">Exemplo de código 15</a>, retornam a quantidade de elementos armazenados no <i>hash</i>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo15">
+  <code>
+    hash1.size
+    # 3
+    hash2.length
+    # 3
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 15</strong> - Os métodos <code class="language-ruby">size</code> e <code class="language-ruby">length</code></p>
+
+<div class="panel atividade" id="atividade4">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 11.4</h4>
+  </div>
+  <div class="panel-body">
+    <p>Abra o IRB, escolha e use três funções e/ou operadores auxiliares para manipular <i>hashes</i>.</p>
+  </div>
+</div>
+
+<h3 id="iterando_hashes">Iterando em <i>hashes</i></h3>
+
+<p>Assim como nos <i>arrays</i>, em diversas situações também será necessário iterar, ou seja, percorrer entre os elementos armazenados num <i>hash</i>, realizando alguma verificação ou processamento com cada um desses elementos.</p>
+
+<p>Existem várias maneiras de iterar entre os elementos de um <i>hash</i>. O <a href="#codigo16">Exemplo de código 16</a> ilustra como iterar usando o <code class="language-ruby">each</code>. Observe, na linha 3, que especificamos os nomes das variáveis (<code class="language-ruby">chave</code> e <code class="language-ruby">valor</code>) que irão armazenar a chave e o valor de cada posição do <i>hash</i>. Assim como nos <i>arrays</i>, a cada iteração do laço <code class="language-ruby">each</code>, as variáveis <code class="language-ruby">chave</code> e <code class="language-ruby">valor</code> irão assumir uma chave e um valor de uma posição do <i>hash</i>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo16">
+  <code>
+    meu_hash = { :um => 1, :dois => 2, :tres => 3 }
+
+    meu_hash.each do |chave, valor|
+      puts "A posição #{chave} guarda o valor #{valor}"
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 16</strong> - Iterando entre elementos com <code class="language-ruby">each</code></p>
+
+<p>O <a href="#codigo17">Exemplo de código 17</a> ilustra outra forma de iterar entre os elementos de um <i>hash</i>. Nesse exemplo também usamos o <code class="language-ruby">each</code>, contudo, usamos as chaves (<code class="language-ruby">{</code> e <code class="language-ruby">}</code>) ao invés de usar o <code class="language-ruby">do</code> e o <code class="language-ruby">end</code> para marcar o início e o fim do bloco de código.</p>
+
+<pre class="language-ruby line-numbers" id="codigo17">
+  <code>
+    meu_hash = { :um => 1, :dois => 2, :tres => 3 }
+
+    meu_hash.each { |chave, valor|
+      puts "A posição #{chave} guarda o valor #{valor}"
+    }
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 17</strong> - Iterando entre elementos com <code class="language-ruby">each</code></p>
+
+<p>O <a href="#codigo18">Exemplo de código 18</a> ilustra outra forma de iterar entre os elementos de um <i>hash</i>, mas, dessa vez, utilizando o <code class="language-ruby">each_pair</code>, que funciona da mesma forma que os exemplos apresentados anteriormente.</p>
+
+<pre class="language-ruby line-numbers" id="codigo18">
+  <code>
+    meu_hash = { :um => 1, :dois => 2, :tres => 3 }
+
+    meu_hash.each_pair do |chave, valor|
+      puts "A posição #{chave} guarda o valor #{valor}"
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 18</strong> - Iterando entre elementos com <code class="language-ruby">each_pair</code></p>
+
+<p>Em determinadas situações pode ser necessário iterar apenas entre as chaves e não entre os valores. Para esses casos existe o <code class="language-ruby">each_key</code>, ilustrado no <a href="#codigo19">Exemplo de código 19</a>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo19">
+  <code>
+    meu_hash = { :um => 1, :dois => 2, :tres => 3 }
+
+    meu_hash.each_key do |chave|
+      puts "A posição #{chave} guarda o valor #{meu_hash[chave]}"
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 18</strong> - Iterando entre elementos com <code class="language-ruby">each_key</code></p>
+
+<p>Conforme ilustrado no <a href="#codigo20">Exemplo de código 20</a>, o <code class="language-ruby">each_key</code> também pode ser escrito usando chaves (<code class="language-ruby">{</code> e <code class="language-ruby">}</code>) ao invés de <code class="language-ruby">do</code> e o <code class="language-ruby">end</code>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo20">
+  <code>
+    meu_hash = { :um => 1, :dois => 2, :tres => 3 }
+
+    meu_hash.each_key { |chave|
+      puts "A posição #{chave} guarda o valor #{meu_hash[chave]}"
+    }
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 20</strong> - Iterando entre elementos com <code class="language-ruby">each_key</code></p>
+
+<p>Também é possível utilizar o <code class="language-ruby">for</code> para iterar entre os elementos de um <i>hash</i>, conforme ilustrado no <a href="#codigo21">Exemplo de código 21</a>. Observe que, após o <code class="language-ruby">for</code>, é necessário especificar os nomes das variáveis que irão guardar as chaves e os valores do <i>hash</i> (<code class="language-ruby">chave</code> e <code class="language-ruby">valor</code>). O nome da variável que armazena o <i>hash</i> é especificado após o <code class="language-ruby">in</code>.</p>
+
+<pre class="language-ruby line-numbers" id="codigo21">
+  <code>
+    meu_hash = { :um => 1, :dois => 2, :tres => 3 }
+
+    for chave, valor in meu_hash
+      puts "A posição #{chave} guarda o valor #{valor}"
+    end
+  </code>
+</pre>
+<p class="caption"><strong>Exemplo de código 21</strong> - Iterando entre elementos com <code class="language-ruby">for</code></p>
+
+<div class="panel atividade" id="atividade5">
+  <div class="panel-heading">
+    <h4><i class="fa fa-pencil" aria-hidden="true"></i> Atividade 11.5</h4>
+  </div>
+  <div class="panel-body">
+    <p>Crie um <i>script</i> em Ruby. Nesse <i>script</i>, crie um <i>hash</i> com valores iniciais, escolha e use dois laços para iterar entre os elementos desse <i>hash</i>. Mostre na tela cada chave e valor armazenado no <i>hash</i>.</p>
+  </div>
+</div>
+
+<h2 id="referencias">Referências</h2>
+
+<p>COMMUNITY, R. Class Hash. Ruby Documentation. 2015. Disponivel em: <a href="http://docs.ruby-lang.org/en/2.0.0/Hash.html" target="_blank">http://docs.ruby-lang.org/en/2.0.0/Hash.html</a>. Acesso em: 10 fev. 2015.</p>
+
+POINT, T. Ruby Tutorial. Tutorials Point. 2015. Disponivel em: <a href="http://www.tutorialspoint.com/ruby/" target="_blank">http://www.tutorialspoint.com/ruby/</a>. Acesso em: 12 nov. 2015.
+
+<p>RANGEL, E. Conhecendo Ruby. [S.l.]: Leanpub, 2014.</p>
+
+<p>SOUZA, L. Ruby: aprenda a programar na linguagem mais divertida. 1. ed. São Paulo: Casa do Código, 2012. v. I.</p>

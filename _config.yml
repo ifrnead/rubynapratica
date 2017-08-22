@@ -18,7 +18,7 @@ description: > # Livro didático construído colaborativamente para ensino de pr
 baseurl: "/rubynapratica" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
-github: "https://github.com/jalerson/rubynapratica"
+github: "https://github.com/ifrnead/rubynapratica"
 
 author:
   name: Jalerson Lima
